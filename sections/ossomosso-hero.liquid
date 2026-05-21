@@ -1,0 +1,310 @@
+{% comment %}
+  Ossomosso Hero Section
+  Two-column layout: text left, image/visual right
+{% endcomment %}
+
+{% liquid
+  assign eyebrow = section.settings.eyebrow
+  assign title = section.settings.title
+  assign title_emphasis = section.settings.title_emphasis
+  assign body_text = section.settings.body_text
+  assign primary_button_text = section.settings.primary_button_text
+  assign primary_button_url = section.settings.primary_button_url
+  assign secondary_button_text = section.settings.secondary_button_text
+  assign secondary_button_url = section.settings.secondary_button_url
+  assign image = section.settings.image
+  assign caption = section.settings.caption
+%}
+
+<style>
+  .osso-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    background: var(--color-background);
+  }
+
+  .osso-hero__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 48px;
+  }
+
+  .osso-hero__eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    margin-bottom: 28px;
+    font-family: var(--font-body--family);
+    font-weight: 400;
+  }
+
+  .osso-hero__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(54px, 6vw, 88px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--color-foreground);
+    margin-bottom: 32px;
+  }
+
+  .osso-hero__title em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .osso-hero__body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    max-width: 380px;
+    margin-bottom: 48px;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  .osso-hero__actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .osso-hero__btn-primary {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    font-family: var(--font-body--family);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+    font-weight: 500;
+  }
+
+  .osso-hero__btn-primary:hover {
+    background: var(--color-primary);
+    color: var(--color-background);
+  }
+
+  .osso-hero__btn-ghost {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    font-weight: 400;
+  }
+
+  .osso-hero__btn-ghost:hover {
+    color: var(--color-foreground);
+    opacity: 1;
+    border-color: var(--color-foreground);
+  }
+
+  .osso-hero__scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+  }
+
+  .osso-hero__scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--color-border);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { width: 40px; }
+    50% { width: 60px; }
+  }
+
+  .osso-hero__right {
+    position: relative;
+    background: var(--color-background);
+    opacity: 0.9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .osso-hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .osso-hero__caption {
+    position: absolute;
+    bottom: 24px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .osso-hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .osso-hero__left {
+      padding: 100px 24px 60px;
+    }
+
+    .osso-hero__right {
+      min-height: 60vw;
+    }
+
+    .osso-hero__scroll {
+      display: none;
+    }
+  }
+</style>
+
+<section class="osso-hero" data-section-id="{{ section.id }}">
+  <div class="osso-hero__left">
+    {% if eyebrow != blank %}
+      <p class="osso-hero__eyebrow">{{ eyebrow }}</p>
+    {% endif %}
+
+    {% if title != blank %}
+      <h1 class="osso-hero__title">
+        {{ title }}
+        {% if title_emphasis != blank %}
+          <em>{{ title_emphasis }}</em>
+        {% endif %}
+      </h1>
+    {% endif %}
+
+    {% if body_text != blank %}
+      <p class="osso-hero__body">{{ body_text }}</p>
+    {% endif %}
+
+    <div class="osso-hero__actions">
+      {% if primary_button_text != blank and primary_button_url != blank %}
+        <a href="{{ primary_button_url }}" class="osso-hero__btn-primary">{{ primary_button_text }}</a>
+      {% endif %}
+
+      {% if secondary_button_text != blank and secondary_button_url != blank %}
+        <a href="{{ secondary_button_url }}" class="osso-hero__btn-ghost">{{ secondary_button_text }}</a>
+      {% endif %}
+    </div>
+
+    <div class="osso-hero__scroll">
+      <span class="osso-hero__scroll-line"></span>
+      <span>Scroll</span>
+    </div>
+  </div>
+
+  <div class="osso-hero__right">
+    {% if image != blank %}
+      {{ image | image_url: width: 1200 | image_tag: class: 'osso-hero__image', loading: 'eager' }}
+    {% else %}
+      <div class="osso-hero__placeholder" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--color-background); opacity: 0.5;">
+        <span style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Imagen del producto</span>
+      </div>
+    {% endif %}
+
+    {% if caption != blank %}
+      <p class="osso-hero__caption">{{ caption }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Impresión 3D · Diseño independiente · Madrid"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Objetos que hablan por sí solos."
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Emphasis word (italic)",
+      "default": "hablan"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "Diseñamos y fabricamos piezas únicas en impresión 3D. Lámparas que transforman la luz, organizadores que transforman el espacio."
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Primary button text",
+      "default": "Explorar colección"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_url",
+      "label": "Primary button URL"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary button text",
+      "default": "Cómo lo hacemos"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_url",
+      "label": "Secondary button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Image caption",
+      "default": "Lámpara Tulipa — Colección 001"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Hero"
+    }
+  ]
+}
+{% endschema %}

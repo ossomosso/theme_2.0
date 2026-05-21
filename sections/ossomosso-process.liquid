@@ -1,0 +1,226 @@
+{% comment %}
+  Ossomosso Process Section
+  4-step process with dark background
+{% endcomment %}
+
+{% liquid
+  assign title = section.settings.title
+  assign title_emphasis = section.settings.title_emphasis
+  assign description = section.settings.description
+%}
+
+<style>
+  .osso-process {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    padding: 120px 48px;
+  }
+
+  .osso-process__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .osso-process__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+  }
+
+  .osso-process__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(36px, 4vw, 58px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--color-background);
+  }
+
+  .osso-process__title em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .osso-process__desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-background);
+    opacity: 0.55;
+    padding-top: 12px;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  .osso-process__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .osso-process__step {
+    padding: 40px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    padding-right: 40px;
+    margin-right: -1px;
+  }
+
+  .osso-process__step:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .osso-process__step:not(:first-child) {
+    padding-left: 40px;
+  }
+
+  .osso-process__step-num {
+    font-family: var(--font-heading--family);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--color-background);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .osso-process__step-title {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: var(--color-background);
+    font-family: var(--font-body--family);
+    font-weight: 500;
+  }
+
+  .osso-process__step-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--color-background);
+    opacity: 0.5;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+    .osso-process {
+      padding: 80px 24px;
+    }
+
+    .osso-process__header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .osso-process__steps {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .osso-process__step {
+      padding: 24px 0;
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .osso-process__step:not(:first-child) {
+      padding-left: 0;
+    }
+  }
+</style>
+
+<section class="osso-process" id="proceso" data-section-id="{{ section.id }}">
+  <div class="osso-process__inner">
+    <div class="osso-process__header">
+      {% if title != blank %}
+        <h2 class="osso-process__title">
+          {{ title }}
+          {% if title_emphasis != blank %}
+            <em>{{ title_emphasis }}</em>
+          {% endif %}
+        </h2>
+      {% endif %}
+
+      {% if description != blank %}
+        <p class="osso-process__desc">{{ description }}</p>
+      {% endif %}
+    </div>
+
+    <div class="osso-process__steps">
+      {% for block in section.blocks %}
+        <div class="osso-process__step" {{ block.shopify_attributes }}>
+          {% if block.settings.number != blank %}
+            <p class="osso-process__step-num">{{ block.settings.number }}</p>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <p class="osso-process__step-title">{{ block.settings.title }}</p>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <p class="osso-process__step-text">{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Process",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Del diseño a tus"
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis (italic)",
+      "default": "manos"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Cada objeto comienza con una idea y termina en una pieza real. Sin intermediarios, sin almacenes llenos de stock, sin residuos innecesarios. Solo diseño, material y proceso."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Step number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step title",
+          "default": "Diseño"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Step text",
+          "default": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Process"
+    }
+  ]
+}
+{% endschema %}

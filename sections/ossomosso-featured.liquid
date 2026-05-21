@@ -1,0 +1,268 @@
+{% comment %}
+  Ossomosso Featured Product Section
+  Two-column: image left, content right
+{% endcomment %}
+
+{% liquid
+  assign eyebrow = section.settings.eyebrow
+  assign title = section.settings.title
+  assign title_emphasis = section.settings.title_emphasis
+  assign description = section.settings.description
+  assign image = section.settings.image
+  assign button_text = section.settings.button_text
+  assign button_url = section.settings.button_url
+%}
+
+<style>
+  .osso-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+  }
+
+  .osso-featured__visual {
+    background: var(--color-background);
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+  }
+
+  .osso-featured__visual img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .osso-featured__content {
+    background: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+  }
+
+  .osso-featured__eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+    font-family: var(--font-body--family);
+    font-weight: 500;
+  }
+
+  .osso-featured__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--color-foreground);
+    margin-bottom: 28px;
+  }
+
+  .osso-featured__title em {
+    font-style: italic;
+  }
+
+  .osso-featured__desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    margin-bottom: 40px;
+    max-width: 380px;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  .osso-featured__specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .osso-featured__spec-item {
+    border-top: 1px solid var(--color-border);
+    padding-top: 14px;
+  }
+
+  .osso-featured__spec-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    margin-bottom: 6px;
+    font-family: var(--font-body--family);
+  }
+
+  .osso-featured__spec-value {
+    font-family: var(--font-heading--family);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-foreground);
+  }
+
+  .osso-featured__btn {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    font-family: var(--font-body--family);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    display: inline-block;
+    width: fit-content;
+    font-weight: 500;
+  }
+
+  .osso-featured__btn:hover {
+    background: var(--color-primary);
+    color: var(--color-background);
+  }
+
+  @media (max-width: 900px) {
+    .osso-featured {
+      grid-template-columns: 1fr;
+    }
+
+    .osso-featured__visual {
+      padding: 60px 40px;
+    }
+
+    .osso-featured__content {
+      padding: 60px 24px;
+    }
+  }
+</style>
+
+<section class="osso-featured" data-section-id="{{ section.id }}">
+  <div class="osso-featured__visual">
+    {% if image != blank %}
+      {{ image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+    {% else %}
+      <div style="width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; background: var(--color-border); opacity: 0.5;">
+        <span style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Imagen del producto</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="osso-featured__content">
+    {% if eyebrow != blank %}
+      <p class="osso-featured__eyebrow">{{ eyebrow }}</p>
+    {% endif %}
+
+    {% if title != blank %}
+      <h2 class="osso-featured__title">
+        {{ title }}
+        {% if title_emphasis != blank %}
+          <em>{{ title_emphasis }}</em>
+        {% endif %}
+      </h2>
+    {% endif %}
+
+    {% if description != blank %}
+      <p class="osso-featured__desc">{{ description }}</p>
+    {% endif %}
+
+    <div class="osso-featured__specs">
+      {% for block in section.blocks %}
+        <div class="osso-featured__spec-item" {{ block.shopify_attributes }}>
+          {% if block.settings.label != blank %}
+            <p class="osso-featured__spec-label">{{ block.settings.label }}</p>
+          {% endif %}
+          {% if block.settings.value != blank %}
+            <p class="osso-featured__spec-value">{{ block.settings.value }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if button_text != blank and button_url != blank %}
+      <a href="{{ button_url }}" class="osso-featured__btn">{{ button_text }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Featured Product",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Producto destacado"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Lámpara"
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis (italic)",
+      "default": "Tulipa"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Una reinterpretación del tulipán en material. La forma orgánica filtra y difunde la luz de manera única, proyectando sombras que cambian con el día."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Añadir al carrito — 89 €"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Specification",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Altura"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "34 cm"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Featured Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,92 @@
+{% comment %}
+  Ossomosso Stats Strip Section
+  3-column stats with accent background
+{% endcomment %}
+
+<style>
+  .osso-stats {
+    background: var(--color-primary);
+    padding: 80px 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .osso-stats__item {
+    padding: 40px;
+    background: var(--color-primary);
+    text-align: center;
+    color: var(--color-background);
+  }
+
+  .osso-stats__number {
+    font-family: var(--font-heading--family);
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .osso-stats__label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-family: var(--font-body--family);
+    font-weight: 400;
+  }
+
+  @media (max-width: 900px) {
+    .osso-stats {
+      grid-template-columns: 1fr;
+      gap: 2px;
+      padding: 60px 24px;
+    }
+  }
+</style>
+
+<div class="osso-stats" aria-label="Estadísticas" data-section-id="{{ section.id }}">
+  {% for block in section.blocks %}
+    <div class="osso-stats__item" {{ block.shopify_attributes }}>
+      {% if block.settings.number != blank %}
+        <p class="osso-stats__number">{{ block.settings.number }}</p>
+      {% endif %}
+      {% if block.settings.label != blank %}
+        <p class="osso-stats__label">{{ block.settings.label }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Ossomosso - Stats",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "100%"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Fabricado en Madrid"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Stats"
+    }
+  ]
+}
+{% endschema %}

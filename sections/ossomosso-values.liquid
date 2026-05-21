@@ -1,0 +1,153 @@
+{% comment %}
+  Ossomosso Values Section
+  3-column USP grid
+{% endcomment %}
+
+<style>
+  .osso-values {
+    padding: 120px 48px;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-background);
+  }
+
+  .osso-values__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .osso-values__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    padding-top: 6px;
+    font-family: var(--font-body--family);
+    font-weight: 400;
+  }
+
+  .osso-values__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+  }
+
+  .osso-values__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+  }
+
+  .osso-values__title {
+    font-family: var(--font-heading--family);
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--color-foreground);
+  }
+
+  .osso-values__text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+    .osso-values {
+      padding: 80px 24px;
+    }
+
+    .osso-values__inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .osso-values__grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+</style>
+
+<section class="osso-values" data-section-id="{{ section.id }}">
+  <div class="osso-values__inner">
+    {% if section.settings.label != blank %}
+      <p class="osso-values__label">{{ section.settings.label }}</p>
+    {% endif %}
+
+    <div class="osso-values__grid">
+      {% for block in section.blocks %}
+        <div class="osso-values__item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon_svg != blank %}
+            <div class="osso-values__icon">
+              {{ block.settings.icon_svg }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <p class="osso-values__title">{{ block.settings.title }}</p>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <p class="osso-values__text">{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Values",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "Por qué Ossomosso"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "Icon SVG",
+          "default": "<svg viewBox='0 0 36 36' fill='none'><path d='M18 4 C 10 4, 4 10, 4 18 C 4 26, 10 32, 18 32 C 26 32, 32 26, 32 18' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/></svg>"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Sin residuos"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Fabricamos bajo demanda. No existe stock sobrante ni producción innecesaria. Tu pedido se imprime cuando lo haces."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Values"
+    }
+  ]
+}
+{% endschema %}

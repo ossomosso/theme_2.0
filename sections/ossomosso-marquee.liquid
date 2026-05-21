@@ -1,0 +1,85 @@
+{% comment %}
+  Ossomosso Marquee Section
+  Animated scrolling text bar
+{% endcomment %}
+
+{% liquid
+  assign items = section.settings.marquee_items | newline_to_br | split: '<br />'
+%}
+
+<style>
+  .osso-marquee {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .osso-marquee__track {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+  }
+
+  .osso-marquee__item {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 40px;
+    opacity: 0.7;
+    font-family: var(--font-body--family);
+    font-weight: 400;
+  }
+
+  .osso-marquee__dot {
+    color: var(--color-primary);
+    opacity: 1;
+    margin: 0 16px;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+
+<div class="osso-marquee" aria-hidden="true" data-section-id="{{ section.id }}">
+  <div class="osso-marquee__track">
+    {% for item in items %}
+      {% assign trimmed = item | strip %}
+      {% if trimmed != blank %}
+        <span class="osso-marquee__item">{{ trimmed }}</span>
+        <span class="osso-marquee__item osso-marquee__dot">·</span>
+      {% endif %}
+    {% endfor %}
+    {% comment %} Duplicate for seamless loop {% endcomment %}
+    {% for item in items %}
+      {% assign trimmed = item | strip %}
+      {% if trimmed != blank %}
+        <span class="osso-marquee__item">{{ trimmed }}</span>
+        <span class="osso-marquee__item osso-marquee__dot">·</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ossomosso - Marquee",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "marquee_items",
+      "label": "Marquee items (one per line)",
+      "default": "Diseño original\nPLA ecológico\nFabricación local\nPiezas únicas\nImpresión 3D\nMadrid, España\nBajo demanda\nPersonalizable"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Marquee"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,274 @@
+{% comment %}
+  Ossomosso Products Grid Section
+  Bento-style grid with hover effects
+{% endcomment %}
+
+{% liquid
+  assign section_title = section.settings.section_title
+  assign view_all_text = section.settings.view_all_text
+  assign view_all_url = section.settings.view_all_url
+%}
+
+<style>
+  .osso-products {
+    padding: 0 48px 120px;
+    background: var(--color-background);
+  }
+
+  .osso-products__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .osso-products__title {
+    font-family: var(--font-heading--family);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+  }
+
+  .osso-products__view-all {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+    font-family: var(--font-body--family);
+    font-weight: 400;
+  }
+
+  .osso-products__view-all:hover {
+    color: var(--color-foreground);
+    opacity: 1;
+    border-color: var(--color-foreground);
+  }
+
+  .osso-products__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .osso-products__card {
+    position: relative;
+    background: var(--color-background);
+    opacity: 0.9;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .osso-products__card:first-child {
+    grid-row: span 2;
+  }
+
+  .osso-products__image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .osso-products__card:first-child .osso-products__image {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 600px;
+  }
+
+  .osso-products__card:hover .osso-products__image {
+    transform: scale(1.04);
+  }
+
+  .osso-products__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .osso-products__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: linear-gradient(transparent, rgba(28, 26, 23, 0.55));
+    color: white;
+    transform: translateY(8px);
+    transition: transform 0.3s;
+  }
+
+  .osso-products__card:hover .osso-products__info {
+    transform: translateY(0);
+  }
+
+  .osso-products__name {
+    font-family: var(--font-heading--family);
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: white;
+  }
+
+  .osso-products__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  .osso-products__type {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    color: white;
+    font-family: var(--font-body--family);
+  }
+
+  .osso-products__price {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    font-family: var(--font-body--family);
+  }
+
+  @media (max-width: 900px) {
+    .osso-products {
+      padding: 0 24px 80px;
+    }
+
+    .osso-products__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .osso-products__card:first-child {
+      grid-row: auto;
+    }
+  }
+</style>
+
+<section class="osso-products" data-section-id="{{ section.id }}">
+  <div class="osso-products__header">
+    {% if section_title != blank %}
+      <span class="osso-products__title">{{ section_title }}</span>
+    {% endif %}
+
+    {% if view_all_text != blank and view_all_url != blank %}
+      <a href="{{ view_all_url }}" class="osso-products__view-all">{{ view_all_text }}</a>
+    {% endif %}
+  </div>
+
+  <div class="osso-products__grid">
+    {% for block in section.blocks %}
+      {% liquid
+        assign product = block.settings.product
+        assign image = block.settings.image
+        assign name = block.settings.name
+        assign type = block.settings.type
+        assign price = block.settings.price
+      %}
+
+      <div class="osso-products__card" {{ block.shopify_attributes }}>
+        <div class="osso-products__image">
+          {% if image != blank %}
+            {{ image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+          {% elsif product != blank and product.featured_image != blank %}
+            {{ product.featured_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+          {% else %}
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--color-border);">
+              <span style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Sin imagen</span>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="osso-products__info">
+          <p class="osso-products__name">{{ name | default: product.title }}</p>
+          <div class="osso-products__meta">
+            <span class="osso-products__type">{{ type }}</span>
+            <span class="osso-products__price">{{ price | default: product.price | money }}</span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Products Grid",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Colección actual"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all text",
+      "default": "Ver todo"
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Product name (override)"
+        },
+        {
+          "type": "text",
+          "id": "type",
+          "label": "Product type",
+          "default": "Iluminación"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price (override)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Products Grid"
+    }
+  ]
+}
+{% endschema %}

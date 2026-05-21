@@ -1,0 +1,161 @@
+{% comment %}
+  Ossomosso Email Signup Section
+  Newsletter signup with centered layout
+{% endcomment %}
+
+<style>
+  .osso-signup {
+    padding: 120px 48px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-background);
+  }
+
+  .osso-signup__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 300;
+    color: var(--color-foreground);
+    margin-bottom: 16px;
+  }
+
+  .osso-signup__title em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .osso-signup__sub {
+    font-size: 15px;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    margin-bottom: 40px;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  .osso-signup__form {
+    display: flex;
+    gap: 0;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .osso-signup__input {
+    flex: 1;
+    border: 1px solid var(--color-border);
+    border-right: none;
+    background: transparent;
+    padding: 14px 18px;
+    font-family: var(--font-body--family);
+    font-size: 14px;
+    color: var(--color-foreground);
+    outline: none;
+    font-weight: 300;
+  }
+
+  .osso-signup__input:focus {
+    border-color: var(--color-foreground);
+  }
+
+  .osso-signup__input::placeholder {
+    color: var(--color-foreground);
+    opacity: 0.4;
+  }
+
+  .osso-signup__btn {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    border: 1px solid var(--color-foreground);
+    padding: 14px 24px;
+    font-family: var(--font-body--family);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 500;
+  }
+
+  .osso-signup__btn:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  @media (max-width: 900px) {
+    .osso-signup {
+      padding: 80px 24px;
+    }
+  }
+</style>
+
+<section class="osso-signup" data-section-id="{{ section.id }}">
+  {% if section.settings.title != blank %}
+    <h2 class="osso-signup__title">
+      {{ section.settings.title }}
+      {% if section.settings.title_emphasis != blank %}
+        <em>{{ section.settings.title_emphasis }}</em>
+      {% endif %}
+    </h2>
+  {% endif %}
+
+  {% if section.settings.subtitle != blank %}
+    <p class="osso-signup__sub">{{ section.settings.subtitle }}</p>
+  {% endif %}
+
+  {% form 'customer', class: 'osso-signup__form' %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <input
+      type="email"
+      name="contact[email]"
+      class="osso-signup__input"
+      placeholder="{{ section.settings.placeholder | default: 'tu@email.com' }}"
+      required
+    >
+    <button type="submit" class="osso-signup__btn">{{ section.settings.button_text | default: 'Suscribirse' }}</button>
+  {% endform %}
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Signup",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Nuevas piezas."
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis (italic)",
+      "default": "Antes que nadie."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Lanzamos colecciones en pequeñas tiradas. Sé el primero en saberlo."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Input placeholder",
+      "default": "tu@email.com"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Suscribirse"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Signup"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,111 @@
+{% comment %}
+  Ossomosso Statement Section
+  Philosophy statement with label and large text
+{% endcomment %}
+
+{% liquid
+  assign label = section.settings.label
+  assign statement = section.settings.statement
+  assign emphasis = section.settings.emphasis
+%}
+
+<style>
+  .osso-statement {
+    padding: 120px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--color-background);
+  }
+
+  .osso-statement__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .osso-statement__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    padding-top: 12px;
+    font-family: var(--font-body--family);
+    font-weight: 400;
+  }
+
+  .osso-statement__text {
+    font-family: var(--font-heading--family);
+    font-size: clamp(28px, 3.5vw, 46px);
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--color-foreground);
+  }
+
+  .osso-statement__text em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 900px) {
+    .osso-statement {
+      padding: 80px 24px;
+    }
+
+    .osso-statement__inner {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+</style>
+
+<section class="osso-statement" data-section-id="{{ section.id }}">
+  <div class="osso-statement__inner">
+    {% if label != blank %}
+      <p class="osso-statement__label">{{ label }}</p>
+    {% endif %}
+
+    {% if statement != blank %}
+      <p class="osso-statement__text">
+        {{ statement }}
+        {% if emphasis != blank %}
+          <em>{{ emphasis }}</em>
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Statement",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Nuestra filosofía"
+    },
+    {
+      "type": "textarea",
+      "id": "statement",
+      "label": "Statement text",
+      "default": "No fabricamos en serie. Fabricamos con intención. Cada pieza existe porque alguien la imaginó primero."
+    },
+    {
+      "type": "text",
+      "id": "emphasis",
+      "label": "Emphasis text (italic)",
+      "default": "con intención"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Statement"
+    }
+  ]
+}
+{% endschema %}
