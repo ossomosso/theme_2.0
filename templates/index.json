@@ -752,12 +752,69 @@
         "padding-block-start": 48,
         "padding-block-end": 64
       }
+    },
+    "ossomosso_hero_r7KfJh": {
+      "type": "ossomosso-hero",
+      "name": "Ossomosso - Hero",
+      "settings": {
+        "eyebrow": "Impresión 3D · Diseño independiente · Madrid",
+        "title": "Objetos que hablan por sí solos.",
+        "title_emphasis": "hablan",
+        "body_text": "Diseñamos y fabricamos piezas únicas en impresión 3D. Lámparas que transforman la luz, organizadores que transforman el espacio.",
+        "primary_button_text": "Explorar colección",
+        "primary_button_url": "",
+        "secondary_button_text": "Cómo lo hacemos",
+        "secondary_button_url": "",
+        "image": "shopify://shop_images/Capturadepantalla2026-05-21alas20.50.48.png",
+        "caption": "Lámpara Tulipa — Colección 001"
+      }
+    },
+    "ossomosso_marquee_LFJECd": {
+      "type": "ossomosso-marquee",
+      "name": "Ossomosso - Marquee",
+      "settings": {
+        "marquee_items": "Diseño original\nPLA ecológico\nFabricación local\nPiezas únicas\nImpresión 3D\nMadrid, España\nBajo demanda\nPersonalizable"
+      }
+    },
+    "ossomosso_process_CwcCWp": {
+      "type": "ossomosso-process",
+      "name": "Ossomosso - Process",
+      "settings": {
+        "title": "Del diseño a tus",
+        "title_emphasis": "manos",
+        "description": "Cada objeto comienza con una idea y termina en una pieza real. Sin intermediarios, sin almacenes llenos de stock, sin residuos innecesarios. Solo diseño, material y proceso."
+      }
+    },
+    "ossomosso_products_PkAJhG": {
+      "type": "ossomosso-products",
+      "name": "Ossomosso - Products Grid",
+      "settings": {
+        "section_title": "Colección actual",
+        "view_all_text": "Ver todo",
+        "view_all_url": ""
+      }
+    },
+    "ossomosso_signup_fkY3p6": {
+      "type": "ossomosso-signup",
+      "name": "Ossomosso - Signup",
+      "settings": {
+        "title": "Nuevas piezas.",
+        "title_emphasis": "Antes que nadie.",
+        "subtitle": "Lanzamos colecciones en pequeñas tiradas. Sé el primero en saberlo.",
+        "placeholder": "tu@email.com",
+        "button_text": "Suscribirse"
+      }
     }
   },
   "order": [
     "hero_iLBwPd",
     "product_list_EDUBdR",
     "media_with_content_LfPdEJ",
-    "collection_list_xpBxCm"
+    "collection_list_xpBxCm",
+    "ossomosso_hero_r7KfJh",
+    "ossomosso_marquee_LFJECd",
+    "ossomosso_process_CwcCWp",
+    "ossomosso_products_PkAJhG",
+    "ossomosso_signup_fkY3p6"
   ]
 }
