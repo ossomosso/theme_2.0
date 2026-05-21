@@ -542,6 +542,52 @@
     z-index: var(--layer-heightened);
   }
 
+  /* ossomosso-style floating navbar */
+  @media screen and (min-width: 750px) {
+    .header-section:has(> #header-component) {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1400px;
+      z-index: var(--layer-sticky);
+    }
+
+    #header-component {
+      border-radius: 12px;
+      background: rgba(253, 250, 245, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(42, 36, 32, 0.08), 0 1px 2px rgba(42, 36, 32, 0.04);
+      border: 0.5px solid rgba(232, 223, 201, 0.6);
+      overflow: hidden;
+    }
+
+    #header-component .header__underlay-closed {
+      background: transparent;
+    }
+
+    #header-component .header__row {
+      border-bottom: none !important;
+    }
+
+    #header-component .header__row--top,
+    #header-component .header__row--bottom {
+      padding: 12px 24px;
+    }
+
+    /* Add padding to body to account for fixed header */
+    body:has(.header-section:has(> #header-component)) {
+      padding-top: calc(var(--header-height, 80px) + 32px);
+    }
+
+    /* Adjust transparent header margin */
+    body:has(.header[transparent]) .content-for-layout > .shopify-section:first-child {
+      margin-top: 0;
+    }
+  }
+
   /* need default values for non-flash transitions on first overflow menu open */
   #header-component {
     --submenu-height: 0px;
