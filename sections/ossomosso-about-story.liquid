@@ -1,0 +1,158 @@
+{% comment %}
+  Ossomosso About Story Section
+  Two-column: text left, visual right
+{% endcomment %}
+
+<style>
+  .osso-about-story {
+    padding: 120px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--color-background);
+  }
+
+  .osso-about-story__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .osso-about-story__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 16px;
+    font-family: var(--font-body--family);
+  }
+
+  .osso-about-story__text {
+    font-family: var(--font-heading--family);
+    font-size: clamp(24px, 2.8vw, 36px);
+    font-weight: 300;
+    line-height: 1.35;
+    color: var(--color-foreground);
+  }
+
+  .osso-about-story__text em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .osso-about-story__body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    margin-top: 32px;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  .osso-about-story__visual {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-background);
+    opacity: 0.9;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .osso-about-story__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .osso-about-story {
+      padding: 80px 24px;
+    }
+
+    .osso-about-story__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
+
+<section class="osso-about-story" data-section-id="{{ section.id }}">
+  <div class="osso-about-story__inner">
+    <div>
+      {% if section.settings.label != blank %}
+        <p class="osso-about-story__label">{{ section.settings.label }}</p>
+      {% endif %}
+
+      {% if section.story_text != blank %}
+        <p class="osso-about-story__text">{{ section.settings.story_text }}</p>
+      {% endif %}
+
+      {% if section.settings.body_1 != blank %}
+        <p class="osso-about-story__body">{{ section.settings.body_1 }}</p>
+      {% endif %}
+
+      {% if section.settings.body_2 != blank %}
+        <p class="osso-about-story__body">{{ section.settings.body_2 }}</p>
+      {% endif %}
+    </div>
+
+    <div class="osso-about-story__visual">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      {% else %}
+        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Visual</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - About Story",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Nuestra historia"
+    },
+    {
+      "type": "textarea",
+      "id": "story_text",
+      "label": "Story text (large)",
+      "default": "Nace del amor por el interiorismo, el diseño de producto y la creación de piezas capaces de transformar cualquier espacio."
+    },
+    {
+      "type": "textarea",
+      "id": "body_1",
+      "label": "Body paragraph 1",
+      "default": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo paramétrico —líneas de código que definen curvas y espesores— y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo."
+    },
+    {
+      "type": "textarea",
+      "id": "body_2",
+      "label": "Body paragraph 2",
+      "default": "El nombre viene del italiano: osso (hueso) y mosso (movimiento). Estructura viva."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Story image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - About Story"
+    }
+  ]
+}
+{% endschema %}

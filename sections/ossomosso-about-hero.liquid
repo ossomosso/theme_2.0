@@ -1,0 +1,193 @@
+{% comment %}
+  Ossomosso About Hero Section
+  Two-column layout for About page
+{% endcomment %}
+
+<style>
+  .osso-about-hero {
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+    background: var(--color-background);
+  }
+
+  .osso-about-hero__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 48px;
+  }
+
+  .osso-about-hero__eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 28px;
+    font-family: var(--font-body--family);
+    font-weight: 500;
+  }
+
+  .osso-about-hero__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(48px, 5.5vw, 78px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--color-foreground);
+    margin-bottom: 32px;
+  }
+
+  .osso-about-hero__title em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .osso-about-hero__body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    max-width: 420px;
+    margin-bottom: 40px;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  .osso-about-hero__scroll {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.4;
+  }
+
+  .osso-about-hero__scroll-line {
+    width: 40px;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  .osso-about-hero__right {
+    position: relative;
+    background: var(--color-background);
+    opacity: 0.9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .osso-about-hero__image {
+    width: 75%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 900px) {
+    .osso-about-hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .osso-about-hero__left {
+      padding: 100px 24px 60px;
+    }
+
+    .osso-about-hero__right {
+      min-height: 60vw;
+    }
+  }
+</style>
+
+<section class="osso-about-hero" data-section-id="{{ section.id }}">
+  <div class="osso-about-hero__left">
+    {% if section.settings.eyebrow != blank %}
+      <p class="osso-about-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% endif %}
+
+    {% if section.settings.title != blank %}
+      <h1 class="osso-about-hero__title">
+        {{ section.settings.title }}
+        {% if section.settings.title_emphasis != blank %}
+          <em>{{ section.settings.title_emphasis }}</em>
+        {% endif %}
+      </h1>
+    {% endif %}
+
+    {% if section.settings.body != blank %}
+      <p class="osso-about-hero__body">{{ section.settings.body }}</p>
+    {% endif %}
+
+    {% if section.settings.scroll_text != blank %}
+      <div class="osso-about-hero__scroll">
+        <span class="osso-about-hero__scroll-line"></span>
+        <span>{{ section.settings.scroll_text }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="osso-about-hero__right">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 800 | image_tag: class: 'osso-about-hero__image', loading: 'eager' }}
+    {% else %}
+      <div style="width: 75%; max-width: 400px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-border); opacity: 0.5; border-radius: 4px;">
+        <span style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Ilustración</span>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - About Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Sobre nosotros"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Donde el diseño encuentra la"
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis (italic)",
+      "default": "esencia"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Ossomosso es una marca española de diseño de hogar nacida del amor por el interiorismo y la creación de objetos contemporáneos. Cada pieza se produce mediante impresión 3D, explorando nuevas formas y posibilidades."
+    },
+    {
+      "type": "text",
+      "id": "scroll_text",
+      "label": "Scroll text",
+      "default": "Conoce nuestra historia"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - About Hero"
+    }
+  ]
+}
+{% endschema %}

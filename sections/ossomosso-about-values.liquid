@@ -1,0 +1,194 @@
+{% comment %}
+  Ossomosso About Values Section
+  6 values in 3x2 grid with icons
+{% endcomment %}
+
+<style>
+  .osso-about-values {
+    padding: 120px 48px;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-background);
+  }
+
+  .osso-about-values__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .osso-about-values__header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 64px;
+  }
+
+  .osso-about-values__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-family: var(--font-body--family);
+  }
+
+  .osso-about-values__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--color-foreground);
+  }
+
+  .osso-about-values__title em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .osso-about-values__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+  }
+
+  .osso-about-values__item {
+    text-align: left;
+  }
+
+  .osso-about-values__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 24px;
+    color: var(--color-primary);
+  }
+
+  .osso-about-values__item-title {
+    font-family: var(--font-heading--family);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    color: var(--color-foreground);
+  }
+
+  .osso-about-values__text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--color-foreground);
+    opacity: 0.6;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+    .osso-about-values {
+      padding: 80px 24px;
+    }
+
+    .osso-about-values__header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .osso-about-values__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
+
+<section class="osso-about-values" data-section-id="{{ section.id }}">
+  <div class="osso-about-values__inner">
+    <div class="osso-about-values__header">
+      {% if section.settings.label != blank %}
+        <p class="osso-about-values__label">{{ section.settings.label }}</p>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h2 class="osso-about-values__title">
+          {{ section.settings.title }}
+          {% if section.settings.title_emphasis != blank %}
+            <em>{{ section.settings.title_emphasis }}</em>
+          {% endif %}
+        </h2>
+      {% endif %}
+    </div>
+
+    <div class="osso-about-values__grid">
+      {% for block in section.blocks %}
+        <div class="osso-about-values__item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon_svg != blank %}
+            <div class="osso-about-values__icon">
+              {{ block.settings.icon_svg }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <p class="osso-about-values__item-title">{{ block.settings.title }}</p>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <p class="osso-about-values__text">{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - About Values",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "Nuestra filosofía"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Diseñamos y producimos cada pieza mediante impresión 3D, explorando formas que serían imposibles con métodos tradicionales."
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis (italic)",
+      "default": "impresión 3D"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "Icon SVG",
+          "default": "<svg viewBox='0 0 40 40' fill='none'><circle cx='20' cy='20' r='16' stroke='currentColor' stroke-width='1.5'/></svg>"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Fabricación bajo demanda"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - About Values"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,128 @@
+{% comment %}
+  Ossomosso About CTA Section
+  Terracotta background with centered text and button
+{% endcomment %}
+
+<style>
+  .osso-about-cta {
+    background: var(--color-primary);
+    padding: 100px 48px;
+    text-align: center;
+  }
+
+  .osso-about-cta__title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(36px, 4vw, 64px);
+    font-weight: 300;
+    color: var(--color-background);
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .osso-about-cta__title em {
+    font-style: italic;
+  }
+
+  .osso-about-cta__sub {
+    font-size: 16px;
+    color: var(--color-background);
+    opacity: 0.75;
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    font-family: var(--font-body--family);
+    font-weight: 300;
+  }
+
+  .osso-about-cta__btn {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body--family);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+    font-weight: 400;
+  }
+
+  .osso-about-cta__btn:hover {
+    background: var(--color-border);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .osso-about-cta {
+      padding: 80px 24px;
+    }
+  }
+</style>
+
+<section class="osso-about-cta" data-section-id="{{ section.id }}">
+  {% if section.settings.title != blank %}
+    <h2 class="osso-about-cta__title">
+      {{ section.settings.title }}
+      {% if section.settings.title_emphasis != blank %}
+        <em>{{ section.settings.title_emphasis }}</em>
+      {% endif %}
+    </h2>
+  {% endif %}
+
+  {% if section.settings.subtitle != blank %}
+    <p class="osso-about-cta__sub">{{ section.settings.subtitle }}</p>
+  {% endif %}
+
+  {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+    <a href="{{ section.settings.button_url }}" class="osso-about-cta__btn">{{ section.settings.button_text }}</a>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - About CTA",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Piezas que transforman la forma de vivir tu"
+    },
+    {
+      "type": "text",
+      "id": "title_emphasis",
+      "label": "Title emphasis (italic)",
+      "default": "espacio"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Si te mueve el diseño que innova, que emociona y que convierte un espacio en un lugar propio, bienvenido a Ossomosso."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Explorar colección"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - About CTA"
+    }
+  ]
+}
+{% endschema %}

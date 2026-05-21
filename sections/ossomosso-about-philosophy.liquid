@@ -1,0 +1,98 @@
+{% comment %}
+  Ossomosso About Philosophy Section
+  Centered quote with attribution
+{% endcomment %}
+
+<style>
+  .osso-about-philosophy {
+    background: var(--color-background);
+    opacity: 0.9;
+    padding: 120px 48px;
+    text-align: center;
+  }
+
+  .osso-about-philosophy__inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .osso-about-philosophy__quote {
+    font-family: var(--font-heading--family);
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--color-foreground);
+    margin-bottom: 36px;
+  }
+
+  .osso-about-philosophy__quote em {
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  .osso-about-philosophy__attr {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-foreground);
+    opacity: 0.5;
+    font-family: var(--font-body--family);
+    font-weight: 400;
+  }
+
+  @media (max-width: 900px) {
+    .osso-about-philosophy {
+      padding: 80px 24px;
+    }
+  }
+</style>
+
+<section class="osso-about-philosophy" data-section-id="{{ section.id }}">
+  <div class="osso-about-philosophy__inner">
+    {% if section.settings.quote != blank %}
+      <p class="osso-about-philosophy__quote">
+        {{ section.settings.quote }}
+        {% if section.settings.quote_emphasis != blank %}
+          <em>{{ section.settings.quote_emphasis }}</em>
+        {% endif %}
+      </p>
+    {% endif %}
+
+    {% if section.settings.attribution != blank %}
+      <p class="osso-about-philosophy__attr">— {{ section.settings.attribution }}</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - About Philosophy",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote text",
+      "default": "No fabricamos en serie. Fabricamos"
+    },
+    {
+      "type": "text",
+      "id": "quote_emphasis",
+      "label": "Quote emphasis (italic)",
+      "default": "con intención"
+    },
+    {
+      "type": "text",
+      "id": "attribution",
+      "label": "Attribution",
+      "default": "Ossomosso"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - About Philosophy"
+    }
+  ]
+}
+{% endschema %}
