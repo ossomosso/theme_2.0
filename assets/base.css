@@ -4213,3 +4213,10 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+/* Contact page: extra top spacing on desktop to clear navbar */
+@media screen and (min-width: 750px) {
+  [data-template="page.contact"] .section-wrapper:first-child .spacing-style {
+    --padding-block-start: 100px;
+  }
+}
