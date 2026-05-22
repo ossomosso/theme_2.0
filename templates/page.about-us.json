@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "ossomosso_about_hero_exWjBQ": {
@@ -17,14 +8,16 @@
         "title": "Donde el diseño encuentra la",
         "title_emphasis": "esencia",
         "body": "Ossomosso es una marca española de diseño de hogar nacida del amor por el interiorismo y la creación de objetos contemporáneos. Cada pieza se produce mediante impresión 3D, explorando nuevas formas y posibilidades.",
-        "scroll_text": "Conoce nuestra historia"
+        "scroll_text": "Conoce nuestra historia",
+        "image": "",
+        "svg_code": ""
       }
     },
     "ossomosso_marquee_f7nkE7": {
       "type": "ossomosso-marquee",
       "name": "Ossomosso - Marquee",
       "settings": {
-        "marquee_items": "Diseño original\nPLA ecológico\nFabricación local\nPiezas únicas\nImpresión 3D\nMadrid, España\nBajo demanda\nPersonalizable"
+        "marquee_items": "Diseño independiente\nImpresión 3D\nFabricado en Madrid\nPLA ecológico\nBajo demanda\nArtesanía digital"
       }
     },
     "ossomosso_about_story_9DtdLk": {
@@ -34,7 +27,18 @@
         "label": "Nuestra historia",
         "story_text": "Nace del amor por el interiorismo, el diseño de producto y la creación de piezas capaces de transformar cualquier espacio.",
         "body_1": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo paramétrico —líneas de código que definen curvas y espesores— y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo.",
-        "body_2": "El nombre viene del italiano: osso (hueso) y mosso (movimiento). Estructura viva."
+        "body_2": "El nombre viene del italiano: osso (hueso) y mosso (movimiento). Estructura viva.",
+        "image": "",
+        "svg_code": ""
+      }
+    },
+    "ossomosso_about_philosophy": {
+      "type": "ossomosso-about-philosophy",
+      "name": "Ossomosso - About Philosophy",
+      "settings": {
+        "quote": "No fabricamos en serie. Fabricamos",
+        "quote_emphasis": "con intención",
+        "attribution": "Ossomosso"
       }
     },
     "ossomosso_about_values_r8R3Az": {
@@ -44,495 +48,163 @@
         "label": "Nuestra filosofía",
         "title": "Diseñamos y producimos cada pieza mediante impresión 3D, explorando formas que serían imposibles con métodos tradicionales.",
         "title_emphasis": "impresión 3D"
-      }
-    },
-    "section_HHiwpd": {
-      "type": "section",
+      },
       "blocks": {
-        "group_FLxCaf": {
-          "type": "group",
+        "value_1": {
+          "type": "value",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "icon_pGCRBx": {
-              "type": "icon",
-              "settings": {
-                "icon": "lock",
-                "width": 32,
-                "link": "",
-                "open_in_new_tab": false
-              },
-              "blocks": {}
-            },
-            "group_HWEAQ3": {
-              "type": "group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_w7VxxE": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Fabricación bajo demanda</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_8Xz4R8": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa. Cada objeto nace con un destino.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "paragraph",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_w7VxxE",
-                "text_8Xz4R8"
-              ]
-            }
-          },
-          "block_order": [
-            "icon_pGCRBx",
-            "group_HWEAQ3"
-          ]
+            "icon_svg": "<svg viewBox='0 0 40 40' fill='none'><circle cx='20' cy='20' r='16' stroke='currentColor' stroke-width='1.5'/><path d='M20 10 L20 20 L27 24' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/><circle cx='20' cy='20' r='2' fill='currentColor'/></svg>",
+            "title": "Fabricación bajo demanda",
+            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa. Cada objeto nace con un destino."
+          }
         },
-        "group_FAxkWR": {
-          "type": "group",
+        "value_2": {
+          "type": "value",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "icon_r49ijB": {
-              "type": "icon",
-              "settings": {
-                "icon": "heart",
-                "width": 32,
-                "link": "",
-                "open_in_new_tab": false
-              },
-              "blocks": {}
-            },
-            "group_Xkj8kV": {
-              "type": "group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_qcWxQh": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Diseño propio</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_ULgxMt": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>We believe in building better</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_qcWxQh",
-                "text_ULgxMt"
-              ]
-            }
-          },
-          "block_order": [
-            "icon_r49ijB",
-            "group_Xkj8kV"
-          ]
+            "icon_svg": "<svg viewBox='0 0 40 40' fill='none'><path d='M8 32 L20 8 L32 32' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/><path d='M13 22 L27 22' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/><circle cx='20' cy='28' r='3' stroke='currentColor' stroke-width='1.5'/></svg>",
+            "title": "Diseño propio",
+            "text": "Cada pieza nace en nuestro estudio. No vendemos modelos de terceros; diseñamos desde cero para que funcionen, duren y se vean bien en tu espacio."
+          }
         },
-        "group_97XepF": {
-          "type": "group",
+        "value_3": {
+          "type": "value",
           "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "icon_eyDEbD": {
-              "type": "icon",
-              "settings": {
-                "icon": "silhouette",
-                "width": 32,
-                "link": "",
-                "open_in_new_tab": false
-              },
-              "blocks": {}
-            },
-            "group_6tzrnL": {
-              "type": "group",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_VrEzfE": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Materiales cuidados</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_Kcj6gR": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Real people making great products</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_VrEzfE",
-                "text_Kcj6gR"
-              ]
-            }
-          },
-          "block_order": [
-            "icon_eyDEbD",
-            "group_6tzrnL"
-          ]
+            "icon_svg": "<svg viewBox='0 0 40 40' fill='none'><rect x='8' y='16' width='24' height='18' rx='3' stroke='currentColor' stroke-width='1.5'/><path d='M14 16 L14 11 C14 7.7 16.7 5 20 5 C23.3 5 26 7.7 26 11 L26 16' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/><circle cx='20' cy='25' r='2.5' stroke='currentColor' stroke-width='1.5'/></svg>",
+            "title": "Materiales cuidados",
+            "text": "Trabajamos con PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos materiales por su comportamiento y por su impacto."
+          }
+        },
+        "value_4": {
+          "type": "value",
+          "settings": {
+            "icon_svg": "<svg viewBox='0 0 40 40' fill='none'><path d='M6 20 C6 12, 12 6, 20 6 C28 6, 34 12, 34 20' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/><path d='M10 20 C10 14, 14 10, 20 10 C26 10, 30 14, 30 20' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' opacity='0.5'/><path d='M14 20 C14 16, 17 13, 20 13 C23 13, 26 16, 26 20' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' opacity='0.3'/><line x1='20' y1='20' x2='20' y2='34' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/><path d='M14 34 L26 34' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/></svg>",
+            "title": "Producción local",
+            "text": "Diseñamos y fabricamos en Madrid. Producción local significa menos transporte, más control de calidad y apoyo a la economía del entorno."
+          }
+        },
+        "value_5": {
+          "type": "value",
+          "settings": {
+            "icon_svg": "<svg viewBox='0 0 40 40' fill='none'><circle cx='20' cy='14' r='6' stroke='currentColor' stroke-width='1.5'/><path d='M8 36 C8 28, 13 24, 20 24 C27 24, 32 28, 32 36' stroke='currentColor' stroke-width='1.5' stroke-linecap='round'/><path d='M14 12 C16 10, 24 10, 26 12' stroke='currentColor' stroke-width='1' stroke-linecap='round' opacity='0.5'/></svg>",
+            "title": "Piezas personalizables",
+            "text": "Color, tamaño, acabado. Muchas piezas son adaptables a tu espacio. Escríbenos si tienes algo específico en mente y lo hacemos realidad."
+          }
+        },
+        "value_6": {
+          "type": "value",
+          "settings": {
+            "icon_svg": "<svg viewBox='0 0 40 40' fill='none'><path d='M20 6 L23 15 L32 15 L25 21 L28 30 L20 25 L12 30 L15 21 L8 15 L17 15 Z' stroke='currentColor' stroke-width='1.5' stroke-linejoin='round'/><circle cx='20' cy='18' r='2' fill='currentColor' opacity='0.5'/></svg>",
+            "title": "Calidad artesanal",
+            "text": "Lijado, tratamiento superficial y control de calidad manual. Ninguna pieza sale sin revisión. La tecnología no reemplaza el toque humano."
+          }
         }
       },
       "block_order": [
-        "group_FLxCaf",
-        "group_FAxkWR",
-        "group_97XepF"
-      ],
-      "name": "t:names.icons_with_text",
+        "value_1",
+        "value_2",
+        "value_3",
+        "value_4",
+        "value_5",
+        "value_6"
+      ]
+    },
+    "ossomosso_process": {
+      "type": "ossomosso-process",
+      "name": "Ossomosso - Process",
       "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
+        "title": "Del diseño a tus",
+        "title_emphasis": "manos",
+        "description": "Cada objeto comienza con una idea y termina en una pieza real. Sin intermediarios, sin almacenes llenos de stock, sin residuos innecesarios. Solo diseño, material y proceso."
+      },
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Diseño",
+            "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Material",
+            "text": "PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos materiales por su comportamiento, no solo por su look."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Fabricación",
+            "text": "Imprimimos bajo demanda en Madrid. Tu pedido se fabrica cuando lo haces, no antes. Cada pieza es única."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Acabado",
+            "text": "Lijado, tratamiento superficial y control de calidad manual. Ninguna pieza sale sin revisión."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ]
+    },
+    "ossomosso_about_sustainability": {
+      "type": "ossomosso-about-sustainability",
+      "name": "Ossomosso - About Sustainability",
+      "settings": {
+        "label": "Sostenibilidad",
+        "title": "Tecnología con",
+        "title_emphasis": "conciencia",
+        "body_1": "La impresión 3D nos permite crear solo lo necesario. Sin moldes costosos, sin mínimos de producción, sin inventario dormido. Fabricamos cuando necesitamos, con los materiales adecuados, en el lugar donde vivimos.",
+        "body_2": "Nuestros materiales son biodegradables y de origen vegetal. Nuestro packaging es minimalista y reciclado. Nuestro objetivo: objetos hermosos que no dejen huella.",
+        "image": "",
+        "svg_code": ""
+      },
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "100%",
+            "label": "PLA biodegradable"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "0kg",
+            "label": "Stock acumulado"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "Madrid",
+            "label": "Producción local"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "72h",
+            "label": "Tiempo de impresión"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ]
     },
     "ossomosso_about_cta_ae9aXk": {
       "type": "ossomosso-about-cta",
@@ -550,8 +222,10 @@
     "ossomosso_about_hero_exWjBQ",
     "ossomosso_marquee_f7nkE7",
     "ossomosso_about_story_9DtdLk",
+    "ossomosso_about_philosophy",
     "ossomosso_about_values_r8R3Az",
-    "section_HHiwpd",
+    "ossomosso_process",
+    "ossomosso_about_sustainability",
     "ossomosso_about_cta_ae9aXk"
   ]
 }

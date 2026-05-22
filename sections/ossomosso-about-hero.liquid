@@ -132,12 +132,12 @@
   </div>
 
   <div class="osso-about-hero__right">
-    {% if section.settings.image != blank %}
+    {% if section.settings.svg_code != blank %}
+      <div class="osso-about-hero__image">{{ section.settings.svg_code }}</div>
+    {% elsif section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 800 | image_tag: class: 'osso-about-hero__image', loading: 'eager' }}
     {% else %}
-      <div style="width: 75%; max-width: 400px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: var(--color-border); opacity: 0.5; border-radius: 4px;">
-        <span style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Ilustración</span>
-      </div>
+      {{ 'about-hero-illustration.svg' | inline_asset_content }}
     {% endif %}
   </div>
 </section>
@@ -182,6 +182,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Hero image"
+    },
+    {
+      "type": "html",
+      "id": "svg_code",
+      "label": "SVG code (overrides image)"
     }
   ],
   "presets": [

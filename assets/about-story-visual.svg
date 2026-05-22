@@ -1,0 +1,14 @@
+<svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ambientGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFC878" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFC878" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="200" cy="170" rx="90" ry="90" fill="url(#ambientGlow)"/>
+  <text x="200" y="240" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="120" fill="#C4A882" opacity="0.15" font-weight="300">O</text>
+  <text x="200" y="320" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="15" fill="#7A6E64" letter-spacing="4" font-weight="300">OSSOMOSSO · 2025</text>
+  <circle cx="200" cy="160" r="30" fill="none" stroke="#C4A882" stroke-width="0.5" opacity="0.6"/>
+  <circle cx="200" cy="160" r="50" fill="none" stroke="#C4A882" stroke-width="0.5" opacity="0.4"/>
+  <circle cx="200" cy="160" r="70" fill="none" stroke="#C4A882" stroke-width="0.5" opacity="0.2"/>
+</svg>

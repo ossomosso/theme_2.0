@@ -102,12 +102,12 @@
     </div>
 
     <div class="osso-about-story__visual">
-      {% if section.settings.image != blank %}
+      {% if section.settings.svg_code != blank %}
+        {{ section.settings.svg_code }}
+      {% elsif section.settings.image != blank %}
         {{ section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
       {% else %}
-        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-          <span style="font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4;">Visual</span>
-        </div>
+        {{ 'about-story-visual.svg' | inline_asset_content }}
       {% endif %}
     </div>
   </div>
@@ -147,6 +147,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Story image"
+    },
+    {
+      "type": "html",
+      "id": "svg_code",
+      "label": "SVG code (overrides image)"
     }
   ],
   "presets": [
