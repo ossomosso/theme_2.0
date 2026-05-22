@@ -4217,6 +4217,6 @@ product-recommendations:has([data-has-recommendations='false']) {
 /* Contact page: extra top spacing on desktop to clear navbar */
 @media screen and (min-width: 750px) {
   [data-template="page.contact"] .section-wrapper:first-child .spacing-style {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 }
