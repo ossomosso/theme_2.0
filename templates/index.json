@@ -787,6 +787,63 @@
     },
     "ossomosso_products_PkAJhG": {
       "type": "ossomosso-products",
+      "blocks": {
+        "product_HMAcMA": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "",
+            "type": "Iluminación",
+            "price": ""
+          }
+        },
+        "product_iPDwPJ": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "",
+            "type": "Iluminación",
+            "price": ""
+          }
+        },
+        "product_8PiHzm": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "",
+            "type": "Iluminación",
+            "price": ""
+          }
+        },
+        "product_4FjkmC": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "",
+            "type": "Iluminación",
+            "price": ""
+          }
+        },
+        "product_MJcWdC": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "name": "",
+            "type": "Iluminación",
+            "price": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_HMAcMA",
+        "product_iPDwPJ",
+        "product_8PiHzm",
+        "product_4FjkmC",
+        "product_MJcWdC"
+      ],
+      "custom_css": [
+        "{margin-top: 50px;}"
+      ],
       "name": "Ossomosso - Products Grid",
       "settings": {
         "section_title": "Colección actual",
@@ -804,6 +861,44 @@
         "placeholder": "tu@email.com",
         "button_text": "Suscribirse"
       }
+    },
+    "ossomosso_values_Cgnacw": {
+      "type": "ossomosso-values",
+      "blocks": {
+        "value_MzAmKe": {
+          "type": "value",
+          "settings": {
+            "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 4 C 10 4, 4 10, 4 18 C 4 26, 10 32, 18 32 C 26 32, 32 26, 32 18\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
+            "title": "Sin residuos",
+            "text": "Fabricamos bajo demanda. No existe stock sobrante ni producción innecesaria. Tu pedido se imprime cuando lo haces."
+          }
+        },
+        "value_PMDfhd": {
+          "type": "value",
+          "settings": {
+            "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 4 C 10 4, 4 10, 4 18 C 4 26, 10 32, 18 32 C 26 32, 32 26, 32 18\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
+            "title": "Sin residuos",
+            "text": "Fabricamos bajo demanda. No existe stock sobrante ni producción innecesaria. Tu pedido se imprime cuando lo haces."
+          }
+        },
+        "value_Ccktj9": {
+          "type": "value",
+          "settings": {
+            "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 4 C 10 4, 4 10, 4 18 C 4 26, 10 32, 18 32 C 26 32, 32 26, 32 18\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
+            "title": "Sin residuos",
+            "text": "Fabricamos bajo demanda. No existe stock sobrante ni producción innecesaria. Tu pedido se imprime cuando lo haces."
+          }
+        }
+      },
+      "block_order": [
+        "value_MzAmKe",
+        "value_PMDfhd",
+        "value_Ccktj9"
+      ],
+      "name": "Ossomosso - Values",
+      "settings": {
+        "label": "Por qué Ossomosso"
+      }
     }
   },
   "order": [
@@ -815,6 +910,7 @@
     "ossomosso_marquee_LFJECd",
     "ossomosso_process_CwcCWp",
     "ossomosso_products_PkAJhG",
-    "ossomosso_signup_fkY3p6"
+    "ossomosso_signup_fkY3p6",
+    "ossomosso_values_Cgnacw"
   ]
 }
