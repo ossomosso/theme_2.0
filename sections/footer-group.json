@@ -111,18 +111,64 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "logo_3wL6a8": {
+          "type": "logo",
+          "name": "t:names.logo",
+          "settings": {
+            "inverse": false,
+            "font": "heading",
+            "unit": "pixel",
+            "percent_width": 100,
+            "pixel_height": 48,
+            "custom_mobile_size": false,
+            "unit_mobile": "percent",
+            "percent_width_mobile": 100,
+            "pixel_height_mobile": 120,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_b9hHDr": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Objetos de diseño independiente<br/>hechos en impresión 3D en Madrid.<br/><br/></p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "menu_8tJbUk": {
           "type": "menu",
           "settings": {
             "menu": "footer",
-            "heading": "Shop",
+            "heading": "PRODUCTOS",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
             "accordion_dividers": false,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "heading_preset": "h3",
+            "heading_preset": "h5",
             "link_preset": "paragraph",
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -264,6 +310,8 @@
         }
       },
       "block_order": [
+        "logo_3wL6a8",
+        "text_b9hHDr",
         "menu_8tJbUk",
         "menu_jRmAQi",
         "menu_6jWwP4",
