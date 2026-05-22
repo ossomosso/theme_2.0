@@ -34,8 +34,8 @@
       "settings": {
         "label": "Nuestra historia",
         "story_text": "Nace del amor por el interiorismo, el diseño de producto y la creación de piezas capaces de transformar cualquier espacio.",
-        "body_1": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo paramétrico —líneas de código que definen curvas y espesores— y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo.",
-        "body_2": "El nombre viene del italiano: osso (hueso) y mosso (movimiento). Estructura viva.",
+        "body_1": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo parametrico —lineas de codigo que definen curvas y espesores— y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo.",
+        "body_2": "El nombre viene del italiano: <em>osso</em> (hueso) y <em>mosso</em> (movimiento). Estructura viva.",
         "svg_code": ""
       }
     },
@@ -125,7 +125,7 @@
           "settings": {
             "number": "01",
             "title": "Diseño",
-            "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
+            "text": "Modelado parametrico en 3D. Cada curva y cada angulo responden a una funcion o a una intención estética."
           }
         },
         "step_M9NKL4": {
