@@ -137,7 +137,7 @@
           "settings": {
             "menu": "colecciones",
             "heading": "PRODUCTOS",
-            "menu_spacing": 12,
+            "menu_spacing": 10,
             "show_as_accordion": false,
             "accordion_icon": "caret",
             "accordion_dividers": false,
@@ -157,7 +157,7 @@
           "settings": {
             "menu": "informacion",
             "heading": "INFORMACIÓN",
-            "menu_spacing": 12,
+            "menu_spacing": 10,
             "show_as_accordion": false,
             "accordion_icon": "caret",
             "accordion_dividers": false,
@@ -178,7 +178,7 @@
           "settings": {
             "menu": "ayuda",
             "heading": "AYUDA",
-            "menu_spacing": 12,
+            "menu_spacing": 10,
             "show_as_accordion": false,
             "accordion_icon": "caret",
             "accordion_dividers": false,
