@@ -528,7 +528,7 @@
         "title_emphasis": "2026",
         "body_text": "Diseñamos y fabricamos piezas únicas en impresión 3D. Lámparas que transforman la luz, organizadores que transforman el espacio.",
         "primary_button_text": "Explorar colección",
-        "primary_button_url": "shopify://collections",
+        "primary_button_url": "shopify://collections/all",
         "secondary_button_text": "Cómo lo hacemos",
         "secondary_button_url": "",
         "image": "shopify://shop_images/Lampara_Tulipa_1.png",
@@ -1088,17 +1088,6 @@
         "padding-block-start": 60,
         "padding-block-end": 100
       }
-    },
-    "ossomosso_signup_cBtGYf": {
-      "type": "ossomosso-signup",
-      "name": "Ossomosso - Signup",
-      "settings": {
-        "title": "Nuevas piezas.",
-        "title_emphasis": "Antes que nadie.",
-        "subtitle": "Lanzamos colecciones en pequeñas tiradas. Sé el primero en saberlo.",
-        "placeholder": "tu@email.com",
-        "button_text": "Suscribirse"
-      }
     }
   },
   "order": [
@@ -1112,7 +1101,6 @@
     "ossomosso_products_PkAJhG",
     "ossomosso_values_Cgnacw",
     "divider_D7BUAj",
-    "section_qykFqP",
-    "ossomosso_signup_cBtGYf"
+    "section_qykFqP"
   ]
 }
