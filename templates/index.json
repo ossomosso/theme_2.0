@@ -868,25 +868,25 @@
         "value_MzAmKe": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 4 C 10 4, 4 10, 4 18 C 4 26, 10 32, 18 32 C 26 32, 32 26, 32 18\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
-            "title": "Sin residuos",
-            "text": "Fabricamos bajo demanda. No existe stock sobrante ni producción innecesaria. Tu pedido se imprime cuando lo haces."
+            "icon_svg": "<svg viewBox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 6 L30 12 L30 24 L18 30 L6 24 L6 12 Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+            "title": "Geometría libre",
+            "text": "La impresión 3D nos permite explorar formas imposibles para la manufactura tradicional. Cada pieza es un experimento hecho objeto."
           }
         },
         "value_PMDfhd": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 4 C 10 4, 4 10, 4 18 C 4 26, 10 32, 18 32 C 26 32, 32 26, 32 18\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
-            "title": "Sin residuos",
-            "text": "Fabricamos bajo demanda. No existe stock sobrante ni producción innecesaria. Tu pedido se imprime cuando lo haces."
+            "icon_svg": "<svg viewBox=\"0 0 36 36\" fill=\"none\"><circle cx=\"18\" cy=\"18\" r=\"12\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M18 10 L18 18 L23 21\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg>",
+            "title": "Bajo demanda",
+            "text": "No producimos hasta que decides. Sin stock acumulado, sin residuos de producción en masa. Solo lo que necesitas, cuando lo necesitas."
           }
         },
         "value_Ccktj9": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 4 C 10 4, 4 10, 4 18 C 4 26, 10 32, 18 32 C 26 32, 32 26, 32 18\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
-            "title": "Sin residuos",
-            "text": "Fabricamos bajo demanda. No existe stock sobrante ni producción innecesaria. Tu pedido se imprime cuando lo haces."
+            "icon_svg": "<svg viewBox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 6 C 18 6, 8 14, 8 24 C 8 28, 12 30, 18 30 C 24 30, 28 28, 28 24 C 28 14, 18 6, 18 6Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><line x1=\"18\" y1=\"12\" x2=\"18\" y2=\"26\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg>",
+            "title": "Materiales conscientes",
+            "text": "PLA de origen vegetal, PETG reciclado y acabados naturales. Elegimos cada material por su comportamiento y su huella."
           }
         }
       },
@@ -897,7 +897,7 @@
       ],
       "name": "Ossomosso - Values",
       "settings": {
-        "label": "Por qué Ossomosso"
+        "label": "Hecho en Madrid, pensado para durar"
       }
     }
   },
