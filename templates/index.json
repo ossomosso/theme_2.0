@@ -934,6 +934,20 @@
         "label": "SOBRE NOSOTROS"
       }
     },
+    "divider_D7BUAj": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "page-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
+    },
     "section_qykFqP": {
       "type": "section",
       "blocks": {
@@ -992,23 +1006,23 @@
         "text_qgpX3i": {
           "type": "text",
           "settings": {
-            "text": "<p><br/>Lanzamos colecciones en pequeñas tiradas. Sé el primero en saberlo.</p>",
+            "text": "<p>Lanzamos colecciones en pequeñas tiradas. Sé el primero en saberlo.</p>",
             "width": "100%",
-            "max_width": "normal",
+            "max_width": "narrow",
             "alignment": "center",
-            "type_preset": "paragraph",
+            "type_preset": "custom",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
+            "wrap": "balance",
+            "color": "var(--color-foreground-muted)",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-start": 20,
+            "padding-block-end": 20,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -1022,7 +1036,7 @@
             "inherit_color_scheme": true,
             "color_scheme": "",
             "heading": "",
-            "heading_preset": "h3",
+            "heading_preset": "",
             "border_style": "all",
             "border_width": 1,
             "border_radius": 0,
@@ -1071,8 +1085,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-start": 60,
+        "padding-block-end": 100
       }
     },
     "ossomosso_signup_cBtGYf": {
@@ -1097,6 +1111,7 @@
     "ossomosso_process_CwcCWp",
     "ossomosso_products_PkAJhG",
     "ossomosso_values_Cgnacw",
+    "divider_D7BUAj",
     "section_qykFqP",
     "ossomosso_signup_cBtGYf"
   ]
