@@ -3,13 +3,25 @@
 {% liquid
   assign block_settings = block.settings
   assign image = settings.logo
+  assign has_custom_asset = false
 
-  if block_settings.inverse and settings.logo_inverse
+  if block_settings.custom_asset != blank
+    assign has_custom_asset = true
+  elsif block_settings.inverse and settings.logo_inverse
     assign image = settings.logo_inverse
   endif
 %}
 
-{%- if image -%}
+{%- if has_custom_asset -%}
+  {% capture logo_image %}
+    <img
+      src="{{ block_settings.custom_asset | asset_url }}"
+      alt="{{ shop.name }}"
+      class="logo-block__image"
+      style="height: var(--logo-height, 100%); width: auto; object-fit: contain;"
+    >
+  {% endcapture %}
+{%- elsif image -%}
   {% capture logo_image %}
     {{-
       image
@@ -31,7 +43,10 @@
     spacing-style
   "
   style="
-    {% if block_settings.unit == 'percent' %}
+    {% if has_custom_asset %}
+      --logo-width: auto;
+      --logo-height: {{ block_settings.pixel_height }}px;
+    {% elsif block_settings.unit == 'percent' %}
       --logo-width: {{ block_settings.percent_width }}%;
     {% else %}
       {% if image %}
@@ -136,6 +151,12 @@
       ],
       "default": "heading",
       "visible_if": "{{ settings.logo == blank and settings.logo_inverse == blank or block.settings.inverse == false }}"
+    },
+    {
+      "type": "text",
+      "id": "custom_asset",
+      "label": "Custom logo asset filename",
+      "info": "Enter the filename of a logo image in your assets folder (e.g. logo-white.png). This will override the theme logo."
     },
     {
       "type": "paragraph",

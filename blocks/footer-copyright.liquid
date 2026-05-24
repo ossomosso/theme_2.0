@@ -10,11 +10,15 @@
   {{ block.shopify_attributes }}
 >
   <span class="footer-utilities__text">
-    &copy; {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url -}}
-    {%- if block_settings.show_powered_by -%}
-      , {{ powered_by_link }}
-    {%- endif -%}
+    {% if block_settings.custom_text != blank %}
+      {{ block_settings.custom_text }}
+    {% else %}
+      &copy; {{ 'now' | date: '%Y' }}
+      {{ shop.name | link_to: routes.root_url -}}
+      {%- if block_settings.show_powered_by -%}
+        , {{ powered_by_link }}
+      {%- endif -%}
+    {% endif %}
   </span>
 </div>
 
@@ -28,6 +32,13 @@
       "id": "show_powered_by",
       "label": "t:settings.show_powered_by_shopify",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "custom_text",
+      "label": "Custom copyright text",
+      "default": "",
+      "info": "Leave blank to use the default copyright text."
     },
     {
       "type": "paragraph",
