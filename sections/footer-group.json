@@ -135,7 +135,7 @@
         "menu_8tJbUk": {
           "type": "menu",
           "settings": {
-            "menu": "footer",
+            "menu": "colecciones",
             "heading": "PRODUCTOS",
             "menu_spacing": 12,
             "show_as_accordion": false,
@@ -143,7 +143,7 @@
             "accordion_dividers": false,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "heading_preset": "h5",
+            "heading_preset": "",
             "link_preset": "paragraph",
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -155,15 +155,15 @@
         "menu_jRmAQi": {
           "type": "menu",
           "settings": {
-            "menu": "",
-            "heading": "Help",
+            "menu": "informacion",
+            "heading": "INFORMACIÓN",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
             "accordion_dividers": false,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "heading_preset": "h3",
+            "heading_preset": "h6",
             "link_preset": "paragraph",
             "padding-block-start": 0,
             "padding-block-end": 0,
@@ -176,18 +176,18 @@
           "type": "menu",
           "name": "t:names.menu",
           "settings": {
-            "menu": "",
-            "heading": "About",
+            "menu": "ayuda",
+            "heading": "AYUDA",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
             "accordion_dividers": false,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "heading_preset": "h3",
+            "heading_preset": "h6",
             "link_preset": "paragraph",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 44,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -232,31 +232,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_jBr8nr": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Stay Connected</p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-primary--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 10,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "social_links_JBkCiP": {
               "type": "social-links",
               "name": "t:names.social_media_links",
@@ -279,7 +254,6 @@
             }
           },
           "block_order": [
-            "text_jBr8nr",
             "social_links_JBkCiP"
           ]
         }
@@ -303,19 +277,36 @@
     "utilities": {
       "type": "footer-utilities",
       "blocks": {
-        "copyright": {
-          "type": "footer-copyright",
+        "text_9NkQUA": {
+          "type": "text",
+          "name": "t:names.text",
           "settings": {
-            "show_powered_by": true,
-            "font_size": "0.75rem",
-            "case": "none"
+            "text": "<p>Hecho en Madrid con impresión 3D y mucho cariño.</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
-        "footer_policy_list_rfGrqz": {
-          "type": "footer-policy-list",
-          "name": "t:names.policy_list",
+        "copyright": {
+          "type": "footer-copyright",
           "settings": {
+            "show_powered_by": false,
             "font_size": "0.75rem",
             "case": "none"
           },
@@ -323,8 +314,8 @@
         }
       },
       "block_order": [
-        "copyright",
-        "footer_policy_list_rfGrqz"
+        "text_9NkQUA",
+        "copyright"
       ],
       "settings": {
         "section_width": "page-width",
