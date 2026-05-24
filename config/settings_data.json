@@ -23,6 +23,7 @@
     "type_size_h3": "32",
     "type_size_h4": "24",
     "type_size_h5": "18",
+    "type_letter_spacing_h6": "heading-loose",
     "type_case_h6": "none",
     "secondary_button_border_width": 0,
     "cart_type": "drawer",

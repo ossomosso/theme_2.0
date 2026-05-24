@@ -117,7 +117,7 @@
           "settings": {
             "inverse": false,
             "font": "heading",
-            "custom_asset": "",
+            "custom_asset": "logo-ossomosso-blanco.png",
             "unit": "pixel",
             "percent_width": 100,
             "pixel_height": 48,

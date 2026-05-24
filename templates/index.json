@@ -1042,7 +1042,7 @@
             "display_type": "text",
             "label": "SUSCRIBIRSE",
             "integrated_button": false,
-            "button_type_preset": "paragraph",
+            "button_type_preset": "h6",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
