@@ -934,17 +934,6 @@
         "label": "SOBRE NOSOTROS"
       }
     },
-    "ossomosso_signup_fkY3p6": {
-      "type": "ossomosso-signup",
-      "name": "Ossomosso - Signup",
-      "settings": {
-        "title": "Nuevas piezas.",
-        "title_emphasis": "Antes que nadie.",
-        "subtitle": "Lanzamos colecciones en pequeñas tiradas. Sé el primero en saberlo.",
-        "placeholder": "",
-        "button_text": ""
-      }
-    },
     "section_qykFqP": {
       "type": "section",
       "blocks": {
@@ -1085,6 +1074,17 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "ossomosso_signup_cBtGYf": {
+      "type": "ossomosso-signup",
+      "name": "Ossomosso - Signup",
+      "settings": {
+        "title": "Nuevas piezas.",
+        "title_emphasis": "Antes que nadie.",
+        "subtitle": "Lanzamos colecciones en pequeñas tiradas. Sé el primero en saberlo.",
+        "placeholder": "tu@email.com",
+        "button_text": "Suscribirse"
+      }
     }
   },
   "order": [
@@ -1097,7 +1097,7 @@
     "ossomosso_process_CwcCWp",
     "ossomosso_products_PkAJhG",
     "ossomosso_values_Cgnacw",
-    "ossomosso_signup_fkY3p6",
-    "section_qykFqP"
+    "section_qykFqP",
+    "ossomosso_signup_cBtGYf"
   ]
 }
