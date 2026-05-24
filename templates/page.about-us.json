@@ -131,7 +131,7 @@
         "step_M9NKL4": {
           "type": "step",
           "settings": {
-            "number": "01",
+            "number": "02",
             "title": "Diseño",
             "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
           }
@@ -139,7 +139,7 @@
         "step_g8wLCt": {
           "type": "step",
           "settings": {
-            "number": "01",
+            "number": "03",
             "title": "Diseño",
             "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
           }
@@ -147,7 +147,7 @@
         "step_kNNtdm": {
           "type": "step",
           "settings": {
-            "number": "01",
+            "number": "04",
             "title": "Diseño",
             "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
           }
