@@ -25,7 +25,7 @@
       "type": "ossomosso-marquee",
       "name": "Ossomosso - Marquee",
       "settings": {
-        "marquee_items": "Diseño original\nPLA ecológico\nFabricación local\nPiezas únicas\nImpresión 3D\nMadrid, España\nBajo demanda\nPersonalizable"
+        "marquee_items": "Diseño independiente\nImpresión 3D\nFabricado en Madrid\nPLA ecológico\nBajo demanda\nArtesanía digital"
       }
     },
     "ossomosso_about_story_9DtdLk": {
@@ -34,7 +34,7 @@
       "settings": {
         "label": "Nuestra historia",
         "story_text": "Nace del amor por el interiorismo, el diseño de producto y la creación de piezas capaces de transformar cualquier espacio.",
-        "body_1": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo parametrico —lineas de codigo que definen curvas y espesores— y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo.",
+        "body_1": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo parametrico — lineas de codigo que definen curvas y espesores — y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo.",
         "body_2": "El nombre viene del italiano: <em>osso</em> (hueso) y <em>mosso</em> (movimiento). Estructura viva.",
         "svg_code": ""
       }
@@ -45,49 +45,49 @@
         "value_bjizam": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
+            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M20 10 L20 20 L27 24\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"20\" r=\"2\" fill=\"currentColor\"/></svg>",
             "title": "Fabricación bajo demanda",
-            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa."
+            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa. Cada objeto nace con un destino."
           }
         },
         "value_JWDtDr": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
-            "title": "Fabricación bajo demanda",
-            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa."
+            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M8 32 L20 8 L32 32\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M13 22 L27 22\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"28\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>",
+            "title": "Diseño propio",
+            "text": "Cada pieza nace en nuestro estudio. No vendemos modelos de terceros; diseñamos desde cero para que funcionen, duren y se vean bien en tu espacio."
           }
         },
         "value_GJpDaN": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
-            "title": "Fabricación bajo demanda",
-            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa."
+            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><rect x=\"8\" y=\"16\" width=\"24\" height=\"18\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M14 16 L14 11 C14 7.7 16.7 5 20 5 C23.3 5 26 7.7 26 11 L26 16\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"25\" r=\"2.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>",
+            "title": "Materiales cuidados",
+            "text": "Trabajamos con PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos materiales por su comportamiento y por su impacto."
           }
         },
         "value_GE3kyn": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
-            "title": "Fabricación bajo demanda",
-            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa."
+            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M6 20 C6 12, 12 6, 20 6 C28 6, 34 12, 34 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M10 20 C10 14, 14 10, 20 10 C26 10, 30 14, 30 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.5\"/><path d=\"M14 20 C14 16, 17 13, 20 13 C23 13, 26 16, 26 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.3\"/><line x1=\"20\" y1=\"20\" x2=\"20\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 34 L26 34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg>",
+            "title": "Producción local",
+            "text": "Diseñamos y fabricamos en Madrid. Producción local significa menos transporte, más control de calidad y apoyo a la economía del entorno."
           }
         },
         "value_rJ4Wcz": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
-            "title": "Fabricación bajo demanda",
-            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa."
+            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"14\" r=\"6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M8 36 C8 28, 13 24, 20 24 C27 24, 32 28, 32 36\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 12 C16 10, 24 10, 26 12\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" opacity=\"0.5\"/></svg>",
+            "title": "Piezas personalizables",
+            "text": "Color, tamaño, acabado. Muchas piezas son adaptables a tu espacio. Escríbenos si tienes algo específico en mente y lo hacemos realidad."
           }
         },
         "value_pHmaJa": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
-            "title": "Fabricación bajo demanda",
-            "text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa."
+            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M20 6 L23 15 L32 15 L25 21 L28 30 L20 25 L12 30 L15 21 L8 15 L17 15 Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/><circle cx=\"20\" cy=\"18\" r=\"2\" fill=\"currentColor\" opacity=\"0.5\"/></svg>",
+            "title": "Calidad artesanal",
+            "text": "Lijado, tratamiento superficial y control de calidad manual. Ninguna pieza sale sin revisión. La tecnología no reemplaza el toque humano."
           }
         }
       },
@@ -114,7 +114,7 @@
         "title_emphasis": "espacio",
         "subtitle": "Si te mueve el diseño que innova, que emociona y que convierte un espacio en un lugar propio, bienvenido a Ossomosso.",
         "button_text": "Explorar colección",
-        "button_url": "shopify://collections"
+        "button_url": "shopify://collections/all"
       }
     },
     "ossomosso_process_QtcbHG": {
@@ -132,24 +132,24 @@
           "type": "step",
           "settings": {
             "number": "02",
-            "title": "Diseño",
-            "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
+            "title": "Material",
+            "text": "PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos materiales por su comportamiento, no solo por su look."
           }
         },
         "step_g8wLCt": {
           "type": "step",
           "settings": {
             "number": "03",
-            "title": "Diseño",
-            "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
+            "title": "Fabricación",
+            "text": "Imprimimos bajo demanda en Madrid. Tu pedido se fabrica cuando lo haces, no antes. Cada pieza es única."
           }
         },
         "step_kNNtdm": {
           "type": "step",
           "settings": {
             "number": "04",
-            "title": "Diseño",
-            "text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética."
+            "title": "Acabado",
+            "text": "Lijado, tratamiento superficial y control de calidad manual. Ninguna pieza sale sin revisión."
           }
         }
       },
