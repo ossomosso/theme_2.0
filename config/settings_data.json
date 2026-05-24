@@ -77,7 +77,7 @@
       "scheme-2": {
         "settings": {
           "background": "#fdfaf5",
-          "foreground_heading": "#2a2420",
+          "foreground_heading": "#000000",
           "foreground": "#2a2420",
           "primary": "#c47b5a",
           "primary_hover": "#9b5b3c",
