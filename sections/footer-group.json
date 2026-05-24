@@ -11,122 +11,107 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
-    "media_with_content_RqxiU3": {
-      "type": "media-with-content",
-      "blocks": {
-        "media": {
-          "type": "_media-without-appearance",
-          "static": true,
-          "settings": {
-            "media_type": "image",
-            "link": "",
-            "video_loop": true,
-            "video_autoplay": false,
-            "image_position": "cover",
-            "video_position": "cover"
-          },
-          "blocks": {}
-        },
-        "content": {
-          "type": "_content-without-appearance",
-          "disabled": true,
-          "static": true,
-          "settings": {
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 24
-          },
-          "blocks": {
-            "text_tPnNpR": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<p>Join our Newsletter — Get Updates, Offers and Invites.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "email_signup_zxrhUw": {
-              "type": "email-signup",
-              "name": "t:names.email_signup",
-              "settings": {
-                "width": "fill",
-                "custom_width": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "scheme-4",
-                "heading": "",
-                "heading_preset": "h3",
-                "border_style": "all",
-                "border_width": 0,
-                "border_radius": 100,
-                "input_type_preset": "paragraph",
-                "style_class": "button",
-                "display_type": "arrow",
-                "label": "Sign up",
-                "integrated_button": false,
-                "button_type_preset": "paragraph",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_tPnNpR",
-            "email_signup_zxrhUw"
-          ]
-        }
-      },
-      "name": "t:names.media_with_text",
-      "settings": {
-        "media_position": "left",
-        "media_width": "medium",
-        "media_height": "auto",
-        "section_width": "full-width",
-        "extend_media": true,
-        "color_scheme": "scheme-e1e09ff5-6396-47cd-ad7a-c05470cf2a2e",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
-        "brand_group_a1b2c3": {
+        "logo_3wL6a8": {
+          "type": "logo",
+          "name": "t:names.logo",
+          "settings": {
+            "inverse": false,
+            "font": "heading",
+            "custom_asset": "logo-ossomosso-blanco.png",
+            "unit": "pixel",
+            "percent_width": 100,
+            "pixel_height": 48,
+            "custom_mobile_size": false,
+            "unit_mobile": "percent",
+            "percent_width_mobile": 100,
+            "pixel_height_mobile": 120,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "menu_8tJbUk": {
+          "type": "menu",
+          "settings": {
+            "menu": "colecciones",
+            "heading": "PRODUCTOS",
+            "menu_spacing": 10,
+            "show_as_accordion": false,
+            "accordion_icon": "caret",
+            "accordion_dividers": false,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "heading_preset": "h6",
+            "link_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "menu_jRmAQi": {
+          "type": "menu",
+          "settings": {
+            "menu": "informacion",
+            "heading": "INFORMACIÓN",
+            "menu_spacing": 10,
+            "show_as_accordion": false,
+            "accordion_icon": "caret",
+            "accordion_dividers": false,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "heading_preset": "h6",
+            "link_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "menu_6jWwP4": {
+          "type": "menu",
+          "name": "t:names.menu",
+          "settings": {
+            "menu": "ayuda",
+            "heading": "AYUDA",
+            "menu_spacing": 10,
+            "show_as_accordion": false,
+            "accordion_icon": "caret",
+            "accordion_dividers": false,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "heading_preset": "h6",
+            "link_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 44,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_hAzkCn": {
           "type": "group",
           "settings": {
             "content_direction": "column",
-            "vertical_on_mobile": true,
+            "vertical_on_mobile": false,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 16,
+            "gap": 24,
             "width": "fill",
-            "custom_width": 100,
+            "custom_width": 35,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
-            "height": "fit",
+            "height": "fill",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -145,166 +130,72 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 4,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "logo_x9y8z7": {
-              "type": "logo",
+            "social_links_JBkCiP": {
+              "type": "social-links",
+              "name": "t:names.social_media_links",
               "settings": {
-                "inverse": false,
-                "font": "heading",
-                "custom_asset": "logo-ossomosso-blanco.png",
-                "unit": "pixel",
-                "percent_width": 100,
-                "pixel_height": 36,
-                "custom_mobile_size": false,
-                "unit_mobile": "percent",
-                "percent_width_mobile": 100,
-                "pixel_height_mobile": 120,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "tagline_m3n4o5": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Objetos de diseño independiente<br>hechos en impresión 3D en Madrid.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.875rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-muted)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "facebook_url": "https://facebook.com",
+                "instagram_url": "https://instagram.com",
+                "youtube_url": "",
+                "tiktok_url": "https://tiktok.com",
+                "twitter_url": "https://x.com",
+                "threads_url": "",
+                "linkedin_url": "",
+                "bluesky_url": "",
+                "snapchat_url": "",
+                "pinterest_url": "",
+                "tumblr_url": "",
+                "vimeo_url": "",
+                "custom_url": ""
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "logo_x9y8z7",
-            "tagline_m3n4o5"
+            "social_links_JBkCiP"
           ]
-        },
-        "menu_colecciones_p6q7r8": {
-          "type": "menu",
-          "settings": {
-            "menu": "colecciones",
-            "heading": "COLECCIONES",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "heading_preset": "h6",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "menu_info_s2t3u4": {
-          "type": "menu",
-          "settings": {
-            "menu": "informacion",
-            "heading": "INFORMACIÓN",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "heading_preset": "h6",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "menu_ayuda_v5w6x7": {
-          "type": "menu",
-          "settings": {
-            "menu": "ayuda",
-            "heading": "AYUDA",
-            "menu_spacing": 12,
-            "show_as_accordion": false,
-            "accordion_icon": "caret",
-            "accordion_dividers": false,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "heading_preset": "h6",
-            "link_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "brand_group_a1b2c3",
-        "menu_colecciones_p6q7r8",
-        "menu_info_s2t3u4",
-        "menu_ayuda_v5w6x7"
+        "logo_3wL6a8",
+        "menu_8tJbUk",
+        "menu_jRmAQi",
+        "menu_6jWwP4",
+        "group_hAzkCn"
       ],
       "name": "Footer",
       "settings": {
         "section_width": "page-width",
-        "gap": 40,
+        "gap": 12,
         "color_scheme": "scheme-3",
-        "padding-block-start": 60,
-        "padding-block-end": 40
+        "padding-block-start": 36,
+        "padding-block-end": 18
       }
     },
     "utilities": {
       "type": "footer-utilities",
       "blocks": {
-        "copyright_b8c9d0": {
-          "type": "footer-copyright",
-          "settings": {
-            "show_powered_by": false,
-            "custom_text": "© 2025 OSSOMOSSO. Todos los derechos reservados.",
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "made_in_madrid_e1f2g3": {
+        "text_9NkQUA": {
           "type": "text",
+          "name": "t:names.text",
           "settings": {
-            "text": "<p>Hecho en Madrid con impresoras 3D y mucho cariño.</p>",
-            "width": "100%",
+            "text": "<p>Hecho en Madrid con impresión 3D y mucho cariño.</p>",
+            "width": "fit-content",
             "max_width": "normal",
-            "alignment": "right",
-            "type_preset": "custom",
+            "alignment": "left",
+            "type_preset": "rte",
             "font": "var(--font-body--family)",
-            "font_size": "0.75rem",
+            "font_size": "1rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
-            "color": "var(--color-foreground-muted)",
+            "color": "var(--color-foreground)",
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
@@ -314,11 +205,20 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "copyright": {
+          "type": "footer-copyright",
+          "settings": {
+            "show_powered_by": false,
+            "font_size": "0.75rem",
+            "case": "none"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "copyright_b8c9d0",
-        "made_in_madrid_e1f2g3"
+        "text_9NkQUA",
+        "copyright"
       ],
       "settings": {
         "section_width": "page-width",
@@ -326,12 +226,11 @@
         "divider_thickness": 1,
         "color_scheme": "scheme-3",
         "padding-block-start": 20,
-        "padding-block-end": 20
+        "padding-block-end": 18
       }
     }
   },
   "order": [
-    "media_with_content_RqxiU3",
     "footer",
     "utilities"
   ]
