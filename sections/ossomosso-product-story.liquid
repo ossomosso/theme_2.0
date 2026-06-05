@@ -1,0 +1,338 @@
+{% if product and product.handle == 'lampara-tulip' %}
+  {% liquid
+    assign featured_image = product.featured_image
+    assign secondary_image = product.media[1].preview_image | default: featured_image
+    assign tertiary_image = product.media[2].preview_image | default: secondary_image
+    assign selected_variant = product.selected_or_first_available_variant
+  %}
+
+  <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
+    <div class="osso-product-story__intro">
+      <div class="osso-product-story__intro-copy">
+        <p class="osso-product-story__eyebrow">Luz escultorica</p>
+        <h2 class="osso-product-story__title">Una tulipa convertida en objeto.</h2>
+        <div class="osso-product-story__text">
+          <p>
+            Tulipa nace de una silueta floral muy simple y la lleva a un terreno mas material: una pieza luminosa,
+            suave y domestica, pensada para dar ambiente sin imponerse.
+          </p>
+          <p>
+            La forma ondulada filtra la luz y deja que el volumen haga el resto. Encendida funciona como lampara;
+            apagada, como una pequena escultura sobre una mesa, una balda o una mesilla.
+          </p>
+        </div>
+      </div>
+
+      <div class="osso-product-story__specs">
+        <div class="osso-product-story__spec">
+          <span class="osso-product-story__spec-label">Color</span>
+          <span class="osso-product-story__spec-value">{{ selected_variant.title }}</span>
+        </div>
+        <div class="osso-product-story__spec">
+          <span class="osso-product-story__spec-label">Produccion</span>
+          <span class="osso-product-story__spec-value">Bajo pedido</span>
+        </div>
+        <div class="osso-product-story__spec">
+          <span class="osso-product-story__spec-label">Origen</span>
+          <span class="osso-product-story__spec-value">Hecha en Madrid</span>
+        </div>
+        <div class="osso-product-story__spec">
+          <span class="osso-product-story__spec-label">Caracter</span>
+          <span class="osso-product-story__spec-value">Luz suave y envolvente</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="osso-product-story__grid">
+      <article class="osso-product-story__card osso-product-story__card--image">
+        {% if featured_image != blank %}
+          {{
+            featured_image
+            | image_url: width: 1400
+            | image_tag:
+              loading: 'lazy',
+              widths: '480, 720, 960, 1400',
+              class: 'osso-product-story__image',
+              alt: product.title
+          }}
+        {% endif %}
+      </article>
+
+      <article class="osso-product-story__card osso-product-story__card--text">
+        <p class="osso-product-story__card-kicker">La forma</p>
+        <h3 class="osso-product-story__card-title">Curvas que recogen la luz.</h3>
+        <p class="osso-product-story__card-copy">
+          La geometria abierta de Tulipa esta pensada para difuminar el punto de luz y repartirlo con una presencia mas
+          calida. No busca deslumbrar, sino construir atmosfera.
+        </p>
+      </article>
+
+      <article class="osso-product-story__card osso-product-story__card--text osso-product-story__card--dark">
+        <p class="osso-product-story__card-kicker">El proceso</p>
+        <h3 class="osso-product-story__card-title">Diseno digital, acabado cercano.</h3>
+        <p class="osso-product-story__card-copy">
+          Cada pieza parte de un modelo 3D y se produce en series cortas. Eso permite cuidar mejor el resultado, evitar
+          exceso de stock y mantener el objeto dentro de una escala casi artesanal.
+        </p>
+      </article>
+
+      <article class="osso-product-story__card osso-product-story__card--image">
+        {% if secondary_image != blank %}
+          {{
+            secondary_image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              widths: '480, 720, 960, 1200',
+              class: 'osso-product-story__image',
+              alt: product.title
+          }}
+        {% endif %}
+      </article>
+    </div>
+
+    <div class="osso-product-story__highlight">
+      <div class="osso-product-story__highlight-media">
+        {% if tertiary_image != blank %}
+          {{
+            tertiary_image
+            | image_url: width: 1400
+            | image_tag:
+              loading: 'lazy',
+              widths: '480, 720, 960, 1400',
+              class: 'osso-product-story__image',
+              alt: product.title
+          }}
+        {% endif %}
+      </div>
+
+      <div class="osso-product-story__highlight-copy">
+        <p class="osso-product-story__eyebrow">Para espacios pequenos y rincones con intencion</p>
+        <h3 class="osso-product-story__highlight-title">Una pieza sencilla que cambia el tono de la estancia.</h3>
+        <p class="osso-product-story__card-copy">
+          Funciona especialmente bien en dormitorios, recibidores, estanterias o mesas auxiliares. Donde hace falta una
+          luz mas amable y un objeto que no parezca sacado de una cadena sin personalidad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {% stylesheet %}
+    .osso-product-story {
+      padding: 32px 0 80px;
+    }
+
+    .osso-product-story__intro,
+    .osso-product-story__highlight,
+    .osso-product-story__grid {
+      width: min(1200px, calc(100vw - 48px));
+      margin: 0 auto;
+    }
+
+    .osso-product-story__intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.9fr);
+      gap: 40px;
+      padding: 32px 0 56px;
+      align-items: end;
+    }
+
+    .osso-product-story__eyebrow,
+    .osso-product-story__card-kicker,
+    .osso-product-story__spec-label {
+      margin: 0 0 12px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.62;
+    }
+
+    .osso-product-story__title,
+    .osso-product-story__highlight-title,
+    .osso-product-story__card-title {
+      margin: 0;
+      font-family: var(--font-heading--family);
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .osso-product-story__title {
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      max-width: 11ch;
+      margin-bottom: 20px;
+    }
+
+    .osso-product-story__text,
+    .osso-product-story__card-copy {
+      font-size: 15px;
+      line-height: 1.8;
+      opacity: 0.76;
+    }
+
+    .osso-product-story__text p,
+    .osso-product-story__card-copy,
+    .osso-product-story__highlight-copy p {
+      margin: 0;
+    }
+
+    .osso-product-story__text p + p {
+      margin-top: 14px;
+    }
+
+    .osso-product-story__specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .osso-product-story__spec {
+      padding: 18px;
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--color-foreground) 5%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+      display: grid;
+      gap: 4px;
+    }
+
+    .osso-product-story__spec-label {
+      margin-bottom: 0;
+    }
+
+    .osso-product-story__spec-value {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .osso-product-story__grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .osso-product-story__card {
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 320px;
+      background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
+    }
+
+    .osso-product-story__card--text {
+      padding: clamp(28px, 4vw, 44px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .osso-product-story__card--dark {
+      background: var(--color-foreground);
+      color: var(--color-background);
+    }
+
+    .osso-product-story__card-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      max-width: 8ch;
+      margin-bottom: 14px;
+    }
+
+    .osso-product-story__image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    .osso-product-story__highlight {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+
+    .osso-product-story__highlight-media,
+    .osso-product-story__highlight-copy {
+      border-radius: 28px;
+      overflow: hidden;
+      background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
+    }
+
+    .osso-product-story__highlight-copy {
+      padding: clamp(28px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .osso-product-story__highlight-title {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      max-width: 10ch;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 989px) {
+      .osso-product-story {
+        padding-bottom: 56px;
+      }
+
+      .osso-product-story__intro,
+      .osso-product-story__grid,
+      .osso-product-story__highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .osso-product-story__intro,
+      .osso-product-story__highlight,
+      .osso-product-story__grid {
+        width: min(100vw - 32px, 720px);
+      }
+
+      .osso-product-story__card,
+      .osso-product-story__highlight-media,
+      .osso-product-story__highlight-copy {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 749px) {
+      .osso-product-story {
+        padding-top: 12px;
+      }
+
+      .osso-product-story__intro {
+        padding-bottom: 32px;
+      }
+
+      .osso-product-story__specs {
+        grid-template-columns: 1fr;
+      }
+
+      .osso-product-story__title,
+      .osso-product-story__card-title,
+      .osso-product-story__highlight-title {
+        max-width: none;
+      }
+    }
+  {% endstylesheet %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Ossomosso - Product Story",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Product Story"
+    }
+  ]
+}
+{% endschema %}

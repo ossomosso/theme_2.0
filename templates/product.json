@@ -177,7 +177,7 @@
               "type": "product-description",
               "name": "t:names.product_description",
               "settings": {
-                "text": "{{ closest.product.description }}",
+                "text": "{% if closest.product.handle == 'lampara-tulip' %}<p>Una lampara de sobremesa con presencia serena y una silueta inspirada en el gesto organico de un tulipan. Pensada para rincones que necesitan luz y tambien un poco de caracter.</p>{% else %}{{ closest.product.description }}{% endif %}",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -330,7 +330,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Made with care</p>",
+                            "text": "{% if closest.product.handle == 'lampara-tulip' %}<p>Hecha en Madrid</p>{% else %}<p>Made with care</p>{% endif %}",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -411,7 +411,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Great value</p>",
+                            "text": "{% if closest.product.handle == 'lampara-tulip' %}<p>Produccion bajo pedido</p>{% else %}<p>Great value</p>{% endif %}",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -537,7 +537,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Elegant design</p>",
+                            "text": "{% if closest.product.handle == 'lampara-tulip' %}<p>Silueta floral</p>{% else %}<p>Elegant design</p>{% endif %}",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -618,7 +618,7 @@
                           "type": "text",
                           "name": "Heading",
                           "settings": {
-                            "text": "<p>Quality materials</p>",
+                            "text": "{% if closest.product.handle == 'lampara-tulip' %}<p>Luz suave</p>{% else %}<p>Quality materials</p>{% endif %}",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "center",
@@ -680,7 +680,7 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Details",
+                    "heading": "Detalles",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -689,7 +689,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
+                        "text": "{% if closest.product.handle == 'lampara-tulip' %}<p>Tulipa reinterpreta la forma de una flor como objeto de luz. La pantalla ondulada suaviza la presencia del punto luminoso y convierte la pieza en una presencia calida, pensada para acompanar sin recargar el espacio.</p><p>Se produce en series cortas y bajo pedido, dentro del universo material de Ossomosso: diseno digital, fabricacion cercana y una escala mas humana.</p>{% else %}<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>{% endif %}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -719,7 +719,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping & Returns",
+                    "heading": "Envios y devoluciones",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -728,7 +728,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
+                        "text": "{% if closest.product.handle == 'lampara-tulip' %}<p>Cada Tulipa se prepara con produccion bajo pedido, asi que el plazo de envio puede variar ligeramente frente a un producto de stock inmediato.</p><p>Si necesitas ayuda con tu pedido o quieres tramitar una devolucion, puedes escribirnos y te acompaaremos caso por caso.</p>{% else %}<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>{% endif %}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -783,6 +783,12 @@
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 32
+      }
+    },
+    "ossomosso_product_story_xY7L2m": {
+      "type": "ossomosso-product-story",
+      "settings": {
+        "color_scheme": "scheme-1"
       }
     },
     "section_NaqU9X": {
@@ -1083,6 +1089,7 @@
   },
   "order": [
     "main",
+    "ossomosso_product_story_xY7L2m",
     "section_NaqU9X",
     "product_list_zR9Cym"
   ]

@@ -35,6 +35,11 @@
 {% enddoc %}
 
 {% liquid
+  assign is_tulipa_product = false
+  if request.page_type == 'product' and product and product.handle == 'lampara-tulip'
+    assign is_tulipa_product = true
+  endif
+
   # Determine render order based on media position
   if settings.desktop_media_position == 'left'
     assign render_order = 'media,product-details'
@@ -78,7 +83,7 @@
 
 <div class="section-background color-{{ settings.color_scheme }}"></div>
 <div
-  class="product-information section section--{{ content_width }} spacing-style color-{{ settings.color_scheme }} relative"
+  class="product-information section section--{{ content_width }} spacing-style color-{{ settings.color_scheme }} relative{% if is_tulipa_product %} product-information--tulipa{% endif %}"
   style="{% render 'spacing-style', settings: settings %} --gap: {{ settings.gap }}px;"
   data-testid="product-information"
 >
@@ -117,6 +122,29 @@
     gap: var(--gap) 0;
   }
 
+  .product-information--tulipa {
+    padding-top: 24px;
+  }
+
+  .product-information--tulipa .product-details > .group-block {
+    background:
+      radial-gradient(circle at top left, rgba(211, 168, 111, 0.12), transparent 30%),
+      color-mix(in srgb, var(--color-foreground) 2%, var(--color-background));
+    border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+    border-radius: 28px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.06);
+  }
+
+  .product-information--tulipa .product-information__media {
+    align-self: start;
+  }
+
+  .product-information--tulipa .product-information__media .product-media-gallery__grid,
+  .product-information--tulipa .product-information__media .product-media-gallery__carousel {
+    border-radius: 28px;
+    overflow: hidden;
+  }
+
   /* Base grid layout */
   .product-information__grid {
     display: grid;
@@ -148,6 +176,14 @@
 
     .product-details {
       grid-column: 2 / 3;
+    }
+
+    .product-information--tulipa {
+      padding-top: 0;
+    }
+
+    .product-information--tulipa .product-details > .group-block {
+      border-radius: 22px;
     }
   }
 
