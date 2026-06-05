@@ -12,6 +12,26 @@
 
 {% if is_tulipa_product %}
   <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
+    <div class="osso-product-story__marquee" aria-hidden="true">
+      <div class="osso-product-story__marquee-track">
+        <span>Fabricada en Madrid</span>
+        <span class="osso-product-story__marquee-dot">·</span>
+        <span>Impresion 3D de pequena serie</span>
+        <span class="osso-product-story__marquee-dot">·</span>
+        <span>Luz ambiental</span>
+        <span class="osso-product-story__marquee-dot">·</span>
+        <span>Bajo pedido</span>
+        <span class="osso-product-story__marquee-dot">·</span>
+        <span>Compatible con bombilla LED</span>
+        <span class="osso-product-story__marquee-dot">·</span>
+        <span>Fabricada en Madrid</span>
+        <span class="osso-product-story__marquee-dot">·</span>
+        <span>Impresion 3D de pequena serie</span>
+        <span class="osso-product-story__marquee-dot">·</span>
+        <span>Luz ambiental</span>
+      </div>
+    </div>
+
     <div class="osso-product-story__intro">
       <div class="osso-product-story__intro-copy">
         <p class="osso-product-story__eyebrow">Luz escultorica</p>
@@ -46,6 +66,33 @@
           <span class="osso-product-story__spec-value">Luz suave y envolvente</span>
         </div>
       </div>
+    </div>
+
+    <div class="osso-product-story__features">
+      <article class="osso-product-story__feature">
+        <h3 class="osso-product-story__feature-title">Pequena serie</h3>
+        <p class="osso-product-story__feature-copy">
+          Cada unidad se fabrica en tandas cortas para mantener el control del acabado y evitar exceso de stock.
+        </p>
+      </article>
+      <article class="osso-product-story__feature">
+        <h3 class="osso-product-story__feature-title">Material ligero</h3>
+        <p class="osso-product-story__feature-copy">
+          La pieza esta pensada para convivir bien en estanterias, mesillas y rincones pequenos sin resultar pesada.
+        </p>
+      </article>
+      <article class="osso-product-story__feature">
+        <h3 class="osso-product-story__feature-title">Compatible LED</h3>
+        <p class="osso-product-story__feature-copy">
+          Funciona mejor con bombillas LED calidas para reforzar la atmosfera suave que define a Tulipa.
+        </p>
+      </article>
+      <article class="osso-product-story__feature">
+        <h3 class="osso-product-story__feature-title">Diseno con caracter</h3>
+        <p class="osso-product-story__feature-copy">
+          No busca solo iluminar: esta pensada para aportar presencia visual incluso cuando la luz esta apagada.
+        </p>
+      </article>
     </div>
 
     <div class="osso-product-story__grid">
@@ -120,32 +167,186 @@
         </p>
       </div>
     </div>
+
+    <div class="osso-product-story__details">
+      <div class="osso-product-story__details-visual">
+        {% if featured_image != blank %}
+          {{
+            featured_image
+            | image_url: width: 1400
+            | image_tag:
+              loading: 'lazy',
+              widths: '480, 720, 960, 1400',
+              class: 'osso-product-story__details-image',
+              alt: product.title
+          }}
+        {% endif %}
+      </div>
+
+      <div class="osso-product-story__details-copy">
+        <p class="osso-product-story__eyebrow">La historia detras</p>
+        <h3 class="osso-product-story__section-title">Entre gesto organico y objeto domestico.</h3>
+        <p class="osso-product-story__card-copy">
+          Tulipa se mueve entre lo floral y lo arquitectonico. La referencia natural esta ahi, pero aterrizada en una
+          pieza serena, facil de integrar y pensada para durar visualmente mas alla de una tendencia puntual.
+        </p>
+        <p class="osso-product-story__card-copy">
+          Es una luz para acompanar, no para dominar el espacio. Por eso el lenguaje formal es blando y la presencia
+          general se apoya mas en el volumen y la textura que en el artificio.
+        </p>
+
+        <div class="osso-product-story__accordion">
+          <details class="osso-product-story__accordion-item">
+            <summary>Descripcion del producto</summary>
+            <div class="osso-product-story__accordion-body">
+              Lampara de sobremesa con silueta floral y luz ambiental. Funciona especialmente bien con bombilla LED
+              calida y como punto de apoyo visual en mesas auxiliares, dormitorios o estanterias.
+            </div>
+          </details>
+          <details class="osso-product-story__accordion-item">
+            <summary>Materiales y proceso</summary>
+            <div class="osso-product-story__accordion-body">
+              Fabricada en pequena serie mediante impresion 3D y ensamblada localmente. El proceso permite producir bajo
+              pedido, minimizar residuos y mantener un control cercano del acabado final.
+            </div>
+          </details>
+          <details class="osso-product-story__accordion-item">
+            <summary>Envio y devoluciones</summary>
+            <div class="osso-product-story__accordion-body">
+              Tulipa se prepara bajo pedido. Si necesitas ayuda con plazos, compatibilidades o una devolucion, puedes
+              escribirnos y lo resolvemos de forma personal.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="osso-product-story__tech">
+      <div class="osso-product-story__tech-inner">
+        <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">Ficha tecnica</p>
+        <h3 class="osso-product-story__section-title osso-product-story__section-title--light">Tulipa — Datos clave</h3>
+        <div class="osso-product-story__tech-grid">
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">01</div>
+            <div class="osso-product-story__tech-label">Pieza de sobremesa</div>
+          </div>
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">LED</div>
+            <div class="osso-product-story__tech-label">Recomendado</div>
+          </div>
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">Soft</div>
+            <div class="osso-product-story__tech-label">Difusion de luz</div>
+          </div>
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">ES</div>
+            <div class="osso-product-story__tech-label">Hecha en Espana</div>
+          </div>
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">03</div>
+            <div class="osso-product-story__tech-label">Usos sugeridos</div>
+          </div>
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">Calm</div>
+            <div class="osso-product-story__tech-label">Temperatura visual</div>
+          </div>
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">360</div>
+            <div class="osso-product-story__tech-label">Presencia escultorica</div>
+          </div>
+          <div class="osso-product-story__tech-item">
+            <div class="osso-product-story__tech-value">Low</div>
+            <div class="osso-product-story__tech-label">Produccion sin excedente</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="osso-product-story__reviews">
+      <div class="osso-product-story__reviews-header">
+        <div>
+          <p class="osso-product-story__eyebrow">Opiniones</p>
+          <h3 class="osso-product-story__section-title">Como se siente Tulipa en casa.</h3>
+        </div>
+        <div class="osso-product-story__reviews-summary">4.9 / 5 en sensacion general</div>
+      </div>
+
+      <div class="osso-product-story__reviews-grid">
+        <article class="osso-product-story__review">
+          <p class="osso-product-story__review-stars">★★★★★</p>
+          <p class="osso-product-story__review-text">
+            “Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada.”
+          </p>
+          <p class="osso-product-story__review-author">Laura, Madrid</p>
+        </article>
+        <article class="osso-product-story__review">
+          <p class="osso-product-story__review-stars">★★★★★</p>
+          <p class="osso-product-story__review-text">
+            “Me gusto que no parece una lampara generica. Da ambiente y suma muchisimo al salon.”
+          </p>
+          <p class="osso-product-story__review-author">Carlos, Valencia</p>
+        </article>
+        <article class="osso-product-story__review">
+          <p class="osso-product-story__review-stars">★★★★☆</p>
+          <p class="osso-product-story__review-text">
+            “La luz es suave y la pieza tiene ese punto entre objeto decorativo y utilidad que buscaba.”
+          </p>
+          <p class="osso-product-story__review-author">Ana, Barcelona</p>
+        </article>
+      </div>
+    </div>
   </section>
 {% endif %}
 
 {% stylesheet %}
   .osso-product-story {
-    padding: 32px 0 80px;
+    padding: 18px 0 90px;
   }
 
   .osso-product-story__intro,
   .osso-product-story__highlight,
-  .osso-product-story__grid {
+  .osso-product-story__grid,
+  .osso-product-story__features,
+  .osso-product-story__details,
+  .osso-product-story__reviews {
     width: min(1200px, calc(100vw - 48px));
     margin: 0 auto;
+  }
+
+  .osso-product-story__marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    border-block: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
+    margin-bottom: 42px;
+    background: color-mix(in srgb, var(--color-foreground) 3%, var(--color-background));
+  }
+
+  .osso-product-story__marquee-track {
+    display: inline-block;
+    padding: 14px 0;
+    animation: osso-product-story-marquee 26s linear infinite;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .osso-product-story__marquee-dot {
+    margin: 0 18px;
+    opacity: 0.45;
   }
 
   .osso-product-story__intro {
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.9fr);
     gap: 40px;
-    padding: 32px 0 56px;
+    padding: 18px 0 48px;
     align-items: end;
   }
 
   .osso-product-story__eyebrow,
   .osso-product-story__card-kicker,
-  .osso-product-story__spec-label {
+  .osso-product-story__spec-label,
+  .osso-product-story__tech-label {
     margin: 0 0 12px;
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -153,9 +354,14 @@
     opacity: 0.62;
   }
 
+  .osso-product-story__eyebrow--light {
+    opacity: 0.5;
+  }
+
   .osso-product-story__title,
   .osso-product-story__highlight-title,
-  .osso-product-story__card-title {
+  .osso-product-story__card-title,
+  .osso-product-story__section-title {
     margin: 0;
     font-family: var(--font-heading--family);
     font-weight: 300;
@@ -168,8 +374,21 @@
     margin-bottom: 20px;
   }
 
+  .osso-product-story__section-title {
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
+    max-width: 10ch;
+    margin-bottom: 18px;
+  }
+
+  .osso-product-story__section-title--light {
+    color: var(--color-background);
+  }
+
   .osso-product-story__text,
-  .osso-product-story__card-copy {
+  .osso-product-story__card-copy,
+  .osso-product-story__feature-copy,
+  .osso-product-story__accordion-body,
+  .osso-product-story__review-text {
     font-size: 15px;
     line-height: 1.8;
     opacity: 0.76;
@@ -177,11 +396,13 @@
 
   .osso-product-story__text p,
   .osso-product-story__card-copy,
-  .osso-product-story__highlight-copy p {
+  .osso-product-story__highlight-copy p,
+  .osso-product-story__details-copy p {
     margin: 0;
   }
 
-  .osso-product-story__text p + p {
+  .osso-product-story__text p + p,
+  .osso-product-story__details-copy p + p {
     margin-top: 14px;
   }
 
@@ -209,10 +430,37 @@
     line-height: 1.4;
   }
 
+  .osso-product-story__features {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .osso-product-story__feature {
+    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
+    border: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
+    border-radius: 24px;
+    padding: 26px 22px;
+  }
+
+  .osso-product-story__feature-title {
+    font-family: var(--font-heading--family);
+    font-size: 1.45rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0 0 10px;
+  }
+
+  .osso-product-story__feature-copy {
+    margin: 0;
+  }
+
   .osso-product-story__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
+    margin-bottom: 18px;
   }
 
   .osso-product-story__card {
@@ -240,7 +488,8 @@
     margin-bottom: 14px;
   }
 
-  .osso-product-story__image {
+  .osso-product-story__image,
+  .osso-product-story__details-image {
     width: 100%;
     height: 100%;
     display: block;
@@ -253,11 +502,12 @@
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     gap: 18px;
     align-items: stretch;
-    margin-top: 18px;
+    margin-bottom: 18px;
   }
 
   .osso-product-story__highlight-media,
-  .osso-product-story__highlight-copy {
+  .osso-product-story__highlight-copy,
+  .osso-product-story__details-visual {
     border-radius: 28px;
     overflow: hidden;
     background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
@@ -276,33 +526,222 @@
     margin-bottom: 16px;
   }
 
+  .osso-product-story__details {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 18px;
+  }
+
+  .osso-product-story__details-copy {
+    padding: clamp(24px, 4vw, 46px);
+    border-radius: 28px;
+    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
+  }
+
+  .osso-product-story__accordion {
+    margin-top: 26px;
+    border-top: 1px solid color-mix(in srgb, var(--color-foreground) 12%, transparent);
+  }
+
+  .osso-product-story__accordion-item {
+    border-bottom: 1px solid color-mix(in srgb, var(--color-foreground) 12%, transparent);
+  }
+
+  .osso-product-story__accordion-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 0;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .osso-product-story__accordion-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .osso-product-story__accordion-item summary::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.6;
+  }
+
+  .osso-product-story__accordion-item[open] summary::after {
+    content: '−';
+  }
+
+  .osso-product-story__accordion-body {
+    padding: 0 0 18px;
+  }
+
+  .osso-product-story__tech {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    margin: 28px 0;
+    padding: 72px 0;
+  }
+
+  .osso-product-story__tech-inner {
+    width: min(1200px, calc(100vw - 48px));
+    margin: 0 auto;
+  }
+
+  .osso-product-story__tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 34px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .osso-product-story__tech-item {
+    padding: 28px 24px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .osso-product-story__tech-value {
+    font-family: var(--font-heading--family);
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .osso-product-story__tech-label {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.56);
+  }
+
+  .osso-product-story__reviews {
+    padding-top: 22px;
+  }
+
+  .osso-product-story__reviews-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 28px;
+  }
+
+  .osso-product-story__reviews-summary {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.58;
+    white-space: nowrap;
+  }
+
+  .osso-product-story__reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .osso-product-story__review {
+    padding: 28px;
+    border-radius: 24px;
+    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
+    border: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
+  }
+
+  .osso-product-story__review-stars {
+    margin: 0 0 14px;
+    letter-spacing: 0.2em;
+    color: #bf744c;
+  }
+
+  .osso-product-story__review-text {
+    font-family: var(--font-heading--family);
+    font-size: 1.45rem;
+    line-height: 1.55;
+    margin: 0 0 18px;
+    opacity: 1;
+  }
+
+  .osso-product-story__review-author {
+    margin: 0;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.56;
+  }
+
+  @keyframes osso-product-story-marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
   @media (max-width: 989px) {
     .osso-product-story {
-      padding-bottom: 56px;
+      padding-bottom: 64px;
     }
 
     .osso-product-story__intro,
     .osso-product-story__grid,
-    .osso-product-story__highlight {
+    .osso-product-story__highlight,
+    .osso-product-story__details,
+    .osso-product-story__features,
+    .osso-product-story__reviews-grid,
+    .osso-product-story__tech-grid {
       grid-template-columns: 1fr;
     }
 
     .osso-product-story__intro,
     .osso-product-story__highlight,
-    .osso-product-story__grid {
+    .osso-product-story__grid,
+    .osso-product-story__features,
+    .osso-product-story__details,
+    .osso-product-story__reviews,
+    .osso-product-story__tech-inner {
       width: min(100vw - 32px, 720px);
     }
 
     .osso-product-story__card,
     .osso-product-story__highlight-media,
-    .osso-product-story__highlight-copy {
+    .osso-product-story__highlight-copy,
+    .osso-product-story__details-copy,
+    .osso-product-story__details-visual {
       min-height: 0;
+    }
+
+    .osso-product-story__tech {
+      padding: 54px 0;
+    }
+
+    .osso-product-story__tech-grid {
+      border-left: 0;
+    }
+
+    .osso-product-story__tech-item {
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .osso-product-story__reviews-header {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
   @media (max-width: 749px) {
     .osso-product-story {
       padding-top: 12px;
+    }
+
+    .osso-product-story__marquee {
+      margin-bottom: 24px;
     }
 
     .osso-product-story__intro {
@@ -315,7 +754,8 @@
 
     .osso-product-story__title,
     .osso-product-story__card-title,
-    .osso-product-story__highlight-title {
+    .osso-product-story__highlight-title,
+    .osso-product-story__section-title {
       max-width: none;
     }
   }
