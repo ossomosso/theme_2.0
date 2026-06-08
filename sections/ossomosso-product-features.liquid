@@ -1,0 +1,197 @@
+{% liquid
+  assign section_label = section.settings.label
+  assign section_title = section.settings.title
+%}
+
+<div class="osso-features color-{{ section.settings.color_scheme }}">
+  <div class="osso-features__inner page-width">
+    {% if section_label != blank %}
+      <p class="osso-features__label">{{ section_label }}</p>
+    {% endif %}
+    {% if section_title != blank %}
+      <h2 class="osso-features__title">{{ section_title }}</h2>
+    {% endif %}
+    <div class="osso-features__grid">
+      {% for block in section.blocks %}
+        <div class="osso-features__item" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="osso-features__icon">
+              {{ block.settings.icon | image_url: width: 48 | image_tag: loading: 'lazy' }}
+            </div>
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <p class="osso-features__item-title">{{ block.settings.title }}</p>
+          {% endif %}
+          {% if block.settings.text != blank %}
+            <p class="osso-features__item-text">{{ block.settings.text }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .osso-features {
+    padding: 80px 0;
+  }
+
+  .osso-features__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .osso-features__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
+
+  .osso-features__title {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 48px;
+  }
+
+  .osso-features__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .osso-features__item {
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .osso-features__icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+  }
+
+  .osso-features__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .osso-features__item-title {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  .osso-features__item-text {
+    font-size: 13px;
+    line-height: 1.7;
+    opacity: 0.7;
+  }
+
+  @media screen and (max-width: 900px) {
+    .osso-features {
+      padding: 60px 24px;
+    }
+
+    .osso-features__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .osso-features__item {
+      padding: 24px 16px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ossomosso - Product Features",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label",
+      "default": "Características"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Por qué elegir esta pieza"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Short description of the feature."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Product Features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "title": "72h de impresión",
+            "text": "Cada pieza requiere 3 días de fabricación continua capa a capa."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "title": "PLA biodegradable",
+            "text": "Material de origen vegetal, compostable industrialmente."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "title": "Compatible E27",
+            "text": "Funciona con cualquier bombilla LED estándar de rosca E27."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "title": "Personalizable",
+            "text": "Texto, color o diseño propio bajo pedido. Consulta opciones."
+          }
+        }
+      }
+    }
+  ]
+}
+{% endschema %}
