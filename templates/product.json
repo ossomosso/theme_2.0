@@ -87,7 +87,7 @@
               "name": "t:names.title",
               "settings": {
                 "text": "<h1>{{ closest.product.title }}</h1>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "h2",
