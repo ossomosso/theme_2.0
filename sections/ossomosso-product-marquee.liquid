@@ -1,0 +1,127 @@
+{% liquid
+  assign speed = section.settings.speed | default: 22
+%}
+
+<div class="osso-marquee-bar color-{{ section.settings.color_scheme }}" aria-hidden="true">
+  <div class="osso-marquee-track" style="--marquee-speed: {{ speed }}s;">
+    {% for block in section.blocks %}
+      <span>{{ block.settings.text }}</span>
+      {% unless forloop.last %}
+        <span class="osso-marquee-dot">·</span>
+      {% endunless %}
+    {% endfor %}
+    {% comment %} Duplicate for seamless loop {% endcomment %}
+    {% for block in section.blocks %}
+      <span>{{ block.settings.text }}</span>
+      {% unless forloop.last %}
+        <span class="osso-marquee-dot">·</span>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .osso-marquee-bar {
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .osso-marquee-track {
+    display: inline-block;
+    animation: osso-marquee-scroll var(--marquee-speed, 22s) linear infinite;
+  }
+
+  .osso-marquee-track span {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 40px;
+    opacity: 0.7;
+  }
+
+  .osso-marquee-dot {
+    opacity: 1;
+    margin: 0 16px;
+  }
+
+  @keyframes osso-marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ossomosso - Product Marquee",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Animation speed",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "default": 22
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Marquee item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Marquee item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Product Marquee",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "text": "PLA ecológico"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "text": "Impresión 3D"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "text": "Fabricado en Madrid"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "text": "Bajo demanda"
+          }
+        }
+      }
+    }
+  ]
+}
+{% endschema %}

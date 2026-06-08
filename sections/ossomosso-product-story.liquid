@@ -1,17 +1,11 @@
 {% liquid
-  assign is_tulipa_product = false
-  if product and product.handle == 'lampara-tulip'
-    assign is_tulipa_product = true
-  endif
-
   assign featured_image = product.featured_image
   assign secondary_image = product.media[1].preview_image | default: featured_image
   assign tertiary_image = product.media[2].preview_image | default: secondary_image
   assign selected_variant = product.selected_or_first_available_variant
 %}
 
-{% if is_tulipa_product %}
-  <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
+<section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
     <div class="osso-product-story__marquee" aria-hidden="true">
       <div class="osso-product-story__marquee-track">
         <span>Fabricada en Madrid</span>
@@ -296,7 +290,6 @@
       </div>
     </div>
   </section>
-{% endif %}
 
 {% stylesheet %}
   .osso-product-story {
