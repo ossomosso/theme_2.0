@@ -6,290 +6,268 @@
 %}
 
 <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
-    <div class="osso-product-story__marquee" aria-hidden="true">
-      <div class="osso-product-story__marquee-track">
-        <span>Fabricada en Madrid</span>
-        <span class="osso-product-story__marquee-dot">·</span>
-        <span>Impresion 3D de pequena serie</span>
-        <span class="osso-product-story__marquee-dot">·</span>
-        <span>Luz ambiental</span>
-        <span class="osso-product-story__marquee-dot">·</span>
-        <span>Bajo pedido</span>
-        <span class="osso-product-story__marquee-dot">·</span>
-        <span>Compatible con bombilla LED</span>
-        <span class="osso-product-story__marquee-dot">·</span>
-        <span>Fabricada en Madrid</span>
-        <span class="osso-product-story__marquee-dot">·</span>
-        <span>Impresion 3D de pequena serie</span>
-        <span class="osso-product-story__marquee-dot">·</span>
-        <span>Luz ambiental</span>
-      </div>
-    </div>
+  {% for block in section.blocks %}
+    {% case block.type %}
 
-    <div class="osso-product-story__intro">
-      <div class="osso-product-story__intro-copy">
-        <p class="osso-product-story__eyebrow">Luz escultorica</p>
-        <h2 class="osso-product-story__title">Una tulipa convertida en objeto.</h2>
-        <div class="osso-product-story__text">
-          <p>
-            Tulipa nace de una silueta floral muy simple y la lleva a un terreno mas material: una pieza luminosa,
-            suave y domestica, pensada para dar ambiente sin imponerse.
-          </p>
-          <p>
-            La forma ondulada filtra la luz y deja que el volumen haga el resto. Encendida funciona como lampara;
-            apagada, como una pequena escultura sobre una mesa, una balda o una mesilla.
-          </p>
+      {% when 'marquee' %}
+        <div class="osso-product-story__marquee" aria-hidden="true" {{ block.shopify_attributes }}>
+          <div class="osso-product-story__marquee-track" style="animation-duration: {{ block.settings.speed | default: 26 }}s;">
+            {% for i in (1..5) %}
+              {% capture item_key %}item_{{ i }}{% endcapture %}
+              {% assign item_text = block.settings[item_key] %}
+              {% if item_text != blank %}
+                <span>{{ item_text }}</span>
+                {% unless forloop.last %}
+                  <span class="osso-product-story__marquee-dot">·</span>
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+            {% comment %} Duplicate for seamless loop {% endcomment %}
+            {% for i in (1..5) %}
+              {% capture item_key %}item_{{ i }}{% endcapture %}
+              {% assign item_text = block.settings[item_key] %}
+              {% if item_text != blank %}
+                <span>{{ item_text }}</span>
+                {% unless forloop.last %}
+                  <span class="osso-product-story__marquee-dot">·</span>
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
-      </div>
 
-      <div class="osso-product-story__specs">
-        <div class="osso-product-story__spec">
-          <span class="osso-product-story__spec-label">Color</span>
-          <span class="osso-product-story__spec-value">{{ selected_variant.title }}</span>
-        </div>
-        <div class="osso-product-story__spec">
-          <span class="osso-product-story__spec-label">Produccion</span>
-          <span class="osso-product-story__spec-value">Bajo pedido</span>
-        </div>
-        <div class="osso-product-story__spec">
-          <span class="osso-product-story__spec-label">Origen</span>
-          <span class="osso-product-story__spec-value">Hecha en Madrid</span>
-        </div>
-        <div class="osso-product-story__spec">
-          <span class="osso-product-story__spec-label">Caracter</span>
-          <span class="osso-product-story__spec-value">Luz suave y envolvente</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="osso-product-story__features">
-      <article class="osso-product-story__feature">
-        <h3 class="osso-product-story__feature-title">Pequena serie</h3>
-        <p class="osso-product-story__feature-copy">
-          Cada unidad se fabrica en tandas cortas para mantener el control del acabado y evitar exceso de stock.
-        </p>
-      </article>
-      <article class="osso-product-story__feature">
-        <h3 class="osso-product-story__feature-title">Material ligero</h3>
-        <p class="osso-product-story__feature-copy">
-          La pieza esta pensada para convivir bien en estanterias, mesillas y rincones pequenos sin resultar pesada.
-        </p>
-      </article>
-      <article class="osso-product-story__feature">
-        <h3 class="osso-product-story__feature-title">Compatible LED</h3>
-        <p class="osso-product-story__feature-copy">
-          Funciona mejor con bombillas LED calidas para reforzar la atmosfera suave que define a Tulipa.
-        </p>
-      </article>
-      <article class="osso-product-story__feature">
-        <h3 class="osso-product-story__feature-title">Diseno con caracter</h3>
-        <p class="osso-product-story__feature-copy">
-          No busca solo iluminar: esta pensada para aportar presencia visual incluso cuando la luz esta apagada.
-        </p>
-      </article>
-    </div>
-
-    <div class="osso-product-story__grid">
-      <article class="osso-product-story__card osso-product-story__card--image">
-        {% if featured_image != blank %}
-          {{
-            featured_image
-            | image_url: width: 1400
-            | image_tag:
-              loading: 'lazy',
-              widths: '480, 720, 960, 1400',
-              class: 'osso-product-story__image',
-              alt: product.title
-          }}
-        {% endif %}
-      </article>
-
-      <article class="osso-product-story__card osso-product-story__card--text">
-        <p class="osso-product-story__card-kicker">La forma</p>
-        <h3 class="osso-product-story__card-title">Curvas que recogen la luz.</h3>
-        <p class="osso-product-story__card-copy">
-          La geometria abierta de Tulipa esta pensada para difuminar el punto de luz y repartirlo con una presencia mas
-          calida. No busca deslumbrar, sino construir atmosfera.
-        </p>
-      </article>
-
-      <article class="osso-product-story__card osso-product-story__card--text osso-product-story__card--dark">
-        <p class="osso-product-story__card-kicker">El proceso</p>
-        <h3 class="osso-product-story__card-title">Diseno digital, acabado cercano.</h3>
-        <p class="osso-product-story__card-copy">
-          Cada pieza parte de un modelo 3D y se produce en series cortas. Eso permite cuidar mejor el resultado, evitar
-          exceso de stock y mantener el objeto dentro de una escala casi artesanal.
-        </p>
-      </article>
-
-      <article class="osso-product-story__card osso-product-story__card--image">
-        {% if secondary_image != blank %}
-          {{
-            secondary_image
-            | image_url: width: 1200
-            | image_tag:
-              loading: 'lazy',
-              widths: '480, 720, 960, 1200',
-              class: 'osso-product-story__image',
-              alt: product.title
-          }}
-        {% endif %}
-      </article>
-    </div>
-
-    <div class="osso-product-story__highlight">
-      <div class="osso-product-story__highlight-media">
-        {% if tertiary_image != blank %}
-          {{
-            tertiary_image
-            | image_url: width: 1400
-            | image_tag:
-              loading: 'lazy',
-              widths: '480, 720, 960, 1400',
-              class: 'osso-product-story__image',
-              alt: product.title
-          }}
-        {% endif %}
-      </div>
-
-      <div class="osso-product-story__highlight-copy">
-        <p class="osso-product-story__eyebrow">Para espacios pequenos y rincones con intencion</p>
-        <h3 class="osso-product-story__highlight-title">Una pieza sencilla que cambia el tono de la estancia.</h3>
-        <p class="osso-product-story__card-copy">
-          Funciona especialmente bien en dormitorios, recibidores, estanterias o mesas auxiliares. Donde hace falta una
-          luz mas amable y un objeto que no parezca sacado de una cadena sin personalidad.
-        </p>
-      </div>
-    </div>
-
-    <div class="osso-product-story__details">
-      <div class="osso-product-story__details-visual">
-        {% if featured_image != blank %}
-          {{
-            featured_image
-            | image_url: width: 1400
-            | image_tag:
-              loading: 'lazy',
-              widths: '480, 720, 960, 1400',
-              class: 'osso-product-story__details-image',
-              alt: product.title
-          }}
-        {% endif %}
-      </div>
-
-      <div class="osso-product-story__details-copy">
-        <p class="osso-product-story__eyebrow">La historia detras</p>
-        <h3 class="osso-product-story__section-title">Entre gesto organico y objeto domestico.</h3>
-        <p class="osso-product-story__card-copy">
-          Tulipa se mueve entre lo floral y lo arquitectonico. La referencia natural esta ahi, pero aterrizada en una
-          pieza serena, facil de integrar y pensada para durar visualmente mas alla de una tendencia puntual.
-        </p>
-        <p class="osso-product-story__card-copy">
-          Es una luz para acompanar, no para dominar el espacio. Por eso el lenguaje formal es blando y la presencia
-          general se apoya mas en el volumen y la textura que en el artificio.
-        </p>
-
-        <div class="osso-product-story__accordion">
-          <details class="osso-product-story__accordion-item">
-            <summary>Descripcion del producto</summary>
-            <div class="osso-product-story__accordion-body">
-              Lampara de sobremesa con silueta floral y luz ambiental. Funciona especialmente bien con bombilla LED
-              calida y como punto de apoyo visual en mesas auxiliares, dormitorios o estanterias.
+      {% when 'intro' %}
+        <div class="osso-product-story__intro" {{ block.shopify_attributes }}>
+          <div class="osso-product-story__intro-copy">
+            {% if block.settings.eyebrow != blank %}
+              <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h2 class="osso-product-story__title">{{ block.settings.title }}</h2>
+            {% endif %}
+            {% if block.settings.body != blank %}
+              <div class="osso-product-story__text rte">{{ block.settings.body }}</div>
+            {% endif %}
+          </div>
+          {% if block.settings.show_specs %}
+            <div class="osso-product-story__specs">
+              {% for i in (1..4) %}
+                {% capture label_key %}spec_{{ i }}_label{% endcapture %}
+                {% capture value_key %}spec_{{ i }}_value{% endcapture %}
+                {% assign spec_label = block.settings[label_key] %}
+                {% assign spec_value = block.settings[value_key] %}
+                {% if spec_label != blank or spec_value != blank %}
+                  <div class="osso-product-story__spec">
+                    {% if spec_label != blank %}
+                      <span class="osso-product-story__spec-label">{{ spec_label }}</span>
+                    {% endif %}
+                    {% if spec_value != blank %}
+                      <span class="osso-product-story__spec-value">{{ spec_value }}</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
-          </details>
-          <details class="osso-product-story__accordion-item">
-            <summary>Materiales y proceso</summary>
-            <div class="osso-product-story__accordion-body">
-              Fabricada en pequena serie mediante impresion 3D y ensamblada localmente. El proceso permite producir bajo
-              pedido, minimizar residuos y mantener un control cercano del acabado final.
+          {% endif %}
+        </div>
+
+      {% when 'features' %}
+        <div class="osso-product-story__features" {{ block.shopify_attributes }}>
+          {% for i in (1..4) %}
+            {% capture title_key %}feature_{{ i }}_title{% endcapture %}
+            {% capture text_key %}feature_{{ i }}_text{% endcapture %}
+            {% assign feature_title = block.settings[title_key] %}
+            {% assign feature_text = block.settings[text_key] %}
+            {% if feature_title != blank or feature_text != blank %}
+              <article class="osso-product-story__feature">
+                {% if feature_title != blank %}
+                  <h3 class="osso-product-story__feature-title">{{ feature_title }}</h3>
+                {% endif %}
+                {% if feature_text != blank %}
+                  <p class="osso-product-story__feature-copy">{{ feature_text }}</p>
+                {% endif %}
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      {% when 'media_grid' %}
+        <div class="osso-product-story__grid" {{ block.shopify_attributes }}>
+          {% for i in (1..4) %}
+            {% capture type_key %}card_{{ i }}_type{% endcapture %}
+            {% capture image_key %}card_{{ i }}_image{% endcapture %}
+            {% capture kicker_key %}card_{{ i }}_kicker{% endcapture %}
+            {% capture title_key %}card_{{ i }}_title{% endcapture %}
+            {% capture text_key %}card_{{ i }}_text{% endcapture %}
+            {% capture dark_key %}card_{{ i }}_dark{% endcapture %}
+            {% assign card_type = block.settings[type_key] %}
+            {% assign card_image = block.settings[image_key] %}
+            {% assign card_kicker = block.settings[kicker_key] %}
+            {% assign card_title = block.settings[title_key] %}
+            {% assign card_text = block.settings[text_key] %}
+            {% assign card_dark = block.settings[dark_key] %}
+
+            {% if card_type == 'image' %}
+              <article class="osso-product-story__card osso-product-story__card--image">
+                {% if card_image != blank %}
+                  {{ card_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
+                {% elsif featured_image != blank %}
+                  {{ featured_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
+                {% endif %}
+              </article>
+            {% else %}
+              <article class="osso-product-story__card osso-product-story__card--text{% if card_dark %} osso-product-story__card--dark{% endif %}">
+                {% if card_kicker != blank %}
+                  <p class="osso-product-story__card-kicker">{{ card_kicker }}</p>
+                {% endif %}
+                {% if card_title != blank %}
+                  <h3 class="osso-product-story__card-title">{{ card_title }}</h3>
+                {% endif %}
+                {% if card_text != blank %}
+                  <p class="osso-product-story__card-copy">{{ card_text }}</p>
+                {% endif %}
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      {% when 'highlight' %}
+        <div class="osso-product-story__highlight" {{ block.shopify_attributes }}>
+          <div class="osso-product-story__highlight-media">
+            {% if block.settings.media != blank %}
+              {{ block.settings.media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
+            {% elsif tertiary_image != blank %}
+              {{ tertiary_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
+            {% endif %}
+          </div>
+          <div class="osso-product-story__highlight-copy">
+            {% if block.settings.eyebrow != blank %}
+              <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h3 class="osso-product-story__highlight-title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <p class="osso-product-story__card-copy">{{ block.settings.text }}</p>
+            {% endif %}
+          </div>
+        </div>
+
+      {% when 'details' %}
+        <div class="osso-product-story__details" {{ block.shopify_attributes }}>
+          <div class="osso-product-story__details-visual">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__details-image', alt: product.title }}
+            {% elsif featured_image != blank %}
+              {{ featured_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__details-image', alt: product.title }}
+            {% endif %}
+          </div>
+          <div class="osso-product-story__details-copy">
+            {% if block.settings.eyebrow != blank %}
+              <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h3 class="osso-product-story__section-title">{{ block.settings.title }}</h3>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="osso-product-story__text rte">{{ block.settings.text }}</div>
+            {% endif %}
+            {% if block.settings.show_accordion %}
+              <div class="osso-product-story__accordion">
+                {% for i in (1..3) %}
+                  {% capture heading_key %}accordion_{{ i }}_heading{% endcapture %}
+                  {% capture content_key %}accordion_{{ i }}_content{% endcapture %}
+                  {% assign acc_heading = block.settings[heading_key] %}
+                  {% assign acc_content = block.settings[content_key] %}
+                  {% if acc_heading != blank %}
+                    <details class="osso-product-story__accordion-item">
+                      <summary>{{ acc_heading }}</summary>
+                      {% if acc_content != blank %}
+                        <div class="osso-product-story__accordion-body rte">{{ acc_content }}</div>
+                      {% endif %}
+                    </details>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+      {% when 'tech_specs' %}
+        <div class="osso-product-story__tech" {{ block.shopify_attributes }}>
+          <div class="osso-product-story__tech-inner">
+            {% if block.settings.label != blank %}
+              <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ block.settings.label }}</p>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ block.settings.title }}</h3>
+            {% endif %}
+            <div class="osso-product-story__tech-grid">
+              {% for i in (1..8) %}
+                {% capture value_key %}spec_{{ i }}_value{% endcapture %}
+                {% capture label_key %}spec_{{ i }}_label{% endcapture %}
+                {% assign spec_value = block.settings[value_key] %}
+                {% assign spec_label = block.settings[label_key] %}
+                {% if spec_value != blank or spec_label != blank %}
+                  <div class="osso-product-story__tech-item">
+                    {% if spec_value != blank %}
+                      <div class="osso-product-story__tech-value">{{ spec_value }}</div>
+                    {% endif %}
+                    {% if spec_label != blank %}
+                      <div class="osso-product-story__tech-label">{{ spec_label }}</div>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
-          </details>
-          <details class="osso-product-story__accordion-item">
-            <summary>Envio y devoluciones</summary>
-            <div class="osso-product-story__accordion-body">
-              Tulipa se prepara bajo pedido. Si necesitas ayuda con plazos, compatibilidades o una devolucion, puedes
-              escribirnos y lo resolvemos de forma personal.
+          </div>
+        </div>
+
+      {% when 'reviews' %}
+        <div class="osso-product-story__reviews" {{ block.shopify_attributes }}>
+          <div class="osso-product-story__reviews-header">
+            <div>
+              {% if block.settings.label != blank %}
+                <p class="osso-product-story__eyebrow">{{ block.settings.label }}</p>
+              {% endif %}
+              {% if block.settings.title != blank %}
+                <h3 class="osso-product-story__section-title">{{ block.settings.title }}</h3>
+              {% endif %}
             </div>
-          </details>
-        </div>
-      </div>
-    </div>
-
-    <div class="osso-product-story__tech">
-      <div class="osso-product-story__tech-inner">
-        <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">Ficha tecnica</p>
-        <h3 class="osso-product-story__section-title osso-product-story__section-title--light">Tulipa — Datos clave</h3>
-        <div class="osso-product-story__tech-grid">
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">01</div>
-            <div class="osso-product-story__tech-label">Pieza de sobremesa</div>
+            {% if block.settings.rating_text != blank %}
+              <div class="osso-product-story__reviews-summary">{{ block.settings.rating_text }}</div>
+            {% endif %}
           </div>
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">LED</div>
-            <div class="osso-product-story__tech-label">Recomendado</div>
-          </div>
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">Soft</div>
-            <div class="osso-product-story__tech-label">Difusion de luz</div>
-          </div>
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">ES</div>
-            <div class="osso-product-story__tech-label">Hecha en Espana</div>
-          </div>
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">03</div>
-            <div class="osso-product-story__tech-label">Usos sugeridos</div>
-          </div>
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">Calm</div>
-            <div class="osso-product-story__tech-label">Temperatura visual</div>
-          </div>
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">360</div>
-            <div class="osso-product-story__tech-label">Presencia escultorica</div>
-          </div>
-          <div class="osso-product-story__tech-item">
-            <div class="osso-product-story__tech-value">Low</div>
-            <div class="osso-product-story__tech-label">Produccion sin excedente</div>
+          <div class="osso-product-story__reviews-grid">
+            {% for i in (1..3) %}
+              {% capture stars_key %}review_{{ i }}_stars{% endcapture %}
+              {% capture text_key %}review_{{ i }}_text{% endcapture %}
+              {% capture author_key %}review_{{ i }}_author{% endcapture %}
+              {% assign review_stars = block.settings[stars_key] %}
+              {% assign review_text = block.settings[text_key] %}
+              {% assign review_author = block.settings[author_key] %}
+              {% if review_text != blank %}
+                <article class="osso-product-story__review">
+                  {% if review_stars > 0 %}
+                    <p class="osso-product-story__review-stars">
+                      {% for s in (1..5) %}
+                        {% if s <= review_stars %}★{% else %}☆{% endif %}
+                      {% endfor %}
+                    </p>
+                  {% endif %}
+                  <p class="osso-product-story__review-text">{{ review_text }}</p>
+                  {% if review_author != blank %}
+                    <p class="osso-product-story__review-author">{{ review_author }}</p>
+                  {% endif %}
+                </article>
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="osso-product-story__reviews">
-      <div class="osso-product-story__reviews-header">
-        <div>
-          <p class="osso-product-story__eyebrow">Opiniones</p>
-          <h3 class="osso-product-story__section-title">Como se siente Tulipa en casa.</h3>
-        </div>
-        <div class="osso-product-story__reviews-summary">4.9 / 5 en sensacion general</div>
-      </div>
-
-      <div class="osso-product-story__reviews-grid">
-        <article class="osso-product-story__review">
-          <p class="osso-product-story__review-stars">★★★★★</p>
-          <p class="osso-product-story__review-text">
-            “Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada.”
-          </p>
-          <p class="osso-product-story__review-author">Laura, Madrid</p>
-        </article>
-        <article class="osso-product-story__review">
-          <p class="osso-product-story__review-stars">★★★★★</p>
-          <p class="osso-product-story__review-text">
-            “Me gusto que no parece una lampara generica. Da ambiente y suma muchisimo al salon.”
-          </p>
-          <p class="osso-product-story__review-author">Carlos, Valencia</p>
-        </article>
-        <article class="osso-product-story__review">
-          <p class="osso-product-story__review-stars">★★★★☆</p>
-          <p class="osso-product-story__review-text">
-            “La luz es suave y la pieza tiene ese punto entre objeto decorativo y utilidad que buscaba.”
-          </p>
-          <p class="osso-product-story__review-author">Ana, Barcelona</p>
-        </article>
-      </div>
-    </div>
-  </section>
+    {% endcase %}
+  {% endfor %}
+</section>
 
 {% stylesheet %}
   .osso-product-story {
@@ -767,9 +745,711 @@
       "default": "scheme-1"
     }
   ],
+  "blocks": [
+    {
+      "type": "marquee",
+      "name": "Marquee",
+      "settings": [
+        {
+          "type": "range",
+          "id": "speed",
+          "label": "Animation speed (seconds)",
+          "min": 10,
+          "max": 60,
+          "step": 1,
+          "default": 26
+        },
+        {
+          "type": "text",
+          "id": "item_1",
+          "label": "Item 1",
+          "default": "Fabricada en Madrid"
+        },
+        {
+          "type": "text",
+          "id": "item_2",
+          "label": "Item 2",
+          "default": "Impresión 3D de pequeña serie"
+        },
+        {
+          "type": "text",
+          "id": "item_3",
+          "label": "Item 3",
+          "default": "Luz ambiental"
+        },
+        {
+          "type": "text",
+          "id": "item_4",
+          "label": "Item 4",
+          "default": "Bajo pedido"
+        },
+        {
+          "type": "text",
+          "id": "item_5",
+          "label": "Item 5",
+          "default": "Compatible con bombilla LED"
+        }
+      ]
+    },
+    {
+      "type": "intro",
+      "name": "Intro + Specs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Luz escultórica"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Una tulipa convertida en objeto."
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body text",
+          "default": "<p>Tulipa nace de una silueta floral muy simple y la lleva a un terreno más material: una pieza luminosa, suave y doméstica, pensada para dar ambiente sin imponerse.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_specs",
+          "label": "Show specs grid",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Specs"
+        },
+        {
+          "type": "text",
+          "id": "spec_1_label",
+          "label": "Spec 1 label",
+          "default": "Color"
+        },
+        {
+          "type": "text",
+          "id": "spec_1_value",
+          "label": "Spec 1 value",
+          "default": "Arena natural"
+        },
+        {
+          "type": "text",
+          "id": "spec_2_label",
+          "label": "Spec 2 label",
+          "default": "Producción"
+        },
+        {
+          "type": "text",
+          "id": "spec_2_value",
+          "label": "Spec 2 value",
+          "default": "Bajo pedido"
+        },
+        {
+          "type": "text",
+          "id": "spec_3_label",
+          "label": "Spec 3 label",
+          "default": "Origen"
+        },
+        {
+          "type": "text",
+          "id": "spec_3_value",
+          "label": "Spec 3 value",
+          "default": "Hecha en Madrid"
+        },
+        {
+          "type": "text",
+          "id": "spec_4_label",
+          "label": "Spec 4 label",
+          "default": "Carácter"
+        },
+        {
+          "type": "text",
+          "id": "spec_4_value",
+          "label": "Spec 4 value",
+          "default": "Luz suave y envolvente"
+        }
+      ]
+    },
+    {
+      "type": "features",
+      "name": "Features grid",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_1_title",
+          "label": "Feature 1 title",
+          "default": "Pequeña serie"
+        },
+        {
+          "type": "textarea",
+          "id": "feature_1_text",
+          "label": "Feature 1 text",
+          "default": "Cada unidad se fabrica en tandas cortas para mantener el control del acabado."
+        },
+        {
+          "type": "text",
+          "id": "feature_2_title",
+          "label": "Feature 2 title",
+          "default": "Material ligero"
+        },
+        {
+          "type": "textarea",
+          "id": "feature_2_text",
+          "label": "Feature 2 text",
+          "default": "La pieza está pensada para convivir bien en estanterías y rincones pequeños."
+        },
+        {
+          "type": "text",
+          "id": "feature_3_title",
+          "label": "Feature 3 title",
+          "default": "Compatible LED"
+        },
+        {
+          "type": "textarea",
+          "id": "feature_3_text",
+          "label": "Feature 3 text",
+          "default": "Funciona mejor con bombillas LED cálidas para reforzar la atmósfera suave."
+        },
+        {
+          "type": "text",
+          "id": "feature_4_title",
+          "label": "Feature 4 title",
+          "default": "Diseño con carácter"
+        },
+        {
+          "type": "textarea",
+          "id": "feature_4_text",
+          "label": "Feature 4 text",
+          "default": "No busca solo iluminar: está pensada para aportar presencia visual."
+        }
+      ]
+    },
+    {
+      "type": "media_grid",
+      "name": "Media grid (2×2)",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Card 1"
+        },
+        {
+          "type": "select",
+          "id": "card_1_type",
+          "label": "Card 1 type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "text", "label": "Text" }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_1_image",
+          "label": "Card 1 image"
+        },
+        {
+          "type": "text",
+          "id": "card_1_kicker",
+          "label": "Card 1 kicker"
+        },
+        {
+          "type": "text",
+          "id": "card_1_title",
+          "label": "Card 1 title"
+        },
+        {
+          "type": "textarea",
+          "id": "card_1_text",
+          "label": "Card 1 text"
+        },
+        {
+          "type": "checkbox",
+          "id": "card_1_dark",
+          "label": "Dark background",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Card 2"
+        },
+        {
+          "type": "select",
+          "id": "card_2_type",
+          "label": "Card 2 type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "text", "label": "Text" }
+          ],
+          "default": "text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_2_image",
+          "label": "Card 2 image"
+        },
+        {
+          "type": "text",
+          "id": "card_2_kicker",
+          "label": "Card 2 kicker",
+          "default": "La forma"
+        },
+        {
+          "type": "text",
+          "id": "card_2_title",
+          "label": "Card 2 title",
+          "default": "Curvas que recogen la luz."
+        },
+        {
+          "type": "textarea",
+          "id": "card_2_text",
+          "label": "Card 2 text",
+          "default": "La geometría abierta está pensada para difuminar el punto de luz y repartirlo con una presencia más cálida."
+        },
+        {
+          "type": "checkbox",
+          "id": "card_2_dark",
+          "label": "Dark background",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Card 3"
+        },
+        {
+          "type": "select",
+          "id": "card_3_type",
+          "label": "Card 3 type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "text", "label": "Text" }
+          ],
+          "default": "text"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_3_image",
+          "label": "Card 3 image"
+        },
+        {
+          "type": "text",
+          "id": "card_3_kicker",
+          "label": "Card 3 kicker",
+          "default": "El proceso"
+        },
+        {
+          "type": "text",
+          "id": "card_3_title",
+          "label": "Card 3 title",
+          "default": "Diseño digital, acabado cercano."
+        },
+        {
+          "type": "textarea",
+          "id": "card_3_text",
+          "label": "Card 3 text",
+          "default": "Cada pieza parte de un modelo 3D y se produce en series cortas para mantener una escala casi artesanal."
+        },
+        {
+          "type": "checkbox",
+          "id": "card_3_dark",
+          "label": "Dark background",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Card 4"
+        },
+        {
+          "type": "select",
+          "id": "card_4_type",
+          "label": "Card 4 type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "text", "label": "Text" }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_4_image",
+          "label": "Card 4 image"
+        },
+        {
+          "type": "text",
+          "id": "card_4_kicker",
+          "label": "Card 4 kicker"
+        },
+        {
+          "type": "text",
+          "id": "card_4_title",
+          "label": "Card 4 title"
+        },
+        {
+          "type": "textarea",
+          "id": "card_4_text",
+          "label": "Card 4 text"
+        },
+        {
+          "type": "checkbox",
+          "id": "card_4_dark",
+          "label": "Dark background",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "highlight",
+      "name": "Highlight",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "media",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Para espacios pequeños y rincones con intención"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Una pieza sencilla que cambia el tono de la estancia."
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Funciona especialmente bien en dormitorios, recibidores, estanterías o mesas auxiliares."
+        }
+      ]
+    },
+    {
+      "type": "details",
+      "name": "Details + Accordion",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "La historia detrás"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Entre gesto orgánico y objeto doméstico."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Tulipa se mueve entre lo floral y lo arquitectónico. La referencia natural está ahí, pero aterrizada en una pieza serena y fácil de integrar.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_accordion",
+          "label": "Show accordion",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Accordion items"
+        },
+        {
+          "type": "text",
+          "id": "accordion_1_heading",
+          "label": "Accordion 1 heading",
+          "default": "Descripción del producto"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_1_content",
+          "label": "Accordion 1 content",
+          "default": "<p>Lámpara de sobremesa con silueta floral y luz ambiental. Funciona especialmente bien con bombilla LED cálida.</p>"
+        },
+        {
+          "type": "text",
+          "id": "accordion_2_heading",
+          "label": "Accordion 2 heading",
+          "default": "Materiales y proceso"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_2_content",
+          "label": "Accordion 2 content",
+          "default": "<p>Fabricada en pequeña serie mediante impresión 3D y ensamblada localmente en Madrid.</p>"
+        },
+        {
+          "type": "text",
+          "id": "accordion_3_heading",
+          "label": "Accordion 3 heading",
+          "default": "Envío y devoluciones"
+        },
+        {
+          "type": "richtext",
+          "id": "accordion_3_content",
+          "label": "Accordion 3 content",
+          "default": "<p>Se prepara bajo pedido. Si necesitas ayuda con plazos o una devolución, escríbenos.</p>"
+        }
+      ]
+    },
+    {
+      "type": "tech_specs",
+      "name": "Tech specs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Ficha técnica"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Tulipa — Datos clave"
+        },
+        {
+          "type": "header",
+          "content": "Specifications"
+        },
+        {
+          "type": "text",
+          "id": "spec_1_value",
+          "label": "Spec 1 value",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "spec_1_label",
+          "label": "Spec 1 label",
+          "default": "Pieza de sobremesa"
+        },
+        {
+          "type": "text",
+          "id": "spec_2_value",
+          "label": "Spec 2 value",
+          "default": "LED"
+        },
+        {
+          "type": "text",
+          "id": "spec_2_label",
+          "label": "Spec 2 label",
+          "default": "Recomendado"
+        },
+        {
+          "type": "text",
+          "id": "spec_3_value",
+          "label": "Spec 3 value",
+          "default": "Soft"
+        },
+        {
+          "type": "text",
+          "id": "spec_3_label",
+          "label": "Spec 3 label",
+          "default": "Difusión de luz"
+        },
+        {
+          "type": "text",
+          "id": "spec_4_value",
+          "label": "Spec 4 value",
+          "default": "ES"
+        },
+        {
+          "type": "text",
+          "id": "spec_4_label",
+          "label": "Spec 4 label",
+          "default": "Hecha en España"
+        },
+        {
+          "type": "text",
+          "id": "spec_5_value",
+          "label": "Spec 5 value",
+          "default": "03"
+        },
+        {
+          "type": "text",
+          "id": "spec_5_label",
+          "label": "Spec 5 label",
+          "default": "Usos sugeridos"
+        },
+        {
+          "type": "text",
+          "id": "spec_6_value",
+          "label": "Spec 6 value",
+          "default": "Calm"
+        },
+        {
+          "type": "text",
+          "id": "spec_6_label",
+          "label": "Spec 6 label",
+          "default": "Temperatura visual"
+        },
+        {
+          "type": "text",
+          "id": "spec_7_value",
+          "label": "Spec 7 value",
+          "default": "360"
+        },
+        {
+          "type": "text",
+          "id": "spec_7_label",
+          "label": "Spec 7 label",
+          "default": "Presencia escultórica"
+        },
+        {
+          "type": "text",
+          "id": "spec_8_value",
+          "label": "Spec 8 value",
+          "default": "Low"
+        },
+        {
+          "type": "text",
+          "id": "spec_8_label",
+          "label": "Spec 8 label",
+          "default": "Producción sin excedente"
+        }
+      ]
+    },
+    {
+      "type": "reviews",
+      "name": "Reviews",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Opiniones"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Cómo se siente Tulipa en casa."
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Rating text",
+          "default": "4.9 / 5 en sensación general"
+        },
+        {
+          "type": "header",
+          "content": "Review 1"
+        },
+        {
+          "type": "range",
+          "id": "review_1_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_1_text",
+          "label": "Text",
+          "default": "Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada."
+        },
+        {
+          "type": "text",
+          "id": "review_1_author",
+          "label": "Author",
+          "default": "Laura, Madrid"
+        },
+        {
+          "type": "header",
+          "content": "Review 2"
+        },
+        {
+          "type": "range",
+          "id": "review_2_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_2_text",
+          "label": "Text",
+          "default": "Me gustó que no parece una lámpara genérica. Da ambiente y suma muchísimo al salón."
+        },
+        {
+          "type": "text",
+          "id": "review_2_author",
+          "label": "Author",
+          "default": "Carlos, Valencia"
+        },
+        {
+          "type": "header",
+          "content": "Review 3"
+        },
+        {
+          "type": "range",
+          "id": "review_3_stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 4
+        },
+        {
+          "type": "textarea",
+          "id": "review_3_text",
+          "label": "Text",
+          "default": "La luz es suave y la pieza tiene ese punto entre objeto decorativo y utilidad que buscaba."
+        },
+        {
+          "type": "text",
+          "id": "review_3_author",
+          "label": "Author",
+          "default": "Ana, Barcelona"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Ossomosso - Product Story"
+      "name": "Ossomosso - Product Story",
+      "blocks": {
+        "marquee": {
+          "type": "marquee"
+        },
+        "intro": {
+          "type": "intro"
+        },
+        "features": {
+          "type": "features"
+        },
+        "media_grid": {
+          "type": "media_grid"
+        },
+        "highlight": {
+          "type": "highlight"
+        },
+        "details": {
+          "type": "details"
+        },
+        "tech_specs": {
+          "type": "tech_specs"
+        },
+        "reviews": {
+          "type": "reviews"
+        }
+      }
     }
   ]
 }
