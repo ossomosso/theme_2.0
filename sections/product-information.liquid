@@ -215,6 +215,85 @@
     }
   }
 
+  .product-information .product-details {
+    align-self: stretch;
+  }
+
+  .product-information .product-details > .group-block {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  .product-information .product-details > .group-block > .group-block-content {
+    gap: clamp(14px, 1.8vw, 22px);
+  }
+
+  .product-information .product-details h1 {
+    margin: 0;
+    font-family: var(--font-heading--family, var(--font-body--family));
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    max-width: 10ch;
+  }
+
+  .product-information .product-details .price {
+    margin: 0;
+  }
+
+  .product-information .product-details .price__container {
+    gap: var(--gap-xs);
+  }
+
+  .product-information .product-details .price-item {
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    line-height: 1;
+  }
+
+  .product-information .product-details .tax-note,
+  .product-information .product-details .installment {
+    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+  }
+
+  .product-information .product-details .variant-option--buttons legend,
+  .product-information .product-details .quantity-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground-rgb) / 0.62);
+  }
+
+  .product-information .product-details .variant-option__button-label {
+    min-height: 3.15rem;
+    padding-inline: 1rem;
+    border-radius: 999px;
+    background: transparent;
+    border-color: rgb(var(--color-foreground-rgb) / 0.14);
+  }
+
+  .product-information .product-details .variant-option__button-label__pill {
+    background: rgb(var(--color-foreground-rgb) / 0.08);
+  }
+
+  .product-information .product-details .variant-option__button-label:has(:checked) {
+    box-shadow: 0 12px 24px rgb(var(--color-foreground-rgb) / 0.08);
+  }
+
+  .product-information .product-details .variant-option__button-label__text {
+    font-size: 0.92rem;
+    letter-spacing: 0.01em;
+  }
+
+  .product-information .product-details .product-description,
+  .product-information .product-details .rte {
+    color: rgb(var(--color-foreground-rgb) / 0.82);
+    line-height: 1.7;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .sticky-add-to-cart__bar {
       transition-property: transform, opacity, display;
@@ -286,6 +365,15 @@
 
   /* Mobile adjustments */
   @media screen and (max-width: 749px) {
+    .product-information .product-details > .group-block {
+      max-width: none;
+    }
+
+    .product-information .product-details h1 {
+      max-width: none;
+      font-size: clamp(1.8rem, 10vw, 2.8rem);
+    }
+
     .sticky-add-to-cart__bar {
       bottom: 0;
       width: 100%;
