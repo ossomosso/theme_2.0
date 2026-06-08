@@ -1,0 +1,245 @@
+{% liquid
+  assign label = section.settings.label
+  assign title = section.settings.title
+  assign rating_text = section.settings.rating_text
+%}
+
+<div class="osso-reviews color-{{ section.settings.color_scheme }}">
+  <div class="osso-reviews__inner page-width">
+    <div class="osso-reviews__header">
+      <div>
+        {% if label != blank %}
+          <p class="osso-reviews__label">{{ label }}</p>
+        {% endif %}
+        {% if title != blank %}
+          <h2 class="osso-reviews__title">{{ title }}</h2>
+        {% endif %}
+      </div>
+      {% if rating_text != blank %}
+        <div class="osso-reviews__rating">
+          <div class="osso-reviews__stars">★★★★★</div>
+          <span class="osso-reviews__rating-text">{{ rating_text }}</span>
+        </div>
+      {% endif %}
+    </div>
+    <div class="osso-reviews__grid">
+      {% for block in section.blocks %}
+        <div class="osso-reviews__card" {{ block.shopify_attributes }}>
+          <div class="osso-reviews__card-stars">
+            {% for i in (1..5) %}
+              {% if i <= block.settings.stars %}
+                ★
+              {% else %}
+                ☆
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% if block.settings.text != blank %}
+            <p class="osso-reviews__card-text">{{ block.settings.text }}</p>
+          {% endif %}
+          {% if block.settings.author != blank %}
+            <p class="osso-reviews__card-author">— {{ block.settings.author }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .osso-reviews {
+    padding: 100px 0;
+  }
+
+  .osso-reviews__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .osso-reviews__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(var(--color-foreground-rgb), 0.12);
+  }
+
+  .osso-reviews__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
+
+  .osso-reviews__title {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+
+  .osso-reviews__rating {
+    text-align: right;
+  }
+
+  .osso-reviews__stars {
+    font-size: 18px;
+    margin-bottom: 4px;
+    letter-spacing: 2px;
+  }
+
+  .osso-reviews__rating-text {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  .osso-reviews__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .osso-reviews__card {
+    padding: 32px;
+    background: rgba(var(--color-foreground-rgb), 0.04);
+    border-radius: 4px;
+  }
+
+  .osso-reviews__card-stars {
+    font-size: 13px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+  }
+
+  .osso-reviews__card-text {
+    font-size: 17px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .osso-reviews__card-author {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  @media screen and (max-width: 900px) {
+    .osso-reviews {
+      padding: 60px 24px;
+    }
+
+    .osso-reviews__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .osso-reviews__rating {
+      text-align: left;
+    }
+
+    .osso-reviews__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ossomosso - Product Reviews",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Opiniones"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Lo que dicen nuestros clientes"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "4.9 de 5 · 38 reseñas"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review text",
+          "default": "Una pieza de arte funcional. La luz que proyecta es increíble."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Laura M., Barcelona"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Product Reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "text": "Una pieza de arte funcional. La luz que proyecta por las noches crea un ambiente increíble.",
+            "author": "Laura M., Barcelona"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "stars": 5,
+            "text": "Llevaba meses buscando una lámpara diferente y esta es exactamente lo que quería.",
+            "author": "Carlos R., Madrid"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "stars": 4,
+            "text": "Excelente atención al cliente. La lámpara es exactamente como en las fotos.",
+            "author": "Ana P., Valencia"
+          }
+        }
+      }
+    }
+  ]
+}
+{% endschema %}

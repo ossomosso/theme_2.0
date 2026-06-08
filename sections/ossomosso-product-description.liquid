@@ -1,0 +1,274 @@
+{% liquid
+  assign image = section.settings.image
+  assign label = section.settings.label
+  assign title = section.settings.title
+  assign body = section.settings.body
+%}
+
+<div class="osso-description color-{{ section.settings.color_scheme }}">
+  <div class="osso-description__inner page-width">
+    <div class="osso-description__visual">
+      {% if image != blank %}
+        {{
+          image
+          | image_url: width: 800
+          | image_tag:
+            loading: 'lazy',
+            widths: '400, 600, 800',
+            class: 'osso-description__image'
+        }}
+      {% else %}
+        <div class="osso-description__placeholder">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="osso-description__content">
+      {% if label != blank %}
+        <p class="osso-description__label">{{ label }}</p>
+      {% endif %}
+      {% if title != blank %}
+        <h2 class="osso-description__title">{{ title }}</h2>
+      {% endif %}
+      {% if body != blank %}
+        <div class="osso-description__body rte">{{ body }}</div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="osso-accordion">
+          {% for block in section.blocks %}
+            <details class="osso-accordion__item" {{ block.shopify_attributes }}>
+              <summary class="osso-accordion__header">
+                <span>{{ block.settings.heading }}</span>
+                <span class="osso-accordion__arrow">+</span>
+              </summary>
+              <div class="osso-accordion__body rte">{{ block.settings.content }}</div>
+            </details>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .osso-description {
+    padding: 100px 0;
+  }
+
+  .osso-description__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .osso-description__visual {
+    background: rgba(var(--color-foreground-rgb), 0.04);
+    min-height: 500px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .osso-description__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .osso-description__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .osso-description__placeholder svg {
+    width: 50%;
+    height: auto;
+    opacity: 0.3;
+  }
+
+  .osso-description__content {
+    padding: 20px 0;
+  }
+
+  .osso-description__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 16px;
+    opacity: 0.7;
+  }
+
+  .osso-description__title {
+    font-size: clamp(32px, 3vw, 48px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .osso-description__body {
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.7;
+    margin-bottom: 20px;
+  }
+
+  .osso-accordion {
+    border-top: 1px solid rgba(var(--color-foreground-rgb), 0.12);
+    margin-top: 32px;
+  }
+
+  .osso-accordion__item {
+    border-bottom: 1px solid rgba(var(--color-foreground-rgb), 0.12);
+  }
+
+  .osso-accordion__header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: left;
+    list-style: none;
+  }
+
+  .osso-accordion__header::-webkit-details-marker {
+    display: none;
+  }
+
+  .osso-accordion__arrow {
+    font-size: 20px;
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+
+  .osso-accordion__item[open] .osso-accordion__arrow {
+    transform: rotate(45deg);
+  }
+
+  .osso-accordion__body {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.7;
+    padding-bottom: 18px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .osso-description {
+      padding: 60px 24px;
+    }
+
+    .osso-description__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .osso-description__visual {
+      min-height: 350px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ossomosso - Product Description",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "La historia detrás"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Donde el algoritmo encuentra la arcilla."
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>Descripción del producto en párrafos.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Descripción del producto"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Contenido desplegable.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Product Description",
+      "blocks": {
+        "accordion_1": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Descripción del producto",
+            "content": "<p>Lámpara de mesa con cuerpo geométrico impreso en 3D.</p>"
+          }
+        },
+        "accordion_2": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Materiales y proceso",
+            "content": "<p>Fabricada en Madrid con filamento PLA de origen vegetal.</p>"
+          }
+        },
+        "accordion_3": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Envío y devoluciones",
+            "content": "<p>Fabricación bajo pedido: 5-7 días hábiles. Envío en 24-48h.</p>"
+          }
+        }
+      }
+    }
+  ]
+}
+{% endschema %}

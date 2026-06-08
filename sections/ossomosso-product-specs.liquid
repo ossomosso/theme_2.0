@@ -1,0 +1,193 @@
+{% liquid
+  assign label = section.settings.label
+  assign title = section.settings.title
+%}
+
+<div class="osso-specs color-{{ section.settings.color_scheme }}">
+  <div class="osso-specs__inner page-width">
+    {% if label != blank %}
+      <p class="osso-specs__label">{{ label }}</p>
+    {% endif %}
+    {% if title != blank %}
+      <h2 class="osso-specs__title">{{ title }}</h2>
+    {% endif %}
+    <div class="osso-specs__grid">
+      {% for block in section.blocks %}
+        <div class="osso-specs__item" {{ block.shopify_attributes }}>
+          <div class="osso-specs__value">
+            {{ block.settings.value }}
+            {% if block.settings.unit != blank %}
+              <span class="osso-specs__unit">{{ block.settings.unit }}</span>
+            {% endif %}
+          </div>
+          {% if block.settings.label != blank %}
+            <p class="osso-specs__item-label">{{ block.settings.label }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .osso-specs {
+    padding: 80px 0;
+  }
+
+  .osso-specs__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .osso-specs__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+    opacity: 0.4;
+  }
+
+  .osso-specs__title {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 48px;
+  }
+
+  .osso-specs__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-left: 1px solid rgba(var(--color-foreground-rgb), 0.1);
+  }
+
+  .osso-specs__item {
+    padding: 36px 28px;
+    border-right: 1px solid rgba(var(--color-foreground-rgb), 0.1);
+    border-bottom: 1px solid rgba(var(--color-foreground-rgb), 0.1);
+  }
+
+  .osso-specs__value {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .osso-specs__unit {
+    font-size: 20px;
+    opacity: 0.35;
+  }
+
+  .osso-specs__item-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 8px;
+    opacity: 0.45;
+  }
+
+  @media screen and (max-width: 900px) {
+    .osso-specs {
+      padding: 60px 24px;
+    }
+
+    .osso-specs__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ossomosso - Product Specs",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Ficha técnica"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Especificaciones"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec",
+      "name": "Specification",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "72"
+        },
+        {
+          "type": "text",
+          "id": "unit",
+          "label": "Unit",
+          "default": "h"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Tiempo de impresión"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Product Specs",
+      "blocks": {
+        "spec_1": {
+          "type": "spec",
+          "settings": {
+            "value": "72",
+            "unit": "h",
+            "label": "Tiempo de impresión"
+          }
+        },
+        "spec_2": {
+          "type": "spec",
+          "settings": {
+            "value": "0.1",
+            "unit": "mm",
+            "label": "Resolución de capa"
+          }
+        },
+        "spec_3": {
+          "type": "spec",
+          "settings": {
+            "value": "35",
+            "unit": "cm",
+            "label": "Altura"
+          }
+        },
+        "spec_4": {
+          "type": "spec",
+          "settings": {
+            "value": "E27",
+            "label": "Casquillo estándar"
+          }
+        }
+      }
+    }
+  ]
+}
+{% endschema %}
