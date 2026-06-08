@@ -143,7 +143,7 @@
               "type": "buy-buttons",
               "settings": {
                 "stacking": false,
-                "show_pickup_availability": false,
+                "show_pickup_availability": true,
                 "gift_card_form": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
@@ -161,7 +161,7 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
-                    "style_class": "button"
+                    "style_class": "button-secondary"
                   },
                   "blocks": {}
                 },
@@ -172,7 +172,11 @@
                   "blocks": {}
                 }
               },
-              "block_order": []
+              "block_order": [
+                "quantity",
+                "add-to-cart",
+                "accelerated-checkout"
+              ]
             },
             "product_description_LfDYCg": {
               "type": "product-description",
@@ -783,7 +787,8 @@
         "gap": 48,
         "color_scheme": "",
         "padding-block-start": 0,
-        "padding-block-end": 32
+        "padding-block-end": 32,
+        "enable_sticky_add_to_cart": true
       }
     },
     "section_NaqU9X": {
