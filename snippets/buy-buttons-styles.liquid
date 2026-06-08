@@ -335,4 +335,56 @@
   .shopify-payment-button__more-options[aria-hidden='true'] {
     display: none;
   }
+
+  /* ============================================
+     Estilo Ossomosso — coherencia con portada
+     ============================================ */
+
+  /* Add to Cart button */
+  .product-form-buttons .add-to-cart-button,
+  .product-form-buttons .add-to-cart-button.button-secondary {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 0;
+    font-weight: 500;
+    box-shadow: none;
+    transition: background 0.2s, color 0.2s;
+    height: auto;
+    line-height: 1.4;
+  }
+
+  .product-form-buttons .add-to-cart-button:hover,
+  .product-form-buttons .add-to-cart-button.button-secondary:hover {
+    background: var(--color-primary);
+    color: var(--color-background);
+  }
+
+  .product-form-buttons .add-to-cart-button:disabled,
+  .product-form-buttons .add-to-cart-button.button-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--color-foreground);
+    color: var(--color-background);
+  }
+
+  /* Shopify Pay / Buy It Now button */
+  shopify-accelerated-checkout,
+  shopify-accelerated-checkout-cart {
+    --shopify-accelerated-checkout-button-border-radius: 0px;
+  }
+
+  .product-form-buttons :is(shopify-accelerated-checkout, shopify-accelerated-checkout-cart) {
+    --shopify-accelerated-checkout-button-block-size: auto;
+  }
+
+  /* Quantity selector to match */
+  .product-form-buttons .quantity-selector {
+    border-radius: 0;
+    align-self: stretch;
+  }
 {% endstylesheet %}
