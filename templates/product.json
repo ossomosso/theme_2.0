@@ -221,6 +221,7 @@
             "group_X39hBc": {
               "type": "group",
               "name": "Values",
+              "disabled": true,
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
@@ -816,71 +817,6 @@
         "padding-block-end": 32
       }
     },
-    "ossomosso_product_story_xY7L2m": {
-      "type": "ossomosso-product-story",
-      "settings": {
-        "color_scheme": "scheme-1"
-      }
-    },
-    "section_NaqU9X": {
-      "type": "section",
-      "blocks": {
-        "video_PthMbP": {
-          "type": "video",
-          "name": "t:names.video",
-          "settings": {
-            "source": "uploaded",
-            "video_url": "",
-            "video_autoplay": false,
-            "video_loop": true,
-            "alt": "",
-            "custom_width": 100,
-            "custom_width_mobile": 100,
-            "aspect_ratio": "16/9",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "video_PthMbP"
-      ],
-      "name": "t:names.video_section",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "full-width",
-        "section_height": "small",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "product_list_zR9Cym": {
       "type": "product-list",
       "blocks": {
@@ -1117,13 +1053,160 @@
         "padding-block-start": 60,
         "padding-block-end": 72
       }
+    },
+    "ossomosso_product_story_n8d9JT": {
+      "type": "ossomosso-product-story",
+      "blocks": {
+        "marquee_hea9YP": {
+          "type": "marquee",
+          "settings": {
+            "speed": 26,
+            "item_1": "Fabricada en Madrid",
+            "item_2": "Impresión 3D de pequeña serie",
+            "item_3": "Luz ambiental",
+            "item_4": "Bajo pedido",
+            "item_5": "Compatible con bombilla LED"
+          }
+        },
+        "intro_ihcmLB": {
+          "type": "intro",
+          "settings": {
+            "eyebrow": "Luz escultórica",
+            "title": "Una tulipa convertida en objeto.",
+            "body": "<p>Tulipa nace de una silueta floral muy simple y la lleva a un terreno más material: una pieza luminosa, suave y doméstica, pensada para dar ambiente sin imponerse.</p>",
+            "show_specs": true,
+            "spec_1_label": "Color",
+            "spec_1_value": "Arena natural",
+            "spec_2_label": "Producción",
+            "spec_2_value": "Bajo pedido",
+            "spec_3_label": "Origen",
+            "spec_3_value": "Hecha en Madrid",
+            "spec_4_label": "Carácter",
+            "spec_4_value": "Luz suave y envolvente"
+          }
+        },
+        "features_mCmGAe": {
+          "type": "features",
+          "settings": {
+            "feature_1_title": "Pequeña serie",
+            "feature_1_text": "Cada unidad se fabrica en tandas cortas para mantener el control del acabado.",
+            "feature_2_title": "Material ligero",
+            "feature_2_text": "La pieza está pensada para convivir bien en estanterías y rincones pequeños.",
+            "feature_3_title": "Compatible LED",
+            "feature_3_text": "Funciona mejor con bombillas LED cálidas para reforzar la atmósfera suave.",
+            "feature_4_title": "Diseño con carácter",
+            "feature_4_text": "No busca solo iluminar: está pensada para aportar presencia visual."
+          }
+        },
+        "media_grid_yiBkYA": {
+          "type": "media_grid",
+          "settings": {
+            "card_1_type": "image",
+            "card_1_kicker": "",
+            "card_1_title": "",
+            "card_1_text": "",
+            "card_1_dark": false,
+            "card_2_type": "text",
+            "card_2_kicker": "La forma",
+            "card_2_title": "Curvas que recogen la luz.",
+            "card_2_text": "La geometría abierta está pensada para difuminar el punto de luz y repartirlo con una presencia más cálida.",
+            "card_2_dark": false,
+            "card_3_type": "text",
+            "card_3_kicker": "El proceso",
+            "card_3_title": "Diseño digital, acabado cercano.",
+            "card_3_text": "Cada pieza parte de un modelo 3D y se produce en series cortas para mantener una escala casi artesanal.",
+            "card_3_dark": true,
+            "card_4_type": "image",
+            "card_4_kicker": "",
+            "card_4_title": "",
+            "card_4_text": "",
+            "card_4_dark": false
+          }
+        },
+        "highlight_aFtPwH": {
+          "type": "highlight",
+          "settings": {
+            "eyebrow": "Para espacios pequeños y rincones con intención",
+            "title": "Una pieza sencilla que cambia el tono de la estancia.",
+            "text": "Funciona especialmente bien en dormitorios, recibidores, estanterías o mesas auxiliares."
+          }
+        },
+        "details_mzHy3T": {
+          "type": "details",
+          "settings": {
+            "eyebrow": "La historia detrás",
+            "title": "Entre gesto orgánico y objeto doméstico.",
+            "text": "<p>Tulipa se mueve entre lo floral y lo arquitectónico. La referencia natural está ahí, pero aterrizada en una pieza serena y fácil de integrar.</p>",
+            "show_accordion": true,
+            "accordion_1_heading": "Descripción del producto",
+            "accordion_1_content": "<p>Lámpara de sobremesa con silueta floral y luz ambiental. Funciona especialmente bien con bombilla LED cálida.</p>",
+            "accordion_2_heading": "Materiales y proceso",
+            "accordion_2_content": "<p>Fabricada en pequeña serie mediante impresión 3D y ensamblada localmente en Madrid.</p>",
+            "accordion_3_heading": "Envío y devoluciones",
+            "accordion_3_content": "<p>Se prepara bajo pedido. Si necesitas ayuda con plazos o una devolución, escríbenos.</p>"
+          }
+        },
+        "tech_specs_cMwUTM": {
+          "type": "tech_specs",
+          "settings": {
+            "label": "Ficha técnica",
+            "title": "Tulipa — Datos clave",
+            "spec_1_value": "01",
+            "spec_1_label": "Pieza de sobremesa",
+            "spec_2_value": "LED",
+            "spec_2_label": "Recomendado",
+            "spec_3_value": "Soft",
+            "spec_3_label": "Difusión de luz",
+            "spec_4_value": "ES",
+            "spec_4_label": "Hecha en España",
+            "spec_5_value": "03",
+            "spec_5_label": "Usos sugeridos",
+            "spec_6_value": "Calm",
+            "spec_6_label": "Temperatura visual",
+            "spec_7_value": "360",
+            "spec_7_label": "Presencia escultórica",
+            "spec_8_value": "Low",
+            "spec_8_label": "Producción sin excedente"
+          }
+        },
+        "reviews_DTTrtr": {
+          "type": "reviews",
+          "settings": {
+            "label": "Opiniones",
+            "title": "Cómo se siente Tulipa en casa.",
+            "rating_text": "4.9 / 5 en sensación general",
+            "review_1_stars": 5,
+            "review_1_text": "Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada.",
+            "review_1_author": "Laura, Madrid",
+            "review_2_stars": 5,
+            "review_2_text": "Me gustó que no parece una lámpara genérica. Da ambiente y suma muchísimo al salón.",
+            "review_2_author": "Carlos, Valencia",
+            "review_3_stars": 4,
+            "review_3_text": "La luz es suave y la pieza tiene ese punto entre objeto decorativo y utilidad que buscaba.",
+            "review_3_author": "Ana, Barcelona"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_hea9YP",
+        "intro_ihcmLB",
+        "features_mCmGAe",
+        "media_grid_yiBkYA",
+        "highlight_aFtPwH",
+        "details_mzHy3T",
+        "tech_specs_cMwUTM",
+        "reviews_DTTrtr"
+      ],
+      "name": "Ossomosso - Product Story",
+      "settings": {
+        "color_scheme": ""
+      }
     }
   },
   "order": [
     "divider_iPjTfx",
     "main",
-    "ossomosso_product_story_xY7L2m",
-    "section_NaqU9X",
-    "product_list_zR9Cym"
+    "product_list_zR9Cym",
+    "ossomosso_product_story_n8d9JT"
   ]
 }
