@@ -1827,7 +1827,6 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 
 /* Swatches */
 .swatch {
-  --color-border: rgb(var(--color-foreground-rgb) / var(--style-border-swatch-opacity));
   --min-width-unitless: 15.9999; /* want to avoid division by 0 */
   --min-height-unitless: 15.9999; /* want to avoid division by 0 */
   --min-height: 16px;
@@ -1884,9 +1883,10 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   background: var(--swatch-background);
   background-position: var(--swatch-focal-point, center);
   border-radius: var(--variant-picker-swatch-radius);
-  border: var(--style-border-swatch-width) var(--style-border-swatch-style) var(--color-border);
+  border: 0;
   width: var(--swatch-width);
   height: var(--swatch-height);
+  box-shadow: inset 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.08);
 
   /* This is different than `background-size: cover` because we use `box-sizing: border-box`,
    * doing it like makes the background clip under the border without repeating.
@@ -1917,12 +1917,10 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
     border-radius: var(--variant-picker-swatch-radius);
   }
 
-  /* swatches in filters and pills always have a border  */
+  /* swatches in filters and pills keep a subtle inner stroke for legibility  */
   &.swatch--filter,
   &.swatch--pill {
-    --style-border-swatch-width: var(--variant-picker-border-width);
-    --style-border-swatch-style: var(--variant-picker-border-style);
-    --color-border: rgb(var(--color-foreground-rgb) / var(--variant-picker-border-opacity));
+    box-shadow: inset 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.14);
   }
 
   &.swatch--variant-image {
@@ -2233,12 +2231,12 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 .variant-option__button-label--has-swatch:hover {
-  outline: var(--focus-outline-width) solid rgb(var(--color-foreground-rgb) / var(--opacity-35-55));
+  outline: var(--focus-outline-width) solid rgb(var(--color-foreground-rgb) / 0.18);
   outline-offset: var(--focus-outline-offset);
 }
 
 .variant-option__button-label--has-swatch:has(:checked) {
-  --focus-outline: var(--focus-outline-width) solid var(--color-foreground);
+  --focus-outline: var(--focus-outline-width) solid rgb(var(--color-foreground-rgb) / 0.22);
 
   outline: var(--focus-outline);
   outline-offset: var(--focus-outline-offset);
