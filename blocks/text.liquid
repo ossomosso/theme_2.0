@@ -1,26 +1,5 @@
 
-{% liquid
-  assign override_text = blank
-
-  if request.page_type == 'product' and product and product.handle == 'lampara-tulip'
-    case block.id
-      when 'text_ktmjan'
-        assign override_text = '<p>Hecha en Madrid</p>'
-      when 'text_DRMYrh'
-        assign override_text = '<p>Produccion bajo pedido</p>'
-      when 'text_fN97nd'
-        assign override_text = '<p>Silueta floral</p>'
-      when 'text_UmcfKJ'
-        assign override_text = '<p>Luz suave</p>'
-      when 'text_McjMWz'
-        assign override_text = '<p>Tulipa reinterpreta la forma de una flor como objeto de luz. La pantalla ondulada suaviza la presencia del punto luminoso y convierte la pieza en una presencia calida, pensada para acompanar sin recargar el espacio.</p><p>Se produce en series cortas y bajo pedido, dentro del universo material de Ossomosso: diseno digital, fabricacion cercana y una escala mas humana.</p>'
-      when 'text_DNPAct'
-        assign override_text = '<p>Cada Tulipa se prepara con produccion bajo pedido, asi que el plazo de envio puede variar ligeramente frente a un producto de stock inmediato.</p><p>Si necesitas ayuda con tu pedido o quieres tramitar una devolucion, puedes escribirnos y te acompaaremos caso por caso.</p>'
-    endcase
-  endif
-%}
-
-{% render 'text', block: block, override_text: override_text %}
+{% render 'text', block: block %}
 
 {% schema %}
 {

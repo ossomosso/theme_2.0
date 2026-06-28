@@ -6,18 +6,13 @@
     assign current_product = closest.product
   endif
 
-  assign override_text = blank
-  if current_product and current_product.handle == 'lampara-tulip'
-    assign override_text = '<p>Una lampara de sobremesa con presencia serena y una silueta inspirada en el gesto organico de un tulipan. Pensada para rincones que necesitan luz y tambien un poco de caracter.</p>'
-  endif
-
   if request.visual_preview_mode and current_product == blank
     assign current_product = collections.all.products.first
     assign text = current_product.description
   endif
 %}
 
-{% render 'text', fallback_text: text, block: block, override_text: override_text %}
+{% render 'text', fallback_text: text, block: block %}
 
 {% schema %}
 {

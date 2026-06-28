@@ -1,16 +1,6 @@
 
 {% liquid
   assign block_settings = block.settings
-  assign heading_override = blank
-
-  if request.page_type == 'product' and product and product.handle == 'lampara-tulip'
-    case block.id
-      when 'accordion_row_VyFryh'
-        assign heading_override = 'Detalles'
-      when 'accordion_row_aaFerA'
-        assign heading_override = 'Envios y devoluciones'
-    endcase
-  endif
 %}
 
 {% capture accordion_row_children %}
@@ -29,7 +19,7 @@
         width: block_settings.width,
         class_name: 'details__icon'
       %}
-      {{ heading_override | default: block_settings.heading }}
+      {{ block_settings.heading }}
       <span class="svg-wrapper icon-caret icon-animated">
         {{- 'icon-caret.svg' | inline_asset_content -}}
       </span>
