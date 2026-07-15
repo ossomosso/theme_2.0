@@ -286,7 +286,39 @@
   }
 
   .product-information .product-details .variant-option__button-label--has-swatch:has(:checked) {
+    --focus-outline: none;
+
     box-shadow: none;
+    outline: none;
+  }
+
+  .product-information .product-details .variant-option__button-label--has-swatch:hover {
+    outline: none;
+  }
+
+  .product-information .product-details .variant-option__button-label--has-swatch:hover .swatch {
+    --focus-outline: var(--focus-outline-width) solid rgb(var(--color-foreground-rgb) / var(--opacity-35-55));
+
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .product-information .product-details .variant-option__button-label--has-swatch:has(:checked) .swatch {
+    --focus-outline: var(--focus-outline-width) solid var(--color-selected-variant-border);
+
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .product-information .product-details .variant-option__button-label:has(:focus-visible) .swatch {
+    --focus-outline: var(--focus-outline-width) solid currentcolor;
+
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
+
+  .product-information .product-details .variant-option__button-label:has(:focus-visible) {
+    outline: none;
   }
 
   .product-information .product-details .variant-option__button-label__text {
