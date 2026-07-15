@@ -294,6 +294,7 @@
     border: none;
     border-radius: var(--variant-picker-swatch-radius);
     background: transparent;
+    overflow: visible;
   }
 
   .product-information .product-details .variant-option__button-label:has(:checked) {
@@ -319,10 +320,9 @@
   }
 
   .product-information .product-details .variant-option__button-label--has-swatch:has(:checked) .swatch {
-    --focus-outline: var(--focus-outline-width) solid var(--color-selected-variant-border);
-
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-outline-offset);
+    box-shadow: 0 0 0 calc(var(--focus-outline-offset) + var(--focus-outline-width)) var(--color-background),
+      0 0 0 calc((var(--focus-outline-offset) * 2) + var(--focus-outline-width)) var(--color-selected-variant-border);
+    outline: none;
   }
 
   .product-information .product-details .variant-option__button-label:has(:focus-visible) .swatch {
