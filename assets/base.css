@@ -2200,33 +2200,20 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 
 .variant-option__button-label--has-swatch {
   --focus-outline-radius: var(--variant-picker-swatch-radius);
-  --swatch-ring-gap: 2px;
 
-  display: inline-grid;
-  place-items: center;
-  width: calc(var(--variant-picker-swatch-width) + (var(--swatch-ring-gap) * 2));
-  height: calc(var(--variant-picker-swatch-height) + (var(--swatch-ring-gap) * 2));
-  padding: var(--swatch-ring-gap);
+  padding: 0;
   border: none;
   flex-basis: auto;
   min-height: auto;
-  min-width: auto;
-  line-height: 0;
-  box-shadow: 0 0 0 1px transparent;
-  transition: box-shadow var(--animation-speed) var(--animation-easing);
-  box-sizing: border-box;
-  vertical-align: top;
-  background: transparent;
-  overflow: visible;
+}
+
+.variant-option__button-label--has-swatch .swatch {
+  transform: none;
 }
 
 /* Override global label:has(input) display rule with higher specificity */
 .variant-option__button-label--has-swatch:has(input) {
-  display: inline-grid;
-}
-
-.variant-option__button-label--has-swatch .swatch {
-  transform: translateY(0.5px);
+  display: block;
 }
 
 .variant-option__button-label:has(:checked) {
@@ -2248,13 +2235,20 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 .variant-option__button-label--has-swatch:hover {
-  box-shadow: 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.16);
-  outline: none;
+  outline: var(--focus-outline-width) solid var(--color-variant-hover-border);
+  outline-offset: var(--focus-outline-offset);
+}
+
+.variant-option__button-label--has-swatch:has([data-option-available='false']) svg,
+.variant-option__button-label--has-swatch:has([data-option-available='false']) .swatch {
+  stroke: var(--color-variant-border);
 }
 
 .variant-option__button-label--has-swatch:has(:checked) {
-  box-shadow: 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.32);
-  outline: none;
+  --focus-outline: var(--focus-outline-width) solid var(--color-selected-variant-border);
+
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
 }
 
 /* This triggers iOS < 16.4. The outline bug is not recognized as a lack of @supports */
@@ -3002,7 +2996,7 @@ label:has(input[type='checkbox']:disabled) {
 
 /* Override for swatch labels to maintain block display */
 .variant-option__button-label--has-swatch:has(input[type='radio']) {
-  display: inline-grid;
+  display: block;
 }
 
 /* Add to cart button */
