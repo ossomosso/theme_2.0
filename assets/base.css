@@ -2200,22 +2200,29 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 
 .variant-option__button-label--has-swatch {
   --focus-outline-radius: var(--variant-picker-swatch-radius);
+  --swatch-ring-gap: 2px;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+  display: inline-grid;
+  place-items: center;
+  width: calc(var(--variant-picker-swatch-width) + (var(--swatch-ring-gap) * 2));
+  height: calc(var(--variant-picker-swatch-height) + (var(--swatch-ring-gap) * 2));
+  padding: var(--swatch-ring-gap);
   border: none;
   flex-basis: auto;
   min-height: auto;
+  min-width: auto;
   line-height: 0;
   box-shadow: 0 0 0 1px transparent;
   transition: box-shadow var(--animation-speed) var(--animation-easing);
+  box-sizing: border-box;
+  vertical-align: top;
+  background: transparent;
+  overflow: visible;
 }
 
 /* Override global label:has(input) display rule with higher specificity */
 .variant-option__button-label--has-swatch:has(input) {
-  display: block;
+  display: inline-grid;
 }
 
 .variant-option__button-label:has(:checked) {
@@ -2242,7 +2249,7 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 .variant-option__button-label--has-swatch:has(:checked) {
-  box-shadow: 0 0 0 1.5px rgb(var(--color-foreground-rgb) / 0.32);
+  box-shadow: 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.32);
   outline: none;
 }
 
