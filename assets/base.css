@@ -2225,6 +2225,10 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   display: inline-grid;
 }
 
+.variant-option__button-label--has-swatch .swatch {
+  transform: translateY(0.5px);
+}
+
 .variant-option__button-label:has(:checked) {
   color: var(--color-selected-variant-text);
   border-color: var(--color-selected-variant-border);
