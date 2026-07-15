@@ -13,6 +13,24 @@
 {% liquid
   assign swatch_value = null
   assign extra_classes = ''
+  assign normalized_label = label | default: '' | strip | downcase
+  assign normalized_label = normalized_label
+    | replace: 'á', 'a'
+    | replace: 'à', 'a'
+    | replace: 'ä', 'a'
+    | replace: 'é', 'e'
+    | replace: 'è', 'e'
+    | replace: 'ë', 'e'
+    | replace: 'í', 'i'
+    | replace: 'ì', 'i'
+    | replace: 'ï', 'i'
+    | replace: 'ó', 'o'
+    | replace: 'ò', 'o'
+    | replace: 'ö', 'o'
+    | replace: 'ú', 'u'
+    | replace: 'ù', 'u'
+    | replace: 'ü', 'u'
+    | replace: 'ñ', 'n'
   if settings.show_variant_image and variant_image
     assign swatch_image_width = settings.variant_swatch_width | times: 2
     assign swatch_image_url = variant_image | image_url: width: swatch_image_width
@@ -23,6 +41,43 @@
     assign swatch_value = 'url(' | append: swatch_image_url | append: ')'
   elsif swatch.color
     assign swatch_value = 'rgb(' | append: swatch.color.rgb | append: ')'
+  elsif normalized_label != blank
+    case normalized_label
+      when 'blanco', 'white'
+        assign swatch_value = '#ffffff'
+      when 'negro', 'black'
+        assign swatch_value = '#111111'
+      when 'gris', 'gray', 'grey'
+        assign swatch_value = '#9ca3af'
+      when 'beige'
+        assign swatch_value = '#d6c2a1'
+      when 'crema', 'cream'
+        assign swatch_value = '#f6f1e1'
+      when 'marfil', 'ivory'
+        assign swatch_value = '#fff8e7'
+      when 'azul', 'blue'
+        assign swatch_value = '#3b82f6'
+      when 'azul transparente', 'transparent blue'
+        assign swatch_value = 'linear-gradient(135deg, rgba(191, 219, 254, 0.35), rgba(59, 130, 246, 0.85))'
+      when 'verde', 'green'
+        assign swatch_value = '#22c55e'
+      when 'rojo', 'red'
+        assign swatch_value = '#ef4444'
+      when 'rosa', 'pink'
+        assign swatch_value = '#ec4899'
+      when 'amarillo', 'yellow'
+        assign swatch_value = '#facc15'
+      when 'naranja', 'orange'
+        assign swatch_value = '#f97316'
+      when 'morado', 'violeta', 'purple'
+        assign swatch_value = '#8b5cf6'
+      when 'marron', 'cafe', 'brown'
+        assign swatch_value = '#8b5e3c'
+      when 'dorado', 'gold'
+        assign swatch_value = '#d4a017'
+      when 'plateado', 'silver'
+        assign swatch_value = '#c0c0c0'
+    endcase
   endif
 
   case mode
