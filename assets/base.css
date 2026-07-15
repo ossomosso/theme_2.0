@@ -1886,7 +1886,7 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   border: 0;
   width: var(--swatch-width);
   height: var(--swatch-height);
-  box-shadow: inset 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.08);
+  box-shadow: inset 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.14);
 
   /* This is different than `background-size: cover` because we use `box-sizing: border-box`,
    * doing it like makes the background clip under the border without repeating.
@@ -1937,7 +1937,7 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 .variant-picker .variant-option--buttons label:has(.swatch) {
-  border-radius: var(--variant-picker-swatch-radius);
+  border-radius: calc(var(--variant-picker-swatch-radius) + 4px);
 }
 
 /* Variant option component */
@@ -2201,10 +2201,16 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 .variant-option__button-label--has-swatch {
   --focus-outline-radius: var(--variant-picker-swatch-radius);
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   border: none;
   flex-basis: auto;
   min-height: auto;
+  line-height: 0;
+  box-shadow: 0 0 0 1px transparent;
+  transition: box-shadow var(--animation-speed) var(--animation-easing);
 }
 
 /* Override global label:has(input) display rule with higher specificity */
@@ -2231,15 +2237,13 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 .variant-option__button-label--has-swatch:hover {
-  outline: var(--focus-outline-width) solid rgb(var(--color-foreground-rgb) / 0.18);
-  outline-offset: var(--focus-outline-offset);
+  box-shadow: 0 0 0 1px rgb(var(--color-foreground-rgb) / 0.16);
+  outline: none;
 }
 
 .variant-option__button-label--has-swatch:has(:checked) {
-  --focus-outline: var(--focus-outline-width) solid rgb(var(--color-foreground-rgb) / 0.22);
-
-  outline: var(--focus-outline);
-  outline-offset: var(--focus-outline-offset);
+  box-shadow: 0 0 0 1.5px rgb(var(--color-foreground-rgb) / 0.32);
+  outline: none;
 }
 
 /* This triggers iOS < 16.4. The outline bug is not recognized as a lack of @supports */
