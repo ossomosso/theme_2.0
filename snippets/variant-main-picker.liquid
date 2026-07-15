@@ -60,7 +60,7 @@
             class="variant-option"
             data-testid="variant-option-single"
           >
-            {{- product_option.name | downcase | escape -}}
+            {{- product_option.name | downcase | capitalize | escape -}}
             <span
               class="variant-option__swatch-value"
               data-testid="variant-option-single-value"
@@ -77,7 +77,7 @@
             {{ option_id_attribute }}
           >
             <legend>
-              {{ product_option.name | downcase | escape -}}
+              {{ product_option.name | downcase | capitalize | escape -}}
               {%- if variant_style == 'swatch' -%}
                 <span class="variant-option__swatch-value">- {{ product_option.selected_value | downcase }}</span>
               {%- endif %}
