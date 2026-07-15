@@ -65,7 +65,7 @@
               class="variant-option__swatch-value"
               data-testid="variant-option-single-value"
             >
-              {{- ' - ' -}}{{- product_option.selected_value | downcase -}}
+              {{- ' - ' -}}{{- product_option.selected_value | downcase | capitalize -}}
             </span>
           </div>
         {%- elsif variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
@@ -79,7 +79,7 @@
             <legend>
               {{ product_option.name | downcase | capitalize | escape -}}
               {%- if variant_style == 'swatch' -%}
-                <span class="variant-option__swatch-value">- {{ product_option.selected_value | downcase }}</span>
+                <span class="variant-option__swatch-value">- {{ product_option.selected_value | downcase | capitalize }}</span>
               {%- endif %}
             </legend>
             {%- for product_option_value in product_option.values -%}
