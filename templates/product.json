@@ -857,7 +857,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<p>Shop The Full Collection</p>",
+                "text": "<p>Descubre otros productos</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -1070,6 +1070,7 @@
         },
         "intro_ihcmLB": {
           "type": "intro",
+          "disabled": true,
           "settings": {
             "eyebrow": "Luz escultórica",
             "title": "Una tulipa convertida en objeto.",
@@ -1087,6 +1088,7 @@
         },
         "features_mCmGAe": {
           "type": "features",
+          "disabled": true,
           "settings": {
             "feature_1_title": "Pequeña serie",
             "feature_1_text": "Cada unidad se fabrica en tandas cortas para mantener el control del acabado.",
@@ -1100,6 +1102,7 @@
         },
         "media_grid_yiBkYA": {
           "type": "media_grid",
+          "disabled": true,
           "settings": {
             "card_1_type": "image",
             "card_1_kicker": "",
@@ -1125,6 +1128,7 @@
         },
         "highlight_aFtPwH": {
           "type": "highlight",
+          "disabled": true,
           "settings": {
             "eyebrow": "Para espacios pequeños y rincones con intención",
             "title": "Una pieza sencilla que cambia el tono de la estancia.",
