@@ -26,8 +26,41 @@
 {%- endif -%}
 {%- liquid
   assign selected_product = closest.product
-  assign selected_variant_media = selected_product.selected_or_first_available_variant.featured_media
+  assign selected_variant = selected_product.selected_or_first_available_variant
+  assign selected_variant_media = selected_variant.featured_media
   assign first_3d_model = selected_product.media | where: 'media_type', 'model' | first
+  assign selected_color_handle = ''
+  assign has_color_tagged_media = false
+  assign color_option_index = nil
+
+  for product_option in selected_product.options_with_values
+    assign option_name_handle = product_option.name | strip | downcase | handleize
+
+    if option_name_handle == 'color' or option_name_handle == 'colour'
+      assign color_option_index = forloop.index0
+      break
+    endif
+  endfor
+
+  if color_option_index != nil
+    assign selected_color_value = selected_variant.options[color_option_index] | default: ''
+    assign selected_color_handle = selected_color_value | strip | downcase | handleize
+  endif
+
+  for media in selected_product.media
+    assign media_alt = media.alt | default: '' | strip | downcase
+    assign media_alt_color_prefix = media_alt | slice: 0, 7
+
+    if media_alt_color_prefix == '[color:'
+      assign has_color_tagged_media = true
+      break
+    endif
+  endfor
+
+  assign use_color_media_filter = false
+  if selected_color_handle != blank and has_color_tagged_media
+    assign use_color_media_filter = true
+  endif
 
   if block_settings.hide_variants
     assign variant_images = selected_product.images | where: 'attached_to_variant?', true | map: 'src'
@@ -103,19 +136,62 @@
 
   assign sorted_media = '' | split: ','
   if selected_variant_media
-    assign sorted_media = sorted_media | concat: selected_product.media | where: 'id', selected_variant_media.id
+    assign include_selected_variant_media = true
+
+    if use_color_media_filter
+      assign selected_variant_media_alt = selected_variant_media.alt | default: '' | strip | downcase
+      assign selected_variant_media_common_prefix = selected_variant_media_alt | slice: 0, 8
+      assign selected_variant_media_color_prefix = selected_variant_media_alt | slice: 0, 7
+
+      if selected_variant_media_common_prefix != '[common]' and selected_variant_media_color_prefix == '[color:'
+        assign selected_variant_media_color_tag = selected_variant_media_alt | remove_first: '[color:' | split: ']' | first | strip | downcase | handleize
+
+        if selected_variant_media_color_tag != selected_color_handle
+          assign include_selected_variant_media = false
+        endif
+      endif
+    endif
+
+    if include_selected_variant_media
+      assign sorted_media = sorted_media | concat: selected_product.media | where: 'id', selected_variant_media.id
+    endif
 
     for media in selected_product.media
       if block_settings.hide_variants and variant_images contains media.src and sorted_media.size > 0
         continue
       endif
 
-      if media.id != selected_variant_media.id
+      assign include_media = true
+
+      if use_color_media_filter
+        assign include_media = false
+        assign media_alt = media.alt | default: '' | strip | downcase
+        assign media_common_prefix = media_alt | slice: 0, 8
+        assign media_color_prefix = media_alt | slice: 0, 7
+
+        if media.id == selected_variant_media.id
+          assign include_media = include_selected_variant_media
+        elsif media_common_prefix == '[common]'
+          assign include_media = true
+        elsif media_color_prefix == '[color:'
+          assign media_color_tag = media_alt | remove_first: '[color:' | split: ']' | first | strip | downcase | handleize
+
+          if media_color_tag == selected_color_handle
+            assign include_media = true
+          endif
+        endif
+      endif
+
+      if media.id != selected_variant_media.id and include_media
         assign found_media = selected_product.media | where: 'id', media.id
         assign sorted_media = sorted_media | concat: found_media
       endif
     endfor
   else
+    assign sorted_media = selected_product.media
+  endif
+
+  if sorted_media.size == 0
     assign sorted_media = selected_product.media
   endif
   assign has_image_drop = sorted_media | has: 'media_type', 'image'
