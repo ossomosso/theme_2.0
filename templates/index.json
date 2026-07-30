@@ -326,7 +326,6 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/Lampara_Tulipa_1.png",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -531,7 +530,7 @@
         "primary_button_url": "shopify://collections/all",
         "secondary_button_text": "Cómo lo hacemos",
         "secondary_button_url": "",
-        "image": "shopify://shop_images/Lampara_Tulipa_1.png",
+        "image": "shopify://shop_images/lampara-tulipa-blanca-fondo-habitacion-ossomosso-crop.webp",
         "caption": ""
       }
     },
