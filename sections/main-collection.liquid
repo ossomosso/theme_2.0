@@ -35,6 +35,34 @@
   <div
     class="collection-wrapper grid gap-style{% if section.settings.product_grid_width == 'full-width' %} collection-wrapper--grid-full-width{% endif %}"
   >
+    {% if collection.handle == 'all' %}
+      {% assign lamps_collection = collections['lamparas'] %}
+      {% assign vases_collection = collections['jarrones'] %}
+
+      {% for featured_handle in 'lamparas,jarrones' | split: ',' %}
+        {% if forloop.first %}
+          {% assign featured_collection = lamps_collection %}
+          {% assign featured_title = 'Lámparas' %}
+        {% else %}
+          {% assign featured_collection = vases_collection %}
+          {% assign featured_title = 'Jarrones' %}
+        {% endif %}
+
+        {% if featured_collection != blank and featured_collection.products_count > 0 %}
+          <section class="all-collection-featured">
+            <h2 class="all-collection-featured__title">{{ featured_title }}</h2>
+            <ul class="product-grid all-collection-featured__grid" role="list">
+              {% for product in featured_collection.products limit: 50 %}
+                <li class="product-grid__item">
+                  {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product %}
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
     {% content_for 'block',
       type: 'filters',
       id: 'filters',
@@ -256,4 +284,30 @@
   ],
   "presets": []
 }
+{% stylesheet %}
+  .all-collection-featured {
+    grid-column: 1 / -1;
+    margin-block-end: 2rem;
+  }
+
+  .all-collection-featured__title {
+    margin-block: 0 1rem;
+  }
+
+  .all-collection-featured__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--product-grid-columns-mobile, 2), minmax(0, 1fr));
+    gap: var(--gap, 1rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .all-collection-featured__grid {
+      grid-template-columns: repeat(var(--product-grid-columns, 4), minmax(0, 1fr));
+    }
+  }
+{% endstylesheet %}
+
 {% endschema %}
