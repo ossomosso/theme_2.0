@@ -9,11 +9,11 @@
       <h2 class="ossomosso-collection-products__title">
         {{ section.settings.heading | default: selected_collection.title | escape }}
       </h2>
-      <ul class="ossomosso-collection-products__grid" role="list">
+      <ul class="ossomosso-collection-products__grid" data-ossomosso-variant-grid role="list">
         {% for product in selected_collection.products limit: product_limit %}
           {% for variant in product.variants %}
             {% assign card_media = variant.featured_media | default: product.featured_media %}
-            <li class="ossomosso-collection-products__card">
+            <li class="ossomosso-collection-products__card" data-product-handle="{{ product.handle }}">
               <a href="{{ variant.url }}" class="ossomosso-collection-products__link">
                 {% if card_media %}
                   {{ card_media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '320, 480, 640, 900', alt: product.title }}
@@ -32,6 +32,28 @@
   </section>
 {% endif %}
 
+{% javascript %}
+  document.querySelectorAll('[data-ossomosso-variant-grid]').forEach((grid) => {
+    const groups = new Map();
+    [...grid.children].forEach((card) => {
+      const handle = card.dataset.productHandle;
+      groups.set(handle, [...(groups.get(handle) || []), card]);
+    });
+
+    const random = (items) => items.sort(() => Math.random() - 0.5);
+    groups.forEach(random);
+
+    let previousHandle;
+    while ([...groups.values()].some((cards) => cards.length)) {
+      const available = random([...groups.entries()].filter(([handle, cards]) => cards.length && handle !== previousHandle));
+      const fallback = [...groups.entries()].filter(([, cards]) => cards.length);
+      const [handle, cards] = available[0] || fallback[0];
+      grid.append(cards.pop());
+      previousHandle = handle;
+    }
+  });
+{% endjavascript %}
+
 {% stylesheet %}
   .ossomosso-collection-products { padding: 0 0 48px; }
   .ossomosso-collection-products__inner { margin: 0 auto; max-width: var(--page-width); padding: 0 var(--page-margin); }
@@ -40,7 +62,7 @@
   .ossomosso-collection-products__link { color: inherit; display: block; text-decoration: none; }
   .ossomosso-collection-products__link img { aspect-ratio: 3 / 4; display: block; height: auto; object-fit: cover; width: 100%; }
   .ossomosso-collection-products__link h3, .ossomosso-collection-products__link p { margin: 8px 0 0; }
-  .ossomosso-collection-products__link h3 { font-size: 0.75rem; font-weight: 500; line-height: 1.2; }
+  .ossomosso-collection-products__link h3 { font-size: 1rem; font-weight: 500; line-height: 1.2; }
   .ossomosso-collection-products__variants { font-size: 0.875rem; opacity: 0.75; }
   @media screen and (min-width: 750px) { .ossomosso-collection-products__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 {% endstylesheet %}
