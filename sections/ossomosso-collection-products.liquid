@@ -11,25 +11,21 @@
       </h2>
       <ul class="ossomosso-collection-products__grid" role="list">
         {% for product in selected_collection.products limit: product_limit %}
-          <li class="ossomosso-collection-products__card">
-            <a href="{{ product.url }}" class="ossomosso-collection-products__link">
-              {% if product.featured_media %}
-                {{ product.featured_media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '320, 480, 640, 900', alt: product.featured_media.alt | default: product.title }}
-              {% endif %}
-              <h3>{{ product.title | escape }}</h3>
-              <p>{{ product.price | money }}</p>
-              {% for option in product.options_with_values %}
-                {% assign option_name = option.name | downcase %}
-                {% if option_name == 'color' or option_name == 'colour' or option_name == 'colorway' %}
-                  <p class="ossomosso-collection-products__variants">
-                    {% for value in option.values %}
-                      <span>{{ value.name | escape }}</span>{% unless forloop.last %}<span aria-hidden="true"> · </span>{% endunless %}
-                    {% endfor %}
-                  </p>
+          {% for variant in product.variants %}
+            {% assign card_media = variant.featured_media | default: product.featured_media %}
+            <li class="ossomosso-collection-products__card">
+              <a href="{{ variant.url }}" class="ossomosso-collection-products__link">
+                {% if card_media %}
+                  {{ card_media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '320, 480, 640, 900', alt: product.title }}
                 {% endif %}
-              {% endfor %}
-            </a>
-          </li>
+                <h3>{{ product.title | escape }}</h3>
+                {% unless variant.title == 'Default Title' %}
+                  <p class="ossomosso-collection-products__variants">{{ variant.title | escape }}</p>
+                {% endunless %}
+                <p>{{ variant.price | money }}</p>
+              </a>
+            </li>
+          {% endfor %}
         {% endfor %}
       </ul>
     </div>
