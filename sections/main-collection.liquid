@@ -36,71 +36,65 @@
     class="collection-wrapper grid gap-style{% if section.settings.product_grid_width == 'full-width' %} collection-wrapper--grid-full-width{% endif %}"
   >
     {% if collection.handle == 'all' %}
-      {% assign lamps_collection = collections['lamparas'] %}
-      {% assign vases_collection = collections['jarrones'] %}
-
-      {% for featured_handle in 'lamparas,jarrones' | split: ',' %}
-        {% if forloop.first %}
-          {% assign featured_collection = lamps_collection %}
-          {% assign featured_title = 'Lámparas' %}
-        {% else %}
-          {% assign featured_collection = vases_collection %}
-          {% assign featured_title = 'Jarrones' %}
-        {% endif %}
-
-        {% if featured_collection != blank and featured_collection.products_count > 0 %}
-          <section class="all-collection-featured">
-            <h2 class="all-collection-featured__title">{{ featured_title }}</h2>
-            <ul class="product-grid all-collection-featured__grid" role="list">
-              {% for product in featured_collection.products limit: 50 %}
-                <li class="product-grid__item">
-                  {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product %}
-                </li>
-              {% endfor %}
-            </ul>
-          </section>
+      {% for block in section.blocks %}
+        {% if block.type == 'featured_collection' and block.settings.collection != blank %}
+          {% assign featured_collection = block.settings.collection %}
+          {% if featured_collection.products_count > 0 %}
+            <section class="all-collection-featured" {{ block.shopify_attributes }}>
+              <h2 class="all-collection-featured__title">
+                {{ block.settings.heading | default: featured_collection.title | escape }}
+              </h2>
+              <ul class="product-grid all-collection-featured__grid" role="list">
+                {% for product in featured_collection.products limit: 50 %}
+                  <li class="product-grid__item">
+                    {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endif %}
         {% endif %}
       {% endfor %}
-    {% endif %}
-
-    {% content_for 'block',
-      type: 'filters',
-      id: 'filters',
-      results: collection,
-      results_size: collection.products_count
-    %}
-
-    {% assign products_per_page = 24 %}
-
-    {% if section.settings.enable_infinite_scroll == false %}
-      {% assign products_per_page = section.settings.products_per_page %}
-    {% endif %}
-
-    {% paginate collection.products by products_per_page %}
-      {% capture children %}
-        {% for product in collection.products %}
-          <li
-            id="{{ section.id }}-{{ product.id }}"
-            class="product-grid__item product-grid__item--{{ forloop.index0 }}"
-            data-page="{{ paginate.current_page }}"
-            data-product-id="{{ product.id }}"
-            ref="cards[]"
-          >
-            {% # theme-check-disable %}
-            {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product %}
-            {% # theme-check-enable %}
-          </li>
-        {% endfor %}
-      {% endcapture %}
-
-      {% render 'product-grid',
-        section: section,
-        children: children,
-        products: collection.products,
-        paginate: paginate,
-        enable_infinite_scroll: section.settings.enable_infinite_scroll
+    {% else %}
+      {% content_for 'block',
+        type: 'filters',
+        id: 'filters',
+        results: collection,
+        results_size: collection.products_count
       %}
-    {% endpaginate %}
+
+      {% assign products_per_page = 24 %}
+
+      {% if section.settings.enable_infinite_scroll == false %}
+        {% assign products_per_page = section.settings.products_per_page %}
+      {% endif %}
+
+      {% paginate collection.products by products_per_page %}
+        {% capture children %}
+          {% for product in collection.products %}
+            <li
+              id="{{ section.id }}-{{ product.id }}"
+              class="product-grid__item product-grid__item--{{ forloop.index0 }}"
+              data-page="{{ paginate.current_page }}"
+              data-product-id="{{ product.id }}"
+              ref="cards[]"
+            >
+              {% # theme-check-disable %}
+              {% content_for 'block', type: '_product-card', id: 'product-card', closest.product: product %}
+              {% # theme-check-enable %}
+            </li>
+          {% endfor %}
+        {% endcapture %}
+
+        {% render 'product-grid',
+          section: section,
+          children: children,
+          products: collection.products,
+          paginate: paginate,
+          enable_infinite_scroll: section.settings.enable_infinite_scroll
+        %}
+      {% endpaginate %}
+    {% endif %}
   </div>
 </results-list>
 
@@ -280,6 +274,25 @@
       "step": 1,
       "unit": "px",
       "default": 8
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": "Featured collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "info": "Leave blank to use the collection title"
+        }
+      ]
     }
   ],
   "presets": []
