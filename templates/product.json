@@ -711,34 +711,17 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Details",
+                    "heading": "Detalles",
                     "open_by_default": false,
+                    "lamp_only": true,
                     "icon": "none",
                     "width": 20
                   },
                   "blocks": {
                     "text_McjMWz": {
-                      "type": "text",
+                      "type": "custom-liquid",
                       "settings": {
-                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-primary--family)",
-                        "font_size": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
+                        "custom_liquid": "{% assign lamp_title = closest.product.title | downcase %}{% assign lamp_dimensions = '' %}{% if lamp_title contains 'brisa' %}{% assign lamp_dimensions = '214 × 214 × 266 mm' %}{% elsif lamp_title contains 'tulipa' or lamp_title contains 'tulip' %}{% assign lamp_dimensions = '250 × 250 × 334 mm' %}{% elsif lamp_title contains 'grasshopper' %}{% assign lamp_dimensions = '187 × 187 × 218 mm' %}{% elsif lamp_title contains 'champi' %}{% assign lamp_dimensions = '250 × 250 × 294 mm' %}{% endif %}<dl class='lamp-details'><div><dt>Uso</dt><dd>Interior</dd></div><div><dt>Fuente de luz</dt><dd>Bombilla LED E14 incluida</dd></div><div><dt>Cable</dt><dd>Cable textil blanco de 5 m con interruptor</dd></div><div><dt>Material</dt><dd>Impresión 3D en plástico biodegradable (PLA)</dd></div>{% if lamp_dimensions != blank %}<div><dt>Dimensiones</dt><dd>{{ lamp_dimensions }}</dd></div>{% endif %}</dl>"
                       },
                       "blocks": {}
                     }
@@ -750,7 +733,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping & Returns",
+                    "heading": "Envío y devoluciones",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -759,7 +742,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
+                        "text": "<p>Cada lámpara se prepara con cuidado antes de salir del estudio. Te escribiremos con la información de envío cuando tu pedido esté en camino.</p><p>Si necesitas ayuda con un cambio o una devolución, escríbenos y lo revisamos contigo.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",

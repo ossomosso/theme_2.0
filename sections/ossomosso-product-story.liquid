@@ -3,6 +3,26 @@
   assign secondary_image = product.media[1].preview_image | default: featured_image
   assign tertiary_image = product.media[2].preview_image | default: secondary_image
   assign selected_variant = product.selected_or_first_available_variant
+  assign is_lamp = false
+  assign lamp_dimensions = blank
+
+  for collection in product.collections
+    if collection.handle == 'lamparas'
+      assign is_lamp = true
+      break
+    endif
+  endfor
+
+  assign lamp_title = product.title | downcase
+  if lamp_title contains 'brisa'
+    assign lamp_dimensions = '214 × 214 × 266 mm'
+  elsif lamp_title contains 'tulipa' or lamp_title contains 'tulip'
+    assign lamp_dimensions = '250 × 250 × 334 mm'
+  elsif lamp_title contains 'grasshopper'
+    assign lamp_dimensions = '187 × 187 × 218 mm'
+  elsif lamp_title contains 'champi'
+    assign lamp_dimensions = '250 × 250 × 294 mm'
+  endif
 %}
 
 <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
@@ -12,7 +32,20 @@
       {% when 'marquee' %}
         <div class="osso-product-story__marquee" aria-hidden="true" {{ block.shopify_attributes }}>
           <div class="osso-product-story__marquee-track" style="animation-duration: {{ block.settings.speed | default: 26 }}s;">
-            {% for i in (1..5) %}
+            {% if is_lamp %}
+              <span>Interior</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>Bombilla LED E14 incluida</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>Cable textil blanco · 5 m</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>PLA biodegradable</span><span class="osso-product-story__marquee-dot">·</span>
+              {% if lamp_dimensions != blank %}<span>{{ lamp_dimensions }}</span>{% endif %}
+              <span class="osso-product-story__marquee-dot">·</span>
+              <span>Interior</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>Bombilla LED E14 incluida</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>Cable textil blanco · 5 m</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>PLA biodegradable</span><span class="osso-product-story__marquee-dot">·</span>
+              {% if lamp_dimensions != blank %}<span>{{ lamp_dimensions }}</span>{% endif %}
+            {% else %}
+              {% for i in (1..5) %}
               {% capture item_key %}item_{{ i }}{% endcapture %}
               {% assign item_text = block.settings[item_key] %}
               {% if item_text != blank %}
@@ -21,9 +54,9 @@
                   <span class="osso-product-story__marquee-dot">·</span>
                 {% endunless %}
               {% endif %}
-            {% endfor %}
-            {% comment %} Duplicate for seamless loop {% endcomment %}
-            {% for i in (1..5) %}
+              {% endfor %}
+              {% comment %} Duplicate for seamless loop {% endcomment %}
+              {% for i in (1..5) %}
               {% capture item_key %}item_{{ i }}{% endcapture %}
               {% assign item_text = block.settings[item_key] %}
               {% if item_text != blank %}
@@ -32,7 +65,8 @@
                   <span class="osso-product-story__marquee-dot">·</span>
                 {% endunless %}
               {% endif %}
-            {% endfor %}
+              {% endfor %}
+            {% endif %}
           </div>
         </div>
 
@@ -163,13 +197,19 @@
             {% endif %}
           </div>
           <div class="osso-product-story__details-copy">
-            {% if block.settings.eyebrow != blank %}
+            {% if is_lamp %}
+              <p class="osso-product-story__eyebrow">Ficha técnica</p>
+            {% elsif block.settings.eyebrow != blank %}
               <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
             {% endif %}
-            {% if block.settings.title != blank %}
+            {% if is_lamp %}
+              <h3 class="osso-product-story__section-title">{{ product.title }} — detalles esenciales.</h3>
+            {% elsif block.settings.title != blank %}
               <h3 class="osso-product-story__section-title">{{ block.settings.title }}</h3>
             {% endif %}
-            {% if block.settings.text != blank %}
+            {% if is_lamp %}
+              <div class="osso-product-story__text rte"><p>Lámpara de interior impresa en 3D en PLA biodegradable. Incluye bombilla LED E14 y cable textil blanco de 5 m con interruptor.</p></div>
+            {% elsif block.settings.text != blank %}
               <div class="osso-product-story__text rte">{{ block.settings.text }}</div>
             {% endif %}
             {% if block.settings.show_accordion %}
@@ -179,6 +219,18 @@
                   {% capture content_key %}accordion_{{ i }}_content{% endcapture %}
                   {% assign acc_heading = block.settings[heading_key] %}
                   {% assign acc_content = block.settings[content_key] %}
+                  {% if is_lamp %}
+                    {% if i == 1 %}
+                      {% assign acc_heading = 'Detalles' %}
+                      {% capture acc_content %}<dl class="osso-product-story__spec-list"><div><dt>Uso</dt><dd>Interior</dd></div><div><dt>Fuente de luz</dt><dd>Bombilla LED E14 incluida</dd></div><div><dt>Cable</dt><dd>Cable textil blanco de 5 m con interruptor</dd></div><div><dt>Material</dt><dd>Impresión 3D en plástico biodegradable (PLA)</dd></div>{% if lamp_dimensions != blank %}<div><dt>Dimensiones</dt><dd>{{ lamp_dimensions }}</dd></div>{% endif %}</dl>{% endcapture %}
+                    {% elsif i == 2 %}
+                      {% assign acc_heading = 'Material y proceso' %}
+                      {% assign acc_content = '<p>La pantalla se imprime capa a capa en PLA, un plástico biodegradable, y se monta en pequeñas series.</p>' %}
+                    {% else %}
+                      {% assign acc_heading = 'Envío y devoluciones' %}
+                      {% assign acc_content = '<p>Cada lámpara se prepara con cuidado antes de salir del estudio. Si necesitas ayuda con un cambio o una devolución, escríbenos y lo revisamos contigo.</p>' %}
+                    {% endif %}
+                  {% endif %}
                   {% if acc_heading != blank %}
                     <details class="osso-product-story__accordion-item">
                       <summary>{{ acc_heading }}</summary>
@@ -196,13 +248,25 @@
       {% when 'tech_specs' %}
         <div class="osso-product-story__tech" {{ block.shopify_attributes }}>
           <div class="osso-product-story__tech-inner">
-            {% if block.settings.label != blank %}
+            {% if is_lamp %}
+              <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">Ficha técnica</p>
+              <h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ product.title }} — datos clave.</h3>
+            {% elsif block.settings.label != blank %}
               <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ block.settings.label }}</p>
-            {% endif %}
-            {% if block.settings.title != blank %}
+              {% if block.settings.title != blank %}
               <h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ block.settings.title }}</h3>
+              {% endif %}
             {% endif %}
             <div class="osso-product-story__tech-grid">
+              {% if is_lamp %}
+                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">Interior</div><div class="osso-product-story__tech-label">Uso</div></div>
+                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">E14 LED</div><div class="osso-product-story__tech-label">Fuente de luz</div></div>
+                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">Incluida</div><div class="osso-product-story__tech-label">Bombilla</div></div>
+                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">5 m</div><div class="osso-product-story__tech-label">Cable textil blanco</div></div>
+                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">PLA</div><div class="osso-product-story__tech-label">Plástico biodegradable</div></div>
+                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">3D</div><div class="osso-product-story__tech-label">Impresión capa a capa</div></div>
+                {% if lamp_dimensions != blank %}<div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">{{ lamp_dimensions }}</div><div class="osso-product-story__tech-label">Dimensiones</div></div>{% endif %}
+              {% else %}
               {% for i in (1..8) %}
                 {% capture value_key %}spec_{{ i }}_value{% endcapture %}
                 {% capture label_key %}spec_{{ i }}_label{% endcapture %}
@@ -219,6 +283,7 @@
                   </div>
                 {% endif %}
               {% endfor %}
+              {% endif %}
             </div>
           </div>
         </div>
@@ -552,6 +617,32 @@
     padding: 0 0 18px;
   }
 
+  .osso-product-story__spec-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 22px;
+    margin: 0;
+  }
+
+  .osso-product-story__spec-list div {
+    border-top: 1px solid color-mix(in srgb, var(--color-foreground) 12%, transparent);
+    padding-top: 8px;
+  }
+
+  .osso-product-story__spec-list dt {
+    color: color-mix(in srgb, var(--color-foreground) 60%, transparent);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .osso-product-story__spec-list dd {
+    margin: 5px 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
   .osso-product-story__tech {
     background: var(--color-foreground);
     color: var(--color-background);
@@ -562,6 +653,12 @@
   .osso-product-story__tech-inner {
     width: min(1200px, calc(100vw - 48px));
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .osso-product-story__spec-list {
+      grid-template-columns: 1fr;
+    }
   }
 
   .osso-product-story__tech-grid {

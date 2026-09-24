@@ -171,107 +171,7 @@
   additional_blocks: additional_blocks
 %}
 
-{% liquid
-  assign is_lamp = false
-  for collection in closest.product.collections
-    if collection.handle == 'lamparas'
-      assign is_lamp = true
-      break
-    endif
-  endfor
-
-  assign lamp_dimensions = blank
-  assign product_title = closest.product.title | downcase
-  if product_title contains 'brisa'
-    assign lamp_dimensions = section.settings.brisa_dimensions
-  elsif product_title contains 'tulipa'
-    assign lamp_dimensions = section.settings.tulipa_dimensions
-  endif
-%}
-
-{% if is_lamp and section.settings.show_lamp_specifications %}
-  <section class="lamp-specifications" aria-labelledby="lamp-specifications-{{ section.id }}">
-    <div class="lamp-specifications__inner">
-      <h2 id="lamp-specifications-{{ section.id }}">{{ section.settings.lamp_specifications_heading | escape }}</h2>
-      <dl class="lamp-specifications__list">
-        <div>
-          <dt>{{ section.settings.lamp_setting_label | escape }}</dt>
-          <dd>{{ section.settings.lamp_setting_value | escape }}</dd>
-        </div>
-        <div>
-          <dt>{{ section.settings.light_source_label | escape }}</dt>
-          <dd>{{ section.settings.light_source_value | escape }}</dd>
-        </div>
-        <div>
-          <dt>{{ section.settings.cord_label | escape }}</dt>
-          <dd>{{ section.settings.cord_value | escape }}</dd>
-        </div>
-        <div>
-          <dt>{{ section.settings.material_label | escape }}</dt>
-          <dd>{{ section.settings.material_value | escape }}</dd>
-        </div>
-        {% if lamp_dimensions != blank %}
-          <div>
-            <dt>Dimensiones</dt>
-            <dd>{{ lamp_dimensions | escape }}</dd>
-          </div>
-        {% endif %}
-      </dl>
-    </div>
-  </section>
-{% endif %}
-
 {% stylesheet %}
-  .lamp-specifications {
-    padding: 0 var(--padding-page);
-  }
-
-  .lamp-specifications__inner {
-    width: min(100%, var(--page-width));
-    margin-inline: auto;
-    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.18);
-    padding-block: clamp(2rem, 4vw, 4rem);
-  }
-
-  .lamp-specifications h2 {
-    margin: 0 0 1.25rem;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0;
-  }
-
-  .lamp-specifications__list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem clamp(1.5rem, 5vw, 5rem);
-    margin: 0;
-  }
-
-  .lamp-specifications__list div {
-    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
-    padding-top: 0.75rem;
-  }
-
-  .lamp-specifications dt {
-    color: rgb(var(--color-foreground-rgb) / 0.6);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .lamp-specifications dd {
-    margin: 0.4rem 0 0;
-    font-size: 0.95rem;
-    line-height: 1.35;
-  }
-
-  @media screen and (max-width: 749px) {
-    .lamp-specifications__list {
-      grid-template-columns: 1fr;
-    }
-  }
-
   .sticky-add-to-cart__bar {
     position: fixed;
     bottom: 20px;
@@ -445,6 +345,72 @@
   .product-information .product-details .rte {
     color: rgb(var(--color-foreground-rgb) / 0.82);
     line-height: 1.7;
+  }
+
+  .product-information .product-details .accordion {
+    margin-top: 0.5rem;
+    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.18);
+  }
+
+  .product-information .product-details .accordion .details {
+    border-bottom: 1px solid rgb(var(--color-foreground-rgb) / 0.18);
+  }
+
+  .product-information .product-details .accordion .details__header {
+    min-height: 0;
+    padding-block: 1.1rem;
+    color: rgb(var(--color-foreground-rgb) / 0.88);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .product-information .product-details .accordion .details-content {
+    padding: 0 0 1.25rem;
+  }
+
+  .product-information .product-details .accordion .details-content > div {
+    max-width: none;
+  }
+
+  .product-information .product-details .accordion .details__header .icon-plus,
+  .product-information .product-details .accordion .details__header .icon-caret {
+    width: 0.9rem;
+    height: 0.9rem;
+    opacity: 0.75;
+  }
+
+  .lamp-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 1rem;
+    margin: 0;
+  }
+
+  .lamp-details div {
+    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.1);
+    padding-top: 0.55rem;
+  }
+
+  .lamp-details dt {
+    color: rgb(var(--color-foreground-rgb) / 0.56);
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .lamp-details dd {
+    margin: 0.3rem 0 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  @media screen and (max-width: 430px) {
+    .lamp-details {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -684,82 +650,6 @@
       "id": "enable_sticky_add_to_cart",
       "label": "t:settings.enable_sticky_add_to_cart",
       "default": true
-    },
-    {
-      "type": "header",
-      "content": "Ficha técnica de lámparas"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_lamp_specifications",
-      "label": "Mostrar ficha técnica en lámparas",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "lamp_specifications_heading",
-      "label": "Título",
-      "default": "Ficha técnica"
-    },
-    {
-      "type": "text",
-      "id": "lamp_setting_label",
-      "label": "Etiqueta de uso",
-      "default": "Uso"
-    },
-    {
-      "type": "text",
-      "id": "lamp_setting_value",
-      "label": "Valor de uso",
-      "default": "Interior"
-    },
-    {
-      "type": "text",
-      "id": "light_source_label",
-      "label": "Etiqueta de fuente de luz",
-      "default": "Fuente de luz"
-    },
-    {
-      "type": "text",
-      "id": "light_source_value",
-      "label": "Valor de fuente de luz",
-      "default": "Bombilla LED E14 incluida"
-    },
-    {
-      "type": "text",
-      "id": "cord_label",
-      "label": "Etiqueta de cable",
-      "default": "Cable"
-    },
-    {
-      "type": "text",
-      "id": "cord_value",
-      "label": "Valor de cable",
-      "default": "Cable textil blanco de 5 m con interruptor"
-    },
-    {
-      "type": "text",
-      "id": "material_label",
-      "label": "Etiqueta de material",
-      "default": "Material"
-    },
-    {
-      "type": "text",
-      "id": "material_value",
-      "label": "Valor de material",
-      "default": "Impresión 3D en plástico biodegradable (PLA)"
-    },
-    {
-      "type": "text",
-      "id": "brisa_dimensions",
-      "label": "Dimensiones de Brisa",
-      "default": "214 × 214 × 266 mm"
-    },
-    {
-      "type": "text",
-      "id": "tulipa_dimensions",
-      "label": "Dimensiones de Tulipa",
-      "default": "250 × 250 × 334 mm"
     },
     {
       "type": "color_scheme",

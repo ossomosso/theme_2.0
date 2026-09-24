@@ -1,9 +1,21 @@
 
 {% liquid
   assign block_settings = block.settings
+  assign show_row = true
+
+  if block_settings.lamp_only
+    assign show_row = false
+    for collection in closest.product.collections
+      if collection.handle == 'lamparas'
+        assign show_row = true
+        break
+      endif
+    endfor
+  endif
 %}
 
-{% capture accordion_row_children %}
+{% if show_row %}
+  {% capture accordion_row_children %}
   <details
     class="details"
     data-testid="accordion-details"
@@ -32,12 +44,13 @@
       {% content_for 'blocks' %}
     </div>
   </details>
-{% endcapture %}
-{% render 'accordion-custom-component',
-  children: accordion_row_children,
-  open_by_default_on_desktop: block_settings.open_by_default,
-  open_by_default_on_mobile: block_settings.open_by_default
-%}
+  {% endcapture %}
+  {% render 'accordion-custom-component',
+    children: accordion_row_children,
+    open_by_default_on_desktop: block_settings.open_by_default,
+    open_by_default_on_mobile: block_settings.open_by_default
+  %}
+{% endif %}
 
 {% stylesheet %}
   .details__icon {
@@ -69,6 +82,12 @@
       "type": "checkbox",
       "id": "open_by_default",
       "label": "t:settings.open_row_by_default",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "lamp_only",
+      "label": "Mostrar solo en lámparas",
       "default": false
     },
     {
