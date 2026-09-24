@@ -1056,8 +1056,8 @@
           "disabled": true,
           "settings": {
             "eyebrow": "Luz escultórica",
-            "title": "Una tulipa convertida en objeto.",
-            "body": "<p>Tulipa nace de una silueta floral muy simple y la lleva a un terreno más material: una pieza luminosa, suave y doméstica, pensada para dar ambiente sin imponerse.</p>",
+            "title": "Una pieza convertida en objeto.",
+            "body": "<p>Una pieza pensada para convivir con el espacio, aportar presencia y acompañar los gestos cotidianos sin imponerse.</p>",
             "show_specs": true,
             "spec_1_label": "Color",
             "spec_1_value": "Arena natural",
@@ -1123,7 +1123,7 @@
           "settings": {
             "eyebrow": "La historia detrás",
             "title": "Entre gesto orgánico y objeto doméstico.",
-            "text": "<p>Tulipa se mueve entre lo floral y lo arquitectónico. La referencia natural está ahí, pero aterrizada en una pieza serena y fácil de integrar.</p>",
+            "text": "<p>Una forma pensada para integrarse con naturalidad en el espacio, entre presencia escultórica y uso cotidiano.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Descripción del producto",
             "accordion_1_content": "<p>Lámpara de sobremesa con silueta floral y luz ambiental. Funciona especialmente bien con bombilla LED cálida.</p>",
@@ -1137,7 +1137,7 @@
           "type": "tech_specs",
           "settings": {
             "label": "Ficha técnica",
-            "title": "Tulipa — Datos clave",
+            "title": "Datos clave",
             "spec_1_value": "01",
             "spec_1_label": "Pieza de sobremesa",
             "spec_2_value": "LED",
@@ -1160,7 +1160,7 @@
           "type": "reviews",
           "settings": {
             "label": "Opiniones",
-            "title": "Cómo se siente Tulipa en casa.",
+            "title": "Cómo se vive en casa.",
             "rating_text": "4.9 / 5 en sensación general",
             "review_1_stars": 5,
             "review_1_text": "Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada.",
