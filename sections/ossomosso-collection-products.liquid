@@ -13,11 +13,29 @@
         {% for product in selected_collection.products limit: product_limit %}
           {% for variant in product.variants %}
             {% assign card_media = variant.featured_media | default: product.featured_media %}
+            {% assign color_value = blank %}
+            {% for option in product.options_with_values %}
+              {% assign option_name = option.name | downcase %}
+              {% if option_name == 'color' or option_name == 'colour' or option_name == 'colorway' %}
+                {% assign color_value = variant.options[forloop.index0] | downcase %}
+              {% endif %}
+            {% endfor %}
+            {% assign color_tag = '[color:' | append: color_value | append: ']' %}
             <li class="ossomosso-collection-products__card" data-product-handle="{{ product.handle }}">
               <a href="{{ variant.url }}" class="ossomosso-collection-products__link">
-                {% if card_media %}
-                  {{ card_media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '320, 480, 640, 900', alt: product.title }}
-                {% endif %}
+                <div class="ossomosso-collection-products__gallery" aria-label="Fotos de {{ variant.title | escape }}">
+                  {% assign matching_media_count = 0 %}
+                  {% for media in product.media %}
+                    {% assign media_alt = media.alt | downcase %}
+                    {% if media.media_type == 'image' and color_value != blank and media_alt contains color_tag %}
+                      {% assign matching_media_count = matching_media_count | plus: 1 %}
+                      {{ media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '320, 480, 640, 900', alt: product.title }}
+                    {% endif %}
+                  {% endfor %}
+                  {% if matching_media_count == 0 and card_media %}
+                    {{ card_media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '320, 480, 640, 900', alt: product.title }}
+                  {% endif %}
+                </div>
                 <h3>{{ product.title | escape }}</h3>
                 {% unless variant.title == 'Default Title' %}
                   <p class="ossomosso-collection-products__variants">{{ variant.title | escape }}</p>
@@ -60,9 +78,10 @@
   .ossomosso-collection-products__title { margin: 0 0 20px; }
   .ossomosso-collection-products__grid { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
   .ossomosso-collection-products__link { color: inherit; display: block; text-decoration: none; }
-  .ossomosso-collection-products__link img { aspect-ratio: 3 / 4; display: block; height: auto; object-fit: cover; width: 100%; }
+  .ossomosso-collection-products__gallery { display: flex; gap: 4px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: inline mandatory; scrollbar-width: thin; }
+  .ossomosso-collection-products__gallery img { aspect-ratio: 3 / 4; display: block; flex: 0 0 100%; height: auto; object-fit: cover; scroll-snap-align: start; width: 100%; }
   .ossomosso-collection-products__link h3, .ossomosso-collection-products__link p { margin: 8px 0 0; }
-  .ossomosso-collection-products__link h3 { font-size: 1rem; font-weight: 500; line-height: 1.2; }
+  .ossomosso-collection-products__link h3 { font-size: 1.2rem; font-weight: 500; line-height: 1.2; }
   .ossomosso-collection-products__variants { font-size: 0.875rem; opacity: 0.75; }
   @media screen and (min-width: 750px) { .ossomosso-collection-products__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 {% endstylesheet %}
