@@ -510,8 +510,10 @@
       }
     }
 
+    /* Keep the purchase action explicit on mobile instead of showing an empty colour circle. */
     .sticky-add-to-cart__bar .add-to-cart-text__content {
-      display: none;
+      display: inline;
+      white-space: nowrap;
     }
 
     .sticky-add-to-cart__info[data-has-image='false'] {
@@ -523,7 +525,11 @@
     }
 
     .sticky-add-to-cart__button {
-      padding: var(--padding-lg);
+      --button-color: var(--color-background);
+      --button-background-color: var(--color-foreground);
+      --button-border-color: var(--color-foreground);
+      min-width: 8.5rem;
+      padding-inline: var(--padding-lg);
     }
 
     .sticky-add-to-cart__price {
@@ -531,7 +537,7 @@
     }
 
     .sticky-add-to-cart__button {
-      width: var(--height-buy-buttons);
+      width: auto;
     }
 
     sticky-add-to-cart:not([data-variant-available='true']) .add-to-cart-text__content {
