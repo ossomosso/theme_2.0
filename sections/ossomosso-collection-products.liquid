@@ -38,8 +38,9 @@
   .ossomosso-collection-products__title { margin: 0 0 20px; }
   .ossomosso-collection-products__grid { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
   .ossomosso-collection-products__link { color: inherit; display: block; text-decoration: none; }
-  .ossomosso-collection-products__link img { display: block; height: auto; width: 100%; }
+  .ossomosso-collection-products__link img { aspect-ratio: 3 / 4; display: block; height: auto; object-fit: cover; width: 100%; }
   .ossomosso-collection-products__link h3, .ossomosso-collection-products__link p { margin: 8px 0 0; }
+  .ossomosso-collection-products__link h3 { font-size: 0.75rem; font-weight: 500; line-height: 1.2; }
   .ossomosso-collection-products__variants { font-size: 0.875rem; opacity: 0.75; }
   @media screen and (min-width: 750px) { .ossomosso-collection-products__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 {% endstylesheet %}
