@@ -13,14 +13,14 @@
     endif
   endfor
 
-  assign lamp_title = product.title | downcase
-  if lamp_title contains 'brisa'
+  assign lamp_handle = product.handle
+  if lamp_handle == 'lampara-brisa'
     assign lamp_dimensions = '214 × 214 × 266 mm'
-  elsif lamp_title contains 'tulipa' or lamp_title contains 'tulip'
+  elsif lamp_handle == 'lampara-tulip'
     assign lamp_dimensions = '250 × 250 × 334 mm'
-  elsif lamp_title contains 'grasshopper'
+  elsif lamp_handle == 'jarron-grasshoper'
     assign lamp_dimensions = '187 × 187 × 218 mm'
-  elsif lamp_title contains 'champi'
+  elsif lamp_handle == 'lampara-champi'
     assign lamp_dimensions = '250 × 250 × 294 mm'
   endif
 %}
