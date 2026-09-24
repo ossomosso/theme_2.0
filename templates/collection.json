@@ -351,30 +351,8 @@
             "card-gallery",
             "group"
           ]
-        },
-        "featured_lamps": {
-          "type": "featured_collection",
-          "name": "Lámparas",
-          "settings": {
-            "collection": "lamparas",
-            "heading": "Lámparas"
-          }
-        },
-        "featured_vases": {
-          "type": "featured_collection",
-          "name": "Jarrones",
-          "settings": {
-            "collection": "jarrones",
-            "heading": "Jarrones"
-          }
         }
       },
-      "block_order": [
-        "filters",
-        "product-card",
-        "featured_lamps",
-        "featured_vases"
-      ],
       "settings": {
         "layout_type": "grid",
         "product_card_size": "large",
@@ -390,12 +368,31 @@
         "color_scheme": "",
         "padding-block-start": 32,
         "padding-block-end": 32
+      },
+      "disabled": true
+    },
+    "lamps_products": {
+      "type": "ossomosso-collection-products",
+      "settings": {
+        "collection": "lamparas",
+        "heading": "Lámparas",
+        "product_limit": 50
+      }
+    },
+    "vases_products": {
+      "type": "ossomosso-collection-products",
+      "settings": {
+        "collection": "jarrones",
+        "heading": "Jarrones",
+        "product_limit": 3
       }
     }
   },
   "order": [
     "divider_mPdFnH",
     "section",
+    "lamps_products",
+    "vases_products",
     "main"
   ]
 }
