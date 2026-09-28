@@ -39,6 +39,19 @@
             role="list"
           >
             {% for link in block_settings.menu.links %}
+              {% liquid
+                assign localized_title = link.title
+                if localization.language.iso_code == 'en'
+                  case link.url
+                    when '/collections/all'
+                      assign localized_title = 'Products'
+                    when '/pages/sobre-nosostros'
+                      assign localized_title = 'About us'
+                    when '/pages/contact'
+                      assign localized_title = 'Contact'
+                  endcase
+                endif
+              %}
               <li>
                 <a
                   href="{{ link.url }}"
@@ -48,7 +61,7 @@
                     aria-current="page"
                   {% endif %}
                 >
-                  {{- link.title -}}
+                  {{- localized_title -}}
                 </a>
               </li>
             {% endfor %}
@@ -84,6 +97,19 @@
 
     {% capture children %}
       {% for link in block_settings.menu.links %}
+        {% liquid
+          assign localized_title = link.title
+          if localization.language.iso_code == 'en'
+            case link.url
+              when '/collections/all'
+                assign localized_title = 'Products'
+              when '/pages/sobre-nosostros'
+                assign localized_title = 'About us'
+              when '/pages/contact'
+                assign localized_title = 'Contact'
+            endcase
+          endif
+        %}
         <li
           role="presentation"
           class="menu-list__list-item"
@@ -106,7 +132,7 @@
             {% endif %}
             ref="menuitem"
           >
-            <span class="menu-list__link-title">{{- link.title -}}</span>
+            <span class="menu-list__link-title">{{- localized_title -}}</span>
           </a>
           {%- if link.links != blank -%}
             <div class="menu-list__submenu{{ color_scheme_classes }}" ref="submenu[]">
