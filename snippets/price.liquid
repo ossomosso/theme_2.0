@@ -59,17 +59,10 @@
   endif
 
   # Format all prices
-  if use_currency
-    assign price = price | money_with_currency
-    assign compare_at_price = compare_at_price | money_with_currency
-    assign price_min = price_min | money_with_currency
-    assign price_max = price_max | money_with_currency
-  else
-    assign price = price | money
-    assign compare_at_price = compare_at_price | money
-    assign price_min = price_min | money
-    assign price_max = price_max | money
-  endif
+  assign price = price | money_without_currency | append: ' €'
+  assign compare_at_price = compare_at_price | money_without_currency | append: ' €'
+  assign price_min = price_min | money_without_currency | append: ' €'
+  assign price_max = price_max | money_without_currency | append: ' €'
 -%}
 
 <div ref="priceContainer">
@@ -128,11 +121,7 @@
   {% endif %}
   {%- if selected_variant.unit_price and show_unit_price %}
     {%- liquid
-      if use_currency
-        assign unit_price = selected_variant.unit_price | money_with_currency
-      else
-        assign unit_price = selected_variant.unit_price | money
-      endif
+      assign unit_price = selected_variant.unit_price | money_without_currency | append: ' €'
     -%}
     {% render 'unit-price', price: unit_price, measurement: selected_variant.unit_price_measurement %}
   {%- endif -%}
