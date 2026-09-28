@@ -3,101 +3,85 @@
   assign secondary_image = product.media[1].preview_image | default: featured_image
   assign tertiary_image = product.media[2].preview_image | default: secondary_image
   assign selected_variant = product.selected_or_first_available_variant
-  assign is_lamp = false
-  assign lamp_dimensions = blank
-
-  for collection in product.collections
-    if collection.handle == 'lamparas'
-      assign is_lamp = true
-      break
-    endif
-  endfor
-
-  assign lamp_handle = product.handle
-  if lamp_handle == 'lampara-brisa'
-    assign lamp_dimensions = '214 × 214 × 266 mm'
-  elsif lamp_handle == 'lampara-tulip'
-    assign lamp_dimensions = '250 × 250 × 334 mm'
-  elsif lamp_handle == 'jarron-grasshoper'
-    assign lamp_dimensions = '187 × 187 × 218 mm'
-  elsif lamp_handle == 'lampara-champi'
-    assign lamp_dimensions = '250 × 250 × 294 mm'
-  endif
+  assign product_copy_key = blank
+  case product.handle
+    when 'lampara-tulip'
+      assign product_copy_key = 'product_copy.tulipa'
+    when 'lampara-brisa'
+      assign product_copy_key = 'product_copy.brisa'
+    when 'lampara-champi'
+      assign product_copy_key = 'product_copy.champi'
+    when 'jarron-grasshoper'
+      assign product_copy_key = 'product_copy.grasshopper'
+    when 'jarron-copenhagen'
+      assign product_copy_key = 'product_copy.copenhagen'
+    when 'jarron-japandi'
+      assign product_copy_key = 'product_copy.japandi'
+    when 'jarron-organico'
+      assign product_copy_key = 'product_copy.organic'
+  endcase
 %}
 
-<section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
+<section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}" data-product-handle="{{ product.handle }}">
   {% for block in section.blocks %}
     {% case block.type %}
-
       {% when 'marquee' %}
         <div class="osso-product-story__marquee" aria-hidden="true" {{ block.shopify_attributes }}>
           <div class="osso-product-story__marquee-track" style="animation-duration: {{ block.settings.speed | default: 26 }}s;">
-            {% if is_lamp %}
-              <span>{{ 'sections.product_story.indoor_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>{{ 'sections.product_story.bulb_included_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>{{ 'sections.product_story.cable_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>{{ 'sections.product_story.bioplastic_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              {% if lamp_dimensions != blank %}<span>{{ lamp_dimensions }}</span>{% endif %}
-              <span class="osso-product-story__marquee-dot">·</span>
-              <span>{{ 'sections.product_story.indoor_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>{{ 'sections.product_story.bulb_included_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>{{ 'sections.product_story.cable_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>{{ 'sections.product_story.bioplastic_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
-              {% if lamp_dimensions != blank %}<span>{{ lamp_dimensions }}</span>{% endif %}
-            {% else %}
+            {% for loop_index in (1..2) %}
               {% for i in (1..5) %}
-              {% capture item_key %}item_{{ i }}{% endcapture %}
-              {% assign item_text = block.settings[item_key] %}
-              {% if item_text != blank %}
-                <span>{{ item_text }}</span>
-                {% unless forloop.last %}
-                  <span class="osso-product-story__marquee-dot">·</span>
-                {% endunless %}
-              {% endif %}
+                {% if product_copy_key != blank %}
+                  {% assign item_key = product_copy_key | append: '.marquee_' | append: i %}
+                  {% assign item_text = item_key | t %}
+                {% else %}
+                  {% assign item_key = 'item_' | append: i %}
+                  {% assign item_text = block.settings[item_key] %}
+                {% endif %}
+                {% if item_text != blank %}
+                  <span>{{ item_text }}</span>{% unless i == 5 %}<span class="osso-product-story__marquee-dot">·</span>{% endunless %}
+                {% endif %}
               {% endfor %}
-              {% comment %} Duplicate for seamless loop {% endcomment %}
-              {% for i in (1..5) %}
-              {% capture item_key %}item_{{ i }}{% endcapture %}
-              {% assign item_text = block.settings[item_key] %}
-              {% if item_text != blank %}
-                <span>{{ item_text }}</span>
-                {% unless forloop.last %}
-                  <span class="osso-product-story__marquee-dot">·</span>
-                {% endunless %}
-              {% endif %}
-              {% endfor %}
-            {% endif %}
+            {% endfor %}
           </div>
         </div>
 
       {% when 'intro' %}
+        {% if product_copy_key != blank %}
+          {% assign intro_eyebrow_key = product_copy_key | append: '.intro_eyebrow' %}
+          {% assign intro_title_key = product_copy_key | append: '.intro_title' %}
+          {% assign intro_body_key = product_copy_key | append: '.intro_body' %}
+          {% assign intro_eyebrow = intro_eyebrow_key | t %}
+          {% assign intro_title = intro_title_key | t %}
+          {% assign intro_body = intro_body_key | t %}
+        {% else %}
+          {% assign intro_eyebrow = block.settings.eyebrow %}
+          {% assign intro_title = block.settings.title %}
+          {% assign intro_body = block.settings.body %}
+        {% endif %}
         <div class="osso-product-story__intro" {{ block.shopify_attributes }}>
           <div class="osso-product-story__intro-copy">
-            {% if block.settings.eyebrow != blank %}
-              <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
-            {% endif %}
-            {% if block.settings.title != blank %}
-              <h2 class="osso-product-story__title">{{ block.settings.title }}</h2>
-            {% endif %}
-            {% if block.settings.body != blank %}
-              <div class="osso-product-story__text rte">{{ block.settings.body }}</div>
-            {% endif %}
+            {% if intro_eyebrow != blank %}<p class="osso-product-story__eyebrow">{{ intro_eyebrow }}</p>{% endif %}
+            {% if intro_title != blank %}<h2 class="osso-product-story__title">{{ intro_title }}</h2>{% endif %}
+            {% if intro_body != blank %}<div class="osso-product-story__text rte">{{ intro_body }}</div>{% endif %}
           </div>
           {% if block.settings.show_specs %}
             <div class="osso-product-story__specs">
               {% for i in (1..4) %}
-                {% capture label_key %}spec_{{ i }}_label{% endcapture %}
-                {% capture value_key %}spec_{{ i }}_value{% endcapture %}
-                {% assign spec_label = block.settings[label_key] %}
-                {% assign spec_value = block.settings[value_key] %}
+                {% if product_copy_key != blank %}
+                  {% assign spec_label_key = product_copy_key | append: '.intro_spec_' | append: i | append: '_label' %}
+                  {% assign spec_value_key = product_copy_key | append: '.intro_spec_' | append: i | append: '_value' %}
+                  {% assign spec_label = spec_label_key | t %}
+                  {% assign spec_value = spec_value_key | t %}
+                {% else %}
+                  {% assign spec_label_key = 'spec_' | append: i | append: '_label' %}
+                  {% assign spec_value_key = 'spec_' | append: i | append: '_value' %}
+                  {% assign spec_label = block.settings[spec_label_key] %}
+                  {% assign spec_value = block.settings[spec_value_key] %}
+                {% endif %}
                 {% if spec_label != blank or spec_value != blank %}
                   <div class="osso-product-story__spec">
-                    {% if spec_label != blank %}
-                      <span class="osso-product-story__spec-label">{{ spec_label }}</span>
-                    {% endif %}
-                    {% if spec_value != blank %}
-                      <span class="osso-product-story__spec-value">{{ spec_value }}</span>
-                    {% endif %}
+                    {% if spec_label != blank %}<span class="osso-product-story__spec-label">{{ spec_label }}</span>{% endif %}
+                    {% if spec_value != blank %}<span class="osso-product-story__spec-value">{{ spec_value }}</span>{% endif %}
                   </div>
                 {% endif %}
               {% endfor %}
@@ -108,18 +92,21 @@
       {% when 'features' %}
         <div class="osso-product-story__features" {{ block.shopify_attributes }}>
           {% for i in (1..4) %}
-            {% capture title_key %}feature_{{ i }}_title{% endcapture %}
-            {% capture text_key %}feature_{{ i }}_text{% endcapture %}
-            {% assign feature_title = block.settings[title_key] %}
-            {% assign feature_text = block.settings[text_key] %}
+            {% if product_copy_key != blank %}
+              {% assign feature_title_key = product_copy_key | append: '.feature_' | append: i | append: '_title' %}
+              {% assign feature_text_key = product_copy_key | append: '.feature_' | append: i | append: '_text' %}
+              {% assign feature_title = feature_title_key | t %}
+              {% assign feature_text = feature_text_key | t %}
+            {% else %}
+              {% assign feature_title_key = 'feature_' | append: i | append: '_title' %}
+              {% assign feature_text_key = 'feature_' | append: i | append: '_text' %}
+              {% assign feature_title = block.settings[feature_title_key] %}
+              {% assign feature_text = block.settings[feature_text_key] %}
+            {% endif %}
             {% if feature_title != blank or feature_text != blank %}
               <article class="osso-product-story__feature">
-                {% if feature_title != blank %}
-                  <h3 class="osso-product-story__feature-title">{{ feature_title }}</h3>
-                {% endif %}
-                {% if feature_text != blank %}
-                  <p class="osso-product-story__feature-copy">{{ feature_text }}</p>
-                {% endif %}
+                {% if feature_title != blank %}<h3 class="osso-product-story__feature-title">{{ feature_title }}</h3>{% endif %}
+                {% if feature_text != blank %}<p class="osso-product-story__feature-copy">{{ feature_text }}</p>{% endif %}
               </article>
             {% endif %}
           {% endfor %}
@@ -128,130 +115,109 @@
       {% when 'media_grid' %}
         <div class="osso-product-story__grid" {{ block.shopify_attributes }}>
           {% for i in (1..4) %}
-            {% capture type_key %}card_{{ i }}_type{% endcapture %}
-            {% capture image_key %}card_{{ i }}_image{% endcapture %}
-            {% capture kicker_key %}card_{{ i }}_kicker{% endcapture %}
-            {% capture title_key %}card_{{ i }}_title{% endcapture %}
-            {% capture text_key %}card_{{ i }}_text{% endcapture %}
-            {% capture dark_key %}card_{{ i }}_dark{% endcapture %}
+            {% assign type_key = 'card_' | append: i | append: '_type' %}
             {% assign card_type = block.settings[type_key] %}
-            {% assign card_image = block.settings[image_key] %}
-            {% assign card_kicker = block.settings[kicker_key] %}
-            {% assign card_title = block.settings[title_key] %}
-            {% assign card_text = block.settings[text_key] %}
-            {% assign card_dark = block.settings[dark_key] %}
-
+            {% if card_type == blank %}
+              {% assign card_type = 'image' %}
+            {% endif %}
             {% if card_type == 'image' %}
+              {% assign card_media = product.media[forloop.index0].preview_image | default: featured_image %}
               <article class="osso-product-story__card osso-product-story__card--image">
-                {% if card_image != blank %}
-                  {{ card_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
-                {% elsif featured_image != blank %}
-                  {{ featured_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
+                {% if card_media != blank %}
+                  {{ card_media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
                 {% endif %}
               </article>
             {% else %}
-              <article class="osso-product-story__card osso-product-story__card--text{% if card_dark %} osso-product-story__card--dark{% endif %}">
-                {% if card_kicker != blank %}
-                  <p class="osso-product-story__card-kicker">{{ card_kicker }}</p>
-                {% endif %}
-                {% if card_title != blank %}
-                  <h3 class="osso-product-story__card-title">{{ card_title }}</h3>
-                {% endif %}
-                {% if card_text != blank %}
-                  <p class="osso-product-story__card-copy">{{ card_text }}</p>
-                {% endif %}
+              {% if product_copy_key != blank %}
+                {% assign card_kicker_key = product_copy_key | append: '.card_' | append: i | append: '_kicker' %}
+                {% assign card_title_key = product_copy_key | append: '.card_' | append: i | append: '_title' %}
+                {% assign card_text_key = product_copy_key | append: '.card_' | append: i | append: '_text' %}
+                {% assign card_kicker = card_kicker_key | t %}
+                {% assign card_title = card_title_key | t %}
+                {% assign card_text = card_text_key | t %}
+              {% else %}
+                {% assign kicker_key = 'card_' | append: i | append: '_kicker' %}
+                {% assign title_key = 'card_' | append: i | append: '_title' %}
+                {% assign text_key = 'card_' | append: i | append: '_text' %}
+                {% assign card_kicker = block.settings[kicker_key] %}
+                {% assign card_title = block.settings[title_key] %}
+                {% assign card_text = block.settings[text_key] %}
+              {% endif %}
+              {% assign dark_key = 'card_' | append: i | append: '_dark' %}
+              <article class="osso-product-story__card osso-product-story__card--text{% if block.settings[dark_key] %} osso-product-story__card--dark{% endif %}">
+                {% if card_kicker != blank %}<p class="osso-product-story__card-kicker">{{ card_kicker }}</p>{% endif %}
+                {% if card_title != blank %}<h3 class="osso-product-story__card-title">{{ card_title }}</h3>{% endif %}
+                {% if card_text != blank %}<p class="osso-product-story__card-copy">{{ card_text }}</p>{% endif %}
               </article>
             {% endif %}
           {% endfor %}
         </div>
 
       {% when 'highlight' %}
+        {% if product_copy_key != blank %}
+          {% assign highlight_eyebrow_key = product_copy_key | append: '.highlight_eyebrow' %}
+          {% assign highlight_title_key = product_copy_key | append: '.highlight_title' %}
+          {% assign highlight_text_key = product_copy_key | append: '.highlight_text' %}
+          {% assign highlight_eyebrow = highlight_eyebrow_key | t %}
+          {% assign highlight_title = highlight_title_key | t %}
+          {% assign highlight_text = highlight_text_key | t %}
+        {% else %}
+          {% assign highlight_eyebrow = block.settings.eyebrow %}
+          {% assign highlight_title = block.settings.title %}
+          {% assign highlight_text = block.settings.text %}
+        {% endif %}
         <div class="osso-product-story__highlight" {{ block.shopify_attributes }}>
           <div class="osso-product-story__highlight-media">
-            {% if block.settings.media != blank %}
-              {{ block.settings.media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
-            {% elsif tertiary_image != blank %}
-              {{ tertiary_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}
-            {% endif %}
+            {% assign highlight_media = product.media[2].preview_image | default: featured_image %}
+            {% if highlight_media != blank %}{{ highlight_media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__image', alt: product.title }}{% endif %}
           </div>
           <div class="osso-product-story__highlight-copy">
-            {% if block.settings.eyebrow != blank %}
-              <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
-            {% endif %}
-            {% if block.settings.title != blank %}
-              <h3 class="osso-product-story__highlight-title">{{ block.settings.title }}</h3>
-            {% endif %}
-            {% if block.settings.text != blank %}
-              <p class="osso-product-story__card-copy">{{ block.settings.text }}</p>
-            {% endif %}
+            {% if highlight_eyebrow != blank %}<p class="osso-product-story__eyebrow">{{ highlight_eyebrow }}</p>{% endif %}
+            {% if highlight_title != blank %}<h3 class="osso-product-story__highlight-title">{{ highlight_title }}</h3>{% endif %}
+            {% if highlight_text != blank %}<p class="osso-product-story__card-copy">{{ highlight_text }}</p>{% endif %}
           </div>
         </div>
 
       {% when 'details' %}
+        {% if product_copy_key != blank %}
+          {% assign details_eyebrow_key = product_copy_key | append: '.details_eyebrow' %}
+          {% assign details_title_key = product_copy_key | append: '.details_title' %}
+          {% assign details_text_key = product_copy_key | append: '.details_text' %}
+          {% assign details_eyebrow = details_eyebrow_key | t %}
+          {% assign details_title = details_title_key | t %}
+          {% assign details_text = details_text_key | t %}
+        {% else %}
+          {% assign details_eyebrow = block.settings.eyebrow %}
+          {% assign details_title = block.settings.title %}
+          {% assign details_text = block.settings.text %}
+        {% endif %}
         <div class="osso-product-story__details" {{ block.shopify_attributes }}>
           <div class="osso-product-story__details-visual">
-            {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__details-image', alt: product.title }}
-            {% elsif featured_image != blank %}
-              {{ featured_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__details-image', alt: product.title }}
-            {% endif %}
+            {% assign details_media = product.media[1].preview_image | default: featured_image %}
+            {% if details_media != blank %}{{ details_media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__details-image', alt: product.title }}{% endif %}
           </div>
           <div class="osso-product-story__details-copy">
-            {% if is_lamp %}
-              <p class="osso-product-story__eyebrow">{{ 'sections.product_story.tech_label' | t }}</p>
-            {% elsif block.settings.eyebrow != blank %}
-              <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
-            {% endif %}
-            {% if is_lamp %}
-              <h3 class="osso-product-story__section-title">{{ 'sections.product_story.details_title' | t }}</h3>
-            {% elsif block.settings.title != blank %}
-              <h3 class="osso-product-story__section-title">{{ block.settings.title }}</h3>
-            {% endif %}
-            {% if is_lamp %}
-              <div class="osso-product-story__text rte"><p>{{ 'sections.product_story.details_text' | t }}</p></div>
-            {% elsif block.settings.text != blank %}
-              <div class="osso-product-story__text rte">{{ block.settings.text }}</div>
-            {% endif %}
+            {% if details_eyebrow != blank %}<p class="osso-product-story__eyebrow">{{ details_eyebrow }}</p>{% endif %}
+            {% if details_title != blank %}<h3 class="osso-product-story__section-title">{{ details_title }}</h3>{% endif %}
+            {% if details_text != blank %}<div class="osso-product-story__text rte">{{ details_text }}</div>{% endif %}
             {% if block.settings.show_accordion %}
               <div class="osso-product-story__accordion">
                 {% for i in (1..3) %}
-                  {% capture heading_key %}accordion_{{ i }}_heading{% endcapture %}
-                  {% capture content_key %}accordion_{{ i }}_content{% endcapture %}
-                  {% assign acc_heading = block.settings[heading_key] %}
-                  {% assign acc_content = block.settings[content_key] %}
-                  {% if is_lamp %}
-                    {% if i == 1 %}
-                      {% if localization.language.iso_code == 'es' %}
-                        {% assign acc_heading = 'Detalles' %}
-                        {% capture acc_content %}<dl class="osso-product-story__spec-list"><div><dt>Uso</dt><dd>Interior</dd></div><div><dt>Fuente de luz</dt><dd>Bombilla LED E14 incluida</dd></div><div><dt>Cable</dt><dd>Cable textil blanco de 5 m con interruptor</dd></div><div><dt>Material</dt><dd>Impresión 3D en plástico biodegradable (PLA)</dd></div>{% if lamp_dimensions != blank %}<div><dt>Dimensiones</dt><dd>{{ lamp_dimensions }}</dd></div>{% endif %}</dl>{% endcapture %}
-                      {% else %}
-                        {% assign acc_heading = 'Details' %}
-                        {% capture acc_content %}<dl class="osso-product-story__spec-list"><div><dt>Use</dt><dd>Indoor</dd></div><div><dt>Light source</dt><dd>E14 LED bulb included</dd></div><div><dt>Cable</dt><dd>5 m white textile cable with switch</dd></div><div><dt>Material</dt><dd>3D printing in biodegradable plastic (PLA)</dd></div>{% if lamp_dimensions != blank %}<div><dt>Dimensions</dt><dd>{{ lamp_dimensions }}</dd></div>{% endif %}</dl>{% endcapture %}
-                      {% endif %}
-                    {% elsif i == 2 %}
-                      {% if localization.language.iso_code == 'es' %}
-                        {% assign acc_heading = 'Material y proceso' %}
-                        {% assign acc_content = '<p>La pantalla se imprime capa a capa en PLA, un plástico biodegradable, y se monta en pequeñas series.</p>' %}
-                      {% else %}
-                        {% assign acc_heading = 'Materials and process' %}
-                        {% assign acc_content = '<p>The shade is printed layer by layer in PLA, a biodegradable plastic, and assembled in small batches.</p>' %}
-                      {% endif %}
-                    {% else %}
-                      {% if localization.language.iso_code == 'es' %}
-                        {% assign acc_heading = 'Envío y devoluciones' %}
-                        {% assign acc_content = '<p>Cada lámpara se prepara con cuidado antes de salir del estudio. Si necesitas ayuda con un cambio o una devolución, escríbenos y lo revisamos contigo.</p>' %}
-                      {% else %}
-                        {% assign acc_heading = 'Shipping and returns' %}
-                        {% assign acc_content = '<p>Each lamp is carefully prepared before leaving the studio. If you need help with an exchange or return, write to us and we will review it with you.</p>' %}
-                      {% endif %}
-                    {% endif %}
+                  {% if product_copy_key != blank %}
+                    {% assign heading_key = product_copy_key | append: '.accordion_' | append: i | append: '_heading' %}
+                    {% assign content_key = product_copy_key | append: '.accordion_' | append: i | append: '_content' %}
+                    {% assign acc_heading = heading_key | t %}
+                    {% assign acc_content = content_key | t %}
+                  {% else %}
+                    {% assign heading_key = 'accordion_' | append: i | append: '_heading' %}
+                    {% assign content_key = 'accordion_' | append: i | append: '_content' %}
+                    {% assign acc_heading = block.settings[heading_key] %}
+                    {% assign acc_content = block.settings[content_key] %}
                   {% endif %}
                   {% if acc_heading != blank %}
                     <details class="osso-product-story__accordion-item">
                       <summary>{{ acc_heading }}</summary>
-                      {% if acc_content != blank %}
-                        <div class="osso-product-story__accordion-body rte">{{ acc_content }}</div>
-                      {% endif %}
+                      {% if acc_content != blank %}<div class="osso-product-story__accordion-body rte">{{ acc_content }}</div>{% endif %}
                     </details>
                   {% endif %}
                 {% endfor %}
@@ -261,586 +227,269 @@
         </div>
 
       {% when 'tech_specs' %}
+        {% if product_copy_key != blank %}
+          {% assign tech_label_key = product_copy_key | append: '.tech_label' %}
+          {% assign tech_title_key = product_copy_key | append: '.tech_title' %}
+          {% assign tech_label = tech_label_key | t %}
+          {% assign tech_title = tech_title_key | t %}
+        {% else %}
+          {% assign tech_label = block.settings.label %}
+          {% assign tech_title = block.settings.title %}
+        {% endif %}
         <div class="osso-product-story__tech" {{ block.shopify_attributes }}>
           <div class="osso-product-story__tech-inner">
-            {% if is_lamp %}
-              <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ 'sections.product_story.tech_label' | t }}</p>
-              <h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ 'sections.product_story.tech_title' | t }}</h3>
-            {% elsif block.settings.label != blank %}
-              <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ block.settings.label }}</p>
-              {% if block.settings.title != blank %}
-              <h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ block.settings.title }}</h3>
-              {% endif %}
-            {% endif %}
+            {% if tech_label != blank %}<p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ tech_label }}</p>{% endif %}
+            {% if tech_title != blank %}<h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ tech_title }}</h3>{% endif %}
             <div class="osso-product-story__tech-grid">
-              {% if is_lamp %}
-                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">{{ 'sections.product_story.indoor_value' | t }}</div><div class="osso-product-story__tech-label">{{ 'sections.product_story.use_label' | t }}</div></div>
-                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">E14 LED</div><div class="osso-product-story__tech-label">{{ 'sections.product_story.light_source_label' | t }}</div></div>
-                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">{{ 'sections.product_story.included_value' | t }}</div><div class="osso-product-story__tech-label">{{ 'sections.product_story.bulb_label' | t }}</div></div>
-                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">5 m</div><div class="osso-product-story__tech-label">{{ 'sections.product_story.cable_label' | t }}</div></div>
-                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">PLA</div><div class="osso-product-story__tech-label">{{ 'sections.product_story.bioplastic_label' | t }}</div></div>
-                <div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">3D</div><div class="osso-product-story__tech-label">{{ 'sections.product_story.layer_printing_label' | t }}</div></div>
-                {% if lamp_dimensions != blank %}<div class="osso-product-story__tech-item"><div class="osso-product-story__tech-value">{{ lamp_dimensions }}</div><div class="osso-product-story__tech-label">{{ 'sections.product_story.dimensions_label' | t }}</div></div>{% endif %}
-              {% else %}
-              {% for i in (1..8) %}
-                {% capture value_key %}spec_{{ i }}_value{% endcapture %}
-                {% capture label_key %}spec_{{ i }}_label{% endcapture %}
-                {% assign spec_value = block.settings[value_key] %}
-                {% assign spec_label = block.settings[label_key] %}
+              {% for i in (1..6) %}
+                {% if product_copy_key != blank %}
+                  {% assign value_key = product_copy_key | append: '.tech_' | append: i | append: '_value' %}
+                  {% assign label_key = product_copy_key | append: '.tech_' | append: i | append: '_label' %}
+                  {% assign spec_value = value_key | t %}
+                  {% assign spec_label = label_key | t %}
+                {% else %}
+                  {% assign value_key = 'spec_' | append: i | append: '_value' %}
+                  {% assign label_key = 'spec_' | append: i | append: '_label' %}
+                  {% assign spec_value = block.settings[value_key] %}
+                  {% assign spec_label = block.settings[label_key] %}
+                {% endif %}
                 {% if spec_value != blank or spec_label != blank %}
                   <div class="osso-product-story__tech-item">
-                    {% if spec_value != blank %}
-                      <div class="osso-product-story__tech-value">{{ spec_value }}</div>
-                    {% endif %}
-                    {% if spec_label != blank %}
-                      <div class="osso-product-story__tech-label">{{ spec_label }}</div>
-                    {% endif %}
+                    {% if spec_value != blank %}<div class="osso-product-story__tech-value">{{ spec_value }}</div>{% endif %}
+                    {% if spec_label != blank %}<div class="osso-product-story__tech-label">{{ spec_label }}</div>{% endif %}
                   </div>
                 {% endif %}
               {% endfor %}
-              {% endif %}
             </div>
           </div>
         </div>
 
       {% when 'reviews' %}
+        {% if product_copy_key != blank %}
+          {% assign reviews_label_key = product_copy_key | append: '.reviews_label' %}
+          {% assign reviews_title_key = product_copy_key | append: '.reviews_title' %}
+          {% assign rating_key = product_copy_key | append: '.rating_text' %}
+          {% assign reviews_label = reviews_label_key | t %}
+          {% assign reviews_title = reviews_title_key | t %}
+          {% assign rating_text = rating_key | t %}
+        {% else %}
+          {% assign reviews_label = block.settings.label %}
+          {% assign reviews_title = block.settings.title %}
+          {% assign rating_text = block.settings.rating_text %}
+        {% endif %}
         <div class="osso-product-story__reviews" {{ block.shopify_attributes }}>
           <div class="osso-product-story__reviews-header">
             <div>
-              {% if block.settings.label != blank %}
-                <p class="osso-product-story__eyebrow">{{ block.settings.label }}</p>
-              {% endif %}
-              {% if block.settings.title != blank %}
-                <h3 class="osso-product-story__section-title">{{ block.settings.title }}</h3>
-              {% endif %}
+              {% if reviews_label != blank %}<p class="osso-product-story__eyebrow">{{ reviews_label }}</p>{% endif %}
+              {% if reviews_title != blank %}<h3 class="osso-product-story__section-title">{{ reviews_title }}</h3>{% endif %}
             </div>
-            {% if block.settings.rating_text != blank %}
-              <div class="osso-product-story__reviews-summary">{{ block.settings.rating_text }}</div>
-            {% endif %}
+            {% if rating_text != blank %}<div class="osso-product-story__reviews-summary">{{ rating_text }}</div>{% endif %}
           </div>
           <div class="osso-product-story__reviews-grid">
             {% for i in (1..3) %}
-              {% capture stars_key %}review_{{ i }}_stars{% endcapture %}
-              {% capture text_key %}review_{{ i }}_text{% endcapture %}
-              {% capture author_key %}review_{{ i }}_author{% endcapture %}
-              {% assign review_stars = block.settings[stars_key] %}
-              {% assign review_text = block.settings[text_key] %}
-              {% assign review_author = block.settings[author_key] %}
+              {% if product_copy_key != blank %}
+                {% assign review_text_key = product_copy_key | append: '.review_' | append: i | append: '_text' %}
+                {% assign review_author_key = product_copy_key | append: '.review_' | append: i | append: '_author' %}
+                {% assign review_text = review_text_key | t %}
+                {% assign review_author = review_author_key | t %}
+                {% assign review_stars = 5 %}
+              {% else %}
+                {% assign stars_key = 'review_' | append: i | append: '_stars' %}
+                {% assign text_key = 'review_' | append: i | append: '_text' %}
+                {% assign author_key = 'review_' | append: i | append: '_author' %}
+                {% assign review_stars = block.settings[stars_key] %}
+                {% assign review_text = block.settings[text_key] %}
+                {% assign review_author = block.settings[author_key] %}
+              {% endif %}
               {% if review_text != blank %}
                 <article class="osso-product-story__review">
-                  {% if review_stars > 0 %}
-                    <p class="osso-product-story__review-stars">
-                      {% for s in (1..5) %}
-                        {% if s <= review_stars %}★{% else %}☆{% endif %}
-                      {% endfor %}
-                    </p>
-                  {% endif %}
+                  <p class="osso-product-story__review-stars">{% for s in (1..5) %}{% if s <= review_stars %}★{% else %}☆{% endif %}{% endfor %}</p>
                   <p class="osso-product-story__review-text">{{ review_text }}</p>
-                  {% if review_author != blank %}
-                    <p class="osso-product-story__review-author">{{ review_author }}</p>
-                  {% endif %}
+                  {% if review_author != blank %}<p class="osso-product-story__review-author">{{ review_author }}</p>{% endif %}
                 </article>
               {% endif %}
             {% endfor %}
           </div>
         </div>
-
     {% endcase %}
   {% endfor %}
 </section>
 
 {% stylesheet %}
   .osso-product-story {
-    padding: 18px 0 90px;
-  }
-
-  .osso-product-story__intro,
-  .osso-product-story__highlight,
-  .osso-product-story__grid,
-  .osso-product-story__features,
-  .osso-product-story__details,
-  .osso-product-story__reviews {
-    width: min(1200px, calc(100vw - 48px));
-    margin: 0 auto;
+    --story-ink: #1f2521;
+    --story-muted: #69736b;
+    --story-line: rgb(31 37 33 / 16%);
+    --story-paper: #f4f2ec;
+    --story-accent: #7d967f;
+    overflow: hidden;
+    background: var(--story-paper);
+    color: var(--story-ink);
   }
 
   .osso-product-story__marquee {
     overflow: hidden;
-    white-space: nowrap;
-    border-block: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
-    margin-bottom: 42px;
-    background: color-mix(in srgb, var(--color-foreground) 3%, var(--color-background));
+    border-block: 1px solid var(--story-line);
+    background: color-mix(in srgb, var(--story-paper) 82%, var(--story-accent));
+    color: var(--story-ink);
   }
 
   .osso-product-story__marquee-track {
-    display: inline-block;
-    padding: 14px 0;
-    animation: osso-product-story-marquee 26s linear infinite;
-    font-size: 11px;
-    letter-spacing: 0.18em;
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    padding: .9rem 0;
+    animation: osso-story-marquee 28s linear infinite;
+    font-size: .72rem;
+    letter-spacing: .12em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
-  .osso-product-story__marquee-dot {
-    margin: 0 18px;
-    opacity: 0.45;
+  .osso-product-story__marquee-dot { opacity: .45; }
+
+  .osso-product-story__intro,
+  .osso-product-story__highlight,
+  .osso-product-story__details,
+  .osso-product-story__tech,
+  .osso-product-story__reviews {
+    padding: clamp(3rem, 7vw, 7rem) clamp(1.25rem, 5vw, 6rem);
   }
 
   .osso-product-story__intro {
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.9fr);
-    gap: 40px;
-    padding: 18px 0 48px;
+    grid-template-columns: minmax(0, 1.25fr) minmax(16rem, .75fr);
+    gap: clamp(2rem, 6vw, 7rem);
     align-items: end;
+    max-width: 92rem;
+    margin: 0 auto;
   }
 
+  .osso-product-story__intro-copy { max-width: 48rem; }
   .osso-product-story__eyebrow,
   .osso-product-story__card-kicker,
   .osso-product-story__spec-label,
   .osso-product-story__tech-label {
-    margin: 0 0 12px;
-    font-size: 11px;
-    letter-spacing: 0.18em;
+    color: var(--story-muted);
+    font-size: .7rem;
+    letter-spacing: .13em;
+    line-height: 1.3;
     text-transform: uppercase;
-    opacity: 0.62;
   }
 
-  .osso-product-story__eyebrow--light {
-    opacity: 0.5;
-  }
-
+  .osso-product-story__eyebrow { margin: 0 0 1rem; }
+  .osso-product-story__eyebrow--light { color: rgb(255 255 255 / 70%); }
   .osso-product-story__title,
   .osso-product-story__highlight-title,
   .osso-product-story__card-title,
   .osso-product-story__section-title {
     margin: 0;
-    font-family: var(--font-heading--family);
-    font-weight: 300;
-    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -.045em;
+    line-height: .98;
   }
 
-  .osso-product-story__title {
-    font-size: clamp(2.4rem, 6vw, 5rem);
-    max-width: 11ch;
-    margin-bottom: 20px;
-  }
-
-  .osso-product-story__section-title {
-    font-size: clamp(2rem, 4.5vw, 3.6rem);
-    max-width: 10ch;
-    margin-bottom: 18px;
-  }
-
-  .osso-product-story__section-title--light {
-    color: var(--color-background);
-  }
-
+  .osso-product-story__title { max-width: 11ch; font-size: clamp(3rem, 8vw, 8rem); }
+  .osso-product-story__section-title { max-width: 15ch; font-size: clamp(2rem, 4.5vw, 4.5rem); }
+  .osso-product-story__section-title--light { color: #fff; }
   .osso-product-story__text,
   .osso-product-story__card-copy,
   .osso-product-story__feature-copy,
   .osso-product-story__accordion-body,
   .osso-product-story__review-text {
-    font-size: 15px;
-    line-height: 1.8;
-    opacity: 0.76;
+    color: color-mix(in srgb, var(--story-ink) 74%, transparent);
+    font-size: clamp(.95rem, 1.2vw, 1.12rem);
+    line-height: 1.55;
   }
 
+  .osso-product-story__text { max-width: 38rem; margin-top: 2rem; }
   .osso-product-story__text p,
   .osso-product-story__card-copy,
   .osso-product-story__highlight-copy p,
-  .osso-product-story__details-copy p {
-    margin: 0;
-  }
-
+  .osso-product-story__details-copy p { margin: 0; }
   .osso-product-story__text p + p,
-  .osso-product-story__details-copy p + p {
-    margin-top: 14px;
-  }
+  .osso-product-story__details-copy p + p { margin-top: 1rem; }
 
   .osso-product-story__specs {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    border-top: 1px solid var(--story-line);
+    padding-top: 1rem;
   }
 
-  .osso-product-story__spec {
-    padding: 18px;
-    border-radius: 18px;
-    background: color-mix(in srgb, var(--color-foreground) 5%, transparent);
-    border: 1px solid color-mix(in srgb, var(--color-foreground) 10%, transparent);
-    display: grid;
-    gap: 4px;
-  }
-
-  .osso-product-story__spec-label {
-    margin-bottom: 0;
-  }
-
-  .osso-product-story__spec-value {
-    font-size: 1rem;
-    line-height: 1.4;
-  }
+  .osso-product-story__spec { display: grid; gap: .35rem; }
+  .osso-product-story__spec-label { color: var(--story-muted); }
+  .osso-product-story__spec-value { font-size: .95rem; line-height: 1.35; }
 
   .osso-product-story__features {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-    margin-bottom: 18px;
+    gap: 1px;
+    border-block: 1px solid var(--story-line);
+    background: var(--story-line);
   }
 
-  .osso-product-story__feature {
-    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
-    border: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
-    border-radius: 24px;
-    padding: 26px 22px;
-  }
+  .osso-product-story__feature { min-height: 15rem; padding: clamp(1.5rem, 3vw, 3rem); background: var(--story-paper); }
+  .osso-product-story__feature-title { margin: 0 0 1rem; font-size: 1.45rem; font-weight: 400; letter-spacing: -.025em; }
+  .osso-product-story__feature-copy { margin: 0; }
 
-  .osso-product-story__feature-title {
-    font-family: var(--font-heading--family);
-    font-size: 1.45rem;
-    font-weight: 400;
-    line-height: 1.1;
-    margin: 0 0 10px;
-  }
-
-  .osso-product-story__feature-copy {
-    margin: 0;
-  }
-
-  .osso-product-story__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    margin-bottom: 18px;
-  }
-
-  .osso-product-story__card {
-    border-radius: 28px;
-    overflow: hidden;
-    min-height: 320px;
-    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
-  }
-
-  .osso-product-story__card--text {
-    padding: clamp(28px, 4vw, 44px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .osso-product-story__card--dark {
-    background: var(--color-foreground);
-    color: var(--color-background);
-  }
-
-  .osso-product-story__card-title {
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    max-width: 8ch;
-    margin-bottom: 14px;
-  }
-
+  .osso-product-story__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--story-line); }
+  .osso-product-story__card { min-height: clamp(16rem, 30vw, 32rem); background: var(--story-paper); }
+  .osso-product-story__card--image { overflow: hidden; }
+  .osso-product-story__card--text { display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(1.5rem, 3vw, 3rem); }
+  .osso-product-story__card--dark { background: var(--story-ink); color: #fff; }
+  .osso-product-story__card--dark .osso-product-story__card-kicker,
+  .osso-product-story__card--dark .osso-product-story__card-copy { color: rgb(255 255 255 / 70%); }
+  .osso-product-story__card-title { max-width: 10ch; font-size: clamp(1.7rem, 3vw, 3rem); }
   .osso-product-story__image,
-  .osso-product-story__details-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
-  }
+  .osso-product-story__details-image { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-  .osso-product-story__highlight {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    gap: 18px;
-    align-items: stretch;
-    margin-bottom: 18px;
-  }
-
+  .osso-product-story__highlight,
+  .osso-product-story__details { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 6vw, 7rem); align-items: center; max-width: 92rem; margin: 0 auto; }
   .osso-product-story__highlight-media,
-  .osso-product-story__highlight-copy,
-  .osso-product-story__details-visual {
-    border-radius: 28px;
-    overflow: hidden;
-    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
-  }
+  .osso-product-story__details-visual { min-height: clamp(20rem, 43vw, 42rem); overflow: hidden; background: color-mix(in srgb, var(--story-paper) 75%, var(--story-accent)); }
+  .osso-product-story__highlight-copy { max-width: 34rem; }
+  .osso-product-story__highlight-title { margin-bottom: 1.5rem; max-width: 9ch; font-size: clamp(2.3rem, 5vw, 5rem); }
 
-  .osso-product-story__highlight-copy {
-    padding: clamp(28px, 4vw, 48px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  .osso-product-story__details { border-top: 1px solid var(--story-line); }
+  .osso-product-story__details-copy { max-width: 36rem; }
+  .osso-product-story__accordion { margin-top: 2.5rem; border-top: 1px solid var(--story-line); }
+  .osso-product-story__accordion-item { border-bottom: 1px solid var(--story-line); }
+  .osso-product-story__accordion-item summary { display: flex; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; cursor: pointer; list-style: none; font-size: 1.05rem; }
+  .osso-product-story__accordion-item summary::-webkit-details-marker { display: none; }
+  .osso-product-story__accordion-item summary::after { content: '+'; color: var(--story-muted); transition: transform .2s ease; }
+  .osso-product-story__accordion-item[open] summary::after { transform: rotate(45deg); }
+  .osso-product-story__accordion-body { padding: 0 0 1.15rem; }
 
-  .osso-product-story__highlight-title {
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    max-width: 10ch;
-    margin-bottom: 16px;
-  }
+  .osso-product-story__tech { background: var(--story-ink); color: #fff; }
+  .osso-product-story__tech-inner { max-width: 92rem; margin: 0 auto; }
+  .osso-product-story__tech-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; margin-top: 3rem; background: rgb(255 255 255 / 18%); }
+  .osso-product-story__tech-item { min-height: 8rem; padding: 1.25rem; background: var(--story-ink); }
+  .osso-product-story__tech-value { font-size: clamp(1.4rem, 2.5vw, 2.25rem); letter-spacing: -.04em; }
+  .osso-product-story__tech-label { margin-top: .75rem; color: rgb(255 255 255 / 62%); }
 
-  .osso-product-story__details {
-    display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    gap: 24px;
-    align-items: stretch;
-    margin-bottom: 18px;
-  }
+  .osso-product-story__reviews { max-width: 92rem; margin: 0 auto; }
+  .osso-product-story__reviews-header { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-bottom: 2rem; border-bottom: 1px solid var(--story-line); }
+  .osso-product-story__reviews-summary { color: var(--story-muted); font-size: .85rem; letter-spacing: .06em; }
+  .osso-product-story__reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 1px; background: var(--story-line); }
+  .osso-product-story__review { min-height: 15rem; padding: clamp(1.5rem, 3vw, 3rem); background: var(--story-paper); }
+  .osso-product-story__review-stars { margin: 0 0 1.5rem; letter-spacing: .2em; color: var(--story-accent); }
+  .osso-product-story__review-text { margin: 0; }
+  .osso-product-story__review-author { margin: 2rem 0 0; color: var(--story-muted); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
 
-  .osso-product-story__details-copy {
-    padding: clamp(24px, 4vw, 46px);
-    border-radius: 28px;
-    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
-  }
-
-  .osso-product-story__accordion {
-    margin-top: 26px;
-    border-top: 1px solid color-mix(in srgb, var(--color-foreground) 12%, transparent);
-  }
-
-  .osso-product-story__accordion-item {
-    border-bottom: 1px solid color-mix(in srgb, var(--color-foreground) 12%, transparent);
-  }
-
-  .osso-product-story__accordion-item summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 18px 0;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .osso-product-story__accordion-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .osso-product-story__accordion-item summary::after {
-    content: '+';
-    font-size: 20px;
-    font-weight: 300;
-    opacity: 0.6;
-  }
-
-  .osso-product-story__accordion-item[open] summary::after {
-    content: '−';
-  }
-
-  .osso-product-story__accordion-body {
-    padding: 0 0 18px;
-  }
-
-  .osso-product-story__spec-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px 22px;
-    margin: 0;
-  }
-
-  .osso-product-story__spec-list div {
-    border-top: 1px solid color-mix(in srgb, var(--color-foreground) 12%, transparent);
-    padding-top: 8px;
-  }
-
-  .osso-product-story__spec-list dt {
-    color: color-mix(in srgb, var(--color-foreground) 60%, transparent);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .osso-product-story__spec-list dd {
-    margin: 5px 0 0;
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  .osso-product-story__tech {
-    background: var(--color-foreground);
-    color: var(--color-background);
-    margin: 28px 0;
-    padding: 72px 0;
-  }
-
-  .osso-product-story__tech-inner {
-    width: min(1200px, calc(100vw - 48px));
-    margin: 0 auto;
-  }
-
-  @media screen and (max-width: 749px) {
-    .osso-product-story__spec-list {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .osso-product-story__tech-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin-top: 34px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .osso-product-story__tech-item {
-    padding: 28px 24px;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .osso-product-story__tech-value {
-    font-family: var(--font-heading--family);
-    font-size: clamp(2rem, 4vw, 3.3rem);
-    font-weight: 300;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .osso-product-story__tech-label {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.56);
-  }
-
-  .osso-product-story__reviews {
-    padding-top: 22px;
-  }
-
-  .osso-product-story__reviews-header {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    align-items: end;
-    margin-bottom: 28px;
-  }
-
-  .osso-product-story__reviews-summary {
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.58;
-    white-space: nowrap;
-  }
-
-  .osso-product-story__reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  .osso-product-story__review {
-    padding: 28px;
-    border-radius: 24px;
-    background: color-mix(in srgb, var(--color-foreground) 4%, var(--color-background));
-    border: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
-  }
-
-  .osso-product-story__review-stars {
-    margin: 0 0 14px;
-    letter-spacing: 0.2em;
-    color: #bf744c;
-  }
-
-  .osso-product-story__review-text {
-    font-family: var(--font-heading--family);
-    font-size: 1.45rem;
-    line-height: 1.55;
-    margin: 0 0 18px;
-    opacity: 1;
-  }
-
-  .osso-product-story__review-author {
-    margin: 0;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    opacity: 0.56;
-  }
-
-  @keyframes osso-product-story-marquee {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  @media (max-width: 989px) {
-    .osso-product-story {
-      padding-bottom: 64px;
-    }
-
-    .osso-product-story__intro,
-    .osso-product-story__grid,
-    .osso-product-story__highlight,
-    .osso-product-story__details,
-    .osso-product-story__features,
-    .osso-product-story__reviews-grid,
-    .osso-product-story__tech-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .osso-product-story__intro,
-    .osso-product-story__highlight,
-    .osso-product-story__grid,
-    .osso-product-story__features,
-    .osso-product-story__details,
-    .osso-product-story__reviews,
-    .osso-product-story__tech-inner {
-      width: min(100vw - 32px, 720px);
-    }
-
-    .osso-product-story__card,
-    .osso-product-story__highlight-media,
-    .osso-product-story__highlight-copy,
-    .osso-product-story__details-copy,
-    .osso-product-story__details-visual {
-      min-height: 0;
-    }
-
-    .osso-product-story__tech {
-      padding: 54px 0;
-    }
-
-    .osso-product-story__tech-grid {
-      border-left: 0;
-    }
-
-    .osso-product-story__tech-item {
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .osso-product-story__reviews-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
+  @keyframes osso-story-marquee { to { transform: translateX(-50%); } }
 
   @media (max-width: 749px) {
-    .osso-product-story {
-      padding-top: 12px;
-    }
-
-    .osso-product-story__marquee {
-      margin-bottom: 24px;
-    }
-
-    .osso-product-story__intro {
-      padding-bottom: 32px;
-    }
-
-    .osso-product-story__specs {
-      grid-template-columns: 1fr;
-    }
-
-    .osso-product-story__title,
-    .osso-product-story__card-title,
-    .osso-product-story__highlight-title,
-    .osso-product-story__section-title {
-      max-width: none;
-    }
+    .osso-product-story__intro,
+    .osso-product-story__highlight,
+    .osso-product-story__details { grid-template-columns: 1fr; }
+    .osso-product-story__title { max-width: 12ch; font-size: clamp(3rem, 17vw, 6rem); }
+    .osso-product-story__features,
+    .osso-product-story__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .osso-product-story__tech-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .osso-product-story__reviews-header { display: block; }
+    .osso-product-story__reviews-summary { margin-top: 1.25rem; }
   }
 {% endstylesheet %}
 
