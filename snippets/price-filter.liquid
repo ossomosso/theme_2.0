@@ -45,16 +45,16 @@
         >
           {%- if filter.min_value.value != null or filter.max_value.value != null %}
             {%- if filter.min_value.value != null and filter.max_value.value != null %}
-              {{- filter.min_value.value | money | strip_html -}}
+              {{- filter.min_value.value | money_without_currency | strip_html -}} €
               –
-              {{- filter.max_value.value | money | strip_html -}}
+              {{- filter.max_value.value | money_without_currency | strip_html -}} €
             {%- elsif filter.min_value.value != null -%}
-              {{ filter.min_value.value | money | strip_html }}–{{ filter.range_max | money | strip_html }}
+              {{ filter.min_value.value | money_without_currency | strip_html }} €–{{ filter.range_max | money_without_currency | strip_html }} €
 
             {%- elsif filter.max_value.value != null -%}
-              {{- 0 | money | strip_html -}}
+              {{- 0 | money_without_currency | strip_html -}} €
               –
-              {{- filter.max_value.value | money | strip_html -}}
+              {{- filter.max_value.value | money_without_currency | strip_html -}} €
             {%- endif -%}
           {%- endif -%}
         </span>
@@ -110,7 +110,7 @@
                 class="field__label price-facet__label"
                 for="{{ filter.label | escape }}-GTE-{{ id_prefix }}"
               >
-                {{ cart.currency.symbol }}
+                €
               </label>
             </div>
 
@@ -137,7 +137,7 @@
                 class="field__label price-facet__label"
                 for="{{ filter.label | escape }}-LTE-{{ id_prefix }}"
               >
-                {{ cart.currency.symbol }}
+                €
               </label>
             </div>
           </div>
@@ -151,7 +151,7 @@
             {%- endif %}
           "
         >
-          {%- assign formatted_highest_price = filter.range_max | money -%}
+          {%- capture formatted_highest_price -%}{{ filter.range_max | money_without_currency }} €{%- endcapture -%}
           {{ 'content.price_filter_html' | t: price: formatted_highest_price }}
         </div>
 
@@ -239,7 +239,8 @@
 
   .price-facet__label {
     top: 0;
-    left: 0;
+    right: 0;
+    left: auto;
     color: var(--facets-input-label-color);
     padding: var(--input-padding-y) var(--input-padding-x);
     transform: none;
