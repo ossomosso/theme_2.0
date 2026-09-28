@@ -56,6 +56,29 @@
         -%}
 
         {%- if product_option.values.size == 1 and variant_style != 'swatch' -%}
+          {% liquid
+            assign localized_selected_value = product_option.selected_value
+            if localization.language.iso_code != 'es'
+              case product_option.selected_value
+                when 'Azul'
+                  assign localized_selected_value = 'Blue'
+                when 'Azul Transparente'
+                  assign localized_selected_value = 'Transparent Blue'
+                when 'Blanco'
+                  assign localized_selected_value = 'White'
+                when 'Gris'
+                  assign localized_selected_value = 'Grey'
+                when 'Verde'
+                  assign localized_selected_value = 'Green'
+                when 'Rojo'
+                  assign localized_selected_value = 'Red'
+                when 'Rosa'
+                  assign localized_selected_value = 'Pink'
+                when 'Amarillo'
+                  assign localized_selected_value = 'Yellow'
+              endcase
+            endif
+          %}
           <div
             class="variant-option"
             data-testid="variant-option-single"
@@ -65,7 +88,7 @@
               class="variant-option__swatch-value"
               data-testid="variant-option-single-value"
             >
-              {{- ' - ' -}}{{- product_option.selected_value | downcase | capitalize -}}
+              {{- ' - ' -}}{{- localized_selected_value | downcase | capitalize -}}
             </span>
           </div>
         {%- elsif variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
@@ -79,10 +102,56 @@
             <legend>
               {{ product_option.name | downcase | capitalize | escape -}}
               {%- if variant_style == 'swatch' -%}
-                <span class="variant-option__swatch-value">- {{ product_option.selected_value | downcase | capitalize }}</span>
+                {% liquid
+                  assign localized_selected_value = product_option.selected_value
+                  if localization.language.iso_code != 'es'
+                    case product_option.selected_value
+                      when 'Azul'
+                        assign localized_selected_value = 'Blue'
+                      when 'Azul Transparente'
+                        assign localized_selected_value = 'Transparent Blue'
+                      when 'Blanco'
+                        assign localized_selected_value = 'White'
+                      when 'Gris'
+                        assign localized_selected_value = 'Grey'
+                      when 'Verde'
+                        assign localized_selected_value = 'Green'
+                      when 'Rojo'
+                        assign localized_selected_value = 'Red'
+                      when 'Rosa'
+                        assign localized_selected_value = 'Pink'
+                      when 'Amarillo'
+                        assign localized_selected_value = 'Yellow'
+                    endcase
+                  endif
+                %}
+                <span class="variant-option__swatch-value">- {{ localized_selected_value | downcase | capitalize }}</span>
               {%- endif %}
             </legend>
             {%- for product_option_value in product_option.values -%}
+              {% liquid
+                assign localized_option_value = product_option_value.name
+                if localization.language.iso_code != 'es'
+                  case product_option_value.name
+                    when 'Azul'
+                      assign localized_option_value = 'Blue'
+                    when 'Azul Transparente'
+                      assign localized_option_value = 'Transparent Blue'
+                    when 'Blanco'
+                      assign localized_option_value = 'White'
+                    when 'Gris'
+                      assign localized_option_value = 'Grey'
+                    when 'Verde'
+                      assign localized_option_value = 'Green'
+                    when 'Rojo'
+                      assign localized_option_value = 'Red'
+                    when 'Rosa'
+                      assign localized_option_value = 'Pink'
+                    when 'Amarillo'
+                      assign localized_option_value = 'Yellow'
+                  endcase
+                endif
+              %}
               {% if product_option_value.size > longest_value and option_id_attribute %}
                 {% assign longest_value = product_option_value.size %}
               {% endif %}
@@ -93,7 +162,7 @@
                   type="radio"
                   name="{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}"
                   value="{{ product_option_value | escape }}"
-                  aria-label="{{ product_option_value.name | escape }}{% if product_option_value.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}"
+                  aria-label="{{ localized_option_value | escape }}{% if product_option_value.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}"
                   {% if product_option_value.available == false %}
                     aria-disabled="true"
                   {% endif %}
@@ -129,7 +198,7 @@
                     swatch: product_option_value.swatch,
                     variant_image: featured_media,
                     mode: 'unscaled',
-                    label: product_option_value.name
+                    label: localized_option_value
                   %}
                 {% else %}
                   {% if product_option_value.available == true %}
@@ -142,7 +211,7 @@
                     class="variant-option__button-label__text"
                     data-key="variant-option-text"
                   >
-                    {{- product_option_value | escape -}}
+                    {{- localized_option_value | escape -}}
                   </span>
                 {% endif %}
                 {% render 'strikethrough-variant', product_option: product_option_value %}
@@ -187,6 +256,29 @@
                 class="variant-option__select"
               >
                 {%- for product_option_value in product_option.values -%}
+                  {% liquid
+                    assign localized_option_value = product_option_value.name
+                    if localization.language.iso_code != 'es'
+                      case product_option_value.name
+                        when 'Azul'
+                          assign localized_option_value = 'Blue'
+                        when 'Azul Transparente'
+                          assign localized_option_value = 'Transparent Blue'
+                        when 'Blanco'
+                          assign localized_option_value = 'White'
+                        when 'Gris'
+                          assign localized_option_value = 'Grey'
+                        when 'Verde'
+                          assign localized_option_value = 'Green'
+                        when 'Rojo'
+                          assign localized_option_value = 'Red'
+                        when 'Rosa'
+                          assign localized_option_value = 'Pink'
+                        when 'Amarillo'
+                          assign localized_option_value = 'Yellow'
+                      endcase
+                    endif
+                  %}
                   <option
                     value="{{ product_option_value | escape }}"
                     data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
@@ -198,9 +290,9 @@
                     {% endif %}
                   >
                     {% if product_option_value.available == false %}
-                      {{ product_option_value | escape }} - {{ 'content.unavailable' | t }}
+                      {{ localized_option_value | escape }} - {{ 'content.unavailable' | t }}
                     {% else %}
-                      {{ product_option_value | escape }}
+                      {{ localized_option_value | escape }}
                     {% endif %}
                   </option>
                 {%- endfor -%}
