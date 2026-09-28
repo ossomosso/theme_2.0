@@ -721,7 +721,7 @@
                     "text_McjMWz": {
                       "type": "custom-liquid",
                       "settings": {
-                        "custom_liquid": "<dl class='lamp-details'><div><dt>Uso</dt><dd>Objeto decorativo de interior</dd></div><div><dt>Material</dt><dd>Impresión 3D en plástico biodegradable (PLA)</dd></div><div><dt>Proceso</dt><dd>Fabricado capa a capa en pequeña serie</dd></div><div><dt>Flores</dt><dd>Ideal para flores secas o con recipiente interior</dd></div><div><dt>Cuidado</dt><dd>Limpiar con un paño suave y seco</dd></div></dl>"
+                        "custom_liquid": "<dl class='lamp-details'><div><dt>Use</dt><dd>Decorative indoor object</dd></div><div><dt>Material</dt><dd>3D printing in biodegradable plastic (PLA)</dd></div><div><dt>Process</dt><dd>Made layer by layer in small batches</dd></div><div><dt>Flowers</dt><dd>Ideal for dried flowers or with an inner vessel</dd></div><div><dt>Care</dt><dd>Clean with a soft, dry cloth</dd></div></dl>"
                       },
                       "blocks": {}
                     }
@@ -733,7 +733,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Envío y devoluciones",
+                    "heading": "Shipping and returns",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -1044,11 +1044,11 @@
           "type": "marquee",
           "settings": {
             "speed": 26,
-            "item_1": "Fabricado en Madrid",
-            "item_2": "Impresión 3D de pequeña serie",
-            "item_3": "Objeto decorativo",
-            "item_4": "Bajo pedido",
-            "item_5": "Pensado para flores secas"
+            "item_1": "Made in Madrid",
+            "item_2": "3D printing de pequeña serie",
+            "item_3": "Decorative object",
+            "item_4": "Made to order",
+            "item_5": "Designed for dried flowers"
           }
         },
         "intro_ihcmLB": {
@@ -1062,9 +1062,9 @@
             "spec_1_label": "Color",
             "spec_1_value": "Arena natural",
             "spec_2_label": "Producción",
-            "spec_2_value": "Bajo pedido",
+            "spec_2_value": "Made to order",
             "spec_3_label": "Origen",
-            "spec_3_value": "Hecha en Madrid",
+            "spec_3_value": "Made in Madrid",
             "spec_4_label": "Carácter",
             "spec_4_value": "Luz suave y envolvente"
           }
@@ -1074,12 +1074,12 @@
           "disabled": true,
           "settings": {
             "feature_1_title": "Pequeña serie",
-            "feature_1_text": "Cada unidad se fabrica en tandas cortas para mantener el control del acabado.",
+            "feature_1_text": "Each piece is made in short batches to maintain control over the finish.",
             "feature_2_title": "Material ligero",
             "feature_2_text": "La pieza está pensada para convivir bien en estanterías y rincones pequeños.",
             "feature_3_title": "Compatible LED",
             "feature_3_text": "Funciona mejor con bombillas LED cálidas para reforzar la atmósfera suave.",
-            "feature_4_title": "Diseño con carácter",
+            "feature_4_title": "Characterful design",
             "feature_4_text": "No busca solo iluminar: está pensada para aportar presencia visual."
           }
         },
@@ -1094,11 +1094,11 @@
             "card_1_dark": false,
             "card_2_type": "text",
             "card_2_kicker": "La forma",
-            "card_2_title": "Curvas que recogen la luz.",
+            "card_2_title": "Curves that catch the light.",
             "card_2_text": "La geometría abierta está pensada para difuminar el punto de luz y repartirlo con una presencia más cálida.",
             "card_2_dark": false,
             "card_3_type": "text",
-            "card_3_kicker": "El proceso",
+            "card_3_kicker": "The process",
             "card_3_title": "Diseño digital, acabado cercano.",
             "card_3_text": "Cada pieza parte de un modelo 3D y se produce en series cortas para mantener una escala casi artesanal.",
             "card_3_dark": true,
@@ -1127,33 +1127,33 @@
             "show_accordion": true,
             "accordion_1_heading": "El jarrón",
             "accordion_1_content": "<p>Una silueta contemporánea que funciona como pieza escultórica y como acompañamiento para composiciones florales.</p>",
-            "accordion_2_heading": "Material y proceso",
+            "accordion_2_heading": "Materials and process",
             "accordion_2_content": "<p>Fabricado capa a capa en PLA biodegradable mediante impresión 3D y acabado en pequeñas series en Madrid.</p>",
-            "accordion_3_heading": "Envío y devoluciones",
+            "accordion_3_heading": "Shipping and returns",
             "accordion_3_content": "<p>Se prepara bajo pedido. Si necesitas ayuda con plazos o una devolución, escríbenos.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Ficha del objeto",
-            "title": "Detalles de la pieza",
+            "label": "Object details",
+            "title": "Piece details",
             "spec_1_value": "PLA",
             "spec_1_label": "Plástico biodegradable",
             "spec_2_value": "3D",
             "spec_2_label": "Impresión capa a capa",
             "spec_3_value": "ES",
-            "spec_3_label": "Fabricado en Madrid",
+            "spec_3_label": "Made in Madrid",
             "spec_4_value": "Serie corta",
-            "spec_4_label": "Producción bajo pedido",
+            "spec_4_label": "Made-to-order production",
             "spec_5_value": "Interior",
-            "spec_5_label": "Uso recomendado",
-            "spec_6_value": "Flores secas",
+            "spec_5_label": "Use recomendado",
+            "spec_6_value": "Flowers secas",
             "spec_6_label": "Composición sugerida",
             "spec_7_value": "Ligero",
             "spec_7_label": "Peso visual",
             "spec_8_value": "Suave",
-            "spec_8_label": "Cuidado con paño seco"
+            "spec_8_label": "Care with a dry cloth"
           }
         },
         "reviews_DTTrtr": {
@@ -1163,7 +1163,7 @@
             "title": "Cómo se vive en casa.",
             "rating_text": "4.9 / 5 en sensación general",
             "review_1_stars": 5,
-            "review_1_text": "Tiene una presencia muy tranquila. En la estantería queda precioso incluso sin flores.",
+            "review_1_text": "It has a very calm presence. On a shelf it looks beautiful even without flowers.",
             "review_1_author": "Laura, Madrid",
             "review_2_stars": 5,
             "review_2_text": "Me gustó que no parece un jarrón genérico. Da carácter y suma muchísimo al salón.",
