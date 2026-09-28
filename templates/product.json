@@ -1073,8 +1073,8 @@
           "disabled": true,
           "settings": {
             "eyebrow": "Sculptural light",
-            "title": "A tulip-shaped lamp turned into an object.",
-            "body": "<p>Tulipa begins with a very simple floral silhouette and takes it into a more material realm: a luminous, soft and homely piece designed to create atmosphere without imposing itself.</p>",
+            "title": "A sculptural lamp made for everyday spaces.",
+            "body": "<p>This sculptural lamp turns a simple silhouette into a soft, luminous object designed to create atmosphere without imposing itself.</p>",
             "show_specs": true,
             "spec_1_label": "Color",
             "spec_1_value": "Natural sand",
@@ -1131,7 +1131,7 @@
           "disabled": true,
           "settings": {
             "eyebrow": "For small spaces and considered corners",
-            "title": "Una pieza sencilla que cambia el tono de la estancia.",
+            "title": "A simple piece that changes the tone of a room.",
             "text": "It works especially well in bedrooms, entryways, shelves or side tables."
           }
         },
@@ -1140,10 +1140,10 @@
           "settings": {
             "eyebrow": "The story behind",
             "title": "Between organic gesture and domestic object.",
-            "text": "<p>Tulipa moves between the floral and the architectural. The natural reference is there, grounded in a calm piece that is easy to integrate.</p>",
+            "text": "<p>The design moves between the organic and the architectural, grounded in a calm piece that is easy to integrate into everyday spaces.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Product description",
-            "accordion_1_content": "<p>Table lamp with a floral silhouette and ambient light. It works especially well with a warm LED bulb.</p>",
+            "accordion_1_content": "<p>Table lamp with a sculptural silhouette and ambient light. It works especially well with a warm LED bulb.</p>",
             "accordion_2_heading": "Materials and process",
             "accordion_2_content": "<p>Made in small batches using 3D printing and assembled locally in Madrid.</p>",
             "accordion_3_heading": "Shipping and returns",
@@ -1154,7 +1154,7 @@
           "type": "tech_specs",
           "settings": {
             "label": "Technical specifications",
-            "title": "Tulipa — Key details",
+            "title": "Key details",
             "spec_1_value": "01",
             "spec_1_label": "Tabletop piece",
             "spec_2_value": "LED",
@@ -1170,14 +1170,14 @@
             "spec_7_value": "360",
             "spec_7_label": "Sculptural presence",
             "spec_8_value": "Low",
-            "spec_8_label": "Production sin excedente"
+            "spec_8_label": "Small-batch production"
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
             "label": "Reviews",
-            "title": "How Tulipa feels at home.",
+            "title": "How the lamp feels at home.",
             "rating_text": "4.9 / 5 overall feeling",
             "review_1_stars": 5,
             "review_1_text": "It has a very calm presence. It looks beautiful on the bedside table even when switched off.",
