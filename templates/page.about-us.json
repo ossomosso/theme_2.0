@@ -15,9 +15,9 @@
       "settings": {
         "eyebrow": "About us",
         "title": "Where design meets",
-        "title_emphasis": "esencia",
+        "title_emphasis": "essence",
         "body": "Ossomosso is a Spanish home design brand born from a love of interiors and contemporary objects. Each piece is made using 3D printing, exploring new shapes and possibilities.",
-        "scroll_text": "Conoce nuestra historia",
+        "scroll_text": "Learn our story",
         "svg_code": ""
       }
     },
@@ -32,10 +32,10 @@
       "type": "ossomosso-about-story",
       "name": "Ossomosso - About Story",
       "settings": {
-        "label": "Nuestra historia",
+        "label": "Our story",
         "story_text": "Born from a love of interiors, product design and creating pieces that can transform any space.",
-        "body_1": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo parametrico — lineas de codigo que definen curvas y espesores — y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo.",
-        "body_2": "El nombre viene del italiano: <em>osso</em> (hueso) y <em>mosso</em> (movimiento). Estructura viva.",
+        "body_1": "Ossomosso was born from the belief that technology can be handmade. Each piece begins as a parametric file — lines of code that define curves and thicknesses — and ends as an object you can touch, that warms a corner, that is yours.",
+        "body_2": "The name comes from Italian: <em>osso</em> (bone) and <em>mosso</em> (movement). Living structure.",
         "svg_code": ""
       }
     },
@@ -55,7 +55,7 @@
           "settings": {
             "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M8 32 L20 8 L32 32\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M13 22 L27 22\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"28\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>",
             "title": "Our own design",
-            "text": "Cada pieza nace en nuestro estudio. No vendemos modelos de terceros; diseñamos desde cero para que funcionen, duren y se vean bien en tu espacio."
+            "text": "Each piece is born in our studio. We do not sell third-party models; we design from scratch so they work, last and look good in your space."
           }
         },
         "value_GJpDaN": {
@@ -63,15 +63,15 @@
           "settings": {
             "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><rect x=\"8\" y=\"16\" width=\"24\" height=\"18\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M14 16 L14 11 C14 7.7 16.7 5 20 5 C23.3 5 26 7.7 26 11 L26 16\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"25\" r=\"2.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>",
             "title": "Thoughtful materials",
-            "text": "Trabajamos con PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos materiales por su comportamiento y por su impacto."
+            "text": "We work with plant-based PLA, recycled PETG and special filaments. We choose materials for their performance and impact."
           }
         },
         "value_GE3kyn": {
           "type": "value",
           "settings": {
             "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M6 20 C6 12, 12 6, 20 6 C28 6, 34 12, 34 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M10 20 C10 14, 14 10, 20 10 C26 10, 30 14, 30 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.5\"/><path d=\"M14 20 C14 16, 17 13, 20 13 C23 13, 26 16, 26 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.3\"/><line x1=\"20\" y1=\"20\" x2=\"20\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 34 L26 34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg>",
-            "title": "Producción local",
-            "text": "Diseñamos y fabricamos en Madrid. Producción local significa menos transporte, más control de calidad y apoyo a la economía del entorno."
+            "title": "Local production",
+            "text": "Diseñamos y fabricamos en Madrid. Local production significa menos transporte, más control de calidad y apoyo a la economía del entorno."
           }
         },
         "value_rJ4Wcz": {
@@ -79,7 +79,7 @@
           "settings": {
             "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"14\" r=\"6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M8 36 C8 28, 13 24, 20 24 C27 24, 32 28, 32 36\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 12 C16 10, 24 10, 26 12\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" opacity=\"0.5\"/></svg>",
             "title": "Customizable pieces",
-            "text": "Color, tamaño, acabado. Muchas piezas son adaptables a tu espacio. Escríbenos si tienes algo específico en mente y lo hacemos realidad."
+            "text": "Color, size, finish. Many pieces can be adapted to your space. Write to us if you have something specific in mind and we will make it real."
           }
         },
         "value_pHmaJa": {
@@ -87,7 +87,7 @@
           "settings": {
             "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M20 6 L23 15 L32 15 L25 21 L28 30 L20 25 L12 30 L15 21 L8 15 L17 15 Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/><circle cx=\"20\" cy=\"18\" r=\"2\" fill=\"currentColor\" opacity=\"0.5\"/></svg>",
             "title": "Craft quality",
-            "text": "Lijado, tratamiento superficial y control de calidad manual. Ninguna pieza sale sin revisión. La tecnología no reemplaza el toque humano."
+            "text": "Sanding, surface treatment and manual quality control. No piece leaves without inspection. Technology does not replace the human touch."
           }
         }
       },
@@ -101,17 +101,17 @@
       ],
       "name": "Ossomosso - About Values",
       "settings": {
-        "label": "Nuestra filosofía",
-        "title": "Diseñamos y producimos cada pieza mediante impresión 3D, explorando formas que serían imposibles con métodos tradicionales.",
-        "title_emphasis": "impresión 3D"
+        "label": "Our philosophy",
+        "title": "We design and produce every piece using 3D printing, exploring shapes that would be impossible with traditional methods.",
+        "title_emphasis": "3D printing"
       }
     },
     "ossomosso_about_cta_ae9aXk": {
       "type": "ossomosso-about-cta",
       "name": "Ossomosso - About CTA",
       "settings": {
-        "title": "Piezas que transforman la forma de vivir tu",
-        "title_emphasis": "espacio",
+        "title": "Pieces that transform the way you live in your",
+        "title_emphasis": "space",
         "subtitle": "If you are moved by design that innovates, inspires and turns a space into somewhere truly yours, welcome to Ossomosso.",
         "button_text": "Explore collection",
         "button_url": "shopify://collections/all"
@@ -124,8 +124,8 @@
           "type": "step",
           "settings": {
             "number": "01",
-            "title": "Diseño",
-            "text": "Modelado parametrico en 3D. Cada curva y cada angulo responden a una funcion o a una intención estética."
+            "title": "Design",
+            "text": "Parametric 3D modelling. Every curve and angle serves a function or an aesthetic intention."
           }
         },
         "step_M9NKL4": {
@@ -133,14 +133,14 @@
           "settings": {
             "number": "02",
             "title": "Material",
-            "text": "PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos materiales por su comportamiento, no solo por su look."
+            "text": "Plant-based PLA, recycled PETG and special filaments. We choose materials for their performance, not just their look."
           }
         },
         "step_g8wLCt": {
           "type": "step",
           "settings": {
             "number": "03",
-            "title": "Fabricación",
+            "title": "Production",
             "text": "We print to order in Madrid. Your piece is made when you place your order, not before. Every piece is unique."
           }
         },
@@ -148,7 +148,7 @@
           "type": "step",
           "settings": {
             "number": "04",
-            "title": "Acabado",
+            "title": "Finish",
             "text": "Lijado, tratamiento superficial y control de calidad manual. Ninguna pieza sale sin revisión."
           }
         }
