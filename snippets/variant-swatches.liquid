@@ -113,6 +113,28 @@
         {% capture children %}
           {%- for product_option_value in product_option.values -%}
             {% liquid
+              assign localized_option_value = product_option_value.name
+              if localization.language.iso_code != 'es'
+                case product_option_value.name
+                  when 'Azul'
+                    assign localized_option_value = 'Blue'
+                  when 'Azul Transparente'
+                    assign localized_option_value = 'Transparent Blue'
+                  when 'Blanco'
+                    assign localized_option_value = 'White'
+                  when 'Gris'
+                    assign localized_option_value = 'Grey'
+                  when 'Verde'
+                    assign localized_option_value = 'Green'
+                  when 'Rojo'
+                    assign localized_option_value = 'Red'
+                  when 'Rosa'
+                    assign localized_option_value = 'Pink'
+                  when 'Amarillo'
+                    assign localized_option_value = 'Yellow'
+                endcase
+              endif
+
               comment
                 Identify the most relevant variant image to show in a card-gallery, and optionally as the swatch content.
                 The `product_option_value.variant` can be nil when no valid variant is associated with the combination of the current option-value and the other option values.
@@ -156,7 +178,7 @@
                   type="radio"
                   name="{{ product_option.name | escape }}-{{ product_resource.id }}-swatch"
                   value="{{ product_option_value | escape }}"
-                  aria-label="{{ product_option_value.name }}"
+                  aria-label="{{ localized_option_value | escape }}"
                   data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
                   data-option-media-id="{{ featured_media.id }}"
                   data-option-value-id="{{ product_option_value.id }}"
@@ -171,7 +193,7 @@
                 {% render 'swatch',
                   swatch: product_option_value.swatch,
                   variant_image: featured_media,
-                  label: product_option_value.name
+                  label: localized_option_value
                 %}
                 {% render 'strikethrough-variant', product_option: product_option_value %}
               </label>
