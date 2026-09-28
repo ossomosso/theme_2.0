@@ -361,7 +361,10 @@
       "cable_label": "Cable textil blanco",
       "bioplastic_label": "Plástico biodegradable",
       "layer_printing_label": "Impresión capa a capa",
-      "dimensions_label": "Dimensiones"
+      "dimensions_label": "Dimensiones",
+      "bulb_included_value": "Bombilla LED E14 incluida",
+      "cable_value": "Cable textil blanco · 5 m",
+      "bioplastic_value": "PLA biodegradable"
     }
   }
 }
