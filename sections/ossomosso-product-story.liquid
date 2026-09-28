@@ -292,7 +292,7 @@
                 {% assign review_author_key = product_copy_key | append: '.review_' | append: i | append: '_author' %}
                 {% assign review_text = review_text_key | t %}
                 {% assign review_author = review_author_key | t %}
-                {% assign review_stars = 5 %}
+                {% assign review_stars = blank %}
               {% else %}
                 {% assign stars_key = 'review_' | append: i | append: '_stars' %}
                 {% assign text_key = 'review_' | append: i | append: '_text' %}
@@ -476,7 +476,7 @@
   .osso-product-story__review { min-height: 15rem; padding: clamp(1.5rem, 3vw, 3rem); background: var(--story-paper); }
   .osso-product-story__review-stars { margin: 0 0 1.5rem; letter-spacing: .2em; color: var(--story-accent); }
   .osso-product-story__review-text { margin: 0; }
-  .osso-product-story__review-author { margin: 2rem 0 0; color: var(--story-muted); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+  .osso-product-story__review-author { margin: 2rem 0 0; color: var(--story-muted); font-size: .78rem; font-style: italic; letter-spacing: .02em; }\n  .osso-product-story__review-text::before { content: '“'; display: block; margin-bottom: .5rem; color: var(--story-accent); font-family: Georgia, serif; font-size: 2.4rem; line-height: .7; }
 
   @keyframes osso-story-marquee { to { transform: translateX(-50%); } }
 
