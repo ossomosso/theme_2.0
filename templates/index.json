@@ -232,7 +232,7 @@
                   "type": "text",
                   "name": "Heading",
                   "settings": {
-                    "text": "<h2><em> </em>Lámparas únicas creadas capa a capa.</h2>",
+                    "text": "<h2><em> </em>Unique lamps crafted layer by layer.</h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -257,7 +257,7 @@
                 "text_m9AcWC": {
                   "type": "text",
                   "settings": {
-                    "text": "<h1>Nueva Colección 2026</h1>",
+                    "text": "<h1>New Collection 2026</h1>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -290,7 +290,7 @@
               "name": "Text",
               "disabled": true,
               "settings": {
-                "text": "<h3>Lámparas únicas creadas capa a capa.</h3>",
+                "text": "<h3>Unique lamps crafted layer by layer.</h3>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -402,7 +402,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h2>Colecciones</h2>",
+                "text": "<h2>Collections</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -522,13 +522,13 @@
       "type": "ossomosso-hero",
       "name": "Ossomosso - Hero",
       "settings": {
-        "eyebrow": "Impresión 3D · Hecho en Madrid",
-        "title": "Nueva colección",
+        "eyebrow": "3D printing · Made in Madrid",
+        "title": "New collection",
         "title_emphasis": "2026",
-        "body_text": "Diseñamos y fabricamos piezas únicas en impresión 3D. Lámparas que transforman la luz, organizadores que transforman el espacio.",
-        "primary_button_text": "Explorar colección",
+        "body_text": "We design and make unique pieces using 3D printing. Lamps that transform light, organizers that transform space.",
+        "primary_button_text": "Explore collection",
         "primary_button_url": "shopify://collections/all",
-        "secondary_button_text": "Cómo lo hacemos",
+        "secondary_button_text": "How we make it",
         "secondary_button_url": "",
         "image": "shopify://shop_images/lampara-tulipa-blanca-fondo-habitacion-ossomosso-crop.webp",
         "caption": ""
@@ -574,7 +574,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Descubre nuestros productos</h3><h3></h3>",
+                "text": "<h3>Discover our products</h3><h3></h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -775,7 +775,7 @@
       "type": "ossomosso-marquee",
       "name": "Ossomosso - Marquee",
       "settings": {
-        "marquee_items": "Diseño original\nPLA ecológico\nFabricación local\nPiezas únicas\nImpresión 3D\nMadrid, España\nBajo demanda\nPersonalizable"
+        "marquee_items": "Original design\nEco-friendly PLA\nLocal production\nUnique pieces\nImpresión 3D\nMadrid, Spain\nMade to order\nCustomizable"
       }
     },
     "ossomosso_process_CwcCWp": {
@@ -823,8 +823,8 @@
       "disabled": true,
       "name": "Ossomosso - Process",
       "settings": {
-        "title": "Del diseño a tus",
-        "title_emphasis": "manos",
+        "title": "From design to your",
+        "title_emphasis": "hands",
         "description": "Cada objeto comienza con una idea y termina en una pieza real. Sin intermediarios, sin almacenes llenos de stock, sin residuos innecesarios. Solo diseño, material y proceso."
       }
     },
@@ -836,7 +836,7 @@
           "settings": {
             "product": "",
             "name": "",
-            "type": "Iluminación",
+            "type": "Lighting",
             "price": ""
           }
         },
@@ -845,7 +845,7 @@
           "settings": {
             "product": "",
             "name": "",
-            "type": "Iluminación",
+            "type": "Lighting",
             "price": ""
           }
         },
@@ -854,7 +854,7 @@
           "settings": {
             "product": "",
             "name": "",
-            "type": "Iluminación",
+            "type": "Lighting",
             "price": ""
           }
         },
@@ -863,7 +863,7 @@
           "settings": {
             "product": "",
             "name": "",
-            "type": "Iluminación",
+            "type": "Lighting",
             "price": ""
           }
         },
@@ -872,7 +872,7 @@
           "settings": {
             "product": "",
             "name": "",
-            "type": "Iluminación",
+            "type": "Lighting",
             "price": ""
           }
         }
@@ -890,8 +890,8 @@
       ],
       "name": "Ossomosso - Products Grid",
       "settings": {
-        "section_title": "Colección actual",
-        "view_all_text": "Ver todo",
+        "section_title": "Current collection",
+        "view_all_text": "View all",
         "view_all_url": ""
       }
     },
@@ -902,7 +902,7 @@
           "type": "value",
           "settings": {
             "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 6 L30 12 L30 24 L18 30 L6 24 L6 12 Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
-            "title": "Geometría libre",
+            "title": "Free geometry",
             "text": "La impresión 3D nos permite explorar formas imposibles para la manufactura tradicional. Cada pieza es un experimento hecho objeto."
           }
         },
@@ -910,7 +910,7 @@
           "type": "value",
           "settings": {
             "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><circle cx=\"18\" cy=\"18\" r=\"12\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M18 10 L18 18 L23 21\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
-            "title": "Bajo demanda",
+            "title": "Made to order",
             "text": "No producimos hasta que decides. Sin stock acumulado, sin residuos de producción en masa. Solo lo que necesitas, cuando lo necesitas."
           }
         },
@@ -918,7 +918,7 @@
           "type": "value",
           "settings": {
             "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><path d=\"M18 6 C 18 6, 8 14, 8 24 C 8 28, 12 30, 18 30 C 24 30, 28 28, 28 24 C 28 14, 18 6, 18 6Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path><line x1=\"18\" y1=\"12\" x2=\"18\" y2=\"26\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></line></svg>",
-            "title": "Materiales conscientes",
+            "title": "Conscious materials",
             "text": "PLA de origen vegetal, PETG reciclado y acabados naturales. Elegimos cada material por su comportamiento y su huella."
           }
         }
@@ -930,7 +930,7 @@
       ],
       "name": "Ossomosso - Values",
       "settings": {
-        "label": "SOBRE NOSOTROS"
+        "label": "ABOUT US"
       }
     },
     "divider_D7BUAj": {
