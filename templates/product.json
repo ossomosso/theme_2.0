@@ -1061,10 +1061,10 @@
           "type": "marquee",
           "settings": {
             "speed": 26,
-            "item_1": "Fabricada en Madrid",
-            "item_2": "Impresión 3D de pequeña serie",
-            "item_3": "Luz ambiental",
-            "item_4": "Bajo pedido",
+            "item_1": "Made in Madrid",
+            "item_2": "Small-batch 3D printing",
+            "item_3": "Ambient light",
+            "item_4": "Made to order",
             "item_5": "Compatible con bombilla LED"
           }
         },
@@ -1072,18 +1072,18 @@
           "type": "intro",
           "disabled": true,
           "settings": {
-            "eyebrow": "Luz escultórica",
+            "eyebrow": "Sculptural light",
             "title": "Una tulipa convertida en objeto.",
             "body": "<p>Tulipa nace de una silueta floral muy simple y la lleva a un terreno más material: una pieza luminosa, suave y doméstica, pensada para dar ambiente sin imponerse.</p>",
             "show_specs": true,
             "spec_1_label": "Color",
             "spec_1_value": "Arena natural",
             "spec_2_label": "Producción",
-            "spec_2_value": "Bajo pedido",
+            "spec_2_value": "Made to order",
             "spec_3_label": "Origen",
-            "spec_3_value": "Hecha en Madrid",
+            "spec_3_value": "Made in Madrid",
             "spec_4_label": "Carácter",
-            "spec_4_value": "Luz suave y envolvente"
+            "spec_4_value": "Soft, enveloping light"
           }
         },
         "features_mCmGAe": {
@@ -1145,7 +1145,7 @@
             "accordion_1_heading": "Descripción del producto",
             "accordion_1_content": "<p>Table lamp con floral silhouette and ambient light. Funciona especialmente bien con bombilla LED cálida.</p>",
             "accordion_2_heading": "Materials and process",
-            "accordion_2_content": "<p>Fabricada en pequeña serie mediante impresión 3D y ensamblada localmente en Madrid.</p>",
+            "accordion_2_content": "<p>Made in small batches using 3D printing and assembled locally in Madrid.</p>",
             "accordion_3_heading": "Shipping and returns",
             "accordion_3_content": "<p>Made to order. If you need help with lead times or a return, write to us.</p>"
           }
@@ -1183,10 +1183,10 @@
             "review_1_text": "Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada.",
             "review_1_author": "Laura, Madrid",
             "review_2_stars": 5,
-            "review_2_text": "Me gustó que no parece una lámpara genérica. Da ambiente y suma muchísimo al salón.",
+            "review_2_text": "I love that it does not look like a generic lamp. It creates atmosphere and adds so much to the living room.",
             "review_2_author": "Carlos, Valencia",
             "review_3_stars": 4,
-            "review_3_text": "La luz es suave y la pieza tiene ese punto entre objeto decorativo y utilidad que buscaba.",
+            "review_3_text": "The light is soft, and the piece strikes the balance between a decorative object and everyday usefulness.",
             "review_3_author": "Ana, Barcelona"
           }
         }
