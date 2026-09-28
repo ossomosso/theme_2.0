@@ -298,9 +298,9 @@ class PriceFacetComponent extends Component {
     const max = this.#parseDisplayValue(input.getAttribute('data-max') ?? '0', currency);
 
     if (value < min) {
-      input.value = formatMoney(min, moneyFormat, currency);
+      input.value = formatMoney(min, moneyFormat, currency).replace(/^€\s*|\s*€$/g, '');
     } else if (value > max) {
-      input.value = formatMoney(max, moneyFormat, currency);
+      input.value = formatMoney(max, moneyFormat, currency).replace(/^€\s*|\s*€$/g, '');
     }
   }
 
