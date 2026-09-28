@@ -1062,6 +1062,8 @@
         "marquee_hea9YP": {
           "type": "marquee",
           "settings": {
+            "background_color": "#1F1F1F",
+            "text_color": "#fff8ef",
             "speed": 26,
             "item_1": "Made in Madrid",
             "item_2": "Airy curved form",
@@ -1206,8 +1208,8 @@
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": "",
-        "language": "en"
+        "language": "en",
+        "color_scheme": ""
       }
     },
     "ossomosso_product_story_es": {
@@ -1216,6 +1218,8 @@
         "marquee_hea9YP": {
           "type": "marquee",
           "settings": {
+            "background_color": "#8b5e3c",
+            "text_color": "#fff8ef",
             "speed": 26,
             "item_1": "Hecha en Madrid",
             "item_2": "Forma curva y ligera",
@@ -1360,8 +1364,8 @@
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": "",
-        "language": "es"
+        "language": "es",
+        "color_scheme": ""
       }
     }
   },
