@@ -39,7 +39,7 @@
           "type": "menu",
           "settings": {
             "menu": "colecciones",
-            "heading": "PRODUCTOS",
+            "heading": "PRODUCTS",
             "menu_spacing": 10,
             "show_as_accordion": false,
             "accordion_icon": "caret",
@@ -184,7 +184,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Hecho en Madrid con impresión 3D y mucho cariño.</p>",
+            "text": "<p>Made in Madrid using 3D printing and a lot of care.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
