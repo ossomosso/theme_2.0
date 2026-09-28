@@ -18,6 +18,7 @@
         "title_emphasis": "essence",
         "body": "Ossomosso is a Spanish home design brand born from a love of interiors and contemporary objects. Each piece is made using 3D printing, exploring new shapes and possibilities.",
         "scroll_text": "Learn our story",
+        "image": "shopify://shop_images/IMG_0174.webp",
         "svg_code": ""
       }
     },
@@ -45,7 +46,7 @@
         "value_bjizam": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M20 10 L20 20 L27 24\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"20\" r=\"2\" fill=\"currentColor\"/></svg>",
+            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M20 10 L20 20 L27 24\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path><circle cx=\"20\" cy=\"20\" r=\"2\" fill=\"currentColor\"></circle></svg>",
             "title": "Made to order",
             "text": "Your order is printed when you place it, not before. No accumulated stock or mass-production waste. Every object is made with a purpose."
           }
@@ -53,7 +54,7 @@
         "value_JWDtDr": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M8 32 L20 8 L32 32\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M13 22 L27 22\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"28\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>",
+            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><path d=\"M8 32 L20 8 L32 32\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><path d=\"M13 22 L27 22\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path><circle cx=\"20\" cy=\"28\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
             "title": "Our own design",
             "text": "Each piece is born in our studio. We do not sell third-party models; we design from scratch so they work, last and look good in your space."
           }
@@ -61,7 +62,7 @@
         "value_GJpDaN": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><rect x=\"8\" y=\"16\" width=\"24\" height=\"18\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M14 16 L14 11 C14 7.7 16.7 5 20 5 C23.3 5 26 7.7 26 11 L26 16\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"25\" r=\"2.5\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg>",
+            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><rect x=\"8\" y=\"16\" width=\"24\" height=\"18\" rx=\"3\" stroke=\"currentColor\" stroke-width=\"1.5\"></rect><path d=\"M14 16 L14 11 C14 7.7 16.7 5 20 5 C23.3 5 26 7.7 26 11 L26 16\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path><circle cx=\"20\" cy=\"25\" r=\"2.5\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle></svg>",
             "title": "Thoughtful materials",
             "text": "We work with plant-based PLA, recycled PETG and special filaments. We choose materials for their performance and impact."
           }
@@ -69,7 +70,7 @@
         "value_GE3kyn": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M6 20 C6 12, 12 6, 20 6 C28 6, 34 12, 34 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M10 20 C10 14, 14 10, 20 10 C26 10, 30 14, 30 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.5\"/><path d=\"M14 20 C14 16, 17 13, 20 13 C23 13, 26 16, 26 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.3\"/><line x1=\"20\" y1=\"20\" x2=\"20\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 34 L26 34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg>",
+            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><path d=\"M6 20 C6 12, 12 6, 20 6 C28 6, 34 12, 34 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path><path d=\"M10 20 C10 14, 14 10, 20 10 C26 10, 30 14, 30 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.5\"></path><path d=\"M14 20 C14 16, 17 13, 20 13 C23 13, 26 16, 26 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.3\"></path><line x1=\"20\" y1=\"20\" x2=\"20\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></line><path d=\"M14 34 L26 34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
             "title": "Local production",
             "text": "We design and manufacture in Madrid. Local production means less transport, more quality control and support for the surrounding economy."
           }
@@ -77,7 +78,7 @@
         "value_rJ4Wcz": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"14\" r=\"6\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M8 36 C8 28, 13 24, 20 24 C27 24, 32 28, 32 36\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 12 C16 10, 24 10, 26 12\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" opacity=\"0.5\"/></svg>",
+            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"14\" r=\"6\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M8 36 C8 28, 13 24, 20 24 C27 24, 32 28, 32 36\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path><path d=\"M14 12 C16 10, 24 10, 26 12\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" opacity=\"0.5\"></path></svg>",
             "title": "Customizable pieces",
             "text": "Color, size, finish. Many pieces can be adapted to your space. Write to us if you have something specific in mind and we will make it real."
           }
@@ -85,7 +86,7 @@
         "value_pHmaJa": {
           "type": "value",
           "settings": {
-            "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M20 6 L23 15 L32 15 L25 21 L28 30 L20 25 L12 30 L15 21 L8 15 L17 15 Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"/><circle cx=\"20\" cy=\"18\" r=\"2\" fill=\"currentColor\" opacity=\"0.5\"/></svg>",
+            "icon_svg": "<svg viewbox=\"0 0 40 40\" fill=\"none\"><path d=\"M20 6 L23 15 L32 15 L25 21 L28 30 L20 25 L12 30 L15 21 L8 15 L17 15 Z\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"></path><circle cx=\"20\" cy=\"18\" r=\"2\" fill=\"currentColor\" opacity=\"0.5\"></circle></svg>",
             "title": "Craft quality",
             "text": "Sanding, surface treatment and manual quality control. No piece leaves without inspection. Technology does not replace the human touch."
           }
