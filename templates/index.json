@@ -785,7 +785,7 @@
           "type": "step",
           "settings": {
             "number": "01",
-            "title": "Diseño",
+            "title": "Design",
             "text": "Parametric 3D modelling. Every curve and angle serves a function or an aesthetic intention."
           }
         },
@@ -793,7 +793,7 @@
           "type": "step",
           "settings": {
             "number": "01",
-            "title": "Diseño",
+            "title": "Design",
             "text": "Parametric 3D modelling. Every curve and angle serves a function or an aesthetic intention."
           }
         },
@@ -801,7 +801,7 @@
           "type": "step",
           "settings": {
             "number": "01",
-            "title": "Diseño",
+            "title": "Design",
             "text": "Parametric 3D modelling. Every curve and angle serves a function or an aesthetic intention."
           }
         },
@@ -809,7 +809,7 @@
           "type": "step",
           "settings": {
             "number": "01",
-            "title": "Diseño",
+            "title": "Design",
             "text": "Parametric 3D modelling. Every curve and angle serves a function or an aesthetic intention."
           }
         }
@@ -1042,7 +1042,7 @@
             "input_type_preset": "",
             "style_class": "button",
             "display_type": "arrow",
-            "label": "Suscribirse",
+            "label": "Sign up",
             "integrated_button": true,
             "button_type_preset": "",
             "padding-block-start": 0,
