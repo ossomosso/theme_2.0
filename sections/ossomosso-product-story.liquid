@@ -11,7 +11,7 @@
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'marquee' %}
-        <div class="osso-product-story__marquee" aria-hidden="true" {{ block.shopify_attributes }}>
+        <div class="osso-product-story__marquee" style="--marquee-background: {{ block.settings.background_color | default: '#8b5e3c' }}; --marquee-foreground: {{ block.settings.text_color | default: '#fff8ef' }};" aria-hidden="true" {{ block.shopify_attributes }}>
           <div class="osso-product-story__marquee-track" style="animation-duration: {{ block.settings.speed | default: 26 }}s;">
             {% for loop_index in (1..2) %}
               {% for i in (1..5) %}
@@ -315,9 +315,9 @@
 
   .osso-product-story__marquee {
     overflow: hidden;
-    border-block: 1px solid var(--story-line);
-    background: color-mix(in srgb, var(--story-paper) 82%, var(--story-accent));
-    color: var(--story-ink);
+    border-block: 1px solid color-mix(in srgb, var(--marquee-foreground) 22%, transparent);
+    background: var(--marquee-background);
+    color: var(--marquee-foreground);
   }
 
   .osso-product-story__marquee-track {
@@ -507,6 +507,18 @@
       "type": "marquee",
       "name": "Marquee",
       "settings": [
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#8b5e3c"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#fff8ef"
+        },
         {
           "type": "range",
           "id": "speed",
