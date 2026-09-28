@@ -249,7 +249,7 @@
         <div class="osso-product-story__tech" {{ block.shopify_attributes }}>
           <div class="osso-product-story__tech-inner">
             {% if is_lamp %}
-              <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">Ficha técnica</p>
+              <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ 'sections.product_story.tech_label' | t }}</p>
               <h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ 'sections.product_story.tech_title' | t }}</h3>
             {% elsif block.settings.label != blank %}
               <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ block.settings.label }}</p>
