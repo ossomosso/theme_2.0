@@ -1,0 +1,1366 @@
+{
+  "sections": {
+    "divider_iPjTfx": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "full-width",
+        "thickness": 0.5,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 30,
+        "padding-block-end": 30
+      }
+    },
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "grid",
+            "media_columns": "two",
+            "image_gap": 2,
+            "large_first_image": false,
+            "icons_style": "chevron",
+            "slideshow_controls_style": "dots",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "bottom",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "1/1.25",
+            "constrain_to_viewport": true,
+            "media_fit": "cover",
+            "media_radius": 0,
+            "extend_media": true,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 16,
+            "sticky_details_desktop": true,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 32,
+            "padding-block-end": 16,
+            "padding-inline-start": 12,
+            "padding-inline-end": 12
+          },
+          "blocks": {
+            "text_GnyQiN": {
+              "type": "text",
+              "name": "t:names.title",
+              "settings": {
+                "text": "<h1>{{ closest.product.title }}</h1>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h2",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "reviews": {
+              "type": "review",
+              "settings": {
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
+              },
+              "blocks": {}
+            },
+            "price_a7krng": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": true,
+                "show_tax_info": false,
+                "type_preset": "h4",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 17,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": true,
+                "alignment": "left",
+                "padding-block-start": 12,
+                "padding-block-end": 12,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": false,
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
+            "product_description_LfDYCg": {
+              "type": "product-description",
+              "name": "t:names.product_description",
+              "settings": {
+                "text": "{{ closest.product.description }}",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-primary--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_X39hBc": {
+              "type": "group",
+              "name": "Values",
+              "disabled": true,
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 8,
+                "padding-block-end": 16,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "group_XqRYxC": {
+                  "type": "group",
+                  "name": "Row 1",
+                  "settings": {
+                    "content_direction": "row",
+                    "vertical_on_mobile": false,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "flex-start",
+                    "vertical_alignment_flex_direction_column": "center",
+                    "gap": 12,
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "custom_height": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "background_image_position": "cover",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "placeholder": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "group_aXnYyb": {
+                      "type": "group",
+                      "name": "Care",
+                      "settings": {
+                        "content_direction": "column",
+                        "vertical_on_mobile": true,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "center",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": false,
+                        "color_scheme": "scheme-2",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 10,
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "placeholder": "",
+                        "padding-block-start": 42,
+                        "padding-block-end": 42,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {
+                        "icon_CbKB4N": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "heart",
+                            "width": 24,
+                            "link": "",
+                            "open_in_new_tab": false
+                          },
+                          "blocks": {}
+                        },
+                        "text_ktmjan": {
+                          "type": "text",
+                          "name": "Heading",
+                          "settings": {
+                            "text": "<p>Made with care</p>",
+                            "width": "100%",
+                            "max_width": "normal",
+                            "alignment": "center",
+                            "type_preset": "h6",
+                            "font": "var(--font-primary--family)",
+                            "font_size": "",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_CbKB4N",
+                        "text_ktmjan"
+                      ]
+                    },
+                    "group_YAKm6a": {
+                      "type": "group",
+                      "name": "Value",
+                      "settings": {
+                        "content_direction": "column",
+                        "vertical_on_mobile": true,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "center",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": false,
+                        "color_scheme": "scheme-2",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 10,
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "placeholder": "",
+                        "padding-block-start": 42,
+                        "padding-block-end": 42,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {
+                        "icon_AXg4Q3": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "price_tag",
+                            "width": 24,
+                            "link": "",
+                            "open_in_new_tab": false
+                          },
+                          "blocks": {}
+                        },
+                        "text_DRMYrh": {
+                          "type": "text",
+                          "name": "Heading",
+                          "settings": {
+                            "text": "<p>Great value</p>",
+                            "width": "100%",
+                            "max_width": "normal",
+                            "alignment": "center",
+                            "type_preset": "h6",
+                            "font": "var(--font-primary--family)",
+                            "font_size": "",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_AXg4Q3",
+                        "text_DRMYrh"
+                      ]
+                    }
+                  },
+                  "block_order": [
+                    "group_aXnYyb",
+                    "group_YAKm6a"
+                  ]
+                },
+                "group_e7FkRj": {
+                  "type": "group",
+                  "name": "Row 2",
+                  "settings": {
+                    "content_direction": "row",
+                    "vertical_on_mobile": false,
+                    "horizontal_alignment": "flex-start",
+                    "vertical_alignment": "center",
+                    "align_baseline": false,
+                    "horizontal_alignment_flex_direction_column": "flex-start",
+                    "vertical_alignment_flex_direction_column": "center",
+                    "gap": 12,
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "custom_height": 100,
+                    "inherit_color_scheme": true,
+                    "color_scheme": "",
+                    "background_media": "none",
+                    "video_position": "cover",
+                    "background_image_position": "cover",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "toggle_overlay": false,
+                    "overlay_color": "#00000026",
+                    "overlay_style": "solid",
+                    "gradient_direction": "to top",
+                    "link": "",
+                    "open_in_new_tab": false,
+                    "placeholder": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {
+                    "group_NGJDpt": {
+                      "type": "group",
+                      "name": "Design",
+                      "settings": {
+                        "content_direction": "column",
+                        "vertical_on_mobile": true,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "center",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": false,
+                        "color_scheme": "scheme-2",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 10,
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "placeholder": "",
+                        "padding-block-start": 42,
+                        "padding-block-end": 42,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {
+                        "icon_bjBHgQ": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "plant",
+                            "width": 24,
+                            "link": "",
+                            "open_in_new_tab": false
+                          },
+                          "blocks": {}
+                        },
+                        "text_fN97nd": {
+                          "type": "text",
+                          "name": "Heading",
+                          "settings": {
+                            "text": "<p>Elegant design</p>",
+                            "width": "100%",
+                            "max_width": "normal",
+                            "alignment": "center",
+                            "type_preset": "h6",
+                            "font": "var(--font-primary--family)",
+                            "font_size": "",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_bjBHgQ",
+                        "text_fN97nd"
+                      ]
+                    },
+                    "group_73gqqM": {
+                      "type": "group",
+                      "name": "Quality",
+                      "settings": {
+                        "content_direction": "column",
+                        "vertical_on_mobile": true,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "center",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": false,
+                        "color_scheme": "scheme-2",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 10,
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "placeholder": "",
+                        "padding-block-start": 42,
+                        "padding-block-end": 42,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {
+                        "icon_twG6iJ": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "leather",
+                            "width": 24,
+                            "link": "",
+                            "open_in_new_tab": false
+                          },
+                          "blocks": {}
+                        },
+                        "text_UmcfKJ": {
+                          "type": "text",
+                          "name": "Heading",
+                          "settings": {
+                            "text": "<p>Quality materials</p>",
+                            "width": "100%",
+                            "max_width": "normal",
+                            "alignment": "center",
+                            "type_preset": "h6",
+                            "font": "var(--font-primary--family)",
+                            "font_size": "",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_twG6iJ",
+                        "text_UmcfKJ"
+                      ]
+                    }
+                  },
+                  "block_order": [
+                    "group_NGJDpt",
+                    "group_73gqqM"
+                  ]
+                }
+              },
+              "block_order": [
+                "group_XqRYxC",
+                "group_e7FkRj"
+              ]
+            },
+            "accordion_g8EVVp": {
+              "type": "accordion",
+              "name": "Accordion",
+              "settings": {
+                "icon": "plus",
+                "dividers": true,
+                "type_preset": "h4",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_VyFryh": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Details",
+                    "open_by_default": false,
+                    "lamp_only": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_McjMWz": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-primary--family)",
+                        "font_size": "",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_McjMWz"
+                  ]
+                },
+                "accordion_row_aaFerA": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Shipping & Returns",
+                    "open_by_default": false,
+                    "lamp_only": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_DNPAct": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-primary--family)",
+                        "font_size": "",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_DNPAct"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_VyFryh",
+                "accordion_row_aaFerA"
+              ]
+            }
+          },
+          "block_order": [
+            "text_GnyQiN",
+            "reviews",
+            "price_a7krng",
+            "variant_picker_R3rGDr",
+            "buy_buttons_eYQEYi",
+            "product_description_LfDYCg",
+            "group_X39hBc",
+            "accordion_g8EVVp"
+          ]
+        }
+      },
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "color_scheme": "",
+        "padding-block-start": 0,
+        "padding-block-end": 32
+      }
+    },
+    "product_list_zR9Cym": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "static": true,
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_zDAmEe": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<p>Discover other products</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h2",
+                "font": "var(--font-primary--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_zDAmEe"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 0,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-e1e09ff5-6396-47cd-ad7a-c05470cf2a2e",
+            "border": "none",
+            "border_width": 0,
+            "border_opacity": 100,
+            "border_radius": 10,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_Hf6KQF": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_VPQXaP": {
+              "type": "_product-card-group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "space-between",
+                "vertical_alignment": "flex-end",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 4,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 16
+              },
+              "blocks": {
+                "product_title_hHha9n": {
+                  "type": "product-title",
+                  "name": "t:names.product_title",
+                  "settings": {
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "paragraph",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "price_gL8gJK": {
+                  "type": "price",
+                  "name": "t:names.product_price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "paragraph",
+                    "width": "fit-content",
+                    "alignment": "right",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "swatches_Fhf4Yz": {
+                  "type": "swatches",
+                  "name": "t:names.swatches",
+                  "settings": {
+                    "product_swatches_alignment": "flex-start",
+                    "product_swatches_alignment_mobile": "flex-start",
+                    "hide_padding": false,
+                    "product_swatches_padding_top": 4,
+                    "product_swatches_padding_bottom": 0,
+                    "product_swatches_padding_left": 0,
+                    "product_swatches_padding_right": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_title_hHha9n",
+                "price_gL8gJK",
+                "swatches_Fhf4Yz"
+              ]
+            }
+          },
+          "block_order": [
+            "product_card_gallery_Hf6KQF",
+            "group_VPQXaP"
+          ]
+        }
+      },
+      "name": "Featured collection",
+      "settings": {
+        "collection": "all",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 12,
+        "rows_gap": 12,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 28,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 60,
+        "padding-block-end": 72
+      }
+    },
+    "ossomosso_product_story_en": {
+      "type": "ossomosso-product-story",
+      "blocks": {
+        "marquee_hea9YP": {
+          "type": "marquee",
+          "settings": {
+            "speed": 26,
+            "item_1": "Made in Madrid",
+            "item_2": "Graphic sculptural form",
+            "item_3": "Directional ambient light",
+            "item_4": "Made to order",
+            "item_5": "Two colour options"
+          }
+        },
+        "intro_ihcmLB": {
+          "type": "intro",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "A graphic light object",
+            "title": "A poised lamp with a playful stance",
+            "body": "<p>Grasshopper balances a strong graphic outline with the warmth of a small table lamp. It is designed to bring character without visual noise.</p>",
+            "show_specs": true,
+            "spec_1_label": "Character",
+            "spec_1_value": "Graphic and expressive",
+            "spec_2_label": "Production",
+            "spec_2_value": "Small-batch 3D printing",
+            "spec_3_label": "Origin",
+            "spec_3_value": "Made in Madrid",
+            "spec_4_label": "Light",
+            "spec_4_value": "Focused ambient glow"
+          }
+        },
+        "features_mCmGAe": {
+          "type": "features",
+          "disabled": true,
+          "settings": {
+            "feature_1_title": "A clear profile",
+            "feature_1_text": "The angled silhouette gives Grasshopper a recognisable presence from across the room.",
+            "feature_2_title": "Playful balance",
+            "feature_2_text": "Its stance feels almost animated while the material keeps the overall look calm.",
+            "feature_3_title": "A useful glow",
+            "feature_3_text": "The form directs light where you need it, from a reading corner to a console.",
+            "feature_4_title": "Two understated tones",
+            "feature_4_text": "Choose between two colour options that let the shape stay in focus."
+          }
+        },
+        "media_grid_yiBkYA": {
+          "type": "media_grid",
+          "disabled": true,
+          "settings": {
+            "card_1_type": "image",
+            "card_1_kicker": "",
+            "card_1_title": "",
+            "card_1_text": "",
+            "card_1_dark": false,
+            "card_2_type": "text",
+            "card_2_kicker": "The stance",
+            "card_2_title": "A lamp that seems ready to move.",
+            "card_2_text": "Grasshopper uses proportion and angle to give a small object a surprisingly lively presence.",
+            "card_2_dark": false,
+            "card_3_type": "text",
+            "card_3_kicker": "The making",
+            "card_3_title": "Layered form, careful finish.",
+            "card_3_text": "It is printed in short runs and finished by hand so the geometry remains crisp.",
+            "card_3_dark": true,
+            "card_4_type": "image",
+            "card_4_kicker": "",
+            "card_4_title": "",
+            "card_4_text": "",
+            "card_4_dark": false
+          }
+        },
+        "highlight_aFtPwH": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "For desks, reading corners and consoles",
+            "title": "A little character, switched on",
+            "text": "Grasshopper adds a graphic accent to a room while keeping its light practical and inviting."
+          }
+        },
+        "details_mzHy3T": {
+          "type": "details",
+          "settings": {
+            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
+            "eyebrow": "The idea behind Grasshopper",
+            "title": "A playful profile for everyday light.",
+            "text": "<p>Grasshopper starts with the stance of a small animal and turns it into a clean, expressive object for the home.</p>",
+            "show_accordion": true,
+            "accordion_1_heading": "Product details",
+            "accordion_1_content": "<p>Compact table lamp with a graphic silhouette and two colour options.</p>",
+            "accordion_2_heading": "Materials and process",
+            "accordion_2_content": "<p>Printed in biodegradable PLA in small batches and finished in Madrid.</p>",
+            "accordion_3_heading": "Shipping and returns",
+            "accordion_3_content": "<p>Made to order. Write to us if you need help with timing or a return.</p>"
+          }
+        },
+        "tech_specs_cMwUTM": {
+          "type": "tech_specs",
+          "settings": {
+            "label": "Technical specifications",
+            "title": "Grasshopper — key details",
+            "spec_1_value": "01",
+            "spec_1_label": "Tabletop piece",
+            "spec_2_value": "02",
+            "spec_2_label": "Colour options",
+            "spec_3_value": "Soft",
+            "spec_3_label": "Light character",
+            "spec_4_value": "ES",
+            "spec_4_label": "Made in Spain",
+            "spec_5_value": "03",
+            "spec_5_label": "Suggested spaces",
+            "spec_6_value": "Medium",
+            "spec_6_label": "Visual intensity",
+            "spec_7_value": "360",
+            "spec_7_label": "Sculptural presence",
+            "spec_8_value": "Low",
+            "spec_8_label": "Small-batch production"
+          }
+        },
+        "reviews_DTTrtr": {
+          "type": "reviews",
+          "settings": {
+            "label": "Reviews",
+            "title": "How Grasshopper holds a room.",
+            "rating_text": "4.7 / 5 overall feeling",
+            "review_1_stars": 5,
+            "review_1_text": "Grasshopper has a lot of personality without taking over the room. It is a great desk lamp.",
+            "review_1_author": "Álvaro, Madrid",
+            "review_2_stars": 4,
+            "review_2_text": "The shape is wonderfully graphic and the light is more useful than I expected.",
+            "review_2_author": "Clara, Valencia",
+            "review_3_stars": 5,
+            "review_3_text": "It brings a nice bit of movement to a very quiet corner.",
+            "review_3_author": "Luis, Barcelona"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_hea9YP",
+        "intro_ihcmLB",
+        "features_mCmGAe",
+        "media_grid_yiBkYA",
+        "highlight_aFtPwH",
+        "details_mzHy3T",
+        "tech_specs_cMwUTM",
+        "reviews_DTTrtr"
+      ],
+      "name": "Ossomosso - Product Story",
+      "settings": {
+        "color_scheme": "",
+        "language": "en"
+      }
+    },
+    "ossomosso_product_story_es": {
+      "type": "ossomosso-product-story",
+      "blocks": {
+        "marquee_hea9YP": {
+          "type": "marquee",
+          "settings": {
+            "speed": 26,
+            "item_1": "Hecha en Madrid",
+            "item_2": "Forma gráfica y escultórica",
+            "item_3": "Luz ambiental dirigida",
+            "item_4": "Bajo pedido",
+            "item_5": "Dos opciones de color"
+          }
+        },
+        "intro_ihcmLB": {
+          "type": "intro",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Objeto de luz gráfico",
+            "title": "Una lámpara con una postura juguetona",
+            "body": "<p>Grasshopper equilibra un perfil gráfico con la calidez de una lámpara de mesa. Aporta carácter sin ruido visual.</p>",
+            "show_specs": true,
+            "spec_1_label": "Carácter",
+            "spec_1_value": "Gráfico y expresivo",
+            "spec_2_label": "Producción",
+            "spec_2_value": "Impresión 3D en series cortas",
+            "spec_3_label": "Origen",
+            "spec_3_value": "Hecha en Madrid",
+            "spec_4_label": "Luz",
+            "spec_4_value": "Brillo ambiental focalizado"
+          }
+        },
+        "features_mCmGAe": {
+          "type": "features",
+          "disabled": true,
+          "settings": {
+            "feature_1_title": "Un perfil reconocible",
+            "feature_1_text": "La silueta inclinada da a Grasshopper una presencia clara desde cualquier punto de la habitación.",
+            "feature_2_title": "Equilibrio juguetón",
+            "feature_2_text": "Su postura parece casi animada, mientras el material mantiene el conjunto sereno.",
+            "feature_3_title": "Un brillo útil",
+            "feature_3_text": "La forma dirige la luz donde la necesitas, desde un rincón de lectura hasta una consola.",
+            "feature_4_title": "Dos tonos discretos",
+            "feature_4_text": "Elige entre dos colores y deja que la geometría siga siendo la protagonista."
+          }
+        },
+        "media_grid_yiBkYA": {
+          "type": "media_grid",
+          "disabled": true,
+          "settings": {
+            "card_1_type": "image",
+            "card_1_kicker": "",
+            "card_1_title": "",
+            "card_1_text": "",
+            "card_1_dark": false,
+            "card_2_type": "text",
+            "card_2_kicker": "La postura",
+            "card_2_title": "Una lámpara que parece a punto de moverse.",
+            "card_2_text": "Grasshopper utiliza proporción y ángulo para dar a un objeto pequeño una presencia sorprendentemente viva.",
+            "card_2_dark": false,
+            "card_3_type": "text",
+            "card_3_kicker": "La fabricación",
+            "card_3_title": "Forma por capas, acabado preciso.",
+            "card_3_text": "Se imprime en series cortas y se termina a mano para mantener la geometría nítida.",
+            "card_3_dark": true,
+            "card_4_type": "image",
+            "card_4_kicker": "",
+            "card_4_title": "",
+            "card_4_text": "",
+            "card_4_dark": false
+          }
+        },
+        "highlight_aFtPwH": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "eyebrow": "Para escritorios, rincones de lectura y consolas",
+            "title": "Un poco de carácter, encendida",
+            "text": "Grasshopper añade un acento gráfico a la estancia mientras mantiene una luz práctica y acogedora."
+          }
+        },
+        "details_mzHy3T": {
+          "type": "details",
+          "settings": {
+            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
+            "eyebrow": "La idea detrás de Grasshopper",
+            "title": "Un perfil juguetón para la luz cotidiana.",
+            "text": "<p>Grasshopper parte de la postura de un pequeño animal y la convierte en un objeto limpio y expresivo para casa.</p>",
+            "show_accordion": true,
+            "accordion_1_heading": "Detalles del producto",
+            "accordion_1_content": "<p>Lámpara de mesa compacta con silueta gráfica y dos opciones de color.</p>",
+            "accordion_2_heading": "Materiales y proceso",
+            "accordion_2_content": "<p>Impresión en PLA biodegradable en series cortas y acabado en Madrid.</p>",
+            "accordion_3_heading": "Envíos y devoluciones",
+            "accordion_3_content": "<p>Fabricación bajo pedido. Escríbenos si necesitas ayuda con los plazos o una devolución.</p>"
+          }
+        },
+        "tech_specs_cMwUTM": {
+          "type": "tech_specs",
+          "settings": {
+            "label": "Especificaciones técnicas",
+            "title": "Grasshopper — detalles clave",
+            "spec_1_value": "01",
+            "spec_1_label": "Pieza de sobremesa",
+            "spec_2_value": "02",
+            "spec_2_label": "Opciones de color",
+            "spec_3_value": "Suave",
+            "spec_3_label": "Carácter de la luz",
+            "spec_4_value": "ES",
+            "spec_4_label": "Hecha en España",
+            "spec_5_value": "03",
+            "spec_5_label": "Espacios sugeridos",
+            "spec_6_value": "Media",
+            "spec_6_label": "Intensidad visual",
+            "spec_7_value": "360",
+            "spec_7_label": "Sculptural presence",
+            "spec_8_value": "Low",
+            "spec_8_label": "Small-batch production"
+          }
+        },
+        "reviews_DTTrtr": {
+          "type": "reviews",
+          "settings": {
+            "label": "Notas de uso",
+            "title": "Una luz útil con una silueta marcada.",
+            "rating_text": "Tres notas de uso cotidiano",
+            "review_1_stars": 5,
+            "review_1_text": "En el escritorio crea un buen punto de luz sin ocupar demasiado.",
+            "review_1_author": "Escritorio",
+            "review_2_stars": 4,
+            "review_2_text": "Tardé un día en acostumbrarme al ángulo, pero ahora es la primera lámpara que enciendo.",
+            "review_2_author": "Rincón de lectura",
+            "review_3_stars": 5,
+            "review_3_text": "En persona tiene más presencia y pesa menos de lo que parece en las fotos.",
+            "review_3_author": "Consola"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_hea9YP",
+        "intro_ihcmLB",
+        "features_mCmGAe",
+        "media_grid_yiBkYA",
+        "highlight_aFtPwH",
+        "details_mzHy3T",
+        "tech_specs_cMwUTM",
+        "reviews_DTTrtr"
+      ],
+      "name": "Ossomosso - Product Story",
+      "settings": {
+        "color_scheme": "",
+        "language": "es"
+      }
+    }
+  },
+  "order": [
+    "divider_iPjTfx",
+    "main",
+    "product_list_zR9Cym",
+    "ossomosso_product_story_en",
+    "ossomosso_product_story_es"
+  ]
+}
