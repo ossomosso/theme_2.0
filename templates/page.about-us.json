@@ -71,7 +71,7 @@
           "settings": {
             "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><path d=\"M6 20 C6 12, 12 6, 20 6 C28 6, 34 12, 34 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M10 20 C10 14, 14 10, 20 10 C26 10, 30 14, 30 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.5\"/><path d=\"M14 20 C14 16, 17 13, 20 13 C23 13, 26 16, 26 20\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" opacity=\"0.3\"/><line x1=\"20\" y1=\"20\" x2=\"20\" y2=\"34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><path d=\"M14 34 L26 34\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg>",
             "title": "Local production",
-            "text": "Diseñamos y fabricamos en Madrid. Local production significa menos transporte, más control de calidad y apoyo a la economía del entorno."
+            "text": "We design and manufacture in Madrid. Local production means less transport, more quality control and support for the surrounding economy."
           }
         },
         "value_rJ4Wcz": {
@@ -149,7 +149,7 @@
           "settings": {
             "number": "04",
             "title": "Finish",
-            "text": "Lijado, tratamiento superficial y control de calidad manual. Ninguna pieza sale sin revisión."
+            "text": "Sanding, surface treatment and manual quality control. No piece leaves without inspection."
           }
         }
       },
