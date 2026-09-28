@@ -105,14 +105,13 @@
               {% liquid
                 assign localized_title = link.title
                 if localization.language.iso_code == 'en'
-                  case link.url
-                    when '/collections/all'
+                  if link.url contains '/collections/all'
                       assign localized_title = 'Products'
-                    when '/pages/sobre-nosostros'
+                  elsif link.url contains '/pages/sobre-nosostros'
                       assign localized_title = 'About us'
-                    when '/pages/contact'
+                  elsif link.url contains '/pages/contact'
                       assign localized_title = 'Contact'
-                  endcase
+                  endif
                 endif
               %}
               {% assign animation_index = animation_index | plus: 1 %}
