@@ -1065,7 +1065,7 @@
             "item_2": "Small-batch 3D printing",
             "item_3": "Ambient light",
             "item_4": "Made to order",
-            "item_5": "Compatible con bombilla LED"
+            "item_5": "Compatible with LED bulb"
           }
         },
         "intro_ihcmLB": {
@@ -1073,16 +1073,16 @@
           "disabled": true,
           "settings": {
             "eyebrow": "Sculptural light",
-            "title": "Una tulipa convertida en objeto.",
-            "body": "<p>Tulipa nace de una silueta floral muy simple y la lleva a un terreno más material: una pieza luminosa, suave y doméstica, pensada para dar ambiente sin imponerse.</p>",
+            "title": "A tulip-shaped lamp turned into an object.",
+            "body": "<p>Tulipa begins with a very simple floral silhouette and takes it into a more material realm: a luminous, soft and homely piece designed to create atmosphere without imposing itself.</p>",
             "show_specs": true,
             "spec_1_label": "Color",
-            "spec_1_value": "Arena natural",
-            "spec_2_label": "Producción",
+            "spec_1_value": "Natural sand",
+            "spec_2_label": "Production",
             "spec_2_value": "Made to order",
-            "spec_3_label": "Origen",
+            "spec_3_label": "Origin",
             "spec_3_value": "Made in Madrid",
-            "spec_4_label": "Carácter",
+            "spec_4_label": "Character",
             "spec_4_value": "Soft, enveloping light"
           }
         },
@@ -1090,7 +1090,7 @@
           "type": "features",
           "disabled": true,
           "settings": {
-            "feature_1_title": "Pequeña serie",
+            "feature_1_title": "Small batch",
             "feature_1_text": "Each unit is made in short batches to maintain control over the finish.",
             "feature_2_title": "Lightweight material",
             "feature_2_text": "Designed to work beautifully on shelves and in small corners.",
@@ -1110,8 +1110,8 @@
             "card_1_text": "",
             "card_1_dark": false,
             "card_2_type": "text",
-            "card_2_kicker": "La forma",
-            "card_2_title": "Curvas que recogen la luz.",
+            "card_2_kicker": "The form",
+            "card_2_title": "Curves that gather the light.",
             "card_2_text": "The open geometry is designed to diffuse the light source and spread it with a warmer presence.",
             "card_2_dark": false,
             "card_3_type": "text",
@@ -1132,18 +1132,18 @@
           "settings": {
             "eyebrow": "For small spaces and considered corners",
             "title": "Una pieza sencilla que cambia el tono de la estancia.",
-            "text": "Funciona especialmente bien en dormitorios, recibidores, estanterías o mesas auxiliares."
+            "text": "It works especially well in bedrooms, entryways, shelves or side tables."
           }
         },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
-            "eyebrow": "La historia detrás",
-            "title": "Entre gesto orgánico y objeto doméstico.",
-            "text": "<p>Tulipa se mueve entre lo floral y lo arquitectónico. La referencia natural está ahí, pero aterrizada en una pieza serena y fácil de integrar.</p>",
+            "eyebrow": "The story behind",
+            "title": "Between organic gesture and domestic object.",
+            "text": "<p>Tulipa moves between the floral and the architectural. The natural reference is there, grounded in a calm piece that is easy to integrate.</p>",
             "show_accordion": true,
-            "accordion_1_heading": "Descripción del producto",
-            "accordion_1_content": "<p>Table lamp con floral silhouette and ambient light. Funciona especialmente bien con bombilla LED cálida.</p>",
+            "accordion_1_heading": "Product description",
+            "accordion_1_content": "<p>Table lamp with a floral silhouette and ambient light. It works especially well with a warm LED bulb.</p>",
             "accordion_2_heading": "Materials and process",
             "accordion_2_content": "<p>Made in small batches using 3D printing and assembled locally in Madrid.</p>",
             "accordion_3_heading": "Shipping and returns",
@@ -1153,34 +1153,34 @@
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Ficha técnica",
-            "title": "Tulipa — Datos clave",
+            "label": "Technical specifications",
+            "title": "Tulipa — Key details",
             "spec_1_value": "01",
-            "spec_1_label": "Pieza de sobremesa",
+            "spec_1_label": "Tabletop piece",
             "spec_2_value": "LED",
-            "spec_2_label": "Recomendado",
+            "spec_2_label": "Recommended",
             "spec_3_value": "Soft",
-            "spec_3_label": "Difusión de luz",
+            "spec_3_label": "Light diffusion",
             "spec_4_value": "ES",
             "spec_4_label": "Made in Spain",
             "spec_5_value": "03",
-            "spec_5_label": "Usos sugeridos",
+            "spec_5_label": "Suggested uses",
             "spec_6_value": "Calm",
-            "spec_6_label": "Temperatura visual",
+            "spec_6_label": "Visual temperature",
             "spec_7_value": "360",
-            "spec_7_label": "Presencia escultórica",
+            "spec_7_label": "Pressence escultórica",
             "spec_8_value": "Low",
-            "spec_8_label": "Producción sin excedente"
+            "spec_8_label": "Production sin excedente"
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
-            "label": "Opiniones",
-            "title": "Cómo se siente Tulipa en casa.",
-            "rating_text": "4.9 / 5 en sensación general",
+            "label": "Reviews",
+            "title": "How Tulipa feels at home.",
+            "rating_text": "4.9 / 5 overall feeling",
             "review_1_stars": 5,
-            "review_1_text": "Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada.",
+            "review_1_text": "Tiene una pressence muy tranquila. En la mesilla queda preciosa incluso apagada.",
             "review_1_author": "Laura, Madrid",
             "review_2_stars": 5,
             "review_2_text": "I love that it does not look like a generic lamp. It creates atmosphere and adds so much to the living room.",
