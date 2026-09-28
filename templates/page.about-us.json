@@ -46,7 +46,7 @@
           "type": "value",
           "settings": {
             "icon_svg": "<svg viewBox=\"0 0 40 40\" fill=\"none\"><circle cx=\"20\" cy=\"20\" r=\"16\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M20 10 L20 20 L27 24\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"/><circle cx=\"20\" cy=\"20\" r=\"2\" fill=\"currentColor\"/></svg>",
-            "title": "Fabricación bajo demanda",
+            "title": "Made to order",
             "text": "Your order is printed when you place it, not before. No accumulated stock or mass-production waste. Every object is made with a purpose."
           }
         },
@@ -112,7 +112,7 @@
       "settings": {
         "title": "Piezas que transforman la forma de vivir tu",
         "title_emphasis": "espacio",
-        "subtitle": "Si te mueve el diseño que innova, que emociona y que convierte un espacio en un lugar propio, bienvenido a Ossomosso.",
+        "subtitle": "If you are moved by design that innovates, inspires and turns a space into somewhere truly yours, welcome to Ossomosso.",
         "button_text": "Explore collection",
         "button_url": "shopify://collections/all"
       }
@@ -163,7 +163,7 @@
       "settings": {
         "title": "From design to your",
         "title_emphasis": "hands",
-        "description": "Cada objeto comienza con una idea y termina en una pieza real. Sin intermediarios, sin almacenes llenos de stock, sin residuos innecesarios. Solo diseño, material y proceso."
+        "description": "Every object starts as an idea and ends as a real piece. No middlemen, no warehouses full of stock, no unnecessary waste. Just design, material and process."
       }
     }
   },
