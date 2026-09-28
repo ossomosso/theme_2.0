@@ -352,7 +352,16 @@
       "details_title": "Detalles esenciales.",
       "details_text": "Lámpara de interior impresa en 3D en PLA biodegradable. Incluye bombilla LED E14 y cable textil blanco de 5 m con interruptor.",
       "tech_title": "Datos técnicos.",
-      "tech_label": "Ficha técnica"
+      "tech_label": "Ficha técnica",
+      "indoor_value": "Interior",
+      "use_label": "Uso",
+      "light_source_label": "Fuente de luz",
+      "included_value": "Incluida",
+      "bulb_label": "Bombilla",
+      "cable_label": "Cable textil blanco",
+      "bioplastic_label": "Plástico biodegradable",
+      "layer_printing_label": "Impresión capa a capa",
+      "dimensions_label": "Dimensiones"
     }
   }
 }
