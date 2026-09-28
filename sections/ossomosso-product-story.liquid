@@ -33,16 +33,16 @@
         <div class="osso-product-story__marquee" aria-hidden="true" {{ block.shopify_attributes }}>
           <div class="osso-product-story__marquee-track" style="animation-duration: {{ block.settings.speed | default: 26 }}s;">
             {% if is_lamp %}
-              <span>Interior</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>Bombilla LED E14 incluida</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>Cable textil blanco · 5 m</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>PLA biodegradable</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.indoor_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.bulb_included_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.cable_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.bioplastic_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
               {% if lamp_dimensions != blank %}<span>{{ lamp_dimensions }}</span>{% endif %}
               <span class="osso-product-story__marquee-dot">·</span>
-              <span>Interior</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>Bombilla LED E14 incluida</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>Cable textil blanco · 5 m</span><span class="osso-product-story__marquee-dot">·</span>
-              <span>PLA biodegradable</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.indoor_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.bulb_included_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.cable_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
+              <span>{{ 'sections.product_story.bioplastic_value' | t }}</span><span class="osso-product-story__marquee-dot">·</span>
               {% if lamp_dimensions != blank %}<span>{{ lamp_dimensions }}</span>{% endif %}
             {% else %}
               {% for i in (1..5) %}
@@ -198,7 +198,7 @@
           </div>
           <div class="osso-product-story__details-copy">
             {% if is_lamp %}
-              <p class="osso-product-story__eyebrow">Ficha técnica</p>
+              <p class="osso-product-story__eyebrow">{{ 'sections.product_story.tech_label' | t }}</p>
             {% elsif block.settings.eyebrow != blank %}
               <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
             {% endif %}
