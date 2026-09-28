@@ -155,6 +155,11 @@ export function formatMoney(moneyValue, format, currency) {
   const currencyPrecision = CURRENCY_DECIMALS[currency.toUpperCase()] ?? DEFAULT_CURRENCY_DECIMALS;
   const divisor = Math.pow(10, currencyPrecision);
 
+  // Keep EUR consistent with the theme's Liquid output: amount first, symbol second.
+  if (currency.toUpperCase() === 'EUR') {
+    format = `${format.replace(/\s*€\s*/g, '').replace(/\s*EUR\s*/g, '').trim()} €`;
+  }
+
   return format.replace(/{{\s*(\w+)\s*}}/g, (_, placeholder) => {
     if (typeof placeholder !== 'string') return '';
     if (placeholder === 'currency') return currency;
