@@ -321,8 +321,29 @@
             <div class="pickup-availability__column">
               <h4 class="pickup-location__h4">{{ closest.product.title }}</h4>
               {% unless closest.product.has_only_default_variant %}
+                {% assign pickup_variant_title = closest.product.selected_or_first_available_variant.title %}
+                {% if localization.language.iso_code != 'es' and closest.product.selected_or_first_available_variant.options.size == 1 %}
+                  {% case closest.product.selected_or_first_available_variant.options.first %}
+                    {% when 'Azul' %}
+                      {% assign pickup_variant_title = 'Blue' %}
+                    {% when 'Azul Transparente' %}
+                      {% assign pickup_variant_title = 'Transparent Blue' %}
+                    {% when 'Blanco' %}
+                      {% assign pickup_variant_title = 'White' %}
+                    {% when 'Gris' %}
+                      {% assign pickup_variant_title = 'Grey' %}
+                    {% when 'Verde' %}
+                      {% assign pickup_variant_title = 'Green' %}
+                    {% when 'Rojo' %}
+                      {% assign pickup_variant_title = 'Red' %}
+                    {% when 'Rosa' %}
+                      {% assign pickup_variant_title = 'Pink' %}
+                    {% when 'Amarillo' %}
+                      {% assign pickup_variant_title = 'Yellow' %}
+                  {% endcase %}
+                {% endif %}
                 <p class="pickup-location__text-sm">
-                  {{ closest.product.selected_or_first_available_variant.title }}
+                  {{ pickup_variant_title | escape }}
                 </p>
               {% endunless %}
             </div>
