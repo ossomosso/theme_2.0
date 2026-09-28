@@ -44,9 +44,68 @@
   >
     {% content_for 'blocks' %}
   </div>
+
+  {% if section.settings.show_language and localization.available_languages.size > 1 %}
+    <div class="footer-localization">
+      <p class="footer-localization__label">{{ 'content.language' | t }}</p>
+      {% render 'localization-form',
+        show_country: false,
+        show_language: true,
+        form_id: section.id,
+        localization_style: 'footer'
+      %}
+    </div>
+  {% endif %}
 </div>
 
 {% stylesheet %}
+  .footer-localization {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid color-mix(in srgb, currentcolor 18%, transparent);
+  }
+
+  .footer-localization__label {
+    margin: 0;
+    color: color-mix(in srgb, currentcolor 68%, transparent);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .footer-localization localization-form-component {
+    width: auto;
+  }
+
+  .footer-localization .localization-form {
+    width: auto;
+  }
+
+  .footer-localization .language-selector {
+    width: auto;
+    padding: 0;
+  }
+
+  .footer-localization .localization-form__select {
+    min-width: 9rem;
+    padding: .65rem 2.25rem .65rem .9rem;
+    border: 1px solid color-mix(in srgb, currentcolor 28%, transparent);
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+  }
+
+  .footer-localization .language-selector .svg-wrapper.icon-caret {
+    right: .8rem;
+  }
+
   .footer-content {
     contain: content;
     content-visibility: auto;
@@ -58,6 +117,13 @@
 
   .footer-content .menu__heading__default {
     font-weight: var(--font-heading--weight);
+  }
+
+  @media screen and (max-width: 749px) {
+    .footer-localization {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 
   @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -174,6 +240,12 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_language",
+      "label": "t:settings.language_selector",
+      "default": true
     },
     {
       "type": "header",
