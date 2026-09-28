@@ -178,7 +178,7 @@
         {% endif %}
         <div class="osso-product-story__details" {{ block.shopify_attributes }}>
           <div class="osso-product-story__details-visual">
-            {% assign details_media = product.media[1].preview_image | default: featured_image %}
+            {% assign details_media = block.settings.image | default: product.media[1].preview_image | default: featured_image %}
             {% if details_media != blank %}{{ details_media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__details-image', alt: product.title }}{% endif %}
           </div>
           <div class="osso-product-story__details-copy">
