@@ -102,6 +102,19 @@
             {% assign first_accordion_open = false %}
             {% assign animation_index = 0 %}
             {%- for link in linklist.links -%}
+              {% liquid
+                assign localized_title = link.title
+                if localization.language.iso_code == 'en'
+                  case link.url
+                    when '/collections/all'
+                      assign localized_title = 'Products'
+                    when '/pages/sobre-nosostros'
+                      assign localized_title = 'About us'
+                    when '/pages/contact'
+                      assign localized_title = 'Contact'
+                  endcase
+                endif
+              %}
               {% assign animation_index = animation_index | plus: 1 %}
               <li
                 style="--menu-drawer-animation-index: {{ animation_index }};"
@@ -126,7 +139,7 @@
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
                       >
-                        <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                        <span class="menu-drawer__menu-item-text wrap-text">{{ localized_title | escape }}</span>
                         <span class="svg-wrapper icon-plus">
                           {{- 'icon-plus.svg' | inline_asset_content -}}
                         </span>
@@ -190,7 +203,7 @@
                       aria-current="page"
                     {% endif %}
                   >
-                    <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                    <span class="menu-drawer__menu-item-text wrap-text">{{ localized_title | escape }}</span>
                   </a>
                   {% liquid
                     assign render_link_image = false
