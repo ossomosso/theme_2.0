@@ -1039,7 +1039,9 @@
             "item_2": "Fluid organic form",
             "item_3": "For branches and dried flowers",
             "item_4": "Made to order",
-            "item_5": "Small-batch 3D printing"
+            "item_5": "Small-batch 3D printing",
+            "background_color": "#8b5e3c",
+            "text_color": "#fff8ef"
           }
         },
         "intro_ihcmLB": {
@@ -1192,7 +1194,9 @@
             "item_2": "Forma orgánica y fluida",
             "item_3": "Para ramas y flores secas",
             "item_4": "Bajo pedido",
-            "item_5": "Impresión 3D en series cortas"
+            "item_5": "Impresión 3D en series cortas",
+            "background_color": "#8b5e3c",
+            "text_color": "#fff8ef"
           }
         },
         "intro_ihcmLB": {
