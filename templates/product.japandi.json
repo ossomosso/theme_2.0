@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "divider_iPjTfx": {
@@ -1039,9 +1048,7 @@
             "item_2": "Soft Japandi silhouette",
             "item_3": "For quiet interiors",
             "item_4": "Made to order",
-            "item_5": "Small-batch 3D printing",
-            "background_color": "#8b5e3c",
-            "text_color": "#fff8ef"
+            "item_5": "Small-batch 3D printing"
           }
         },
         "intro_ihcmLB": {
@@ -1194,9 +1201,7 @@
             "item_2": "Silueta Japandi suave",
             "item_3": "Para interiores tranquilos",
             "item_4": "Bajo pedido",
-            "item_5": "Impresión 3D en series cortas",
-            "background_color": "#8b5e3c",
-            "text_color": "#fff8ef"
+            "item_5": "Impresión 3D en series cortas"
           }
         },
         "intro_ihcmLB": {

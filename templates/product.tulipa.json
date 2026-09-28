@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "divider_iPjTfx": {
@@ -1058,9 +1067,7 @@
             "item_2": "Floral silhouette",
             "item_3": "Soft ambient light",
             "item_4": "Made to order",
-            "item_5": "E14 LED bulb included",
-            "background_color": "#8b5e3c",
-            "text_color": "#fff8ef"
+            "item_5": "E14 LED bulb included"
           }
         },
         "intro_ihcmLB": {
@@ -1214,9 +1221,7 @@
             "item_2": "Silueta floral",
             "item_3": "Luz ambiental suave",
             "item_4": "Bajo pedido",
-            "item_5": "Bombilla LED E14 incluida",
-            "background_color": "#8b5e3c",
-            "text_color": "#fff8ef"
+            "item_5": "Bombilla LED E14 incluida"
           }
         },
         "intro_ihcmLB": {
