@@ -41,12 +41,12 @@
             {% for link in block_settings.menu.links %}
               {% liquid
                 assign localized_title = link.title
-                if localization.language.iso_code != 'es'
-                  if link.url contains '/collections/all' or link.title == 'Productos'
+                if localization.language.iso_code == 'en'
+                  if link.url contains '/collections/all'
                       assign localized_title = 'Products'
-                  elsif link.url contains '/pages/sobre-nosostros' or link.title == 'Sobre nosotros'
+                  elsif link.url contains '/pages/sobre-nosostros'
                       assign localized_title = 'About us'
-                  elsif link.url contains '/pages/contact' or link.title == 'Contacto'
+                  elsif link.url contains '/pages/contact'
                       assign localized_title = 'Contact'
                   endif
                 endif

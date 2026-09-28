@@ -713,6 +713,7 @@
                   "settings": {
                     "heading": "Details",
                     "open_by_default": false,
+                    "lamp_only": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -752,6 +753,7 @@
                   "settings": {
                     "heading": "Shipping & Returns",
                     "open_by_default": false,
+                    "lamp_only": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -1138,6 +1140,7 @@
         "details_mzHy3T": {
           "type": "details",
           "settings": {
+            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
             "eyebrow": "The story behind",
             "title": "Between organic gesture and domestic object.",
             "text": "<p>The design moves between the organic and the architectural, grounded in a calm piece that is easy to integrate into everyday spaces.</p>",
