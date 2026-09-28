@@ -203,12 +203,12 @@
               <p class="osso-product-story__eyebrow">{{ block.settings.eyebrow }}</p>
             {% endif %}
             {% if is_lamp %}
-              <h3 class="osso-product-story__section-title">Detalles esenciales.</h3>
+              <h3 class="osso-product-story__section-title">{{ 'sections.product_story.details_title' | t }}</h3>
             {% elsif block.settings.title != blank %}
               <h3 class="osso-product-story__section-title">{{ block.settings.title }}</h3>
             {% endif %}
             {% if is_lamp %}
-              <div class="osso-product-story__text rte"><p>Lámpara de interior impresa en 3D en PLA biodegradable. Incluye bombilla LED E14 y cable textil blanco de 5 m con interruptor.</p></div>
+              <div class="osso-product-story__text rte"><p>{{ 'sections.product_story.details_text' | t }}</p></div>
             {% elsif block.settings.text != blank %}
               <div class="osso-product-story__text rte">{{ block.settings.text }}</div>
             {% endif %}
@@ -250,7 +250,7 @@
           <div class="osso-product-story__tech-inner">
             {% if is_lamp %}
               <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">Ficha técnica</p>
-              <h3 class="osso-product-story__section-title osso-product-story__section-title--light">Datos técnicos.</h3>
+              <h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ 'sections.product_story.tech_title' | t }}</h3>
             {% elsif block.settings.label != blank %}
               <p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ block.settings.label }}</p>
               {% if block.settings.title != blank %}
