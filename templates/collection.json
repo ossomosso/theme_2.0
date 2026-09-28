@@ -30,7 +30,7 @@
           "type": "text",
           "name": "Title",
           "settings": {
-            "text": "<h1>Productos</h1>",
+            "text": "<h1>Products</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -375,7 +375,7 @@
       "type": "ossomosso-collection-products",
       "settings": {
         "collection": "lamparas",
-        "heading": "Lámparas",
+        "heading": "Lamps",
         "product_limit": 50
       }
     },
@@ -383,7 +383,7 @@
       "type": "ossomosso-collection-products",
       "settings": {
         "collection": "jarrones",
-        "heading": "Jarrones",
+        "heading": "Vases",
         "product_limit": 3
       }
     }
