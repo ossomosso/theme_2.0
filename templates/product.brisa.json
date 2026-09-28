@@ -1058,7 +1058,9 @@
             "item_2": "Airy curved form",
             "item_3": "Gentle everyday light",
             "item_4": "Made to order",
-            "item_5": "Five colour options"
+            "item_5": "Five colour options",
+            "background_color": "#8b5e3c",
+            "text_color": "#fff8ef"
           }
         },
         "intro_ihcmLB": {
@@ -1212,7 +1214,9 @@
             "item_2": "Forma curva y ligera",
             "item_3": "Luz cotidiana y amable",
             "item_4": "Bajo pedido",
-            "item_5": "Cinco opciones de color"
+            "item_5": "Cinco opciones de color",
+            "background_color": "#8b5e3c",
+            "text_color": "#fff8ef"
           }
         },
         "intro_ihcmLB": {
