@@ -373,7 +373,16 @@
       "details_title": "Essential details.",
       "details_text": "3D-printed indoor lamp in biodegradable PLA. Includes an E14 LED bulb and a 5 m white textile cable with switch.",
       "tech_title": "Technical details.",
-      "tech_label": "Technical specifications"
+      "tech_label": "Technical specifications",
+      "indoor_value": "Indoor",
+      "use_label": "Use",
+      "light_source_label": "Light source",
+      "included_value": "Included",
+      "bulb_label": "Bulb",
+      "cable_label": "White textile cable",
+      "bioplastic_label": "Biodegradable plastic",
+      "layer_printing_label": "Layer-by-layer printing",
+      "dimensions_label": "Dimensions"
     }
   }
 }
