@@ -382,7 +382,10 @@
       "cable_label": "White textile cable",
       "bioplastic_label": "Biodegradable plastic",
       "layer_printing_label": "Layer-by-layer printing",
-      "dimensions_label": "Dimensions"
+      "dimensions_label": "Dimensions",
+      "bulb_included_value": "E14 LED bulb included",
+      "cable_value": "White textile cable · 5 m",
+      "bioplastic_value": "Biodegradable PLA"
     }
   }
 }
