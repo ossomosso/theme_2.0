@@ -711,17 +711,34 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Detalles",
+                    "heading": "Details",
                     "open_by_default": false,
-                    "lamp_only": true,
                     "icon": "none",
                     "width": 20
                   },
                   "blocks": {
                     "text_McjMWz": {
-                      "type": "custom-liquid",
+                      "type": "text",
                       "settings": {
-                        "custom_liquid": "{% assign lamp_handle = closest.product.handle %}{% assign lamp_dimensions = '' %}{% if lamp_handle == 'lampara-brisa' %}{% assign lamp_dimensions = '214 × 214 × 266 mm' %}{% elsif lamp_handle == 'lampara-tulip' %}{% assign lamp_dimensions = '250 × 250 × 334 mm' %}{% elsif lamp_handle == 'jarron-grasshoper' %}{% assign lamp_dimensions = '187 × 187 × 218 mm' %}{% elsif lamp_handle == 'lampara-champi' %}{% assign lamp_dimensions = '250 × 250 × 294 mm' %}{% endif %}<dl class='lamp-details'><div><dt>Uso</dt><dd>Interior</dd></div><div><dt>Fuente de luz</dt><dd>Bombilla LED E14 incluida</dd></div><div><dt>Cable</dt><dd>Cable textil blanco de 5 m con interruptor</dd></div><div><dt>Material</dt><dd>Impresión 3D en plástico biodegradable (PLA)</dd></div>{% if lamp_dimensions != blank %}<div><dt>Dimensiones</dt><dd>{{ lamp_dimensions }}</dd></div>{% endif %}</dl>"
+                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-primary--family)",
+                        "font_size": "",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
                       },
                       "blocks": {}
                     }
@@ -733,7 +750,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Envío y devoluciones",
+                    "heading": "Shipping & Returns",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -742,7 +759,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Cada lámpara se prepara con cuidado antes de salir del estudio. Te escribiremos con la información de envío cuando tu pedido esté en camino.</p><p>Si necesitas ayuda con un cambio o una devolución, escríbenos y lo revisamos contigo.</p>",
+                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -840,7 +857,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<p>Descubre otros productos</p>",
+                "text": "<p>Discover other products</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -1056,8 +1073,8 @@
           "disabled": true,
           "settings": {
             "eyebrow": "Luz escultórica",
-            "title": "Una pieza convertida en objeto.",
-            "body": "<p>Una pieza pensada para convivir con el espacio, aportar presencia y acompañar los gestos cotidianos sin imponerse.</p>",
+            "title": "Una tulipa convertida en objeto.",
+            "body": "<p>Tulipa nace de una silueta floral muy simple y la lleva a un terreno más material: una pieza luminosa, suave y doméstica, pensada para dar ambiente sin imponerse.</p>",
             "show_specs": true,
             "spec_1_label": "Color",
             "spec_1_value": "Arena natural",
@@ -1074,13 +1091,13 @@
           "disabled": true,
           "settings": {
             "feature_1_title": "Pequeña serie",
-            "feature_1_text": "Cada unidad se fabrica en tandas cortas para mantener el control del acabado.",
-            "feature_2_title": "Material ligero",
-            "feature_2_text": "La pieza está pensada para convivir bien en estanterías y rincones pequeños.",
+            "feature_1_text": "Each unit is made in short batches to maintain control over the finish.",
+            "feature_2_title": "Lightweight material",
+            "feature_2_text": "Designed to work beautifully on shelves and in small corners.",
             "feature_3_title": "Compatible LED",
-            "feature_3_text": "Funciona mejor con bombillas LED cálidas para reforzar la atmósfera suave.",
-            "feature_4_title": "Diseño con carácter",
-            "feature_4_text": "No busca solo iluminar: está pensada para aportar presencia visual."
+            "feature_3_text": "Works best with warm LED bulbs to enhance its soft atmosphere.",
+            "feature_4_title": "Design with character",
+            "feature_4_text": "It is not only designed to illuminate, but also to add visual presence."
           }
         },
         "media_grid_yiBkYA": {
@@ -1095,12 +1112,12 @@
             "card_2_type": "text",
             "card_2_kicker": "La forma",
             "card_2_title": "Curvas que recogen la luz.",
-            "card_2_text": "La geometría abierta está pensada para difuminar el punto de luz y repartirlo con una presencia más cálida.",
+            "card_2_text": "The open geometry is designed to diffuse the light source and spread it with a warmer presence.",
             "card_2_dark": false,
             "card_3_type": "text",
-            "card_3_kicker": "El proceso",
-            "card_3_title": "Diseño digital, acabado cercano.",
-            "card_3_text": "Cada pieza parte de un modelo 3D y se produce en series cortas para mantener una escala casi artesanal.",
+            "card_3_kicker": "The process",
+            "card_3_title": "Digital design, carefully finished.",
+            "card_3_text": "Each piece starts from a 3D model and is produced in short runs to retain an almost artisanal scale.",
             "card_3_dark": true,
             "card_4_type": "image",
             "card_4_kicker": "",
@@ -1113,7 +1130,7 @@
           "type": "highlight",
           "disabled": true,
           "settings": {
-            "eyebrow": "Para espacios pequeños y rincones con intención",
+            "eyebrow": "For small spaces and considered corners",
             "title": "Una pieza sencilla que cambia el tono de la estancia.",
             "text": "Funciona especialmente bien en dormitorios, recibidores, estanterías o mesas auxiliares."
           }
@@ -1123,21 +1140,21 @@
           "settings": {
             "eyebrow": "La historia detrás",
             "title": "Entre gesto orgánico y objeto doméstico.",
-            "text": "<p>Una forma pensada para integrarse con naturalidad en el espacio, entre presencia escultórica y uso cotidiano.</p>",
+            "text": "<p>Tulipa se mueve entre lo floral y lo arquitectónico. La referencia natural está ahí, pero aterrizada en una pieza serena y fácil de integrar.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Descripción del producto",
-            "accordion_1_content": "<p>Lámpara de sobremesa con silueta floral y luz ambiental. Funciona especialmente bien con bombilla LED cálida.</p>",
-            "accordion_2_heading": "Materiales y proceso",
+            "accordion_1_content": "<p>Table lamp con floral silhouette and ambient light. Funciona especialmente bien con bombilla LED cálida.</p>",
+            "accordion_2_heading": "Materials and process",
             "accordion_2_content": "<p>Fabricada en pequeña serie mediante impresión 3D y ensamblada localmente en Madrid.</p>",
-            "accordion_3_heading": "Envío y devoluciones",
-            "accordion_3_content": "<p>Se prepara bajo pedido. Si necesitas ayuda con plazos o una devolución, escríbenos.</p>"
+            "accordion_3_heading": "Shipping and returns",
+            "accordion_3_content": "<p>Made to order. If you need help with lead times or a return, write to us.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
             "label": "Ficha técnica",
-            "title": "Datos clave",
+            "title": "Tulipa — Datos clave",
             "spec_1_value": "01",
             "spec_1_label": "Pieza de sobremesa",
             "spec_2_value": "LED",
@@ -1145,7 +1162,7 @@
             "spec_3_value": "Soft",
             "spec_3_label": "Difusión de luz",
             "spec_4_value": "ES",
-            "spec_4_label": "Hecha en España",
+            "spec_4_label": "Made in Spain",
             "spec_5_value": "03",
             "spec_5_label": "Usos sugeridos",
             "spec_6_value": "Calm",
@@ -1160,7 +1177,7 @@
           "type": "reviews",
           "settings": {
             "label": "Opiniones",
-            "title": "Cómo se vive en casa.",
+            "title": "Cómo se siente Tulipa en casa.",
             "rating_text": "4.9 / 5 en sensación general",
             "review_1_stars": 5,
             "review_1_text": "Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada.",
