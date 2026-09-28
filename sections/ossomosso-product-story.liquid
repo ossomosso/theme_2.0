@@ -3,25 +3,9 @@
   assign secondary_image = product.media[1].preview_image | default: featured_image
   assign tertiary_image = product.media[2].preview_image | default: secondary_image
   assign selected_variant = product.selected_or_first_available_variant
-  assign product_copy_key = blank
-  case product.handle
-    when 'lampara-tulip'
-      assign product_copy_key = 'product_copy.tulipa'
-    when 'lampara-brisa'
-      assign product_copy_key = 'product_copy.brisa'
-    when 'lampara-champi'
-      assign product_copy_key = 'product_copy.champi'
-    when 'jarron-grasshoper'
-      assign product_copy_key = 'product_copy.grasshopper'
-    when 'jarron-copenhagen'
-      assign product_copy_key = 'product_copy.copenhagen'
-    when 'jarron-japandi'
-      assign product_copy_key = 'product_copy.japandi'
-    when 'jarron-organico'
-      assign product_copy_key = 'product_copy.organic'
-  endcase
 %}
 
+{% if section.settings.language == blank or section.settings.language == localization.language.iso_code %}
 <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}" data-product-handle="{{ product.handle }}">
   {% for block in section.blocks %}
     {% case block.type %}
@@ -292,7 +276,7 @@
                 {% assign review_author_key = product_copy_key | append: '.review_' | append: i | append: '_author' %}
                 {% assign review_text = review_text_key | t %}
                 {% assign review_author = review_author_key | t %}
-                {% assign review_stars = blank %}
+                {% assign review_stars = 5 %}
               {% else %}
                 {% assign stars_key = 'review_' | append: i | append: '_stars' %}
                 {% assign text_key = 'review_' | append: i | append: '_text' %}
@@ -314,6 +298,7 @@
     {% endcase %}
   {% endfor %}
 </section>
+{% endif %}
 
 {% stylesheet %}
   .osso-product-story {
@@ -472,7 +457,7 @@
   .osso-product-story__reviews { max-width: 92rem; margin: 0 auto; }
   .osso-product-story__reviews-header { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-bottom: 2rem; border-bottom: 1px solid var(--story-line); }
   .osso-product-story__reviews-summary { color: var(--story-muted); font-size: .85rem; letter-spacing: .06em; }
-  .osso-product-story__reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 1px; background: var(--story-line); }
+  .osso-product-story__reviews-grid { display: grid; grid-template-columns: 1fr; gap: 1px; margin-top: 1px; background: var(--story-line); }
   .osso-product-story__review { min-height: 15rem; padding: clamp(1.5rem, 3vw, 3rem); background: var(--story-paper); }
   .osso-product-story__review-stars { margin: 0 0 1.5rem; letter-spacing: .2em; color: var(--story-accent); }
   .osso-product-story__review-text { margin: 0; }
@@ -499,6 +484,16 @@
   "tag": "section",
   "class": "section section--full-width",
   "settings": [
+    {
+      "type": "select",
+      "id": "language",
+      "label": "Language",
+      "options": [
+        { "value": "en", "label": "English" },
+        { "value": "es", "label": "Spanish" }
+      ],
+      "default": "en"
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
