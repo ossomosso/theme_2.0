@@ -3,6 +3,7 @@
   assign secondary_image = product.media[1].preview_image | default: featured_image
   assign tertiary_image = product.media[2].preview_image | default: secondary_image
   assign selected_variant = product.selected_or_first_available_variant
+  assign product_copy_key = blank
 %}
 
 {% if section.settings.language == blank or section.settings.language == localization.language.iso_code %}
