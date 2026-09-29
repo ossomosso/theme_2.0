@@ -65,16 +65,16 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    margin-top: 1rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid color-mix(in srgb, currentcolor 18%, transparent);
+    margin-top: 2.5rem;
+    padding: 1.25rem 0 0.25rem;
+    border-top: 1px solid rgb(var(--color-foreground-rgb) / 0.18);
   }
 
   .footer-localization__label {
     margin: 0;
-    color: color-mix(in srgb, currentcolor 68%, transparent);
-    font-size: .7rem;
-    letter-spacing: .14em;
+    color: rgb(var(--color-foreground-rgb) / 0.68);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
     line-height: 1.2;
     text-transform: uppercase;
   }
@@ -93,13 +93,23 @@
   }
 
   .footer-localization .localization-form__select {
+    min-height: 2.5rem;
     min-width: 9rem;
-    padding: .65rem 2.25rem .65rem .9rem;
-    border: 1px solid color-mix(in srgb, currentcolor 28%, transparent);
+    padding: 0.65rem 2.25rem 0.65rem 0.9rem;
+    border: 1px solid rgb(var(--color-foreground-rgb) / 0.28);
     border-radius: 999px;
     background: transparent;
     color: inherit;
+    font-size: 0.8125rem;
     text-align: left;
+    transition: border-color var(--animation-speed) var(--animation-easing),
+      background-color var(--animation-speed) var(--animation-easing);
+  }
+
+  .footer-localization .localization-form__select:hover,
+  .footer-localization .localization-form__select:focus-visible {
+    border-color: currentcolor;
+    background-color: rgb(var(--color-foreground-rgb) / 0.06);
   }
 
   .footer-localization .language-selector .svg-wrapper.icon-caret {
@@ -121,8 +131,18 @@
 
   @media screen and (max-width: 749px) {
     .footer-localization {
-      align-items: flex-start;
-      flex-direction: column;
+      align-items: stretch;
+      gap: 0.875rem;
+    }
+
+    .footer-localization localization-form-component,
+    .footer-localization .localization-form,
+    .footer-localization .language-selector {
+      width: 100%;
+    }
+
+    .footer-localization .localization-form__select {
+      width: 100%;
     }
   }
 
