@@ -857,6 +857,58 @@
     "review_2_author": "Console",
     "review_3_text": "It is quite sculptural, so I keep it empty most of the time.",
     "review_3_author": "Sculptural display"
+  },
+  "about_us": {
+    "hero": {
+      "eyebrow": "About us",
+      "title": "Where design meets",
+      "title_emphasis": "essence",
+      "body": "Ossomosso is a Spanish home design brand born from a love of interiors and contemporary objects. Each piece is made using 3D printing, exploring new shapes and possibilities.",
+      "scroll_text": "Learn our story"
+    },
+    "marquee_items": "Independent design\n3D printing\nMade in Madrid\nEco-friendly PLA\nMade to order\nDigital craftsmanship",
+    "story": {
+      "label": "Our story",
+      "story_text": "Born from a love of interiors, product design and creating pieces that can transform any space.",
+      "body_1": "Ossomosso was born from the belief that technology can be handmade. Each piece begins as a parametric file — lines of code that define curves and thicknesses — and ends as an object you can touch, that warms a corner, that is yours.",
+      "body_2": "The name comes from Italian: <em>osso</em> (bone) and <em>mosso</em> (movement). Living structure."
+    },
+    "values": {
+      "label": "Our philosophy",
+      "title": "We design and produce every piece using 3D printing, exploring shapes that would be impossible with traditional methods.",
+      "title_emphasis": "3D printing",
+      "value_1_title": "Made to order",
+      "value_1_text": "Your order is printed when you place it, not before. No accumulated stock or mass-production waste. Every object is made with a purpose.",
+      "value_2_title": "Our own design",
+      "value_2_text": "Each piece is born in our studio. We do not sell third-party models; we design from scratch so they work, last and look good in your space.",
+      "value_3_title": "Thoughtful materials",
+      "value_3_text": "We work with plant-based PLA, recycled PETG and special filaments. We choose materials for their performance and impact.",
+      "value_4_title": "Local production",
+      "value_4_text": "We design and manufacture in Madrid. Local production means less transport, more quality control and support for the surrounding economy.",
+      "value_5_title": "Customizable pieces",
+      "value_5_text": "Color, size, finish. Many pieces can be adapted to your space. Write to us if you have something specific in mind and we will make it real.",
+      "value_6_title": "Craft quality",
+      "value_6_text": "Sanding, surface treatment and manual quality control. No piece leaves without inspection. Technology does not replace the human touch."
+    },
+    "cta": {
+      "title": "Pieces that transform the way you live in your",
+      "title_emphasis": "space",
+      "subtitle": "If you are moved by design that innovates, inspires and turns a space into somewhere truly yours, welcome to Ossomosso.",
+      "button_text": "Explore collection"
+    },
+    "process": {
+      "title": "From design to your",
+      "title_emphasis": "hands",
+      "description": "Every object starts as an idea and ends as a real piece. No middlemen, no warehouses full of stock, no unnecessary waste. Just design, material and process.",
+      "step_1_title": "Design",
+      "step_1_text": "Parametric 3D modelling. Every curve and angle serves a function or an aesthetic intention.",
+      "step_2_title": "Material",
+      "step_2_text": "Plant-based PLA, recycled PETG and special filaments. We choose materials for their performance, not just their look.",
+      "step_3_title": "Production",
+      "step_3_text": "We print to order in Madrid. Your piece is made when you place your order, not before. Every piece is unique.",
+      "step_4_title": "Finish",
+      "step_4_text": "Sanding, surface treatment and manual quality control. No piece leaves without inspection."
+    }
   }
 }
 }

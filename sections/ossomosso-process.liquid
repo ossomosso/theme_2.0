@@ -7,6 +7,11 @@
   assign title = section.settings.title
   assign title_emphasis = section.settings.title_emphasis
   assign description = section.settings.description
+  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+    assign title = 'about_us.process.title' | t
+    assign title_emphasis = 'about_us.process.title_emphasis' | t
+    assign description = 'about_us.process.description' | t
+  endif
 %}
 
 <style>
@@ -153,17 +158,37 @@
 
     <div class="osso-process__steps">
       {% for block in section.blocks %}
+        {% liquid
+          assign process_title = block.settings.title
+          assign process_text = block.settings.text
+          if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+            case forloop.index
+              when 1
+                assign process_title = 'about_us.process.step_1_title' | t
+                assign process_text = 'about_us.process.step_1_text' | t
+              when 2
+                assign process_title = 'about_us.process.step_2_title' | t
+                assign process_text = 'about_us.process.step_2_text' | t
+              when 3
+                assign process_title = 'about_us.process.step_3_title' | t
+                assign process_text = 'about_us.process.step_3_text' | t
+              when 4
+                assign process_title = 'about_us.process.step_4_title' | t
+                assign process_text = 'about_us.process.step_4_text' | t
+            endcase
+          endif
+        %}
         <div class="osso-process__step" {{ block.shopify_attributes }}>
           {% if block.settings.number != blank %}
             <p class="osso-process__step-num">{{ block.settings.number }}</p>
           {% endif %}
 
-          {% if block.settings.title != blank %}
-            <p class="osso-process__step-title">{{ block.settings.title }}</p>
+          {% if process_title != blank %}
+            <p class="osso-process__step-title">{{ process_title }}</p>
           {% endif %}
 
-          {% if block.settings.text != blank %}
-            <p class="osso-process__step-text">{{ block.settings.text }}</p>
+          {% if process_text != blank %}
+            <p class="osso-process__step-text">{{ process_text }}</p>
           {% endif %}
         </div>
       {% endfor %}

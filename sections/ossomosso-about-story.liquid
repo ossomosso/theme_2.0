@@ -3,6 +3,19 @@
   Two-column: text left, visual right
 {% endcomment %}
 
+{% liquid
+  assign label = section.settings.label
+  assign story_text = section.settings.story_text
+  assign body_1 = section.settings.body_1
+  assign body_2 = section.settings.body_2
+  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+    assign label = 'about_us.story.label' | t
+    assign story_text = 'about_us.story.story_text' | t
+    assign body_1 = 'about_us.story.body_1' | t
+    assign body_2 = 'about_us.story.body_2' | t
+  endif
+%}
+
 <style>
   .osso-about-story {
     padding: 120px 48px;
@@ -84,20 +97,20 @@
 <section class="osso-about-story" data-section-id="{{ section.id }}">
   <div class="osso-about-story__inner">
     <div>
-      {% if section.settings.label != blank %}
-        <p class="osso-about-story__label">{{ section.settings.label }}</p>
+      {% if label != blank %}
+        <p class="osso-about-story__label">{{ label }}</p>
       {% endif %}
 
-      {% if section.story_text != blank %}
-        <p class="osso-about-story__text">{{ section.settings.story_text }}</p>
+      {% if story_text != blank %}
+        <p class="osso-about-story__text">{{ story_text }}</p>
       {% endif %}
 
-      {% if section.settings.body_1 != blank %}
-        <p class="osso-about-story__body">{{ section.settings.body_1 }}</p>
+      {% if body_1 != blank %}
+        <p class="osso-about-story__body">{{ body_1 }}</p>
       {% endif %}
 
-      {% if section.settings.body_2 != blank %}
-        <p class="osso-about-story__body">{{ section.settings.body_2 }}</p>
+      {% if body_2 != blank %}
+        <p class="osso-about-story__body">{{ body_2 }}</p>
       {% endif %}
     </div>
 

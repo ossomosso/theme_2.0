@@ -3,6 +3,21 @@
   Two-column layout for About page
 {% endcomment %}
 
+{% liquid
+  assign eyebrow = section.settings.eyebrow
+  assign title = section.settings.title
+  assign title_emphasis = section.settings.title_emphasis
+  assign body = section.settings.body
+  assign scroll_text = section.settings.scroll_text
+  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+    assign eyebrow = 'about_us.hero.eyebrow' | t
+    assign title = 'about_us.hero.title' | t
+    assign title_emphasis = 'about_us.hero.title_emphasis' | t
+    assign body = 'about_us.hero.body' | t
+    assign scroll_text = 'about_us.hero.scroll_text' | t
+  endif
+%}
+
 <style>
   .osso-about-hero {
     min-height: 85vh;
@@ -106,27 +121,27 @@
 
 <section class="osso-about-hero" data-section-id="{{ section.id }}">
   <div class="osso-about-hero__left">
-    {% if section.settings.eyebrow != blank %}
-      <p class="osso-about-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    {% if eyebrow != blank %}
+      <p class="osso-about-hero__eyebrow">{{ eyebrow }}</p>
     {% endif %}
 
-    {% if section.settings.title != blank %}
+    {% if title != blank %}
       <h1 class="osso-about-hero__title">
-        {{ section.settings.title }}
-        {% if section.settings.title_emphasis != blank %}
-          <em>{{ section.settings.title_emphasis }}</em>
+        {{ title }}
+        {% if title_emphasis != blank %}
+          <em>{{ title_emphasis }}</em>
         {% endif %}
       </h1>
     {% endif %}
 
-    {% if section.settings.body != blank %}
-      <p class="osso-about-hero__body">{{ section.settings.body }}</p>
+    {% if body != blank %}
+      <p class="osso-about-hero__body">{{ body }}</p>
     {% endif %}
 
-    {% if section.settings.scroll_text != blank %}
+    {% if scroll_text != blank %}
       <div class="osso-about-hero__scroll">
         <span class="osso-about-hero__scroll-line"></span>
-        <span>{{ section.settings.scroll_text }}</span>
+        <span>{{ scroll_text }}</span>
       </div>
     {% endif %}
   </div>

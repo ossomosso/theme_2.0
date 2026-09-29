@@ -845,6 +845,58 @@
     "review_2_author": "Consola",
     "review_3_text": "Es bastante escultórico, así que la mayor parte del tiempo lo dejo vacío.",
     "review_3_author": "Objeto escultórico"
+  },
+  "about_us": {
+    "hero": {
+      "eyebrow": "Sobre nosotros",
+      "title": "Donde el diseño encuentra la",
+      "title_emphasis": "esencia",
+      "body": "Ossomosso es una marca española de diseño de hogar nacida del amor por el interiorismo y los objetos contemporáneos. Cada pieza se crea mediante impresión 3D, explorando nuevas formas y posibilidades.",
+      "scroll_text": "Conoce nuestra historia"
+    },
+    "marquee_items": "Diseño independiente\nImpresión 3D\nHecho en Madrid\nPLA ecológico\nFabricación bajo pedido\nArtesanía digital",
+    "story": {
+      "label": "Nuestra historia",
+      "story_text": "Nacemos del amor por el interiorismo, el diseño de producto y la creación de piezas capaces de transformar cualquier espacio.",
+      "body_1": "Ossomosso nace de la convicción de que la tecnología puede ser artesanal. Cada pieza empieza como un archivo paramétrico —líneas de código que definen curvas y espesores— y termina como un objeto que puedes tocar, que calienta un rincón, que es tuyo.",
+      "body_2": "El nombre viene del italiano: <em>osso</em> (hueso) y <em>mosso</em> (movimiento). Una estructura viva."
+    },
+    "values": {
+      "label": "Nuestra filosofía",
+      "title": "Diseñamos y producimos cada pieza mediante impresión 3D, explorando formas imposibles con los métodos tradicionales.",
+      "title_emphasis": "impresión 3D",
+      "value_1_title": "Fabricación bajo pedido",
+      "value_1_text": "Tu pedido se imprime cuando lo haces, no antes. No hay stock acumulado ni residuos de producción en masa. Cada objeto nace con un propósito.",
+      "value_2_title": "Diseño propio",
+      "value_2_text": "Cada pieza nace en nuestro estudio. No vendemos modelos de terceros: diseñamos desde cero para que funcionen, duren y encajen en tu espacio.",
+      "value_3_title": "Materiales elegidos",
+      "value_3_text": "Trabajamos con PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos cada material por sus prestaciones y su impacto.",
+      "value_4_title": "Producción local",
+      "value_4_text": "Diseñamos y fabricamos en Madrid. Producir localmente significa menos transporte, más control de calidad y apoyo a la economía cercana.",
+      "value_5_title": "Piezas personalizables",
+      "value_5_text": "Color, tamaño y acabado. Muchas piezas pueden adaptarse a tu espacio. Escríbenos si tienes algo concreto en mente y lo haremos realidad.",
+      "value_6_title": "Calidad artesanal",
+      "value_6_text": "Lijado, tratamiento de superficies y control de calidad manual. Ninguna pieza sale sin ser revisada. La tecnología no sustituye el toque humano."
+    },
+    "cta": {
+      "title": "Piezas que transforman la forma de vivir tu",
+      "title_emphasis": "espacio",
+      "subtitle": "Si te mueve el diseño que innova, emociona y convierte un espacio en un lugar propio, bienvenido a Ossomosso.",
+      "button_text": "Explorar colección"
+    },
+    "process": {
+      "title": "Del diseño a tus",
+      "title_emphasis": "manos",
+      "description": "Cada objeto comienza con una idea y termina en una pieza real. Sin intermediarios, sin almacenes llenos de stock, sin residuos innecesarios. Solo diseño, material y proceso.",
+      "step_1_title": "Diseño",
+      "step_1_text": "Modelado paramétrico en 3D. Cada curva y cada ángulo responden a una función o a una intención estética.",
+      "step_2_title": "Material",
+      "step_2_text": "PLA de origen vegetal, PETG reciclado y filamentos especiales. Elegimos los materiales por sus prestaciones, no solo por su aspecto.",
+      "step_3_title": "Producción",
+      "step_3_text": "Imprimimos bajo pedido en Madrid. Tu pieza se fabrica cuando haces el pedido, no antes. Cada pieza es única.",
+      "step_4_title": "Acabado",
+      "step_4_text": "Lijado, tratamiento de superficies y control de calidad manual. Ninguna pieza sale sin ser revisada."
+    }
   }
 }
 }

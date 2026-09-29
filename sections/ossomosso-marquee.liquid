@@ -4,7 +4,11 @@
 {% endcomment %}
 
 {% liquid
-  assign items = section.settings.marquee_items | newline_to_br | split: '<br />'
+  assign marquee_items = section.settings.marquee_items
+  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+    assign marquee_items = 'about_us.marquee_items' | t
+  endif
+  assign items = marquee_items | newline_to_br | split: '<br />'
 %}
 
 <style>

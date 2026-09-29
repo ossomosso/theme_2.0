@@ -3,6 +3,19 @@
   Terracotta background with centered text and button
 {% endcomment %}
 
+{% liquid
+  assign cta_title = section.settings.title
+  assign cta_title_emphasis = section.settings.title_emphasis
+  assign cta_subtitle = section.settings.subtitle
+  assign cta_button_text = section.settings.button_text
+  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+    assign cta_title = 'about_us.cta.title' | t
+    assign cta_title_emphasis = 'about_us.cta.title_emphasis' | t
+    assign cta_subtitle = 'about_us.cta.subtitle' | t
+    assign cta_button_text = 'about_us.cta.button_text' | t
+  endif
+%}
+
 <style>
   .osso-about-cta {
     background: var(--color-primary);
@@ -70,21 +83,21 @@
 </style>
 
 <section class="osso-about-cta" data-section-id="{{ section.id }}">
-  {% if section.settings.title != blank %}
+  {% if cta_title != blank %}
     <h2 class="osso-about-cta__title">
-      {{ section.settings.title }}
-      {% if section.settings.title_emphasis != blank %}
-        <em>{{ section.settings.title_emphasis }}</em>
+      {{ cta_title }}
+      {% if cta_title_emphasis != blank %}
+        <em>{{ cta_title_emphasis }}</em>
       {% endif %}
     </h2>
   {% endif %}
 
-  {% if section.settings.subtitle != blank %}
-    <p class="osso-about-cta__sub">{{ section.settings.subtitle }}</p>
+  {% if cta_subtitle != blank %}
+    <p class="osso-about-cta__sub">{{ cta_subtitle }}</p>
   {% endif %}
 
-  {% if section.settings.button_text != blank and section.settings.button_url != blank %}
-    <a href="{{ section.settings.button_url }}" class="osso-about-cta__btn">{{ section.settings.button_text }}</a>
+  {% if cta_button_text != blank and section.settings.button_url != blank %}
+    <a href="{{ section.settings.button_url }}" class="osso-about-cta__btn">{{ cta_button_text }}</a>
   {% endif %}
 </section>
 

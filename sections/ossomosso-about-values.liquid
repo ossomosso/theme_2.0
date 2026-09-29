@@ -3,6 +3,17 @@
   6 values in 3x2 grid with icons
 {% endcomment %}
 
+{% liquid
+  assign values_label = section.settings.label
+  assign values_title = section.settings.title
+  assign values_title_emphasis = section.settings.title_emphasis
+  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+    assign values_label = 'about_us.values.label' | t
+    assign values_title = 'about_us.values.title' | t
+    assign values_title_emphasis = 'about_us.values.title_emphasis' | t
+  endif
+%}
+
 <style>
   .osso-about-values {
     padding: 120px 48px;
@@ -98,15 +109,15 @@
 <section class="osso-about-values" data-section-id="{{ section.id }}">
   <div class="osso-about-values__inner">
     <div class="osso-about-values__header">
-      {% if section.settings.label != blank %}
-        <p class="osso-about-values__label">{{ section.settings.label }}</p>
+      {% if values_label != blank %}
+        <p class="osso-about-values__label">{{ values_label }}</p>
       {% endif %}
 
-      {% if section.settings.title != blank %}
+      {% if values_title != blank %}
         <h2 class="osso-about-values__title">
-          {{ section.settings.title }}
-          {% if section.settings.title_emphasis != blank %}
-            <em>{{ section.settings.title_emphasis }}</em>
+          {{ values_title }}
+          {% if values_title_emphasis != blank %}
+            <em>{{ values_title_emphasis }}</em>
           {% endif %}
         </h2>
       {% endif %}
@@ -114,6 +125,32 @@
 
     <div class="osso-about-values__grid">
       {% for block in section.blocks %}
+        {% liquid
+          assign value_title = block.settings.title
+          assign value_text = block.settings.text
+          if template.suffix == 'about-us' and localization.language.iso_code == 'es'
+            case forloop.index
+              when 1
+                assign value_title = 'about_us.values.value_1_title' | t
+                assign value_text = 'about_us.values.value_1_text' | t
+              when 2
+                assign value_title = 'about_us.values.value_2_title' | t
+                assign value_text = 'about_us.values.value_2_text' | t
+              when 3
+                assign value_title = 'about_us.values.value_3_title' | t
+                assign value_text = 'about_us.values.value_3_text' | t
+              when 4
+                assign value_title = 'about_us.values.value_4_title' | t
+                assign value_text = 'about_us.values.value_4_text' | t
+              when 5
+                assign value_title = 'about_us.values.value_5_title' | t
+                assign value_text = 'about_us.values.value_5_text' | t
+              when 6
+                assign value_title = 'about_us.values.value_6_title' | t
+                assign value_text = 'about_us.values.value_6_text' | t
+            endcase
+          endif
+        %}
         <div class="osso-about-values__item" {{ block.shopify_attributes }}>
           {% if block.settings.icon_svg != blank %}
             <div class="osso-about-values__icon">
@@ -121,12 +158,12 @@
             </div>
           {% endif %}
 
-          {% if block.settings.title != blank %}
-            <p class="osso-about-values__item-title">{{ block.settings.title }}</p>
+          {% if value_title != blank %}
+            <p class="osso-about-values__item-title">{{ value_title }}</p>
           {% endif %}
 
-          {% if block.settings.text != blank %}
-            <p class="osso-about-values__text">{{ block.settings.text }}</p>
+          {% if value_text != blank %}
+            <p class="osso-about-values__text">{{ value_text }}</p>
           {% endif %}
         </div>
       {% endfor %}
