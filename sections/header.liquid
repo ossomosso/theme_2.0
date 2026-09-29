@@ -547,8 +547,10 @@
     .header-section:has(> #header-component) {
       position: fixed;
       top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      transform: none;
       width: calc(100% - 48px);
       max-width: 1400px;
       z-index: var(--layer-sticky);
@@ -562,6 +564,13 @@
       box-shadow: 0 4px 24px rgba(42, 36, 32, 0.08), 0 1px 2px rgba(42, 36, 32, 0.04);
       border: 0.5px solid rgba(232, 223, 201, 0.5);
       overflow: hidden;
+    }
+
+    #header-component:has(header-drawer > details[open]) {
+      overflow: visible;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      background: rgb(250, 250, 252);
     }
 
     #header-component .header__underlay-closed {
