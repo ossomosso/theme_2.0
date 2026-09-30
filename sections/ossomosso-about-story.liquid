@@ -110,7 +110,7 @@
       {% endif %}
 
       {% if body_2 != blank %}
-        <p class="osso-about-story__body">{{ body_2 }}</p>
+        <p class="osso-about-story__body">{{ body_2 | replace: '&lt;em&gt;', '<em>' | replace: '&lt;/em&gt;', '</em>' }}</p>
       {% endif %}
     </div>
 
