@@ -58,27 +58,9 @@
 
         {%- if product_option.values.size == 1 and variant_style != 'swatch' -%}
           {% liquid
-            assign localized_selected_value = product_option.selected_value
-            if localization.language.iso_code != 'es'
-              case product_option.selected_value
-                when 'Azul'
-                  assign localized_selected_value = 'Blue'
-                when 'Azul Transparente'
-                  assign localized_selected_value = 'Transparent Blue'
-                when 'Blanco'
-                  assign localized_selected_value = 'White'
-                when 'Gris'
-                  assign localized_selected_value = 'Grey'
-                when 'Verde'
-                  assign localized_selected_value = 'Green'
-                when 'Rojo'
-                  assign localized_selected_value = 'Red'
-                when 'Rosa'
-                  assign localized_selected_value = 'Pink'
-                when 'Amarillo'
-                  assign localized_selected_value = 'Yellow'
-              endcase
-            endif
+            capture localized_selected_value
+                  render 'ossomosso-color-name', value: product_option.selected_value
+                endcapture
           %}
           <div
             class="variant-option"
@@ -104,54 +86,18 @@
               {{ product_option.name | downcase | capitalize | escape -}}
               {%- if variant_style == 'swatch' -%}
                 {% liquid
-                  assign localized_selected_value = product_option.selected_value
-                  if localization.language.iso_code != 'es'
-                    case product_option.selected_value
-                      when 'Azul'
-                        assign localized_selected_value = 'Blue'
-                      when 'Azul Transparente'
-                        assign localized_selected_value = 'Transparent Blue'
-                      when 'Blanco'
-                        assign localized_selected_value = 'White'
-                      when 'Gris'
-                        assign localized_selected_value = 'Grey'
-                      when 'Verde'
-                        assign localized_selected_value = 'Green'
-                      when 'Rojo'
-                        assign localized_selected_value = 'Red'
-                      when 'Rosa'
-                        assign localized_selected_value = 'Pink'
-                      when 'Amarillo'
-                        assign localized_selected_value = 'Yellow'
-                    endcase
-                  endif
+                  capture localized_selected_value
+                  render 'ossomosso-color-name', value: product_option.selected_value
+                endcapture
                 %}
                 <span class="variant-option__swatch-value">- {{ localized_selected_value | downcase | capitalize }}</span>
               {%- endif %}
             </legend>
             {%- for product_option_value in product_option.values -%}
               {% liquid
-                assign localized_option_value = product_option_value.name
-                if localization.language.iso_code != 'es'
-                  case product_option_value.name
-                    when 'Azul'
-                      assign localized_option_value = 'Blue'
-                    when 'Azul Transparente'
-                      assign localized_option_value = 'Transparent Blue'
-                    when 'Blanco'
-                      assign localized_option_value = 'White'
-                    when 'Gris'
-                      assign localized_option_value = 'Grey'
-                    when 'Verde'
-                      assign localized_option_value = 'Green'
-                    when 'Rojo'
-                      assign localized_option_value = 'Red'
-                    when 'Rosa'
-                      assign localized_option_value = 'Pink'
-                    when 'Amarillo'
-                      assign localized_option_value = 'Yellow'
-                  endcase
-                endif
+                capture localized_option_value
+                  render 'ossomosso-color-name', value: product_option_value.name
+                endcapture
               %}
               {% if product_option_value.size > longest_value and option_id_attribute %}
                 {% assign longest_value = product_option_value.size %}
@@ -258,27 +204,9 @@
               >
                 {%- for product_option_value in product_option.values -%}
                   {% liquid
-                    assign localized_option_value = product_option_value.name
-                    if localization.language.iso_code != 'es'
-                      case product_option_value.name
-                        when 'Azul'
-                          assign localized_option_value = 'Blue'
-                        when 'Azul Transparente'
-                          assign localized_option_value = 'Transparent Blue'
-                        when 'Blanco'
-                          assign localized_option_value = 'White'
-                        when 'Gris'
-                          assign localized_option_value = 'Grey'
-                        when 'Verde'
-                          assign localized_option_value = 'Green'
-                        when 'Rojo'
-                          assign localized_option_value = 'Red'
-                        when 'Rosa'
-                          assign localized_option_value = 'Pink'
-                        when 'Amarillo'
-                          assign localized_option_value = 'Yellow'
-                      endcase
-                    endif
+                    capture localized_option_value
+                  render 'ossomosso-color-name', value: product_option_value.name
+                endcapture
                   %}
                   <option
                     value="{{ product_option_value | escape }}"

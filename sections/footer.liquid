@@ -48,19 +48,31 @@
   {% if section.settings.show_language and localization.available_languages.size > 1 %}
     <div class="footer-localization">
       <p class="footer-localization__label">{{ 'content.language' | t }}</p>
-      {% render 'localization-form',
-        show_country: false,
-        show_language: true,
-        form_id: section.id,
-        localization_style: 'footer'
-      %}
+      {% assign language_form_id = 'FooterLanguage-' | append: section.id %}
+      {% assign language_label = 'content.language' | t %}
+      {% form 'localization', id: language_form_id, class: 'footer-language-form', aria-label: language_label %}
+        <div class="footer-language-options">
+          {% for language in localization.available_languages %}
+            <button
+              type="submit"
+              name="language_code"
+              value="{{ language.iso_code }}"
+              lang="{{ language.iso_code }}"
+              class="footer-language-option{% if language.iso_code == localization.language.iso_code %} is-current{% endif %}"
+              {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %}
+            >
+              {{ language.endonym_name | capitalize }}
+            </button>
+          {% endfor %}
+        </div>
+      {% endform %}
     </div>
   {% endif %}
 </div>
 
 {% stylesheet %}
   .footer-localization {
-    grid-column: 1 / -1;
+    grid-column: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -72,12 +84,19 @@
 
   .footer-localization__label {
     margin: 0;
-    color: rgb(var(--color-foreground-rgb) / 0.68);
+    color: rgb(var(--color-foreground-rgb) / 0.8);
     font-size: 0.7rem;
     letter-spacing: 0.14em;
     line-height: 1.2;
     text-transform: uppercase;
   }
+
+  .footer-language-form { margin: 0; }
+  .footer-language-options { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; border: 1px solid rgb(var(--color-foreground-rgb) / 0.3); border-radius: 999px; }
+  .footer-language-option { min-height: 44px; padding: 10px 20px; border: 0; border-radius: 999px; background: transparent; color: var(--color-foreground); font: inherit; font-size: .875rem; cursor: pointer; }
+  .footer-language-option:hover { background: rgb(var(--color-foreground-rgb) / 0.12); }
+  .footer-language-option.is-current { background: var(--color-foreground); color: var(--color-background); }
+  .footer-language-option:focus-visible { outline: 2px solid var(--color-foreground); outline-offset: 4px; }
 
   .footer-localization localization-form-component {
     width: auto;
@@ -131,7 +150,8 @@
 
   @media screen and (max-width: 749px) {
     .footer-localization {
-      align-items: stretch;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 0.875rem;
     }
 

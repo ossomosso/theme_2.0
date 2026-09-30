@@ -104,15 +104,6 @@
             {%- for link in linklist.links -%}
               {% liquid
                 assign localized_title = link.title
-                if localization.language.iso_code != 'es'
-                  if link.url contains '/collections/all' or link.title == 'Productos'
-                      assign localized_title = 'Products'
-                  elsif link.url contains '/pages/sobre-nosostros' or link.title == 'Sobre nosotros'
-                      assign localized_title = 'About us'
-                  elsif link.url contains '/pages/contact' or link.title == 'Contacto'
-                      assign localized_title = 'Contact'
-                  endif
-                endif
               %}
               {% assign animation_index = animation_index | plus: 1 %}
               <li

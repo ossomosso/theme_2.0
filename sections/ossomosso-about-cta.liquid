@@ -8,12 +8,6 @@
   assign cta_title_emphasis = section.settings.title_emphasis
   assign cta_subtitle = section.settings.subtitle
   assign cta_button_text = section.settings.button_text
-  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
-    assign cta_title = 'about_us.cta.title' | t
-    assign cta_title_emphasis = 'about_us.cta.title_emphasis' | t
-    assign cta_subtitle = 'about_us.cta.subtitle' | t
-    assign cta_button_text = 'about_us.cta.button_text' | t
-  endif
 %}
 
 <style>
@@ -21,11 +15,10 @@
     background: var(--color-primary);
     padding: 100px 48px;
     text-align: center;
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    grid-column: 1 / -1;
   }
 
   .osso-about-cta__title {

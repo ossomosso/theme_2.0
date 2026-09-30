@@ -1,0 +1,23 @@
+{% liquid
+  assign normalized = value | downcase
+  case normalized
+    when 'blue', 'azul'
+      echo 'ossomosso.colors.blue' | t
+    when 'transparent blue', 'azul transparente'
+      echo 'ossomosso.colors.transparent_blue' | t
+    when 'white', 'blanco'
+      echo 'ossomosso.colors.white' | t
+    when 'grey', 'gris', 'gray'
+      echo 'ossomosso.colors.grey' | t
+    when 'green', 'verde'
+      echo 'ossomosso.colors.green' | t
+    when 'red', 'rojo'
+      echo 'ossomosso.colors.red' | t
+    when 'pink', 'rosa'
+      echo 'ossomosso.colors.pink' | t
+    when 'yellow', 'amarillo'
+      echo 'ossomosso.colors.yellow' | t
+    else
+      echo value | escape
+  endcase
+%}

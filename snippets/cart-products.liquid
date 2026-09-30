@@ -207,27 +207,9 @@
                         <dl class="cart-items__variants">
                           {%- for option in item.options_with_values -%}
                             {% liquid
-                              assign localized_option_value = option.value
-                              if localization.language.iso_code != 'es'
-                                case option.value
-                                  when 'Azul'
-                                    assign localized_option_value = 'Blue'
-                                  when 'Azul Transparente'
-                                    assign localized_option_value = 'Transparent Blue'
-                                  when 'Blanco'
-                                    assign localized_option_value = 'White'
-                                  when 'Gris'
-                                    assign localized_option_value = 'Grey'
-                                  when 'Verde'
-                                    assign localized_option_value = 'Green'
-                                  when 'Rojo'
-                                    assign localized_option_value = 'Red'
-                                  when 'Rosa'
-                                    assign localized_option_value = 'Pink'
-                                  when 'Amarillo'
-                                    assign localized_option_value = 'Yellow'
-                                endcase
-                              endif
+                              capture localized_option_value
+                  render 'ossomosso-color-name', value: option.value
+                endcapture
                             %}
                             <div class="cart-items__variant">
                               <dt class="visually-hidden">{{ option.name }}:</dt>

@@ -95,78 +95,13 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "group_hAzkCn": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 24,
-            "width": "fill",
-            "custom_width": 35,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fill",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 4,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "social_links_JBkCiP": {
-              "type": "social-links",
-              "name": "t:names.social_media_links",
-              "settings": {
-                "facebook_url": "https://facebook.com",
-                "instagram_url": "https://instagram.com",
-                "youtube_url": "",
-                "tiktok_url": "https://tiktok.com",
-                "twitter_url": "https://x.com",
-                "threads_url": "",
-                "linkedin_url": "",
-                "bluesky_url": "",
-                "snapchat_url": "",
-                "pinterest_url": "",
-                "tumblr_url": "",
-                "vimeo_url": "",
-                "custom_url": ""
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "social_links_JBkCiP"
-          ]
         }
       },
       "block_order": [
         "logo_3wL6a8",
         "menu_8tJbUk",
         "menu_jRmAQi",
-        "menu_6jWwP4",
-        "group_hAzkCn"
+        "menu_6jWwP4"
       ],
       "name": "Footer",
       "settings": {

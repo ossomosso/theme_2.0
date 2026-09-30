@@ -102,27 +102,7 @@
         >
           {% unless product.has_only_default_variant %}
             {% if current_variant != blank %}
-              {% assign variant_title = current_variant.title %}
-              {% if localization.language.iso_code != 'es' and current_variant.options.size == 1 %}
-                {% case current_variant.options.first %}
-                  {% when 'Azul' %}
-                    {% assign variant_title = 'Blue' %}
-                  {% when 'Azul Transparente' %}
-                    {% assign variant_title = 'Transparent Blue' %}
-                  {% when 'Blanco' %}
-                    {% assign variant_title = 'White' %}
-                  {% when 'Gris' %}
-                    {% assign variant_title = 'Grey' %}
-                  {% when 'Verde' %}
-                    {% assign variant_title = 'Green' %}
-                  {% when 'Rojo' %}
-                    {% assign variant_title = 'Red' %}
-                  {% when 'Rosa' %}
-                    {% assign variant_title = 'Pink' %}
-                  {% when 'Amarillo' %}
-                    {% assign variant_title = 'Yellow' %}
-                {% endcase %}
-              {% endif %}
+              {% capture variant_title %}{% render 'ossomosso-color-name', value: current_variant.title %}{% endcapture %}
             {% endif %}
             {{ variant_title | escape }}
           {% endunless %}

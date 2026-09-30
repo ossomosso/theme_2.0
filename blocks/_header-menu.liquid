@@ -41,15 +41,6 @@
             {% for link in block_settings.menu.links %}
               {% liquid
                 assign localized_title = link.title
-                if localization.language.iso_code == 'en'
-                  if link.url contains '/collections/all'
-                      assign localized_title = 'Products'
-                  elsif link.url contains '/pages/sobre-nosostros'
-                      assign localized_title = 'About us'
-                  elsif link.url contains '/pages/contact'
-                      assign localized_title = 'Contact'
-                  endif
-                endif
               %}
               <li>
                 <a
@@ -98,15 +89,6 @@
       {% for link in block_settings.menu.links %}
         {% liquid
           assign localized_title = link.title
-          if localization.language.iso_code == 'en'
-            if link.url contains '/collections/all'
-                assign localized_title = 'Products'
-            elsif link.url contains '/pages/sobre-nosostros'
-                assign localized_title = 'About us'
-            elsif link.url contains '/pages/contact'
-                assign localized_title = 'Contact'
-            endif
-          endif
         %}
         <li
           role="presentation"

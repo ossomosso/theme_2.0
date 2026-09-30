@@ -587,7 +587,7 @@
     }
 
     /* Add padding to body to account for fixed header */
-    body:has(.header-section:has(> #header-component)) {
+    body:has(.header-section > #header-component) {
       padding-top: calc(var(--header-height, 80px) + 32px);
     }
 
