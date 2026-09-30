@@ -3,7 +3,6 @@
   assign secondary_image = product.media[1].preview_image | default: featured_image
   assign tertiary_image = product.media[2].preview_image | default: secondary_image
   assign selected_variant = product.selected_or_first_available_variant
-  assign product_copy_key = blank
 %}
 
 {% if section.settings.language == blank or section.settings.language == localization.language.iso_code %}
@@ -15,13 +14,10 @@
           <div class="osso-product-story__marquee-track" style="animation-duration: {{ block.settings.speed | default: 26 }}s;">
             {% for loop_index in (1..2) %}
               {% for i in (1..5) %}
-                {% if product_copy_key != blank %}
-                  {% assign item_key = product_copy_key | append: '.marquee_' | append: i %}
-                  {% assign item_text = item_key | t %}
-                {% else %}
+
                   {% assign item_key = 'item_' | append: i %}
                   {% assign item_text = block.settings[item_key] %}
-                {% endif %}
+
                 {% if item_text != blank %}
                   <span>{{ item_text }}</span>{% unless i == 5 %}<span class="osso-product-story__marquee-dot">·</span>{% endunless %}
                 {% endif %}
@@ -31,18 +27,11 @@
         </div>
 
       {% when 'intro' %}
-        {% if product_copy_key != blank %}
-          {% assign intro_eyebrow_key = product_copy_key | append: '.intro_eyebrow' %}
-          {% assign intro_title_key = product_copy_key | append: '.intro_title' %}
-          {% assign intro_body_key = product_copy_key | append: '.intro_body' %}
-          {% assign intro_eyebrow = intro_eyebrow_key | t %}
-          {% assign intro_title = intro_title_key | t %}
-          {% assign intro_body = intro_body_key | t %}
-        {% else %}
+
           {% assign intro_eyebrow = block.settings.eyebrow %}
           {% assign intro_title = block.settings.title %}
           {% assign intro_body = block.settings.body %}
-        {% endif %}
+
         <div class="osso-product-story__intro" {{ block.shopify_attributes }}>
           <div class="osso-product-story__intro-copy">
             {% if intro_eyebrow != blank %}<p class="osso-product-story__eyebrow">{{ intro_eyebrow }}</p>{% endif %}
@@ -52,17 +41,12 @@
           {% if block.settings.show_specs %}
             <div class="osso-product-story__specs">
               {% for i in (1..4) %}
-                {% if product_copy_key != blank %}
-                  {% assign spec_label_key = product_copy_key | append: '.intro_spec_' | append: i | append: '_label' %}
-                  {% assign spec_value_key = product_copy_key | append: '.intro_spec_' | append: i | append: '_value' %}
-                  {% assign spec_label = spec_label_key | t %}
-                  {% assign spec_value = spec_value_key | t %}
-                {% else %}
+
                   {% assign spec_label_key = 'spec_' | append: i | append: '_label' %}
                   {% assign spec_value_key = 'spec_' | append: i | append: '_value' %}
                   {% assign spec_label = block.settings[spec_label_key] %}
                   {% assign spec_value = block.settings[spec_value_key] %}
-                {% endif %}
+
                 {% if spec_label != blank or spec_value != blank %}
                   <div class="osso-product-story__spec">
                     {% if spec_label != blank %}<span class="osso-product-story__spec-label">{{ spec_label }}</span>{% endif %}
@@ -77,17 +61,12 @@
       {% when 'features' %}
         <div class="osso-product-story__features" {{ block.shopify_attributes }}>
           {% for i in (1..4) %}
-            {% if product_copy_key != blank %}
-              {% assign feature_title_key = product_copy_key | append: '.feature_' | append: i | append: '_title' %}
-              {% assign feature_text_key = product_copy_key | append: '.feature_' | append: i | append: '_text' %}
-              {% assign feature_title = feature_title_key | t %}
-              {% assign feature_text = feature_text_key | t %}
-            {% else %}
+
               {% assign feature_title_key = 'feature_' | append: i | append: '_title' %}
               {% assign feature_text_key = 'feature_' | append: i | append: '_text' %}
               {% assign feature_title = block.settings[feature_title_key] %}
               {% assign feature_text = block.settings[feature_text_key] %}
-            {% endif %}
+
             {% if feature_title != blank or feature_text != blank %}
               <article class="osso-product-story__feature">
                 {% if feature_title != blank %}<h3 class="osso-product-story__feature-title">{{ feature_title }}</h3>{% endif %}
@@ -113,21 +92,14 @@
                 {% endif %}
               </article>
             {% else %}
-              {% if product_copy_key != blank %}
-                {% assign card_kicker_key = product_copy_key | append: '.card_' | append: i | append: '_kicker' %}
-                {% assign card_title_key = product_copy_key | append: '.card_' | append: i | append: '_title' %}
-                {% assign card_text_key = product_copy_key | append: '.card_' | append: i | append: '_text' %}
-                {% assign card_kicker = card_kicker_key | t %}
-                {% assign card_title = card_title_key | t %}
-                {% assign card_text = card_text_key | t %}
-              {% else %}
+
                 {% assign kicker_key = 'card_' | append: i | append: '_kicker' %}
                 {% assign title_key = 'card_' | append: i | append: '_title' %}
                 {% assign text_key = 'card_' | append: i | append: '_text' %}
                 {% assign card_kicker = block.settings[kicker_key] %}
                 {% assign card_title = block.settings[title_key] %}
                 {% assign card_text = block.settings[text_key] %}
-              {% endif %}
+
               {% assign dark_key = 'card_' | append: i | append: '_dark' %}
               <article class="osso-product-story__card osso-product-story__card--text{% if block.settings[dark_key] %} osso-product-story__card--dark{% endif %}">
                 {% if card_kicker != blank %}<p class="osso-product-story__card-kicker">{{ card_kicker }}</p>{% endif %}
@@ -139,18 +111,11 @@
         </div>
 
       {% when 'highlight' %}
-        {% if product_copy_key != blank %}
-          {% assign highlight_eyebrow_key = product_copy_key | append: '.highlight_eyebrow' %}
-          {% assign highlight_title_key = product_copy_key | append: '.highlight_title' %}
-          {% assign highlight_text_key = product_copy_key | append: '.highlight_text' %}
-          {% assign highlight_eyebrow = highlight_eyebrow_key | t %}
-          {% assign highlight_title = highlight_title_key | t %}
-          {% assign highlight_text = highlight_text_key | t %}
-        {% else %}
+
           {% assign highlight_eyebrow = block.settings.eyebrow %}
           {% assign highlight_title = block.settings.title %}
           {% assign highlight_text = block.settings.text %}
-        {% endif %}
+
         <div class="osso-product-story__highlight" {{ block.shopify_attributes }}>
           <div class="osso-product-story__highlight-media">
             {% assign highlight_media = product.media[2].preview_image | default: featured_image %}
@@ -164,18 +129,11 @@
         </div>
 
       {% when 'details' %}
-        {% if product_copy_key != blank %}
-          {% assign details_eyebrow_key = product_copy_key | append: '.details_eyebrow' %}
-          {% assign details_title_key = product_copy_key | append: '.details_title' %}
-          {% assign details_text_key = product_copy_key | append: '.details_text' %}
-          {% assign details_eyebrow = details_eyebrow_key | t %}
-          {% assign details_title = details_title_key | t %}
-          {% assign details_text = details_text_key | t %}
-        {% else %}
+
           {% assign details_eyebrow = block.settings.eyebrow %}
           {% assign details_title = block.settings.title %}
           {% assign details_text = block.settings.text %}
-        {% endif %}
+
         <div class="osso-product-story__details" {{ block.shopify_attributes }}>
           <div class="osso-product-story__details-visual">
             {% assign details_media = block.settings.image | default: product.media[1].preview_image | default: featured_image %}
@@ -188,17 +146,12 @@
             {% if block.settings.show_accordion %}
               <div class="osso-product-story__accordion">
                 {% for i in (1..3) %}
-                  {% if product_copy_key != blank %}
-                    {% assign heading_key = product_copy_key | append: '.accordion_' | append: i | append: '_heading' %}
-                    {% assign content_key = product_copy_key | append: '.accordion_' | append: i | append: '_content' %}
-                    {% assign acc_heading = heading_key | t %}
-                    {% assign acc_content = content_key | t %}
-                  {% else %}
+
                     {% assign heading_key = 'accordion_' | append: i | append: '_heading' %}
                     {% assign content_key = 'accordion_' | append: i | append: '_content' %}
                     {% assign acc_heading = block.settings[heading_key] %}
                     {% assign acc_content = block.settings[content_key] %}
-                  {% endif %}
+
                   {% if acc_heading != blank %}
                     <details class="osso-product-story__accordion-item">
                       <summary>{{ acc_heading }}</summary>
@@ -212,32 +165,22 @@
         </div>
 
       {% when 'tech_specs' %}
-        {% if product_copy_key != blank %}
-          {% assign tech_label_key = product_copy_key | append: '.tech_label' %}
-          {% assign tech_title_key = product_copy_key | append: '.tech_title' %}
-          {% assign tech_label = tech_label_key | t %}
-          {% assign tech_title = tech_title_key | t %}
-        {% else %}
+
           {% assign tech_label = block.settings.label %}
           {% assign tech_title = block.settings.title %}
-        {% endif %}
+
         <div class="osso-product-story__tech" {{ block.shopify_attributes }}>
           <div class="osso-product-story__tech-inner">
             {% if tech_label != blank %}<p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ tech_label }}</p>{% endif %}
             {% if tech_title != blank %}<h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ tech_title }}</h3>{% endif %}
             <div class="osso-product-story__tech-grid">
               {% for i in (1..6) %}
-                {% if product_copy_key != blank %}
-                  {% assign value_key = product_copy_key | append: '.tech_' | append: i | append: '_value' %}
-                  {% assign label_key = product_copy_key | append: '.tech_' | append: i | append: '_label' %}
-                  {% assign spec_value = value_key | t %}
-                  {% assign spec_label = label_key | t %}
-                {% else %}
+
                   {% assign value_key = 'spec_' | append: i | append: '_value' %}
                   {% assign label_key = 'spec_' | append: i | append: '_label' %}
                   {% assign spec_value = block.settings[value_key] %}
                   {% assign spec_label = block.settings[label_key] %}
-                {% endif %}
+
                 {% if spec_value != blank or spec_label != blank %}
                   <div class="osso-product-story__tech-item">
                     {% if spec_value != blank %}<div class="osso-product-story__tech-value">{{ spec_value }}</div>{% endif %}
@@ -250,18 +193,11 @@
         </div>
 
       {% when 'reviews' %}
-        {% if product_copy_key != blank %}
-          {% assign reviews_label_key = product_copy_key | append: '.reviews_label' %}
-          {% assign reviews_title_key = product_copy_key | append: '.reviews_title' %}
-          {% assign rating_key = product_copy_key | append: '.rating_text' %}
-          {% assign reviews_label = reviews_label_key | t %}
-          {% assign reviews_title = reviews_title_key | t %}
-          {% assign rating_text = rating_key | t %}
-        {% else %}
+
           {% assign reviews_label = block.settings.label %}
           {% assign reviews_title = block.settings.title %}
           {% assign rating_text = block.settings.rating_text %}
-        {% endif %}
+
         <div class="osso-product-story__reviews" {{ block.shopify_attributes }}>
           <div class="osso-product-story__reviews-header">
             <div>
@@ -272,23 +208,14 @@
           </div>
           <div class="osso-product-story__reviews-grid">
             {% for i in (1..3) %}
-              {% if product_copy_key != blank %}
-                {% assign review_text_key = product_copy_key | append: '.review_' | append: i | append: '_text' %}
-                {% assign review_author_key = product_copy_key | append: '.review_' | append: i | append: '_author' %}
-                {% assign review_text = review_text_key | t %}
-                {% assign review_author = review_author_key | t %}
-                {% assign review_stars = 5 %}
-              {% else %}
-                {% assign stars_key = 'review_' | append: i | append: '_stars' %}
                 {% assign text_key = 'review_' | append: i | append: '_text' %}
                 {% assign author_key = 'review_' | append: i | append: '_author' %}
-                {% assign review_stars = block.settings[stars_key] %}
                 {% assign review_text = block.settings[text_key] %}
                 {% assign review_author = block.settings[author_key] %}
-              {% endif %}
+
               {% if review_text != blank %}
                 <article class="osso-product-story__review">
-                  <p class="osso-product-story__review-stars">{% for s in (1..5) %}{% if s <= review_stars %}★{% else %}☆{% endif %}{% endfor %}</p>
+                  <p class="osso-product-story__review-stars" aria-hidden="true">0{{ i }}</p>
                   <p class="osso-product-story__review-text">{{ review_text }}</p>
                   {% if review_author != blank %}<p class="osso-product-story__review-author">{{ review_author }}</p>{% endif %}
                 </article>
@@ -490,8 +417,14 @@
       "id": "language",
       "label": "Language",
       "options": [
-        { "value": "en", "label": "English" },
-        { "value": "es", "label": "Spanish" }
+        {
+          "value": "en",
+          "label": "English"
+        },
+        {
+          "value": "es",
+          "label": "Spanish"
+        }
       ],
       "default": "en"
     },
@@ -709,8 +642,14 @@
           "id": "card_1_type",
           "label": "Card 1 type",
           "options": [
-            { "value": "image", "label": "Image" },
-            { "value": "text", "label": "Text" }
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
           ],
           "default": "image"
         },
@@ -749,8 +688,14 @@
           "id": "card_2_type",
           "label": "Card 2 type",
           "options": [
-            { "value": "image", "label": "Image" },
-            { "value": "text", "label": "Text" }
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
           ],
           "default": "text"
         },
@@ -792,8 +737,14 @@
           "id": "card_3_type",
           "label": "Card 3 type",
           "options": [
-            { "value": "image", "label": "Image" },
-            { "value": "text", "label": "Text" }
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
           ],
           "default": "text"
         },
@@ -835,8 +786,14 @@
           "id": "card_4_type",
           "label": "Card 4 type",
           "options": [
-            { "value": "image", "label": "Image" },
-            { "value": "text", "label": "Text" }
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
           ],
           "default": "image"
         },
@@ -1092,100 +1049,72 @@
     },
     {
       "type": "reviews",
-      "name": "Reviews",
+      "name": "Styling and care",
       "settings": [
         {
           "type": "text",
           "id": "label",
           "label": "Label",
-          "default": "Opiniones"
+          "default": "Styling and care"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Cómo se vive en casa."
+          "default": "Ideas for your space"
         },
         {
           "type": "text",
           "id": "rating_text",
-          "label": "Rating text",
-          "default": "4.9 / 5 en sensación general"
+          "label": "Introduction"
         },
         {
           "type": "header",
-          "content": "Review 1"
-        },
-        {
-          "type": "range",
-          "id": "review_1_stars",
-          "label": "Stars",
-          "min": 1,
-          "max": 5,
-          "step": 1,
-          "default": 5
+          "content": "Note 1"
         },
         {
           "type": "textarea",
           "id": "review_1_text",
           "label": "Text",
-          "default": "Tiene una presencia muy tranquila. En la mesilla queda preciosa incluso apagada."
+          "default": "Choose a place where the shape has room to stand out."
         },
         {
           "type": "text",
           "id": "review_1_author",
-          "label": "Author",
-          "default": "Laura, Madrid"
+          "label": "Note heading",
+          "default": "Placement"
         },
         {
           "type": "header",
-          "content": "Review 2"
-        },
-        {
-          "type": "range",
-          "id": "review_2_stars",
-          "label": "Stars",
-          "min": 1,
-          "max": 5,
-          "step": 1,
-          "default": 5
+          "content": "Note 2"
         },
         {
           "type": "textarea",
           "id": "review_2_text",
           "label": "Text",
-          "default": "Me gustó que no parece una lámpara genérica. Da ambiente y suma muchísimo al salón."
+          "default": "Pair with a small number of objects for a balanced composition."
         },
         {
           "type": "text",
           "id": "review_2_author",
-          "label": "Author",
-          "default": "Carlos, Valencia"
+          "label": "Note heading",
+          "default": "Composition"
         },
         {
           "type": "header",
-          "content": "Review 3"
-        },
-        {
-          "type": "range",
-          "id": "review_3_stars",
-          "label": "Stars",
-          "min": 1,
-          "max": 5,
-          "step": 1,
-          "default": 4
+          "content": "Note 3"
         },
         {
           "type": "textarea",
           "id": "review_3_text",
           "label": "Text",
-          "default": "La luz es suave y la pieza tiene ese punto entre objeto decorativo y utilidad que buscaba."
+          "default": "Wipe with a soft, dry cloth and keep away from direct heat."
         },
         {
           "type": "text",
           "id": "review_3_author",
-          "label": "Author",
-          "default": "Ana, Barcelona"
+          "label": "Note heading",
+          "default": "Care"
         }
       ]
     }

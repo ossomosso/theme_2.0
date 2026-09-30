@@ -9,20 +9,6 @@
  */
 {
   "sections": {
-    "divider_iPjTfx": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "full-width",
-        "thickness": 0.5,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 30,
-        "padding-block-end": 30
-      }
-    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -711,7 +697,7 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Details",
+                    "heading": "Product details",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -721,7 +707,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
+                        "text": "<p>Table lamp with a rounded, mushroom-inspired silhouette. Made to order in Madrid.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -751,7 +737,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping & Returns",
+                    "heading": "Shipping and returns",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -761,7 +747,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
+                        "text": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1070,136 +1056,61 @@
             "item_5": "Three colour options"
           }
         },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Softly sculptural",
-            "title": "A little mushroom of light",
-            "body": "<p>Ch​ampi brings the familiar, rounded language of a mushroom into a compact lamp with a warm and playful character.</p>",
-            "show_specs": true,
-            "spec_1_label": "Character",
-            "spec_1_value": "Rounded and playful",
-            "spec_2_label": "Production",
-            "spec_2_value": "Small-batch 3D printing",
-            "spec_3_label": "Origin",
-            "spec_3_value": "Made in Madrid",
-            "spec_4_label": "Light",
-            "spec_4_value": "Warm ambient glow"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "A friendly silhouette",
-            "feature_1_text": "The domed form gives Champi an approachable character that works across many interiors.",
-            "feature_2_title": "Made for atmosphere",
-            "feature_2_text": "Its light is designed to soften a corner rather than flood the whole room.",
-            "feature_3_title": "A tactile object",
-            "feature_3_text": "The printed surface keeps a subtle material rhythm that rewards a closer look.",
-            "feature_4_title": "Three ways to place it",
-            "feature_4_text": "Use it on a bedside table, a console or a shelf where a small glow can do the work."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "The shape",
-            "card_2_title": "A familiar form, made new.",
-            "card_2_text": "Ch​ampi translates the mushroom into a clean, tactile object with a distinctly warm personality.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "The process",
-            "card_3_title": "Printed slowly, finished carefully.",
-            "card_3_text": "Small-batch production lets us keep the texture, colour and finish under close control.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "For warm corners and relaxed rooms",
-            "title": "A small lamp with a big mood",
-            "text": "Ch​ampi adds an easy, welcoming glow to bedrooms, living rooms and anywhere that benefits from a little softness."
-          }
-        },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
-            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
             "eyebrow": "The idea behind Champi",
-            "title": "Playful without becoming childish.",
-            "text": "<p>Ch​ampi takes a simple natural reference and gives it a quieter, more contemporary life as an everyday light.</p>",
+            "title": "A small lamp with a playful profile.",
+            "text": "<p>A rounded shade and a mushroom-inspired silhouette give Champi its playful character. Choose it for a bedside table or sideboard that needs a small, expressive point of light.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Product details",
-            "accordion_1_content": "<p>Compact table lamp with a rounded mushroom-inspired silhouette and three colour options.</p>",
-            "accordion_2_heading": "Materials and process",
-            "accordion_2_content": "<p>Printed in biodegradable PLA in small batches and finished in Madrid.</p>",
+            "accordion_1_content": "<p>Table lamp with a rounded, mushroom-inspired silhouette. Made to order in Madrid.</p>",
+            "accordion_2_heading": "Material and care",
+            "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order. We are happy to help with delivery questions or returns.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Technical specifications",
-            "title": "Ch​ampi — key details",
-            "spec_1_value": "01",
-            "spec_1_label": "Tabletop piece",
-            "spec_2_value": "03",
-            "spec_2_label": "Colour options",
-            "spec_3_value": "Warm",
-            "spec_3_label": "Light character",
-            "spec_4_value": "ES",
-            "spec_4_label": "Made in Spain",
-            "spec_5_value": "02",
-            "spec_5_label": "Mood light",
-            "spec_6_value": "Low",
-            "spec_6_label": "Visual intensity",
-            "spec_7_value": "360",
-            "spec_7_label": "Sculptural presence",
-            "spec_8_value": "Low",
-            "spec_8_label": "Small-batch production"
+            "label": "The piece in detail",
+            "title": "Champi — product details",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Made in",
+            "spec_3_value": "3D",
+            "spec_3_label": "Process",
+            "spec_4_value": "To order",
+            "spec_4_label": "Production",
+            "spec_5_value": "Indoors",
+            "spec_5_label": "Use",
+            "spec_6_value": "Dry cloth",
+            "spec_6_label": "Cleaning",
+            "spec_7_value": "",
+            "spec_7_label": "",
+            "spec_8_value": "",
+            "spec_8_label": ""
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
-            "label": "Reviews",
-            "title": "How Champi changes the mood.",
-            "rating_text": "4.8 / 5 overall feeling",
-            "review_1_stars": 5,
-            "review_1_text": "Ch​ampi feels like a little piece of furniture as much as a lamp. It makes the room feel warmer.",
-            "review_1_author": "Irene, Barcelona",
-            "review_2_stars": 4,
-            "review_2_text": "The shape is playful but still very considered. It looks great on our sideboard.",
-            "review_2_author": "Pablo, Madrid",
-            "review_3_stars": 5,
-            "review_3_text": "A soft light and a lovely object. The texture makes it feel special.",
-            "review_3_author": "Nora, Valencia"
+            "label": "Styling and care",
+            "title": "Living with Champi",
+            "rating_text": "",
+            "review_1_author": "Bedside table",
+            "review_1_text": "Pair its rounded shade with simple bedding and leave room around the lamp.",
+            "review_2_author": "Sideboard",
+            "review_2_text": "Use Champi as a compact accent beside books or a framed photograph.",
+            "review_3_author": "Care",
+            "review_3_text": "Wipe Champi with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
           }
         }
       },
       "block_order": [
         "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
         "details_mzHy3T",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
@@ -1224,136 +1135,61 @@
             "item_5": "Tres opciones de color"
           }
         },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Escultura amable",
-            "title": "Una pequeña seta de luz",
-            "body": "<p>Champi lleva el lenguaje redondeado y familiar de una seta a una lámpara compacta, cálida y con un punto juguetón.</p>",
-            "show_specs": true,
-            "spec_1_label": "Carácter",
-            "spec_1_value": "Redondeado y juguetón",
-            "spec_2_label": "Producción",
-            "spec_2_value": "Impresión 3D en series cortas",
-            "spec_3_label": "Origen",
-            "spec_3_value": "Hecha en Madrid",
-            "spec_4_label": "Luz",
-            "spec_4_value": "Brillo ambiental cálido"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "Una silueta cercana",
-            "feature_1_text": "La forma abovedada da a Champi un carácter accesible que funciona en muchos interiores.",
-            "feature_2_title": "Pensada para crear ambiente",
-            "feature_2_text": "Su luz suaviza un rincón sin pretender iluminar toda la habitación.",
-            "feature_3_title": "Un objeto táctil",
-            "feature_3_text": "La superficie impresa conserva un ritmo material sutil que invita a mirarla de cerca.",
-            "feature_4_title": "Tres formas de colocarla",
-            "feature_4_text": "Úsala en una mesilla, una consola o una estantería donde un brillo pequeño haga la diferencia."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "La forma",
-            "card_2_title": "Un gesto familiar, llevado a otro lugar.",
-            "card_2_text": "Champi traduce la seta en un objeto limpio, táctil y con una personalidad claramente cálida.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "El proceso",
-            "card_3_title": "Impresión lenta, acabado cuidado.",
-            "card_3_text": "La producción en series cortas permite controlar de cerca la textura, el color y el acabado.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Para rincones cálidos y estancias relajadas",
-            "title": "Una lámpara pequeña con mucho ambiente",
-            "text": "Champi aporta un brillo acogedor a dormitorios, salones y cualquier lugar que pida un poco de suavidad."
-          }
-        },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
-            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
             "eyebrow": "La idea detrás de Champi",
-            "title": "Juguetona sin resultar infantil.",
-            "text": "<p>Champi toma una referencia natural sencilla y le da una vida más serena y contemporánea como luz cotidiana.</p>",
+            "title": "Una pequeña lámpara con carácter juguetón.",
+            "text": "<p>La pantalla redondeada y la silueta de seta dan a Champi su carácter juguetón. Una pieza para la mesilla o un aparador que necesita un pequeño punto de luz con personalidad.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Detalles del producto",
-            "accordion_1_content": "<p>Lámpara de mesa compacta con silueta redondeada inspirada en una seta y tres opciones de color.</p>",
-            "accordion_2_heading": "Materiales y proceso",
-            "accordion_2_content": "<p>Impresión en PLA biodegradable en pequeñas series y acabado en Madrid.</p>",
+            "accordion_1_content": "<p>Lámpara de sobremesa con silueta redondeada, inspirada en una seta. Fabricada bajo pedido en Madrid.</p>",
+            "accordion_2_heading": "Material y cuidados",
+            "accordion_2_content": "<p>Impreso en PLA en Madrid. Limpia con un paño suave y seco. Evita el calor directo y los productos abrasivos.</p>",
             "accordion_3_heading": "Envíos y devoluciones",
-            "accordion_3_content": "<p>Fabricación bajo pedido. Estamos aquí para ayudarte con cualquier duda sobre el envío o una devolución.</p>"
+            "accordion_3_content": "<p>Fabricado bajo pedido en Madrid. Consulta la <a href=\"/policies/shipping-policy\">política de envíos</a> para conocer la producción y la entrega, y la <a href=\"/policies/refund-policy\">política de devoluciones</a> para ver sus condiciones. <a href=\"/pages/contact\">Escríbenos</a> si necesitas una fecha concreta.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Especificaciones técnicas",
-            "title": "Champi — detalles clave",
-            "spec_1_value": "01",
-            "spec_1_label": "Pieza de sobremesa",
-            "spec_2_value": "03",
-            "spec_2_label": "Opciones de color",
-            "spec_3_value": "Cálida",
-            "spec_3_label": "Carácter de la luz",
-            "spec_4_value": "ES",
-            "spec_4_label": "Hecha en España",
-            "spec_5_value": "02",
-            "spec_5_label": "Luz ambiental",
-            "spec_6_value": "Baja",
-            "spec_6_label": "Intensidad visual",
-            "spec_7_value": "360",
-            "spec_7_label": "Sculptural presence",
-            "spec_8_value": "Low",
-            "spec_8_label": "Small-batch production"
+            "label": "La pieza en detalle",
+            "title": "Champi — datos de la pieza",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Fabricación",
+            "spec_3_value": "3D",
+            "spec_3_label": "Proceso",
+            "spec_4_value": "Bajo pedido",
+            "spec_4_label": "Producción",
+            "spec_5_value": "Interior",
+            "spec_5_label": "Uso",
+            "spec_6_value": "Paño seco",
+            "spec_6_label": "Limpieza",
+            "spec_7_value": "",
+            "spec_7_label": "",
+            "spec_8_value": "",
+            "spec_8_label": ""
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
-            "label": "Notas de uso",
-            "title": "Un punto de carácter para el aparador.",
-            "rating_text": "Tres notas de uso cotidiano",
-            "review_1_stars": 5,
-            "review_1_text": "Los niños la llaman la lámpara seta, pero está en nuestro dormitorio. La luz es muy suave.",
-            "review_1_author": "Dormitorio",
-            "review_2_stars": 4,
-            "review_2_text": "Tiene una forma divertida sin parecer infantil. La textura de cerca es preciosa.",
+            "label": "Ideas y cuidados",
+            "title": "Cómo colocar Champi",
+            "rating_text": "",
+            "review_1_author": "Mesilla",
+            "review_1_text": "Combina su pantalla redondeada con ropa de cama sencilla y deja espacio alrededor de la lámpara.",
             "review_2_author": "Aparador",
-            "review_3_stars": 5,
-            "review_3_text": "La uso en el aparador, no para leer, y ahí funciona perfectamente.",
-            "review_3_author": "Luz ambiental"
+            "review_2_text": "Utiliza Champi como un pequeño acento junto a libros o una fotografía enmarcada.",
+            "review_3_author": "Cuidados",
+            "review_3_text": "Limpia Champi con un paño suave y seco. Evita fuentes de calor y no utilices productos abrasivos."
           }
         }
       },
       "block_order": [
         "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
         "details_mzHy3T",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
@@ -1366,10 +1202,9 @@
     }
   },
   "order": [
-    "divider_iPjTfx",
     "main",
-    "product_list_zR9Cym",
     "ossomosso_product_story_en",
-    "ossomosso_product_story_es"
+    "ossomosso_product_story_es",
+    "product_list_zR9Cym"
   ]
 }

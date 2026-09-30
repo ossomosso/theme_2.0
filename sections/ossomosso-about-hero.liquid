@@ -9,13 +9,6 @@
   assign title_emphasis = section.settings.title_emphasis
   assign body = section.settings.body
   assign scroll_text = section.settings.scroll_text
-  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
-    assign eyebrow = 'about_us.hero.eyebrow' | t
-    assign title = 'about_us.hero.title' | t
-    assign title_emphasis = 'about_us.hero.title_emphasis' | t
-    assign body = 'about_us.hero.body' | t
-    assign scroll_text = 'about_us.hero.scroll_text' | t
-  endif
 %}
 
 <style>

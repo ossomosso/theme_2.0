@@ -8,12 +8,6 @@
   assign story_text = section.settings.story_text
   assign body_1 = section.settings.body_1
   assign body_2 = section.settings.body_2
-  if template.suffix == 'about-us' and localization.language.iso_code == 'es'
-    assign label = 'about_us.story.label' | t
-    assign story_text = 'about_us.story.story_text' | t
-    assign body_1 = 'about_us.story.body_1' | t
-    assign body_2 = 'about_us.story.body_2' | t
-  endif
 %}
 
 <style>

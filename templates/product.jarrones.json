@@ -9,20 +9,6 @@
  */
 {
   "sections": {
-    "divider_iPjTfx": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "full-width",
-        "thickness": 0.5,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 30,
-        "padding-block-end": 30
-      }
-    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -711,7 +697,7 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Detalles",
+                    "heading": "Product details",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -742,7 +728,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Cada jarrón se prepara con cuidado antes de salir del estudio. Te escribiremos con la información de envío cuando tu pedido esté en camino.</p><p>Si necesitas ayuda con un cambio o una devolución, escríbenos y lo revisamos contigo.</p>",
+                        "text": "<p>See our <a href=\"/policies/shipping-policy\">shipping policy</a> and <a href=\"/policies/refund-policy\">returns policy</a> for details.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1036,164 +1022,10 @@
         "padding-block-start": 60,
         "padding-block-end": 72
       }
-    },
-    "ossomosso_product_story_n8d9JT": {
-      "type": "ossomosso-product-story",
-      "blocks": {
-        "marquee_hea9YP": {
-          "type": "marquee",
-          "settings": {
-            "speed": 26,
-            "item_1": "Made in Madrid",
-            "item_2": "3D printing de pequeña serie",
-            "item_3": "Decorative object",
-            "item_4": "Made to order",
-            "item_5": "Designed for dried flowers"
-          }
-        },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Luz escultórica",
-            "title": "Una pieza convertida en objeto.",
-            "body": "<p>Una pieza pensada para convivir con el espacio, aportar presencia y acompañar los gestos cotidianos sin imponerse.</p>",
-            "show_specs": true,
-            "spec_1_label": "Color",
-            "spec_1_value": "Arena natural",
-            "spec_2_label": "Producción",
-            "spec_2_value": "Made to order",
-            "spec_3_label": "Origen",
-            "spec_3_value": "Made in Madrid",
-            "spec_4_label": "Carácter",
-            "spec_4_value": "Luz suave y envolvente"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "Pequeña serie",
-            "feature_1_text": "Each piece is made in short batches to maintain control over the finish.",
-            "feature_2_title": "Material ligero",
-            "feature_2_text": "La pieza está pensada para convivir bien en estanterías y rincones pequeños.",
-            "feature_3_title": "Compatible LED",
-            "feature_3_text": "Funciona mejor con bombillas LED cálidas para reforzar la atmósfera suave.",
-            "feature_4_title": "Characterful design",
-            "feature_4_text": "No busca solo iluminar: está pensada para aportar presencia visual."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "La forma",
-            "card_2_title": "Curves that catch the light.",
-            "card_2_text": "La geometría abierta está pensada para difuminar el punto de luz y repartirlo con una presencia más cálida.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "The process",
-            "card_3_title": "Diseño digital, acabado cercano.",
-            "card_3_text": "Cada pieza parte de un modelo 3D y se produce en series cortas para mantener una escala casi artesanal.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Para espacios pequeños y rincones con intención",
-            "title": "Una pieza sencilla que cambia el tono de la estancia.",
-            "text": "Funciona especialmente bien en dormitorios, recibidores, estanterías o mesas auxiliares."
-          }
-        },
-        "details_mzHy3T": {
-          "type": "details",
-          "settings": {
-            "eyebrow": "Una pieza para habitar",
-            "title": "Forma, textura y presencia.",
-            "text": "<p>Un jarrón impreso en pequeña serie para acompañar flores, ramas o simplemente ocupar un lugar propio en casa.</p>",
-            "show_accordion": true,
-            "accordion_1_heading": "El jarrón",
-            "accordion_1_content": "<p>Una silueta contemporánea que funciona como pieza escultórica y como acompañamiento para composiciones florales.</p>",
-            "accordion_2_heading": "Materials and process",
-            "accordion_2_content": "<p>Fabricado capa a capa en PLA biodegradable mediante impresión 3D y acabado en pequeñas series en Madrid.</p>",
-            "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Se prepara bajo pedido. Si necesitas ayuda con plazos o una devolución, escríbenos.</p>"
-          }
-        },
-        "tech_specs_cMwUTM": {
-          "type": "tech_specs",
-          "settings": {
-            "label": "Object details",
-            "title": "Piece details",
-            "spec_1_value": "PLA",
-            "spec_1_label": "Plástico biodegradable",
-            "spec_2_value": "3D",
-            "spec_2_label": "Impresión capa a capa",
-            "spec_3_value": "ES",
-            "spec_3_label": "Made in Madrid",
-            "spec_4_value": "Serie corta",
-            "spec_4_label": "Made-to-order production",
-            "spec_5_value": "Interior",
-            "spec_5_label": "Use recomendado",
-            "spec_6_value": "Flowers secas",
-            "spec_6_label": "Composición sugerida",
-            "spec_7_value": "Ligero",
-            "spec_7_label": "Peso visual",
-            "spec_8_value": "Suave",
-            "spec_8_label": "Care with a dry cloth"
-          }
-        },
-        "reviews_DTTrtr": {
-          "type": "reviews",
-          "settings": {
-            "label": "Opiniones",
-            "title": "Cómo se vive en casa.",
-            "rating_text": "4.9 / 5 en sensación general",
-            "review_1_stars": 5,
-            "review_1_text": "It has a very calm presence. On a shelf it looks beautiful even without flowers.",
-            "review_1_author": "Laura, Madrid",
-            "review_2_stars": 5,
-            "review_2_text": "Me gustó que no parece un jarrón genérico. Da carácter y suma muchísimo al salón.",
-            "review_2_author": "Carlos, Valencia",
-            "review_3_stars": 4,
-            "review_3_text": "La pieza tiene ese punto entre objeto decorativo y uso cotidiano que buscaba.",
-            "review_3_author": "Ana, Barcelona"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
-        "details_mzHy3T",
-        "tech_specs_cMwUTM",
-        "reviews_DTTrtr"
-      ],
-      "name": "Ossomosso - Product Story",
-      "settings": {
-        "color_scheme": ""
-      }
     }
   },
   "order": [
-    "divider_iPjTfx",
     "main",
-    "product_list_zR9Cym",
-    "ossomosso_product_story_n8d9JT"
+    "product_list_zR9Cym"
   ]
 }

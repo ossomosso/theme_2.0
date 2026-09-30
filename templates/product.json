@@ -9,20 +9,6 @@
  */
 {
   "sections": {
-    "divider_iPjTfx": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "full-width",
-        "thickness": 0.5,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 30,
-        "padding-block-end": 30
-      }
-    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -711,7 +697,7 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Details",
+                    "heading": "Product details",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -721,7 +707,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
+                        "text": "{{ closest.product.description }}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -751,7 +737,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping & Returns",
+                    "heading": "Shipping and returns",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -761,7 +747,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
+                        "text": "<p>See our <a href=\"/policies/shipping-policy\">shipping policy</a> and <a href=\"/policies/refund-policy\">returns policy</a> for details.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1055,165 +1041,10 @@
         "padding-block-start": 60,
         "padding-block-end": 72
       }
-    },
-    "ossomosso_product_story_n8d9JT": {
-      "type": "ossomosso-product-story",
-      "blocks": {
-        "marquee_hea9YP": {
-          "type": "marquee",
-          "settings": {
-            "speed": 26,
-            "item_1": "Made in Madrid",
-            "item_2": "Small-batch 3D printing",
-            "item_3": "Ambient light",
-            "item_4": "Made to order",
-            "item_5": "Compatible with LED bulb"
-          }
-        },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Sculptural light",
-            "title": "A sculptural lamp made for everyday spaces.",
-            "body": "<p>This sculptural lamp turns a simple silhouette into a soft, luminous object designed to create atmosphere without imposing itself.</p>",
-            "show_specs": true,
-            "spec_1_label": "Color",
-            "spec_1_value": "Natural sand",
-            "spec_2_label": "Production",
-            "spec_2_value": "Made to order",
-            "spec_3_label": "Origin",
-            "spec_3_value": "Made in Madrid",
-            "spec_4_label": "Character",
-            "spec_4_value": "Soft, enveloping light"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "Small batch",
-            "feature_1_text": "Each unit is made in short batches to maintain control over the finish.",
-            "feature_2_title": "Lightweight material",
-            "feature_2_text": "Designed to work beautifully on shelves and in small corners.",
-            "feature_3_title": "Compatible LED",
-            "feature_3_text": "Works best with warm LED bulbs to enhance its soft atmosphere.",
-            "feature_4_title": "Design with character",
-            "feature_4_text": "It is not only designed to illuminate, but also to add visual presence."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "The form",
-            "card_2_title": "Curves that gather the light.",
-            "card_2_text": "The open geometry is designed to diffuse the light source and spread it with a warmer presence.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "The process",
-            "card_3_title": "Digital design, carefully finished.",
-            "card_3_text": "Each piece starts from a 3D model and is produced in short runs to retain an almost artisanal scale.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "For small spaces and considered corners",
-            "title": "A simple piece that changes the tone of a room.",
-            "text": "It works especially well in bedrooms, entryways, shelves or side tables."
-          }
-        },
-        "details_mzHy3T": {
-          "type": "details",
-          "settings": {
-            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
-            "eyebrow": "The story behind",
-            "title": "Between organic gesture and domestic object.",
-            "text": "<p>The design moves between the organic and the architectural, grounded in a calm piece that is easy to integrate into everyday spaces.</p>",
-            "show_accordion": true,
-            "accordion_1_heading": "Product description",
-            "accordion_1_content": "<p>Table lamp with a sculptural silhouette and ambient light. It works especially well with a warm LED bulb.</p>",
-            "accordion_2_heading": "Materials and process",
-            "accordion_2_content": "<p>Made in small batches using 3D printing and assembled locally in Madrid.</p>",
-            "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order. If you need help with lead times or a return, write to us.</p>"
-          }
-        },
-        "tech_specs_cMwUTM": {
-          "type": "tech_specs",
-          "settings": {
-            "label": "Technical specifications",
-            "title": "Key details",
-            "spec_1_value": "01",
-            "spec_1_label": "Tabletop piece",
-            "spec_2_value": "LED",
-            "spec_2_label": "Recommended",
-            "spec_3_value": "Soft",
-            "spec_3_label": "Light diffusion",
-            "spec_4_value": "ES",
-            "spec_4_label": "Made in Spain",
-            "spec_5_value": "03",
-            "spec_5_label": "Suggested uses",
-            "spec_6_value": "Calm",
-            "spec_6_label": "Visual temperature",
-            "spec_7_value": "360",
-            "spec_7_label": "Sculptural presence",
-            "spec_8_value": "Low",
-            "spec_8_label": "Small-batch production"
-          }
-        },
-        "reviews_DTTrtr": {
-          "type": "reviews",
-          "settings": {
-            "label": "Reviews",
-            "title": "How the lamp feels at home.",
-            "rating_text": "4.9 / 5 overall feeling",
-            "review_1_stars": 5,
-            "review_1_text": "It has a very calm presence. It looks beautiful on the bedside table even when switched off.",
-            "review_1_author": "Laura, Madrid",
-            "review_2_stars": 5,
-            "review_2_text": "I love that it does not look like a generic lamp. It creates atmosphere and adds so much to the living room.",
-            "review_2_author": "Carlos, Valencia",
-            "review_3_stars": 4,
-            "review_3_text": "The light is soft, and the piece strikes the balance between a decorative object and everyday usefulness.",
-            "review_3_author": "Ana, Barcelona"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
-        "details_mzHy3T",
-        "tech_specs_cMwUTM",
-        "reviews_DTTrtr"
-      ],
-      "name": "Ossomosso - Product Story",
-      "settings": {
-        "color_scheme": ""
-      }
     }
   },
   "order": [
-    "divider_iPjTfx",
     "main",
-    "product_list_zR9Cym",
-    "ossomosso_product_story_n8d9JT"
+    "product_list_zR9Cym"
   ]
 }

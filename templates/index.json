@@ -525,13 +525,15 @@
         "eyebrow": "3D printing · Made in Madrid",
         "title": "New collection",
         "title_emphasis": "2026",
-        "body_text": "We design and make unique pieces using 3D printing. Lamps that transform light, organizers that transform space.",
+        "body_text": "We design and make lamps and decorative vases in Madrid using 3D printing. Sculptural forms, thoughtful details and pieces made to order.",
         "primary_button_text": "Explore collection",
         "primary_button_url": "shopify://collections/all",
         "secondary_button_text": "How we make it",
         "secondary_button_url": "",
         "image": "shopify://shop_images/lampara-tulipa-blanca-fondo-habitacion-ossomosso-crop.webp",
-        "caption": ""
+        "caption": "",
+        "scroll_text": "Explore",
+        "image_alt": "White Tulipa lamp on a bedside table"
       }
     },
     "product_list_EDUBdR": {
@@ -911,7 +913,7 @@
           "settings": {
             "icon_svg": "<svg viewbox=\"0 0 36 36\" fill=\"none\"><circle cx=\"18\" cy=\"18\" r=\"12\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M18 10 L18 18 L23 21\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg>",
             "title": "Made to order",
-            "text": "We do not produce until you decide. No excess stock, no mass-production waste. Only what you need, when you need it."
+            "text": "We make your piece when you choose it. Producing to order helps us avoid excess stock and give each object the attention it deserves."
           }
         },
         "value_Ccktj9": {

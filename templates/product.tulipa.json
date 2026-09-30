@@ -9,20 +9,6 @@
  */
 {
   "sections": {
-    "divider_iPjTfx": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "full-width",
-        "thickness": 0.5,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 30,
-        "padding-block-end": 30
-      }
-    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -711,7 +697,7 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Details",
+                    "heading": "Product details",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -721,7 +707,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>This product is crafted with quality materials to ensure durability and performance. Designed with your convenience in mind, it seamlessly fits into your everyday life.</p>",
+                        "text": "<p>Table lamp with a floral silhouette. E14 LED bulb and white textile cable included.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -751,7 +737,7 @@
                 "accordion_row_aaFerA": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Shipping & Returns",
+                    "heading": "Shipping and returns",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -761,7 +747,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. </p><p>We are committed to ensuring a positive shopping experience for all our customers. If for any reason you wish to return an item, we invite you to reach out to our team for assistance, and we will evaluate every return request with care and consideration.</p>",
+                        "text": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1070,136 +1056,61 @@
             "item_5": "E14 LED bulb included"
           }
         },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Sculptural light",
-            "title": "A tulip-shaped lamp for quiet corners",
-            "body": "<p>Tulipa takes the simple gesture of a flower and turns it into a warm, tactile light. Its open silhouette creates atmosphere without taking over the room.</p>",
-            "show_specs": true,
-            "spec_1_label": "Form",
-            "spec_1_value": "Floral silhouette",
-            "spec_2_label": "Production",
-            "spec_2_value": "Small-batch 3D printing",
-            "spec_3_label": "Origin",
-            "spec_3_value": "Made in Madrid",
-            "spec_4_label": "Light",
-            "spec_4_value": "Soft ambient glow"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "A softer shape",
-            "feature_1_text": "The petal-like geometry gives the lamp a calm presence, even when it is switched off.",
-            "feature_2_title": "Light that opens out",
-            "feature_2_text": "Its open form diffuses the bulb gently across nearby walls and surfaces.",
-            "feature_3_title": "Made in short runs",
-            "feature_3_text": "Each piece is printed, finished and checked in small batches in Madrid.",
-            "feature_4_title": "Easy to live with",
-            "feature_4_text": "A compact lamp for bedside tables, shelves and corners that need a little warmth."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "The form",
-            "card_2_title": "Curves that gather the light.",
-            "card_2_text": "A floral outline becomes a soft architectural object through layer-by-layer printing.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "The process",
-            "card_3_title": "Digital design, warm finish.",
-            "card_3_text": "The model is refined digitally, printed slowly and finished by hand.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "For bedside tables and slow evenings",
-            "title": "Light with a softer presence",
-            "text": "Tulipa works beautifully where you want a small pool of light: next to a bed, on a console or beside a reading chair."
-          }
-        },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
-            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
             "eyebrow": "The idea behind Tulipa",
             "title": "A flower translated into light.",
-            "text": "<p>Tulipa starts from a familiar botanical gesture and simplifies it into a piece that feels calm, tactile and easy to place at home.</p>",
+            "text": "<p>An open, flower-inspired silhouette that turns a bedside table into a quiet corner. Tulipa brings a sculptural detail to the room, even when the light is off.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Product details",
             "accordion_1_content": "<p>Table lamp with a floral silhouette. E14 LED bulb and white textile cable included.</p>",
-            "accordion_2_heading": "Materials and process",
-            "accordion_2_content": "<p>Printed in biodegradable PLA in small batches and finished locally in Madrid.</p>",
+            "accordion_2_heading": "Material and care",
+            "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order. If you need help with delivery times or a return, write to us and we will help.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Technical specifications",
-            "title": "Tulipa — key details",
-            "spec_1_value": "01",
-            "spec_1_label": "Tabletop piece",
-            "spec_2_value": "E14 LED",
-            "spec_2_label": "Recommended bulb",
-            "spec_3_value": "Soft",
-            "spec_3_label": "Light diffusion",
-            "spec_4_value": "ES",
-            "spec_4_label": "Made in Spain",
-            "spec_5_value": "03",
-            "spec_5_label": "Suggested spaces",
-            "spec_6_value": "Low",
-            "spec_6_label": "Visual intensity",
-            "spec_7_value": "360",
-            "spec_7_label": "Sculptural presence",
-            "spec_8_value": "Low",
-            "spec_8_label": "Small-batch production"
+            "label": "The piece in detail",
+            "title": "Tulipa — product details",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Made in",
+            "spec_3_value": "3D",
+            "spec_3_label": "Process",
+            "spec_4_value": "To order",
+            "spec_4_label": "Production",
+            "spec_5_value": "Indoors",
+            "spec_5_label": "Use",
+            "spec_6_value": "Dry cloth",
+            "spec_6_label": "Cleaning",
+            "spec_7_value": "LED E14",
+            "spec_7_label": "Bulb included",
+            "spec_8_value": "White textile",
+            "spec_8_label": "Cable included"
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
-            "label": "Reviews",
-            "title": "How Tulipa feels at home.",
-            "rating_text": "4.9 / 5 overall feeling",
-            "review_1_stars": 5,
-            "review_1_text": "It has a very calm presence. It looks beautiful on the bedside table even when switched off.",
-            "review_1_author": "Laura, Madrid",
-            "review_2_stars": 4,
-            "review_2_text": "I love that it does not look like a generic lamp. It creates atmosphere without asking for attention.",
-            "review_2_author": "Carlos, Valencia",
-            "review_3_stars": 5,
-            "review_3_text": "The light is soft and the shape gives the room a quiet focal point.",
-            "review_3_author": "Ana, Barcelona"
+            "label": "Styling and care",
+            "title": "Living with Tulipa",
+            "rating_text": "",
+            "review_1_author": "Bedside table",
+            "review_1_text": "Place Tulipa beside the bed for a gentle pool of light at the end of the day.",
+            "review_2_author": "Console",
+            "review_2_text": "Give its open silhouette space on a console, alongside a small stack of books.",
+            "review_3_author": "Care",
+            "review_3_text": "Wipe Tulipa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
           }
         }
       },
       "block_order": [
         "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
         "details_mzHy3T",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
@@ -1224,136 +1135,61 @@
             "item_5": "Bombilla LED E14 incluida"
           }
         },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Luz escultórica",
-            "title": "Una lámpara con forma de tulipán para rincones tranquilos",
-            "body": "<p>Tulipa toma el gesto sencillo de una flor y lo convierte en una luz cálida y táctil. Su silueta abierta crea ambiente sin imponerse en la estancia.</p>",
-            "show_specs": true,
-            "spec_1_label": "Forma",
-            "spec_1_value": "Silueta floral",
-            "spec_2_label": "Producción",
-            "spec_2_value": "Impresión 3D en series cortas",
-            "spec_3_label": "Origen",
-            "spec_3_value": "Hecha en Madrid",
-            "spec_4_label": "Luz",
-            "spec_4_value": "Brillo ambiental suave"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "Una forma amable",
-            "feature_1_text": "La geometría inspirada en pétalos aporta una presencia serena, incluso cuando está apagada.",
-            "feature_2_title": "Luz que se abre",
-            "feature_2_text": "Su forma abierta difunde la bombilla con suavidad sobre las paredes y superficies cercanas.",
-            "feature_3_title": "Fabricada en series cortas",
-            "feature_3_text": "Cada pieza se imprime, se termina y se revisa en pequeñas tandas en Madrid.",
-            "feature_4_title": "Fácil de integrar",
-            "feature_4_text": "Una lámpara compacta para mesillas, estanterías y rincones que piden un poco de calidez."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "La forma",
-            "card_2_title": "Curvas que recogen la luz.",
-            "card_2_text": "Un contorno floral se convierte en un objeto arquitectónico y suave mediante impresión capa a capa.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "El proceso",
-            "card_3_title": "Diseño digital, acabado cálido.",
-            "card_3_text": "El modelo se refina digitalmente, se imprime despacio y se termina a mano.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Para mesillas y tardes tranquilas",
-            "title": "Una luz de presencia suave",
-            "text": "Tulipa funciona especialmente bien donde quieres un pequeño espacio de luz: junto a la cama, en una consola o junto a un sillón de lectura."
-          }
-        },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
-            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Rojo_Principal_221bd367-734c-4118-a2d9-97f647d1caae.webp",
             "eyebrow": "La idea detrás de Tulipa",
-            "title": "Una flor traducida a luz.",
-            "text": "<p>Tulipa parte de un gesto botánico reconocible y lo simplifica en una pieza serena, táctil y fácil de integrar en casa.</p>",
+            "title": "Una flor convertida en luz.",
+            "text": "<p>Una silueta abierta, inspirada en una flor, que convierte la mesilla en un rincón tranquilo. Tulipa aporta un detalle escultórico al espacio, también cuando está apagada.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Detalles del producto",
-            "accordion_1_content": "<p>Lámpara de mesa con silueta floral. Incluye bombilla LED E14 y cable textil blanco.</p>",
-            "accordion_2_heading": "Materiales y proceso",
-            "accordion_2_content": "<p>Impresión en PLA biodegradable en pequeñas series y acabado local en Madrid.</p>",
+            "accordion_1_content": "<p>Lámpara de sobremesa con silueta floral. Incluye bombilla LED E14 y cable textil blanco.</p>",
+            "accordion_2_heading": "Material y cuidados",
+            "accordion_2_content": "<p>Impreso en PLA en Madrid. Limpia con un paño suave y seco. Evita el calor directo y los productos abrasivos.</p>",
             "accordion_3_heading": "Envíos y devoluciones",
-            "accordion_3_content": "<p>Fabricación bajo pedido. Si necesitas ayuda con los plazos o una devolución, escríbenos y te ayudamos.</p>"
+            "accordion_3_content": "<p>Fabricado bajo pedido en Madrid. Consulta la <a href=\"/policies/shipping-policy\">política de envíos</a> para conocer la producción y la entrega, y la <a href=\"/policies/refund-policy\">política de devoluciones</a> para ver sus condiciones. <a href=\"/pages/contact\">Escríbenos</a> si necesitas una fecha concreta.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Especificaciones técnicas",
-            "title": "Tulipa — detalles clave",
-            "spec_1_value": "01",
-            "spec_1_label": "Pieza de sobremesa",
-            "spec_2_value": "E14 LED",
-            "spec_2_label": "Bombilla recomendada",
-            "spec_3_value": "Suave",
-            "spec_3_label": "Difusión de luz",
-            "spec_4_value": "ES",
-            "spec_4_label": "Hecha en España",
-            "spec_5_value": "03",
-            "spec_5_label": "Espacios sugeridos",
-            "spec_6_value": "Baja",
-            "spec_6_label": "Intensidad visual",
-            "spec_7_value": "360",
-            "spec_7_label": "Sculptural presence",
-            "spec_8_value": "Low",
-            "spec_8_label": "Small-batch production"
+            "label": "La pieza en detalle",
+            "title": "Tulipa — datos de la pieza",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Fabricación",
+            "spec_3_value": "3D",
+            "spec_3_label": "Proceso",
+            "spec_4_value": "Bajo pedido",
+            "spec_4_label": "Producción",
+            "spec_5_value": "Interior",
+            "spec_5_label": "Uso",
+            "spec_6_value": "Paño seco",
+            "spec_6_label": "Limpieza",
+            "spec_7_value": "LED E14",
+            "spec_7_label": "Bombilla incluida",
+            "spec_8_value": "Textil blanco",
+            "spec_8_label": "Cable incluido"
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
-            "label": "Notas de uso",
-            "title": "Una luz cálida para la mesilla.",
-            "rating_text": "Tres notas de uso cotidiano",
-            "review_1_stars": 5,
-            "review_1_text": "La tengo en la mesilla y la enciendo todas las noches. La luz es cálida sin quedarse corta.",
+            "label": "Ideas y cuidados",
+            "title": "Cómo colocar Tulipa",
+            "rating_text": "",
             "review_1_author": "Mesilla",
-            "review_2_stars": 4,
-            "review_2_text": "Llegó muy bien protegida y apagada queda incluso más bonita. La base ocupa poco, algo que nos viene genial.",
-            "review_2_author": "Apagada",
-            "review_3_stars": 5,
-            "review_3_text": "La forma fue el motivo de compra, pero lo que más uso es la luz.",
-            "review_3_author": "Luz de noche"
+            "review_1_text": "Coloca Tulipa junto a la cama para crear un punto de luz suave al terminar el día.",
+            "review_2_author": "Consola",
+            "review_2_text": "Deja espacio a su silueta abierta sobre una consola, junto a una pequeña pila de libros.",
+            "review_3_author": "Cuidados",
+            "review_3_text": "Limpia Tulipa con un paño suave y seco. Evita fuentes de calor y no utilices productos abrasivos."
           }
         }
       },
       "block_order": [
         "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
         "details_mzHy3T",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
@@ -1366,10 +1202,9 @@
     }
   },
   "order": [
-    "divider_iPjTfx",
     "main",
-    "product_list_zR9Cym",
     "ossomosso_product_story_en",
-    "ossomosso_product_story_es"
+    "ossomosso_product_story_es",
+    "product_list_zR9Cym"
   ]
 }

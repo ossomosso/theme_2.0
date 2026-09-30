@@ -9,20 +9,6 @@
  */
 {
   "sections": {
-    "divider_iPjTfx": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "full-width",
-        "thickness": 0.5,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 30,
-        "padding-block-end": 30
-      }
-    },
     "main": {
       "type": "product-information",
       "blocks": {
@@ -711,7 +697,7 @@
                 "accordion_row_VyFryh": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Detalles",
+                    "heading": "Product details",
                     "open_by_default": false,
                     "lamp_only": false,
                     "icon": "none",
@@ -742,7 +728,7 @@
                     "text_DNPAct": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Cada jarrón se prepara con cuidado antes de salir del estudio. Te escribiremos con la información de envío cuando tu pedido esté en camino.</p><p>Si necesitas ayuda con un cambio o una devolución, escríbenos y lo revisamos contigo.</p>",
+                        "text": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1051,135 +1037,61 @@
             "item_5": "Small-batch 3D printing"
           }
         },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Quietly tactile",
-            "title": "A vase for slower compositions",
-            "body": "<p>Japandi pairs a soft, organic profile with the restraint of a quiet interior. It is made to sit comfortably among wood, linen, stone and light.</p>",
-            "show_specs": true,
-            "spec_1_label": "Character",
-            "spec_1_value": "Soft and restrained",
-            "spec_2_label": "Production",
-            "spec_2_value": "Small-batch 3D printing",
-            "spec_3_label": "Origin",
-            "spec_3_value": "Made in Madrid",
-            "spec_4_label": "Use",
-            "spec_4_value": "Dried flowers and branches"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "A soft profile",
-            "feature_1_text": "The silhouette keeps its curves gentle, creating a relaxed presence on a shelf or table.",
-            "feature_2_title": "Made for calm spaces",
-            "feature_2_text": "Japandi sits naturally with tactile, neutral materials and uncluttered rooms.",
-            "feature_3_title": "A tactile finish",
-            "feature_3_text": "The printed layers add depth without disturbing the simplicity of the form.",
-            "feature_4_title": "Easy to restyle",
-            "feature_4_text": "Move it from a console to a bedside table as the season or arrangement changes."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "The mood",
-            "card_2_title": "Quiet form, warm materiality.",
-            "card_2_text": "Japandi is designed to bring a slower, more tactile note to an everyday corner.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "The process",
-            "card_3_title": "Digital precision, handmade attention.",
-            "card_3_text": "The form is printed in small runs and checked by hand for a clean, calm finish.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "For calm homes and considered shelves",
-            "title": "A softer way to display flowers",
-            "text": "Japandi gives branches and dried stems a quiet stage, while also working beautifully as a sculptural object on its own."
-          }
-        },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
             "eyebrow": "The idea behind Japandi",
             "title": "A balance between natural and precise.",
-            "text": "<p>Japandi takes the warmth of an organic vessel and pares it back until the shape feels clear, useful and easy to live with.</p>",
+            "text": "<p>Japandi pairs a soft organic profile with a restrained composition. A tactile vase for a few dried stems, natural textures and spaces that leave room to breathe.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Product details",
-            "accordion_1_content": "<p>Decorative vase for dried flowers, branches or display on its own. Not intended for direct water use.</p>",
-            "accordion_2_heading": "Materials and process",
-            "accordion_2_content": "<p>Printed in biodegradable PLA in small batches and finished in Madrid.</p>",
+            "accordion_1_content": "<p>Decorative vase for dried stems and branches. Do not fill directly with water.</p>",
+            "accordion_2_heading": "Material and care",
+            "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order. We are happy to help with delivery questions or returns.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Technical specifications",
-            "title": "Japandi — key details",
-            "spec_1_value": "01",
-            "spec_1_label": "Decorative vessel",
-            "spec_2_value": "Dry",
-            "spec_2_label": "Suggested use",
-            "spec_3_value": "PLA",
-            "spec_3_label": "Biodegradable material",
-            "spec_4_value": "ES",
-            "spec_4_label": "Made in Spain",
-            "spec_5_value": "Small",
-            "spec_5_label": "Batch production",
-            "spec_6_value": "Low",
-            "spec_6_label": "Visual intensity",
-            "spec_7_value": "Ligero",
-            "spec_7_label": "Peso visual",
-            "spec_8_value": "Suave",
-            "spec_8_label": "Care with a dry cloth"
+            "label": "The piece in detail",
+            "title": "Japandi — product details",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Made in",
+            "spec_3_value": "3D",
+            "spec_3_label": "Process",
+            "spec_4_value": "To order",
+            "spec_4_label": "Production",
+            "spec_5_value": "Indoors",
+            "spec_5_label": "Use",
+            "spec_6_value": "Dry cloth",
+            "spec_6_label": "Cleaning",
+            "spec_7_value": "No water",
+            "spec_7_label": "Direct filling",
+            "spec_8_value": "Dried flowers",
+            "spec_8_label": "Arrangement"
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
-            "label": "Reviews",
-            "title": "How Japandi settles into a home.",
-            "rating_text": "4.8 / 5 overall feeling",
-            "review_1_stars": 5,
-            "review_1_text": "Japandi is one of those pieces that makes everything around it feel more intentional.",
-            "review_1_author": "Nuria, Barcelona",
-            "review_2_stars": 4,
-            "review_2_text": "It looks beautiful with a few stems, but I like it just as much empty.",
-            "review_2_author": "Tom, Madrid",
-            "review_3_stars": 5,
-            "review_3_text": "The finish has a subtle texture that makes the simple shape feel rich.",
-            "review_3_author": "Aina, Valencia"
+            "label": "Styling and care",
+            "title": "Living with Japandi",
+            "rating_text": "",
+            "review_1_author": "Dried stems",
+            "review_1_text": "Use a small number of dried stems and leave the arrangement open and light.",
+            "review_2_author": "Natural textures",
+            "review_2_text": "Combine Japandi with wood, linen or a plain ceramic object for a calm composition.",
+            "review_3_author": "Care",
+            "review_3_text": "Wipe Japandi with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
           }
         }
       },
       "block_order": [
         "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
         "details_mzHy3T",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
@@ -1204,135 +1116,61 @@
             "item_5": "Impresión 3D en series cortas"
           }
         },
-        "intro_ihcmLB": {
-          "type": "intro",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Tacto sereno",
-            "title": "Un jarrón para composiciones pausadas",
-            "body": "<p>Japandi combina un perfil orgánico y suave con la contención de un interior sereno. Convive de forma natural con madera, lino, piedra y luz.</p>",
-            "show_specs": true,
-            "spec_1_label": "Carácter",
-            "spec_1_value": "Suave y contenido",
-            "spec_2_label": "Producción",
-            "spec_2_value": "Impresión 3D en series cortas",
-            "spec_3_label": "Origen",
-            "spec_3_value": "Hecho en Madrid",
-            "spec_4_label": "Uso",
-            "spec_4_value": "Flores secas y ramas"
-          }
-        },
-        "features_mCmGAe": {
-          "type": "features",
-          "disabled": true,
-          "settings": {
-            "feature_1_title": "Un perfil suave",
-            "feature_1_text": "La silueta mantiene sus curvas amables y crea una presencia relajada en cualquier mesa o estantería.",
-            "feature_2_title": "Hecho para la calma",
-            "feature_2_text": "Japandi convive naturalmente con materiales táctiles, tonos neutros y espacios despejados.",
-            "feature_3_title": "Un acabado táctil",
-            "feature_3_text": "Las capas impresas aportan profundidad sin romper la sencillez de la forma.",
-            "feature_4_title": "Fácil de cambiar",
-            "feature_4_text": "Pásalo de una consola a una mesilla cuando cambie la estación o la composición."
-          }
-        },
-        "media_grid_yiBkYA": {
-          "type": "media_grid",
-          "disabled": true,
-          "settings": {
-            "card_1_type": "image",
-            "card_1_kicker": "",
-            "card_1_title": "",
-            "card_1_text": "",
-            "card_1_dark": false,
-            "card_2_type": "text",
-            "card_2_kicker": "El ambiente",
-            "card_2_title": "Forma serena, material cálido.",
-            "card_2_text": "Japandi lleva una nota lenta y táctil a cualquier rincón cotidiano.",
-            "card_2_dark": false,
-            "card_3_type": "text",
-            "card_3_kicker": "El proceso",
-            "card_3_title": "Precisión digital, atención manual.",
-            "card_3_text": "La forma se imprime en pequeñas series y se revisa a mano para conseguir un acabado limpio y sereno.",
-            "card_3_dark": true,
-            "card_4_type": "image",
-            "card_4_kicker": "",
-            "card_4_title": "",
-            "card_4_text": "",
-            "card_4_dark": false
-          }
-        },
-        "highlight_aFtPwH": {
-          "type": "highlight",
-          "disabled": true,
-          "settings": {
-            "eyebrow": "Para casas serenas y estanterías pensadas",
-            "title": "Una forma suave de mostrar flores",
-            "text": "Japandi da a las ramas y tallos secos un escenario tranquilo y también funciona como objeto escultórico por sí solo."
-          }
-        },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
             "eyebrow": "La idea detrás de Japandi",
             "title": "Un equilibrio entre lo natural y lo preciso.",
-            "text": "<p>Japandi toma la calidez de un recipiente orgánico y la depura hasta que la forma resulta clara, útil y fácil de habitar.</p>",
+            "text": "<p>Japandi combina un perfil orgánico suave con una composición contenida. Un jarrón con textura para unos pocos tallos secos, materiales naturales y espacios que dejan respirar.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Detalles del producto",
-            "accordion_1_content": "<p>Jarrón decorativo para flores secas, ramas o para lucirlo solo. No está pensado para contener agua directamente.</p>",
-            "accordion_2_heading": "Materiales y proceso",
-            "accordion_2_content": "<p>Impresión en PLA biodegradable en series cortas y acabado en Madrid.</p>",
+            "accordion_1_content": "<p>Jarrón decorativo para tallos y ramas secas. No lo llenes directamente de agua.</p>",
+            "accordion_2_heading": "Material y cuidados",
+            "accordion_2_content": "<p>Impreso en PLA en Madrid. Limpia con un paño suave y seco. Evita el calor directo y los productos abrasivos.</p>",
             "accordion_3_heading": "Envíos y devoluciones",
-            "accordion_3_content": "<p>Fabricación bajo pedido. Estamos aquí para ayudarte con cualquier duda sobre el envío o una devolución.</p>"
+            "accordion_3_content": "<p>Fabricado bajo pedido en Madrid. Consulta la <a href=\"/policies/shipping-policy\">política de envíos</a> para conocer la producción y la entrega, y la <a href=\"/policies/refund-policy\">política de devoluciones</a> para ver sus condiciones. <a href=\"/pages/contact\">Escríbenos</a> si necesitas una fecha concreta.</p>"
           }
         },
         "tech_specs_cMwUTM": {
           "type": "tech_specs",
           "settings": {
-            "label": "Especificaciones técnicas",
-            "title": "Japandi — detalles clave",
-            "spec_1_value": "01",
-            "spec_1_label": "Recipiente decorativo",
-            "spec_2_value": "Seco",
-            "spec_2_label": "Uso recomendado",
-            "spec_3_value": "PLA",
-            "spec_3_label": "Material biodegradable",
-            "spec_4_value": "ES",
-            "spec_4_label": "Hecho en España",
-            "spec_5_value": "Corto",
-            "spec_5_label": "Producción en series",
-            "spec_6_value": "Baja",
-            "spec_6_label": "Intensidad visual",
-            "spec_7_value": "Ligero",
-            "spec_7_label": "Peso visual",
-            "spec_8_value": "Suave",
-            "spec_8_label": "Care with a dry cloth"
+            "label": "La pieza en detalle",
+            "title": "Japandi — datos de la pieza",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Fabricación",
+            "spec_3_value": "3D",
+            "spec_3_label": "Proceso",
+            "spec_4_value": "Bajo pedido",
+            "spec_4_label": "Producción",
+            "spec_5_value": "Interior",
+            "spec_5_label": "Uso",
+            "spec_6_value": "Paño seco",
+            "spec_6_label": "Limpieza",
+            "spec_7_value": "Sin agua",
+            "spec_7_label": "Uso directo",
+            "spec_8_value": "Flores secas",
+            "spec_8_label": "Composición"
           }
         },
         "reviews_DTTrtr": {
           "type": "reviews",
           "settings": {
-            "label": "Notas de uso",
-            "title": "Una forma fácil de integrar.",
-            "rating_text": "Tres notas de uso cotidiano",
-            "review_1_stars": 5,
-            "review_1_text": "Lo compré para poner ramas secas, pero vacío en la librería me gusta todavía más.",
-            "review_1_author": "Librería",
-            "review_2_stars": 4,
-            "review_2_text": "Se siente sólido y la forma es más suave de lo que parecía en la web.",
-            "review_2_author": "Tallos secos",
-            "review_3_stars": 5,
-            "review_3_text": "Es una pieza tranquila que no compite con el resto de la habitación.",
-            "review_3_author": "Rincón sereno"
+            "label": "Ideas y cuidados",
+            "title": "Cómo colocar Japandi",
+            "rating_text": "",
+            "review_1_author": "Tallos secos",
+            "review_1_text": "Utiliza pocos tallos secos y deja la composición abierta y ligera.",
+            "review_2_author": "Texturas naturales",
+            "review_2_text": "Combina Japandi con madera, lino o una pieza cerámica sencilla para crear una composición serena.",
+            "review_3_author": "Cuidados",
+            "review_3_text": "Limpia Japandi con un paño suave y seco. Evita fuentes de calor y no utilices productos abrasivos."
           }
         }
       },
       "block_order": [
         "marquee_hea9YP",
-        "intro_ihcmLB",
-        "features_mCmGAe",
-        "media_grid_yiBkYA",
-        "highlight_aFtPwH",
         "details_mzHy3T",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
@@ -1345,10 +1183,9 @@
     }
   },
   "order": [
-    "divider_iPjTfx",
     "main",
-    "product_list_zR9Cym",
     "ossomosso_product_story_en",
-    "ossomosso_product_story_es"
+    "ossomosso_product_story_es",
+    "product_list_zR9Cym"
   ]
 }
