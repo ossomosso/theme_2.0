@@ -9,20 +9,6 @@
  */
 {
   "sections": {
-    "divider_mPdFnH": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "page-width",
-        "thickness": 0.5,
-        "corner_radius": "square",
-        "width_percent": 5,
-        "alignment_horizontal": "center",
-        "padding-block-start": 40,
-        "padding-block-end": 40
-      }
-    },
     "section": {
       "type": "section",
       "blocks": {
@@ -389,7 +375,6 @@
     }
   },
   "order": [
-    "divider_mPdFnH",
     "section",
     "lamps_products",
     "vases_products",

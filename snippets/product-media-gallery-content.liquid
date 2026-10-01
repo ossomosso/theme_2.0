@@ -604,7 +604,7 @@
                   <button
                     type="button"
                     class="button button-unstyled dialog-thumbnails-list__thumbnail"
-                    aria-label="{{ 'accessibility.scroll_to' | t: title: media.alt | default: media.media_type }}"
+                    aria-label="{{ 'accessibility.scroll_to' | t: title: product.title }}"
                     on:click="/handleThumbnailClick/{{ forloop.index0 }}"
                     on:pointerenter="/handleThumbnailPointerEnter/{{ forloop.index0 }}"
                     style="--aspect-ratio: {{ aspect_ratio }}; --gallery-aspect-ratio: {{ aspect_ratio }};"
@@ -625,7 +625,7 @@
                         loading: 'lazy',
                         sizes: 'auto, 110, (min-width: 750px) 160',
                         widths: '240, 352, 832, 1200',
-                        alt: media.alt,
+                        alt: product.title,
                         style: focal_point_style
                       | escape
                     }}

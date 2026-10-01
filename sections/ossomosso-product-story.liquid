@@ -141,7 +141,7 @@
           </div>
           <div class="osso-product-story__details-copy">
             {% if details_eyebrow != blank %}<p class="osso-product-story__eyebrow">{{ details_eyebrow }}</p>{% endif %}
-            {% if details_title != blank %}<h3 class="osso-product-story__section-title">{{ details_title }}</h3>{% endif %}
+            {% if details_title != blank %}<h2 class="osso-product-story__section-title">{{ details_title }}</h2>{% endif %}
             {% if details_text != blank %}<div class="osso-product-story__text rte">{{ details_text }}</div>{% endif %}
             {% if block.settings.show_accordion %}
               <div class="osso-product-story__accordion">
@@ -172,9 +172,9 @@
         <div class="osso-product-story__tech" {{ block.shopify_attributes }}>
           <div class="osso-product-story__tech-inner">
             {% if tech_label != blank %}<p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ tech_label }}</p>{% endif %}
-            {% if tech_title != blank %}<h3 class="osso-product-story__section-title osso-product-story__section-title--light">{{ tech_title }}</h3>{% endif %}
+            {% if tech_title != blank %}<h2 class="osso-product-story__section-title osso-product-story__section-title--light">{{ tech_title }}</h2>{% endif %}
             <div class="osso-product-story__tech-grid">
-              {% for i in (1..6) %}
+              {% for i in (1..8) %}
 
                   {% assign value_key = 'spec_' | append: i | append: '_value' %}
                   {% assign label_key = 'spec_' | append: i | append: '_label' %}
@@ -202,7 +202,7 @@
           <div class="osso-product-story__reviews-header">
             <div>
               {% if reviews_label != blank %}<p class="osso-product-story__eyebrow">{{ reviews_label }}</p>{% endif %}
-              {% if reviews_title != blank %}<h3 class="osso-product-story__section-title">{{ reviews_title }}</h3>{% endif %}
+              {% if reviews_title != blank %}<h2 class="osso-product-story__section-title">{{ reviews_title }}</h2>{% endif %}
             </div>
             {% if rating_text != blank %}<div class="osso-product-story__reviews-summary">{{ rating_text }}</div>{% endif %}
           </div>
@@ -403,6 +403,9 @@
     .osso-product-story__tech-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .osso-product-story__reviews-header { display: block; }
     .osso-product-story__reviews-summary { margin-top: 1.25rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .osso-product-story__marquee-track { animation: none; }
   }
 {% endstylesheet %}
 

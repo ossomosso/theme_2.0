@@ -826,7 +826,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<p>Descubre otros productos</p>",
+                "text": "<h2>More pieces for your space</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",

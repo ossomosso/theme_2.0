@@ -53,7 +53,7 @@
         <div
           class="sticky-add-to-cart__image"
         >
-          {% assign image_alt = image_to_show.alt | default: product.title | escape %}
+          {% assign image_alt = product.title | escape %}
           {{
             image_to_show
             | image_url: width: 120
