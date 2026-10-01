@@ -1,14 +1,23 @@
 {% liquid
   assign selected_collection = section.settings.collection
   assign product_limit = section.settings.product_limit
+  assign show_group = true
+  if collection.handle != 'all'
+    assign selected_collection = collection
+    if section.settings.all_products_only
+      assign show_group = false
+    endif
+  endif
 %}
 
-{% if selected_collection != blank %}
+{% if selected_collection != blank and show_group %}
   <section class="ossomosso-collection-products" {{ section.shopify_attributes }}>
     <div class="ossomosso-collection-products__inner">
+      {% if collection.handle == 'all' %}
       <h2 class="ossomosso-collection-products__title">
         {{ section.settings.heading | default: selected_collection.title | escape }}
       </h2>
+      {% endif %}
       <ul class="ossomosso-collection-products__grid" data-ossomosso-variant-grid role="list">
         {% for product in selected_collection.products limit: product_limit %}
           {% for variant in product.variants %}
@@ -84,6 +93,7 @@
   "settings": [
     { "type": "collection", "id": "collection", "label": "Collection" },
     { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "checkbox", "id": "all_products_only", "label": "Show only in All products", "default": false },
     { "type": "range", "id": "product_limit", "label": "Products to show", "min": 1, "max": 50, "step": 1, "default": 12 }
   ],
   "presets": [{ "name": "Ossomosso collections" }]
