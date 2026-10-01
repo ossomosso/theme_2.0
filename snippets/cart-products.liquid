@@ -156,7 +156,8 @@
                       style="--ratio:{{ ratio }};"
                     >
                       {%- liquid
-                        echo item.image | image_url: width: 250 | image_tag: class: 'cart-items__media-image border-style', style: border_override
+                        assign cart_image_alt = item.image.alt | split: '[color:' | first | strip | default: item.product.title
+                        echo item.image | image_url: width: 250 | image_tag: class: 'cart-items__media-image border-style', style: border_override, alt: cart_image_alt
                       -%}
                     </a>
                   {%- endif %}
@@ -324,10 +325,19 @@
                       can_update_quantity: can_update_quantity
                     %}
 
+                    {% capture localized_item_title %}
+                      {{- item.product.title -}}
+                      {% unless item.product.has_only_default_variant %}
+                        {%- for option in item.options_with_values -%}
+                          {%- if forloop.first %} - {% else %}, {% endif -%}
+                          {%- render 'ossomosso-color-name', value: option.value -%}
+                        {%- endfor -%}
+                      {% endunless %}
+                    {% endcapture %}
                     <button
                       class="button cart-items__remove"
                       type="button"
-                      aria-label="{{ 'accessibility.remove_item' | t: title: item.title | escape }}"
+                      aria-label="{{ 'accessibility.remove_item' | t: title: localized_item_title | strip | escape }}"
                       on:click="/onLineItemRemove/{{ item.index | plus: 1 }}"
                       {% assign can_remove = item.instructions.can_remove | default: true, allow_false: true %}
                       {% if can_remove == false %}
