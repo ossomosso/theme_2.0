@@ -805,6 +805,178 @@
         "padding-block-end": 32
       }
     },
+    "ossomosso_marquee_EgRkJz": {
+      "type": "ossomosso-marquee",
+      "name": "Ossomosso - Marquee",
+      "settings": {
+        "marquee_items": "Diseño original\nPLA ecológico\nFabricación local\nPiezas únicas\nImpresión 3D\nMadrid, España\nBajo demanda\nPersonalizable"
+      }
+    },
+    "ossomosso_product_story_en": {
+      "type": "ossomosso-product-story",
+      "blocks": {
+        "marquee_hea9YP": {
+          "type": "marquee",
+          "disabled": true,
+          "settings": {
+            "background_color": "#1f1f1f",
+            "text_color": "#fff8ef",
+            "speed": 26,
+            "item_1": "Made in Madrid",
+            "item_2": "Airy curved form",
+            "item_3": "Gentle everyday light",
+            "item_4": "Made to order",
+            "item_5": "Five colour options"
+          }
+        },
+        "details_mzHy3T": {
+          "type": "details",
+          "settings": {
+            "image": "shopify://shop_images/Brisa_Ossomosso_Base-Roja_Cuadrada.webp",
+            "eyebrow": "The idea behind Brisa",
+            "title": "A lamp with room to breathe.",
+            "text": "<p>Brisa follows a fluid, airy line with an easy presence. A compact lamp for a shelf, desk or side table where you want a soft shape and a welcoming point of light.</p>",
+            "show_accordion": true,
+            "accordion_1_heading": "Product details",
+            "accordion_1_content": "<p>Compact table lamp with a fluid silhouette. Made to order in Madrid.</p>",
+            "accordion_2_heading": "Material and care",
+            "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
+            "accordion_3_heading": "Shipping and returns",
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
+          }
+        },
+        "tech_specs_cMwUTM": {
+          "type": "tech_specs",
+          "settings": {
+            "label": "The piece in detail",
+            "title": "Brisa — product details",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Made in",
+            "spec_3_value": "3D",
+            "spec_3_label": "Process",
+            "spec_4_value": "To order",
+            "spec_4_label": "Production",
+            "spec_5_value": "Indoors",
+            "spec_5_label": "Use",
+            "spec_6_value": "Dry cloth",
+            "spec_6_label": "Cleaning",
+            "spec_7_value": "",
+            "spec_7_label": "",
+            "spec_8_value": "",
+            "spec_8_label": ""
+          }
+        },
+        "reviews_DTTrtr": {
+          "type": "reviews",
+          "disabled": true,
+          "settings": {
+            "label": "Styling and care",
+            "title": "Living with Brisa",
+            "rating_text": "",
+            "review_1_text": "Set Brisa beside an armchair to bring a soft, continuous form to the corner.",
+            "review_1_author": "Side table",
+            "review_2_text": "Leave some empty space beside the lamp so its airy silhouette can be appreciated.",
+            "review_2_author": "Shelf",
+            "review_3_text": "Wipe Brisa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners.",
+            "review_3_author": "Care"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_hea9YP",
+        "details_mzHy3T",
+        "tech_specs_cMwUTM",
+        "reviews_DTTrtr"
+      ],
+      "name": "Ossomosso - Product Story",
+      "settings": {
+        "language": "en",
+        "color_scheme": ""
+      }
+    },
+    "ossomosso_product_story_es": {
+      "type": "ossomosso-product-story",
+      "blocks": {
+        "marquee_hea9YP": {
+          "type": "marquee",
+          "settings": {
+            "background_color": "#8b5e3c",
+            "text_color": "#fff8ef",
+            "speed": 26,
+            "item_1": "Hecha en Madrid",
+            "item_2": "Forma curva y ligera",
+            "item_3": "Luz cotidiana y amable",
+            "item_4": "Bajo pedido",
+            "item_5": "Cinco opciones de color"
+          }
+        },
+        "details_mzHy3T": {
+          "type": "details",
+          "settings": {
+            "eyebrow": "La idea detrás de Brisa",
+            "title": "Una lámpara que deja respirar el espacio.",
+            "text": "<p>Brisa sigue una línea fluida y ligera, con una presencia serena. Una lámpara compacta para la estantería, el escritorio o una mesa auxiliar donde buscas una forma suave y un punto de luz acogedor.</p>",
+            "show_accordion": true,
+            "accordion_1_heading": "Detalles del producto",
+            "accordion_1_content": "<p>Lámpara de sobremesa compacta con silueta fluida. Fabricada bajo pedido en Madrid.</p>",
+            "accordion_2_heading": "Material y cuidados",
+            "accordion_2_content": "<p>Impreso en PLA en Madrid. Limpia con un paño suave y seco. Evita el calor directo y los productos abrasivos.</p>",
+            "accordion_3_heading": "Envíos y devoluciones",
+            "accordion_3_content": "<p>Fabricado bajo pedido en Madrid. Consulta la <a href=\"/policies/shipping-policy\">política de envíos</a> para conocer la producción y la entrega, y la <a href=\"/policies/refund-policy\">política de devoluciones</a> para ver sus condiciones. <a href=\"/pages/contact\">Escríbenos</a> si necesitas una fecha concreta.</p>"
+          }
+        },
+        "tech_specs_cMwUTM": {
+          "type": "tech_specs",
+          "settings": {
+            "label": "La pieza en detalle",
+            "title": "Brisa — datos de la pieza",
+            "spec_1_value": "PLA",
+            "spec_1_label": "Material",
+            "spec_2_value": "Madrid",
+            "spec_2_label": "Fabricación",
+            "spec_3_value": "3D",
+            "spec_3_label": "Proceso",
+            "spec_4_value": "Bajo pedido",
+            "spec_4_label": "Producción",
+            "spec_5_value": "Interior",
+            "spec_5_label": "Uso",
+            "spec_6_value": "Paño seco",
+            "spec_6_label": "Limpieza",
+            "spec_7_value": "",
+            "spec_7_label": "",
+            "spec_8_value": "",
+            "spec_8_label": ""
+          }
+        },
+        "reviews_DTTrtr": {
+          "type": "reviews",
+          "settings": {
+            "label": "Ideas y cuidados",
+            "title": "Cómo colocar Brisa",
+            "rating_text": "",
+            "review_1_text": "Sitúa Brisa junto a una butaca para aportar una forma suave y continua al rincón.",
+            "review_1_author": "Mesa auxiliar",
+            "review_2_text": "Deja algo de espacio libre junto a la lámpara para apreciar su silueta ligera.",
+            "review_2_author": "Estantería",
+            "review_3_text": "Limpia Brisa con un paño suave y seco. Evita fuentes de calor y no utilices productos abrasivos.",
+            "review_3_author": "Cuidados"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_hea9YP",
+        "details_mzHy3T",
+        "tech_specs_cMwUTM",
+        "reviews_DTTrtr"
+      ],
+      "name": "Ossomosso - Product Story",
+      "settings": {
+        "language": "es",
+        "color_scheme": ""
+      }
+    },
     "product_list_zR9Cym": {
       "type": "product-list",
       "blocks": {
@@ -1041,172 +1213,11 @@
         "padding-block-start": 60,
         "padding-block-end": 72
       }
-    },
-    "ossomosso_product_story_en": {
-      "type": "ossomosso-product-story",
-      "blocks": {
-        "marquee_hea9YP": {
-          "type": "marquee",
-          "settings": {
-            "background_color": "#1F1F1F",
-            "text_color": "#fff8ef",
-            "speed": 26,
-            "item_1": "Made in Madrid",
-            "item_2": "Airy curved form",
-            "item_3": "Gentle everyday light",
-            "item_4": "Made to order",
-            "item_5": "Five colour options"
-          }
-        },
-        "details_mzHy3T": {
-          "type": "details",
-          "settings": {
-            "eyebrow": "The idea behind Brisa",
-            "title": "A lamp with room to breathe.",
-            "text": "<p>Brisa follows a fluid, airy line with an easy presence. A compact lamp for a shelf, desk or side table where you want a soft shape and a welcoming point of light.</p>",
-            "show_accordion": true,
-            "accordion_1_heading": "Product details",
-            "accordion_1_content": "<p>Compact table lamp with a fluid silhouette. Made to order in Madrid.</p>",
-            "accordion_2_heading": "Material and care",
-            "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
-            "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
-          }
-        },
-        "tech_specs_cMwUTM": {
-          "type": "tech_specs",
-          "settings": {
-            "label": "The piece in detail",
-            "title": "Brisa — product details",
-            "spec_1_value": "PLA",
-            "spec_1_label": "Material",
-            "spec_2_value": "Madrid",
-            "spec_2_label": "Made in",
-            "spec_3_value": "3D",
-            "spec_3_label": "Process",
-            "spec_4_value": "To order",
-            "spec_4_label": "Production",
-            "spec_5_value": "Indoors",
-            "spec_5_label": "Use",
-            "spec_6_value": "Dry cloth",
-            "spec_6_label": "Cleaning",
-            "spec_7_value": "",
-            "spec_7_label": "",
-            "spec_8_value": "",
-            "spec_8_label": ""
-          }
-        },
-        "reviews_DTTrtr": {
-          "type": "reviews",
-          "settings": {
-            "label": "Styling and care",
-            "title": "Living with Brisa",
-            "rating_text": "",
-            "review_1_author": "Side table",
-            "review_1_text": "Set Brisa beside an armchair to bring a soft, continuous form to the corner.",
-            "review_2_author": "Shelf",
-            "review_2_text": "Leave some empty space beside the lamp so its airy silhouette can be appreciated.",
-            "review_3_author": "Care",
-            "review_3_text": "Wipe Brisa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
-          }
-        }
-      },
-      "block_order": [
-        "marquee_hea9YP",
-        "details_mzHy3T",
-        "tech_specs_cMwUTM",
-        "reviews_DTTrtr"
-      ],
-      "name": "Ossomosso - Product Story",
-      "settings": {
-        "language": "en",
-        "color_scheme": ""
-      }
-    },
-    "ossomosso_product_story_es": {
-      "type": "ossomosso-product-story",
-      "blocks": {
-        "marquee_hea9YP": {
-          "type": "marquee",
-          "settings": {
-            "background_color": "#8b5e3c",
-            "text_color": "#fff8ef",
-            "speed": 26,
-            "item_1": "Hecha en Madrid",
-            "item_2": "Forma curva y ligera",
-            "item_3": "Luz cotidiana y amable",
-            "item_4": "Bajo pedido",
-            "item_5": "Cinco opciones de color"
-          }
-        },
-        "details_mzHy3T": {
-          "type": "details",
-          "settings": {
-            "eyebrow": "La idea detrás de Brisa",
-            "title": "Una lámpara que deja respirar el espacio.",
-            "text": "<p>Brisa sigue una línea fluida y ligera, con una presencia serena. Una lámpara compacta para la estantería, el escritorio o una mesa auxiliar donde buscas una forma suave y un punto de luz acogedor.</p>",
-            "show_accordion": true,
-            "accordion_1_heading": "Detalles del producto",
-            "accordion_1_content": "<p>Lámpara de sobremesa compacta con silueta fluida. Fabricada bajo pedido en Madrid.</p>",
-            "accordion_2_heading": "Material y cuidados",
-            "accordion_2_content": "<p>Impreso en PLA en Madrid. Limpia con un paño suave y seco. Evita el calor directo y los productos abrasivos.</p>",
-            "accordion_3_heading": "Envíos y devoluciones",
-            "accordion_3_content": "<p>Fabricado bajo pedido en Madrid. Consulta la <a href=\"/policies/shipping-policy\">política de envíos</a> para conocer la producción y la entrega, y la <a href=\"/policies/refund-policy\">política de devoluciones</a> para ver sus condiciones. <a href=\"/pages/contact\">Escríbenos</a> si necesitas una fecha concreta.</p>"
-          }
-        },
-        "tech_specs_cMwUTM": {
-          "type": "tech_specs",
-          "settings": {
-            "label": "La pieza en detalle",
-            "title": "Brisa — datos de la pieza",
-            "spec_1_value": "PLA",
-            "spec_1_label": "Material",
-            "spec_2_value": "Madrid",
-            "spec_2_label": "Fabricación",
-            "spec_3_value": "3D",
-            "spec_3_label": "Proceso",
-            "spec_4_value": "Bajo pedido",
-            "spec_4_label": "Producción",
-            "spec_5_value": "Interior",
-            "spec_5_label": "Uso",
-            "spec_6_value": "Paño seco",
-            "spec_6_label": "Limpieza",
-            "spec_7_value": "",
-            "spec_7_label": "",
-            "spec_8_value": "",
-            "spec_8_label": ""
-          }
-        },
-        "reviews_DTTrtr": {
-          "type": "reviews",
-          "settings": {
-            "label": "Ideas y cuidados",
-            "title": "Cómo colocar Brisa",
-            "rating_text": "",
-            "review_1_author": "Mesa auxiliar",
-            "review_1_text": "Sitúa Brisa junto a una butaca para aportar una forma suave y continua al rincón.",
-            "review_2_author": "Estantería",
-            "review_2_text": "Deja algo de espacio libre junto a la lámpara para apreciar su silueta ligera.",
-            "review_3_author": "Cuidados",
-            "review_3_text": "Limpia Brisa con un paño suave y seco. Evita fuentes de calor y no utilices productos abrasivos."
-          }
-        }
-      },
-      "block_order": [
-        "marquee_hea9YP",
-        "details_mzHy3T",
-        "tech_specs_cMwUTM",
-        "reviews_DTTrtr"
-      ],
-      "name": "Ossomosso - Product Story",
-      "settings": {
-        "language": "es",
-        "color_scheme": ""
-      }
     }
   },
   "order": [
     "main",
+    "ossomosso_marquee_EgRkJz",
     "ossomosso_product_story_en",
     "ossomosso_product_story_es",
     "product_list_zR9Cym"
