@@ -862,7 +862,6 @@
         },
         "reviews_DTTrtr": {
           "type": "reviews",
-          "disabled": true,
           "settings": {
             "label": "Styling and care",
             "title": "Living with Brisa",
@@ -884,88 +883,6 @@
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "language": "en",
-        "color_scheme": ""
-      }
-    },
-    "ossomosso_product_story_es": {
-      "type": "ossomosso-product-story",
-      "blocks": {
-        "marquee_hea9YP": {
-          "type": "marquee",
-          "settings": {
-            "background_color": "#8b5e3c",
-            "text_color": "#fff8ef",
-            "speed": 26,
-            "item_1": "Hecha en Madrid",
-            "item_2": "Forma curva y ligera",
-            "item_3": "Luz cotidiana y amable",
-            "item_4": "Bajo pedido",
-            "item_5": "Cinco opciones de color"
-          }
-        },
-        "details_mzHy3T": {
-          "type": "details",
-          "settings": {
-            "eyebrow": "La idea detrás de Brisa",
-            "title": "Una lámpara que deja respirar el espacio.",
-            "text": "<p>Brisa sigue una línea fluida y ligera, con una presencia serena. Una lámpara compacta para la estantería, el escritorio o una mesa auxiliar donde buscas una forma suave y un punto de luz acogedor.</p>",
-            "show_accordion": true,
-            "accordion_1_heading": "Detalles del producto",
-            "accordion_1_content": "<p>Lámpara de sobremesa compacta con silueta fluida. Fabricada bajo pedido en Madrid.</p>",
-            "accordion_2_heading": "Material y cuidados",
-            "accordion_2_content": "<p>Impreso en PLA en Madrid. Limpia con un paño suave y seco. Evita el calor directo y los productos abrasivos.</p>",
-            "accordion_3_heading": "Envíos y devoluciones",
-            "accordion_3_content": "<p>Fabricado bajo pedido en Madrid. Consulta la <a href=\"/policies/shipping-policy\">política de envíos</a> para conocer la producción y la entrega, y la <a href=\"/policies/refund-policy\">política de devoluciones</a> para ver sus condiciones. <a href=\"/pages/contact\">Escríbenos</a> si necesitas una fecha concreta.</p>"
-          }
-        },
-        "tech_specs_cMwUTM": {
-          "type": "tech_specs",
-          "settings": {
-            "label": "La pieza en detalle",
-            "title": "Brisa — datos de la pieza",
-            "spec_1_value": "PLA",
-            "spec_1_label": "Material",
-            "spec_2_value": "Madrid",
-            "spec_2_label": "Fabricación",
-            "spec_3_value": "3D",
-            "spec_3_label": "Proceso",
-            "spec_4_value": "Bajo pedido",
-            "spec_4_label": "Producción",
-            "spec_5_value": "Interior",
-            "spec_5_label": "Uso",
-            "spec_6_value": "Paño seco",
-            "spec_6_label": "Limpieza",
-            "spec_7_value": "",
-            "spec_7_label": "",
-            "spec_8_value": "",
-            "spec_8_label": ""
-          }
-        },
-        "reviews_DTTrtr": {
-          "type": "reviews",
-          "settings": {
-            "label": "Ideas y cuidados",
-            "title": "Cómo colocar Brisa",
-            "rating_text": "",
-            "review_1_text": "Sitúa Brisa junto a una butaca para aportar una forma suave y continua al rincón.",
-            "review_1_author": "Mesa auxiliar",
-            "review_2_text": "Deja algo de espacio libre junto a la lámpara para apreciar su silueta ligera.",
-            "review_2_author": "Estantería",
-            "review_3_text": "Limpia Brisa con un paño suave y seco. Evita fuentes de calor y no utilices productos abrasivos.",
-            "review_3_author": "Cuidados"
-          }
-        }
-      },
-      "block_order": [
-        "marquee_hea9YP",
-        "details_mzHy3T",
-        "tech_specs_cMwUTM",
-        "reviews_DTTrtr"
-      ],
-      "name": "Ossomosso - Product Story",
-      "settings": {
-        "language": "es",
         "color_scheme": ""
       }
     },
@@ -1210,7 +1127,6 @@
   "order": [
     "main",
     "ossomosso_product_story_en",
-    "ossomosso_product_story_es",
     "product_list_zR9Cym"
   ]
 }

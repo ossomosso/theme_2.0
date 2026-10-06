@@ -1098,94 +1098,13 @@
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": "",
-        "language": "en"
-      }
-    },
-    "ossomosso_product_story_es": {
-      "type": "ossomosso-product-story",
-      "blocks": {
-        "marquee_hea9YP": {
-          "type": "marquee",
-          "settings": {
-            "speed": 26,
-            "item_1": "Hecho en Madrid",
-            "item_2": "Forma orgánica y fluida",
-            "item_3": "Para ramas y flores secas",
-            "item_4": "Bajo pedido",
-            "item_5": "Impresión 3D en series cortas"
-          }
-        },
-        "details_mzHy3T": {
-          "type": "details",
-          "settings": {
-            "eyebrow": "La idea detrás de Organic",
-            "title": "Una línea libre para los espacios cotidianos.",
-            "text": "<p>Organic sigue una línea libre que aporta movimiento y textura a la estantería o la consola. Combina su forma escultórica con unas ramas secas o disfrútalo por sí solo.</p>",
-            "show_accordion": true,
-            "accordion_1_heading": "Detalles del producto",
-            "accordion_1_content": "<p>Jarrón decorativo para flores y ramas secas, o para colocar por sí solo. No lo llenes directamente de agua.</p>",
-            "accordion_2_heading": "Material y cuidados",
-            "accordion_2_content": "<p>Impreso en PLA en Madrid. Limpia con un paño suave y seco. Evita el calor directo y los productos abrasivos.</p>",
-            "accordion_3_heading": "Envíos y devoluciones",
-            "accordion_3_content": "<p>Fabricado bajo pedido en Madrid. Consulta la <a href=\"/policies/shipping-policy\">política de envíos</a> para conocer la producción y la entrega, y la <a href=\"/policies/refund-policy\">política de devoluciones</a> para ver sus condiciones. <a href=\"/pages/contact\">Escríbenos</a> si necesitas una fecha concreta.</p>"
-          }
-        },
-        "tech_specs_cMwUTM": {
-          "type": "tech_specs",
-          "settings": {
-            "label": "La pieza en detalle",
-            "title": "Organic — datos de la pieza",
-            "spec_1_value": "PLA",
-            "spec_1_label": "Material",
-            "spec_2_value": "Madrid",
-            "spec_2_label": "Fabricación",
-            "spec_3_value": "3D",
-            "spec_3_label": "Proceso",
-            "spec_4_value": "Bajo pedido",
-            "spec_4_label": "Producción",
-            "spec_5_value": "Interior",
-            "spec_5_label": "Uso",
-            "spec_6_value": "Paño seco",
-            "spec_6_label": "Limpieza",
-            "spec_7_value": "Sin agua",
-            "spec_7_label": "Uso directo",
-            "spec_8_value": "Flores secas",
-            "spec_8_label": "Composición"
-          }
-        },
-        "reviews_DTTrtr": {
-          "type": "reviews",
-          "settings": {
-            "label": "Ideas y cuidados",
-            "title": "Cómo colocar Organic",
-            "rating_text": "",
-            "review_1_author": "Ramas",
-            "review_1_text": "Elige unas pocas ramas secas asimétricas que acompañen el movimiento de Organic.",
-            "review_2_author": "Por sí solo",
-            "review_2_text": "Coloca el jarrón vacío sobre una estantería para dar protagonismo a su perfil escultórico.",
-            "review_3_author": "Cuidados",
-            "review_3_text": "Limpia Organic con un paño suave y seco. Evita fuentes de calor y no utilices productos abrasivos."
-          }
-        }
-      },
-      "block_order": [
-        "marquee_hea9YP",
-        "details_mzHy3T",
-        "tech_specs_cMwUTM",
-        "reviews_DTTrtr"
-      ],
-      "name": "Ossomosso - Product Story",
-      "settings": {
-        "color_scheme": "",
-        "language": "es"
+        "color_scheme": ""
       }
     }
   },
   "order": [
     "main",
     "ossomosso_product_story_en",
-    "ossomosso_product_story_es",
     "product_list_zR9Cym"
   ]
 }

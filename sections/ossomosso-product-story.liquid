@@ -5,7 +5,6 @@
   assign selected_variant = product.selected_or_first_available_variant
 %}
 
-{% if section.settings.language == blank or section.settings.language == localization.language.iso_code %}
 <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}" data-product-handle="{{ product.handle }}">
   {% for block in section.blocks %}
     {% case block.type %}
@@ -226,7 +225,6 @@
     {% endcase %}
   {% endfor %}
 </section>
-{% endif %}
 
 {% stylesheet %}
   .osso-product-story {
@@ -416,22 +414,6 @@
   "class": "section section--full-width",
   "settings": [
     {
-      "type": "select",
-      "id": "language",
-      "label": "Language",
-      "options": [
-        {
-          "value": "en",
-          "label": "English"
-        },
-        {
-          "value": "es",
-          "label": "Spanish"
-        }
-      ],
-      "default": "en"
-    },
-    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "Color scheme",
@@ -468,31 +450,31 @@
           "type": "text",
           "id": "item_1",
           "label": "Item 1",
-          "default": "Fabricada en Madrid"
+          "default": "Made in Madrid"
         },
         {
           "type": "text",
           "id": "item_2",
           "label": "Item 2",
-          "default": "Impresión 3D de pequeña serie"
+          "default": "Small-batch 3D printing"
         },
         {
           "type": "text",
           "id": "item_3",
           "label": "Item 3",
-          "default": "Luz ambiental"
+          "default": "Ambient light"
         },
         {
           "type": "text",
           "id": "item_4",
           "label": "Item 4",
-          "default": "Bajo pedido"
+          "default": "Made to order"
         },
         {
           "type": "text",
           "id": "item_5",
           "label": "Item 5",
-          "default": "Compatible con bombilla LED"
+          "default": "LED bulb compatible"
         }
       ]
     },
@@ -504,19 +486,19 @@
           "type": "text",
           "id": "eyebrow",
           "label": "Eyebrow",
-          "default": "Luz escultórica"
+          "default": "Sculptural light"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Una pieza convertida en objeto."
+          "default": "A design brought to life."
         },
         {
           "type": "richtext",
           "id": "body",
           "label": "Body text",
-          "default": "<p>Una pieza pensada para convivir con el espacio, aportar presencia y acompañar los gestos cotidianos sin imponerse.</p>"
+          "default": "<p>A piece designed to live naturally in your space, bring presence and accompany everyday moments without overwhelming them.</p>"
         },
         {
           "type": "checkbox",
@@ -532,19 +514,19 @@
           "type": "text",
           "id": "spec_1_label",
           "label": "Spec 1 label",
-          "default": "Color"
+          "default": "Colour"
         },
         {
           "type": "text",
           "id": "spec_1_value",
           "label": "Spec 1 value",
-          "default": "Arena natural"
+          "default": "Natural sand"
         },
         {
           "type": "text",
           "id": "spec_2_label",
           "label": "Spec 2 label",
-          "default": "Producción"
+          "default": "Production"
         },
         {
           "type": "text",
@@ -556,25 +538,25 @@
           "type": "text",
           "id": "spec_3_label",
           "label": "Spec 3 label",
-          "default": "Origen"
+          "default": "Origin"
         },
         {
           "type": "text",
           "id": "spec_3_value",
           "label": "Spec 3 value",
-          "default": "Hecha en Madrid"
+          "default": "Made in Madrid"
         },
         {
           "type": "text",
           "id": "spec_4_label",
           "label": "Spec 4 label",
-          "default": "Carácter"
+          "default": "Character"
         },
         {
           "type": "text",
           "id": "spec_4_value",
           "label": "Spec 4 value",
-          "default": "Luz suave y envolvente"
+          "default": "Soft, enveloping light"
         }
       ]
     },
@@ -586,49 +568,49 @@
           "type": "text",
           "id": "feature_1_title",
           "label": "Feature 1 title",
-          "default": "Pequeña serie"
+          "default": "Small batches"
         },
         {
           "type": "textarea",
           "id": "feature_1_text",
           "label": "Feature 1 text",
-          "default": "Cada unidad se fabrica en tandas cortas para mantener el control del acabado."
+          "default": "Each piece is made in small batches to maintain control over the finish."
         },
         {
           "type": "text",
           "id": "feature_2_title",
           "label": "Feature 2 title",
-          "default": "Material ligero"
+          "default": "Lightweight material"
         },
         {
           "type": "textarea",
           "id": "feature_2_text",
           "label": "Feature 2 text",
-          "default": "La pieza está pensada para convivir bien en estanterías y rincones pequeños."
+          "default": "Designed to sit comfortably on shelves and in small corners."
         },
         {
           "type": "text",
           "id": "feature_3_title",
           "label": "Feature 3 title",
-          "default": "Compatible LED"
+          "default": "LED compatible"
         },
         {
           "type": "textarea",
           "id": "feature_3_text",
           "label": "Feature 3 text",
-          "default": "Funciona mejor con bombillas LED cálidas para reforzar la atmósfera suave."
+          "default": "Works best with warm LED bulbs for a gentle atmosphere."
         },
         {
           "type": "text",
           "id": "feature_4_title",
           "label": "Feature 4 title",
-          "default": "Diseño con carácter"
+          "default": "Design with character"
         },
         {
           "type": "textarea",
           "id": "feature_4_text",
           "label": "Feature 4 text",
-          "default": "No busca solo iluminar: está pensada para aportar presencia visual."
+          "default": "More than a light source: a piece designed to bring visual presence."
         }
       ]
     },
@@ -711,19 +693,19 @@
           "type": "text",
           "id": "card_2_kicker",
           "label": "Card 2 kicker",
-          "default": "La forma"
+          "default": "The shape"
         },
         {
           "type": "text",
           "id": "card_2_title",
           "label": "Card 2 title",
-          "default": "Curvas que recogen la luz."
+          "default": "Curves that hold the light."
         },
         {
           "type": "textarea",
           "id": "card_2_text",
           "label": "Card 2 text",
-          "default": "La geometría abierta está pensada para difuminar el punto de luz y repartirlo con una presencia más cálida."
+          "default": "The open geometry softens the light source and spreads a warmer glow."
         },
         {
           "type": "checkbox",
@@ -760,19 +742,19 @@
           "type": "text",
           "id": "card_3_kicker",
           "label": "Card 3 kicker",
-          "default": "El proceso"
+          "default": "The process"
         },
         {
           "type": "text",
           "id": "card_3_title",
           "label": "Card 3 title",
-          "default": "Diseño digital, acabado cercano."
+          "default": "Digital design, locally finished."
         },
         {
           "type": "textarea",
           "id": "card_3_text",
           "label": "Card 3 text",
-          "default": "Cada pieza parte de un modelo 3D y se produce en series cortas para mantener una escala casi artesanal."
+          "default": "Each piece begins as a 3D model and is made in small batches to retain a hands-on scale."
         },
         {
           "type": "checkbox",
@@ -841,19 +823,19 @@
           "type": "text",
           "id": "eyebrow",
           "label": "Eyebrow",
-          "default": "Para espacios pequeños y rincones con intención"
+          "default": "For small spaces and thoughtful corners"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Una pieza sencilla que cambia el tono de la estancia."
+          "default": "A simple piece that changes the mood of a room."
         },
         {
           "type": "textarea",
           "id": "text",
           "label": "Text",
-          "default": "Funciona especialmente bien en dormitorios, recibidores, estanterías o mesas auxiliares."
+          "default": "Works especially well in bedrooms, hallways, on shelves or side tables."
         }
       ]
     },
@@ -870,19 +852,19 @@
           "type": "text",
           "id": "eyebrow",
           "label": "Eyebrow",
-          "default": "La historia detrás"
+          "default": "The story behind it"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Entre gesto orgánico y objeto doméstico."
+          "default": "Between organic form and everyday object."
         },
         {
           "type": "richtext",
           "id": "text",
           "label": "Text",
-          "default": "<p>Una forma pensada para integrarse con naturalidad en el espacio, entre presencia escultórica y uso cotidiano.</p>"
+          "default": "<p>A shape designed to sit naturally in your space, balancing sculptural presence with everyday use.</p>"
         },
         {
           "type": "checkbox",
@@ -898,37 +880,37 @@
           "type": "text",
           "id": "accordion_1_heading",
           "label": "Accordion 1 heading",
-          "default": "Descripción del producto"
+          "default": "Product description"
         },
         {
           "type": "richtext",
           "id": "accordion_1_content",
           "label": "Accordion 1 content",
-          "default": "<p>Lámpara de sobremesa con silueta floral y luz ambiental. Funciona especialmente bien con bombilla LED cálida.</p>"
+          "default": "<p>Table lamp with a floral silhouette and ambient light. Works especially well with a warm LED bulb.</p>"
         },
         {
           "type": "text",
           "id": "accordion_2_heading",
           "label": "Accordion 2 heading",
-          "default": "Materiales y proceso"
+          "default": "Materials and process"
         },
         {
           "type": "richtext",
           "id": "accordion_2_content",
           "label": "Accordion 2 content",
-          "default": "<p>Fabricada en pequeña serie mediante impresión 3D y ensamblada localmente en Madrid.</p>"
+          "default": "<p>3D printed in small batches and assembled locally in Madrid.</p>"
         },
         {
           "type": "text",
           "id": "accordion_3_heading",
           "label": "Accordion 3 heading",
-          "default": "Envío y devoluciones"
+          "default": "Shipping and returns"
         },
         {
           "type": "richtext",
           "id": "accordion_3_content",
           "label": "Accordion 3 content",
-          "default": "<p>Se prepara bajo pedido. Si necesitas ayuda con plazos o una devolución, escríbenos.</p>"
+          "default": "<p>Made to order. Contact us if you need help with delivery times or a return.</p>"
         }
       ]
     },
@@ -940,13 +922,13 @@
           "type": "text",
           "id": "label",
           "label": "Label",
-          "default": "Ficha técnica"
+          "default": "Technical specifications"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "Datos clave"
+          "default": "Key details"
         },
         {
           "type": "header",
@@ -962,7 +944,7 @@
           "type": "text",
           "id": "spec_1_label",
           "label": "Spec 1 label",
-          "default": "Pieza de sobremesa"
+          "default": "Tabletop piece"
         },
         {
           "type": "text",
@@ -974,7 +956,7 @@
           "type": "text",
           "id": "spec_2_label",
           "label": "Spec 2 label",
-          "default": "Recomendado"
+          "default": "Recommended"
         },
         {
           "type": "text",
@@ -986,7 +968,7 @@
           "type": "text",
           "id": "spec_3_label",
           "label": "Spec 3 label",
-          "default": "Difusión de luz"
+          "default": "Light diffusion"
         },
         {
           "type": "text",
@@ -998,7 +980,7 @@
           "type": "text",
           "id": "spec_4_label",
           "label": "Spec 4 label",
-          "default": "Hecha en España"
+          "default": "Made in Spain"
         },
         {
           "type": "text",
@@ -1010,7 +992,7 @@
           "type": "text",
           "id": "spec_5_label",
           "label": "Spec 5 label",
-          "default": "Usos sugeridos"
+          "default": "Suggested uses"
         },
         {
           "type": "text",
@@ -1022,7 +1004,7 @@
           "type": "text",
           "id": "spec_6_label",
           "label": "Spec 6 label",
-          "default": "Temperatura visual"
+          "default": "Visual warmth"
         },
         {
           "type": "text",
@@ -1034,7 +1016,7 @@
           "type": "text",
           "id": "spec_7_label",
           "label": "Spec 7 label",
-          "default": "Presencia escultórica"
+          "default": "Sculptural presence"
         },
         {
           "type": "text",
@@ -1046,7 +1028,7 @@
           "type": "text",
           "id": "spec_8_label",
           "label": "Spec 8 label",
-          "default": "Producción sin excedente"
+          "default": "No surplus production"
         }
       ]
     },

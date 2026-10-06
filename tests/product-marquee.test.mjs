@@ -33,24 +33,35 @@ for (const filename of productTemplates) {
   }
 
   if (hasStory) {
+    test(`${filename}: one shared product story with no language switch`, () => {
+      const stories = Object.values(template.sections).filter((section) => section.type === 'ossomosso-product-story');
+      assert.equal(stories.length, 1);
+      assert.equal('language' in stories[0].settings, false);
+      assert.equal(template.order.includes('ossomosso_product_story_es'), false);
+    });
     test(`${filename}: product story is the only marquee source`, () => {
       assert.equal(Object.values(template.sections).some((section) => standaloneMarquees.has(section.type)), false);
     });
   }
 }
 
-test('Brisa keeps matching editable brown marquees in both languages', () => {
+test('Brisa keeps one editable brown marquee and shared image/layout', () => {
   const template = JSON.parse(readFileSync(new URL('product.brisa.json', templatesDirectory), 'utf8').replace(/\/\*[\s\S]*?\*\//g, ''));
-  const settings = ['en', 'es'].map((language) => template.sections[`ossomosso_product_story_${language}`].blocks.marquee_hea9YP.settings);
+  const section = template.sections.ossomosso_product_story_en;
+  const settings = [section.blocks.marquee_hea9YP.settings];
   for (const marquee of settings) {
     assert.equal(marquee.background_color, '#8b5e3c');
     assert.equal(marquee.text_color, '#fff8ef');
     assert.equal(marquee.speed, 26);
   }
   assert.equal(settings[0].item_1, 'Made in Madrid');
-  assert.equal(settings[1].item_1, 'Hecha en Madrid');
+  assert.equal(section.blocks.reviews_DTTrtr.disabled, undefined);
+  assert.equal(section.blocks.details_mzHy3T.settings.image, 'shopify://shop_images/Brisa_Ossomosso_Base-Roja_Cuadrada.webp');
   const story = readFileSync(new URL('../sections/ossomosso-product-story.liquid', import.meta.url), 'utf8');
   for (const id of ['background_color', 'text_color', 'speed', 'item_1', 'item_5']) {
     assert.ok(story.includes(`"id": "${id}"`));
   }
+  assert.equal(story.includes('section.settings.language'), false);
+  const schema = JSON.parse(story.match(/{% schema %}([\s\S]*?){% endschema %}/)[1]);
+  assert.equal(schema.settings.some((setting) => setting.id === 'language'), false);
 });
