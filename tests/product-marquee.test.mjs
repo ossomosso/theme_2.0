@@ -94,6 +94,11 @@ test('Brisa preserves the image and colour edited in Shopify', () => {
   assert.equal(template.sections.ossomosso_product_story_en.blocks.details_mzHy3T.settings.image, 'shopify://shop_images/Brisa_Ossomosso_Base-Roja_Cuadrada.webp');
 });
 
+test('related product images use their own product for accessible labels', () => {
+  const gallery = readFileSync(new URL('../snippets/card-gallery.liquid', import.meta.url), 'utf8');
+  assert.match(gallery, /render 'product-media', media: media, selected_product: product/);
+});
+
 test('story cannot reintroduce the nested marquee', () => {
   const story = readFileSync(new URL('../sections/ossomosso-product-story.liquid', import.meta.url), 'utf8');
   assert.equal(story.includes('marquee'), false);
