@@ -1121,6 +1121,7 @@
         },
         "highlight_daily": {
           "type": "highlight",
+          "disabled": false,
           "settings": {
             "media": "shopify://shop_images/lampara-tulipa-verde-encendida-habitacion-ossomosso.webp",
             "media_position": "right",

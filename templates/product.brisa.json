@@ -885,6 +885,7 @@
         },
         "highlight_daily": {
           "type": "highlight",
+          "disabled": false,
           "settings": {
             "media": "shopify://shop_images/Brisa-Ossomosso-Ambiente-Editorial.webp",
             "media_position": "right",
