@@ -1117,7 +1117,7 @@
             "review_3_author": "Care",
             "review_3_text": "Wipe Tulipa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
           },
-          "disabled": true
+          "disabled": false
         },
         "highlight_daily": {
           "type": "highlight",

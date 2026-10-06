@@ -151,9 +151,11 @@
 
         <div class="osso-product-story__tech" {{ block.shopify_attributes }}>
           <div class="osso-product-story__tech-inner">
-            {% if tech_label != blank %}<p class="osso-product-story__eyebrow osso-product-story__eyebrow--light">{{ tech_label }}</p>{% endif %}
-            {% if tech_title != blank %}<h2 class="osso-product-story__section-title osso-product-story__section-title--light">{{ tech_title }}</h2>{% endif %}
-            <div class="osso-product-story__tech-grid">
+            <div class="osso-product-story__tech-header">
+              {% if tech_label != blank %}<p class="osso-product-story__eyebrow">{{ tech_label }}</p>{% endif %}
+              {% if tech_title != blank %}<h2 class="osso-product-story__section-title">{{ tech_title }}</h2>{% endif %}
+            </div>
+            <dl class="osso-product-story__tech-grid">
               {% for i in (1..8) %}
 
                   {% assign value_key = 'spec_' | append: i | append: '_value' %}
@@ -163,12 +165,12 @@
 
                 {% if spec_value != blank or spec_label != blank %}
                   <div class="osso-product-story__tech-item">
-                    {% if spec_value != blank %}<div class="osso-product-story__tech-value">{{ spec_value }}</div>{% endif %}
-                    {% if spec_label != blank %}<div class="osso-product-story__tech-label">{{ spec_label }}</div>{% endif %}
+                    {% if spec_label != blank %}<dt class="osso-product-story__tech-label">{{ spec_label }}</dt>{% endif %}
+                    {% if spec_value != blank %}<dd class="osso-product-story__tech-value">{{ spec_value }}</dd>{% endif %}
                   </div>
                 {% endif %}
               {% endfor %}
-            </div>
+            </dl>
           </div>
         </div>
 
@@ -195,9 +197,23 @@
 
               {% if review_text != blank %}
                 <article class="osso-product-story__review">
-                  <p class="osso-product-story__review-stars" aria-hidden="true">0{{ i }}</p>
+                  {% liquid
+                    assign note_icon_key = 'note_' | append: i | append: '_icon'
+                    assign note_icon = block.settings[note_icon_key]
+                    if note_icon == blank
+                      case i
+                        when 1
+                          assign note_icon = 'map_pin'
+                        when 2
+                          assign note_icon = 'plant'
+                        when 3
+                          assign note_icon = 'check_box'
+                      endcase
+                    endif
+                  %}
+                  <svg class="osso-product-story__note-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">{% render 'icon', icon: note_icon %}</svg>
+                  {% if review_author != blank %}<h3 class="osso-product-story__review-author">{{ review_author }}</h3>{% endif %}
                   <p class="osso-product-story__review-text">{{ review_text }}</p>
-                  {% if review_author != blank %}<p class="osso-product-story__review-author">{{ review_author }}</p>{% endif %}
                 </article>
               {% endif %}
             {% endfor %}
@@ -340,22 +356,23 @@
   .osso-product-story__accordion-item[open] summary::after { transform: rotate(45deg); }
   .osso-product-story__accordion-body { padding: 0 0 1.15rem; }
 
-  .osso-product-story__tech { background: var(--story-ink); color: #fff; }
-  .osso-product-story__tech-inner { max-width: 92rem; margin: 0 auto; }
-  .osso-product-story__tech-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; margin-top: 3rem; background: rgb(255 255 255 / 18%); }
-  .osso-product-story__tech-item { min-height: 8rem; padding: 1.25rem; background: var(--story-ink); }
-  .osso-product-story__tech-value { font-size: clamp(1.4rem, 2.5vw, 2.25rem); letter-spacing: -.04em; }
-  .osso-product-story__tech-label { margin-top: .75rem; color: rgb(255 255 255 / 62%); }
+  .osso-product-story__tech { background: #ebe8df; color: var(--story-ink); }
+  .osso-product-story__tech-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(2rem, 6vw, 6rem); max-width: 92rem; margin: 0 auto; }
+  .osso-product-story__tech .osso-product-story__section-title,
+  .osso-product-story__reviews .osso-product-story__section-title { max-width: 22ch; font-size: clamp(2rem, 3vw, 3rem); line-height: 1.08; }
+  .osso-product-story__tech-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.5rem, 4vw, 4rem); margin: 0; }
+  .osso-product-story__tech-item { display: flex; flex-direction: column; gap: .5rem; padding: 1rem 0; border-top: 1px solid var(--story-line); }
+  .osso-product-story__tech-value { margin: 0; font-size: 1.125rem; line-height: 1.4; letter-spacing: -.02em; overflow-wrap: anywhere; }
+  .osso-product-story__tech-label { margin: 0; color: var(--story-muted); font-size: .7rem; }
 
   .osso-product-story__reviews { max-width: 92rem; margin: 0 auto; }
-  .osso-product-story__reviews-header { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-bottom: 2rem; border-bottom: 1px solid var(--story-line); }
+  .osso-product-story__reviews-header { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-bottom: 2.5rem; }
   .osso-product-story__reviews-summary { color: var(--story-muted); font-size: .85rem; letter-spacing: .06em; }
-  .osso-product-story__reviews-grid { display: grid; grid-template-columns: 1fr; gap: 1px; margin-top: 1px; background: var(--story-line); }
-  .osso-product-story__review { min-height: 15rem; padding: clamp(1.5rem, 3vw, 3rem); background: var(--story-paper); }
-  .osso-product-story__review-stars { margin: 0 0 1.5rem; letter-spacing: .2em; color: var(--story-accent); }
+  .osso-product-story__reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); }
+  .osso-product-story__review { padding-top: 1.5rem; border-top: 1px solid var(--story-line); }
+  .osso-product-story__note-icon { display: block; width: 1.6rem; height: 1.6rem; margin-bottom: 1.25rem; color: var(--story-ink); }
   .osso-product-story__review-text { margin: 0; }
-  .osso-product-story__review-author { margin: 2rem 0 0; color: var(--story-muted); font-size: .78rem; font-style: italic; letter-spacing: .02em; }
-  .osso-product-story__review-text::before { content: '“'; display: block; margin-bottom: .5rem; color: var(--story-accent); font-family: Georgia, serif; font-size: 2.4rem; line-height: .7; }
+  .osso-product-story__review-author { margin: 0 0 .75rem; color: var(--story-ink); font-family: var(--font-body--family); font-size: 1.15rem; font-weight: 500; letter-spacing: -.02em; line-height: 1.4; }
 
 
   @media (max-width: 749px) {
@@ -365,7 +382,8 @@
     .osso-product-story__title { max-width: 12ch; font-size: clamp(3rem, 17vw, 6rem); }
     .osso-product-story__features,
     .osso-product-story__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .osso-product-story__tech-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .osso-product-story__tech-inner { grid-template-columns: 1fr; }
+    .osso-product-story__reviews-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .osso-product-story__reviews-header { display: block; }
     .osso-product-story__reviews-summary { margin-top: 1.25rem; }
   }
@@ -995,6 +1013,21 @@
       "type": "reviews",
       "name": "Styling and care",
       "settings": [
+        {
+          "type": "select", "id": "note_1_icon", "label": "Note 1 icon",
+          "options": [{"value":"map_pin","label":"Placement"},{"value":"plant","label":"Styling"},{"value":"check_box","label":"Care"},{"value":"lightning_bolt","label":"Lighting"}],
+          "default": "map_pin"
+        },
+        {
+          "type": "select", "id": "note_2_icon", "label": "Note 2 icon",
+          "options": [{"value":"map_pin","label":"Placement"},{"value":"plant","label":"Styling"},{"value":"check_box","label":"Care"},{"value":"lightning_bolt","label":"Lighting"}],
+          "default": "plant"
+        },
+        {
+          "type": "select", "id": "note_3_icon", "label": "Note 3 icon",
+          "options": [{"value":"map_pin","label":"Placement"},{"value":"plant","label":"Styling"},{"value":"check_box","label":"Care"},{"value":"lightning_bolt","label":"Lighting"}],
+          "default": "check_box"
+        },
         {
           "type": "text",
           "id": "label",
