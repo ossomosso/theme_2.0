@@ -67,6 +67,16 @@ for (const filename of names) {
     assert.match(story.blocks.highlight_daily.settings.media, /\.webp$/);
     assert.equal(story.block_order[1], 'highlight_daily');
   });
+  test(filename + ': visible practical advice without fictional reviews', () => {
+    const notes = stories[0].blocks.reviews_DTTrtr;
+    assert.equal(notes.type, 'reviews');
+    assert.equal(notes.disabled, false);
+    assert.equal(notes.settings.rating_text, '');
+    for (let i = 1; i <= 3; i++) {
+      assert.ok(notes.settings['review_' + i + '_author']);
+      assert.ok(notes.settings['review_' + i + '_text']);
+    }
+  });
 }
 
 test('Brisa preserves the image and colour edited in Shopify', () => {
@@ -86,6 +96,12 @@ test('story cannot reintroduce the nested marquee', () => {
   assert.ok(story.includes('@media (min-width: 750px)'));
   assert.ok(story.includes('grid-column: 2; grid-row: 1;'));
   assert.ok(story.indexOf('highlight-media') < story.indexOf('highlight-copy'));
+  assert.ok(story.includes('<dl class="osso-product-story__tech-grid">'));
+  assert.ok(story.includes('<dt class="osso-product-story__tech-label">'));
+  assert.ok(story.includes('<dd class="osso-product-story__tech-value">'));
+  assert.ok(story.includes("'7,8,1,2,3,4,5,6' | split: ','"));
+  assert.equal(story.includes('review-text::before'), false);
+  assert.equal(story.includes('review-stars'), false);
 });
 
 test('marquee, icons and FAQ remain editable and natively translatable', () => {

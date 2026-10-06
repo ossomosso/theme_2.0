@@ -156,7 +156,8 @@
               {% if tech_title != blank %}<h2 class="osso-product-story__section-title">{{ tech_title }}</h2>{% endif %}
             </div>
             <dl class="osso-product-story__tech-grid">
-              {% for i in (1..8) %}
+              {% assign spec_order = '7,8,1,2,3,4,5,6' | split: ',' %}
+              {% for i in spec_order %}
 
                   {% assign value_key = 'spec_' | append: i | append: '_value' %}
                   {% assign label_key = 'spec_' | append: i | append: '_label' %}
@@ -356,21 +357,22 @@
   .osso-product-story__accordion-item[open] summary::after { transform: rotate(45deg); }
   .osso-product-story__accordion-body { padding: 0 0 1.15rem; }
 
-  .osso-product-story__tech { background: #ebe8df; color: var(--story-ink); }
+  .osso-product-story__tech { background: #ebe8df; color: var(--story-ink); padding-block: clamp(2.5rem, 5vw, 5rem); }
   .osso-product-story__tech-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: clamp(2rem, 6vw, 6rem); max-width: 92rem; margin: 0 auto; }
   .osso-product-story__tech .osso-product-story__section-title,
   .osso-product-story__reviews .osso-product-story__section-title { max-width: 22ch; font-size: clamp(2rem, 3vw, 3rem); line-height: 1.08; }
   .osso-product-story__tech-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(1.5rem, 4vw, 4rem); margin: 0; }
   .osso-product-story__tech-item { display: flex; flex-direction: column; gap: .5rem; padding: 1rem 0; border-top: 1px solid var(--story-line); }
   .osso-product-story__tech-value { margin: 0; font-size: 1.125rem; line-height: 1.4; letter-spacing: -.02em; overflow-wrap: anywhere; }
-  .osso-product-story__tech-label { margin: 0; color: var(--story-muted); font-size: .7rem; }
+  .osso-product-story__tech-label { margin: 0; color: #565e57; font-size: .75rem; line-height: 1.5; letter-spacing: .08em; }
 
   .osso-product-story__reviews { max-width: 92rem; margin: 0 auto; }
   .osso-product-story__reviews-header { display: flex; justify-content: space-between; gap: 2rem; align-items: end; padding-bottom: 2.5rem; }
   .osso-product-story__reviews-summary { color: var(--story-muted); font-size: .85rem; letter-spacing: .06em; }
   .osso-product-story__reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); }
-  .osso-product-story__review { padding-top: 1.5rem; border-top: 1px solid var(--story-line); }
-  .osso-product-story__note-icon { display: block; width: 1.6rem; height: 1.6rem; margin-bottom: 1.25rem; color: var(--story-ink); }
+  .osso-product-story__review { display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); column-gap: 1rem; align-content: start; align-items: start; padding-top: 1.5rem; border-top: 1px solid var(--story-line); }
+  .osso-product-story__note-icon { display: block; width: 1.6rem; height: 1.6rem; color: var(--story-ink); }
+  .osso-product-story__review-text { grid-column: 2; }
   .osso-product-story__review-text { margin: 0; }
   .osso-product-story__review-author { margin: 0 0 .75rem; color: var(--story-ink); font-family: var(--font-body--family); font-size: 1.15rem; font-weight: 500; letter-spacing: -.02em; line-height: 1.4; }
 
