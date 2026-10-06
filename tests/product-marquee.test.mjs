@@ -39,7 +39,8 @@ for (const filename of names) {
     const firstAnswer = faq.blocks.question_1.settings.answer;
     if (lamp) assert.match(firstAnswer, /E14.*included/s);
     else {
-      assert.match(firstAnswer, /not designed to hold water/);
+      assert.match(firstAnswer, /watertight inner vessel/);
+      assert.match(firstAnswer, /Do not pour water directly/);
       assert.equal(JSON.stringify(faq).includes('E14'), false);
     }
   });
@@ -76,6 +77,13 @@ for (const filename of names) {
       assert.ok(notes.settings['review_' + i + '_author']);
       assert.ok(notes.settings['review_' + i + '_text']);
     }
+  });
+  test(filename + ': purchase details are native editable text', () => {
+    const accordion = template.sections.main.blocks['product-details'].blocks.accordion_g8EVVp;
+    const body = accordion.blocks.accordion_row_VyFryh.blocks.text_McjMWz;
+    assert.equal(body.type, 'text');
+    assert.ok(body.settings.text);
+    assert.equal('custom_liquid' in body.settings, false);
   });
 }
 

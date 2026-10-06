@@ -705,9 +705,13 @@
                   },
                   "blocks": {
                     "text_McjMWz": {
-                      "type": "custom-liquid",
+                      "type": "text",
                       "settings": {
-                        "custom_liquid": "<dl class='lamp-details'><div><dt>Use</dt><dd>Decorative indoor object</dd></div><div><dt>Material</dt><dd>3D printing in biodegradable plastic (PLA)</dd></div><div><dt>Process</dt><dd>Made layer by layer in small batches</dd></div><div><dt>Flowers</dt><dd>Ideal for dried flowers or with an inner vessel</dd></div><div><dt>Care</dt><dd>Clean with a soft, dry cloth</dd></div></dl>"
+                        "text": "<p>Organic is a decorative indoor vase, 3D printed in PLA and made to order in Madrid. Style it with dried stems, or use a watertight inner vessel for fresh flowers. Clean with a soft, dry cloth.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte"
                       },
                       "blocks": {}
                     }
@@ -766,7 +770,7 @@
               "settings": {
                 "icon_1": "plant",
                 "title_1": "For dried flowers",
-                "text_1": "Do not fill directly with water.",
+                "text_1": "For fresh stems, use a watertight inner vessel.",
                 "icon_2": "map_pin",
                 "title_2": "Made in Madrid",
                 "text_2": "Designed and made locally.",
@@ -1080,8 +1084,8 @@
             "spec_5_label": "Use",
             "spec_6_value": "Dry cloth",
             "spec_6_label": "Cleaning",
-            "spec_7_value": "No water",
-            "spec_7_label": "Direct filling",
+            "spec_7_value": "Inner vessel",
+            "spec_7_label": "Fresh flowers",
             "spec_8_value": "Dried flowers",
             "spec_8_label": "Arrangement"
           }
@@ -1110,7 +1114,7 @@
             "image_zoom": 100,
             "eyebrow": "Made for everyday life",
             "title": "A flowing form, built layer by layer.",
-            "text": "Organic’s surface reveals the process behind it: 3D-printed PLA with a fine layered texture. This is a decorative vase for dried stems, not a watertight container. Keep it indoors and clean it with a dry cloth."
+            "text": "Organic’s surface reveals its layered 3D-printed form. Display it alone to appreciate the flowing outline, or add a few dried stems. For fresh flowers, use a separate watertight inner vessel."
           }
         }
       },
@@ -1152,7 +1156,7 @@
           "type": "question",
           "settings": {
             "question": "Can I put water in Organic?",
-            "answer": "<p>Organic is a decorative vase for dried flowers and branches. It is not designed to hold water: do not fill it directly or use it for fresh flowers in water.</p>",
+            "answer": "<p>Organic is designed for decorative arrangements. Use dried stems directly, or place a separate watertight inner vessel inside for fresh flowers. Do not pour water directly into the printed vase.</p>",
             "open_by_default": false
           }
         },
