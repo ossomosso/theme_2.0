@@ -56,6 +56,17 @@ for (const filename of names) {
       assert.ok(facts.settings['text_' + i]);
     }
   });
+  test(filename + ': reuses alternating image/text blocks', () => {
+    const story = stories[0];
+    assert.equal(story.settings.image_radius, 20);
+    assert.equal(story.blocks.details_mzHy3T.settings.media_position, 'left');
+    assert.equal(story.blocks.details_mzHy3T.settings.show_accordion, false);
+    assert.equal(story.blocks.highlight_daily.type, 'highlight');
+    assert.ok(!story.blocks.highlight_daily.disabled);
+    assert.equal(story.blocks.highlight_daily.settings.media_position, 'right');
+    assert.match(story.blocks.highlight_daily.settings.media, /\.webp$/);
+    assert.equal(story.block_order[1], 'highlight_daily');
+  });
 }
 
 test('Brisa preserves the image and colour edited in Shopify', () => {
@@ -71,6 +82,10 @@ test('story cannot reintroduce the nested marquee', () => {
   assert.equal(story.includes('section.settings.language'), false);
   const schema = JSON.parse(story.match(/{% schema %}([\s\S]*?){% endschema %}/)[1]);
   assert.equal(schema.blocks.some((b) => b.type === 'marquee'), false);
+  assert.ok(story.includes('block.settings.media | default:'));
+  assert.ok(story.includes('@media (min-width: 750px)'));
+  assert.ok(story.includes('grid-column: 2; grid-row: 1;'));
+  assert.ok(story.indexOf('highlight-media') < story.indexOf('highlight-copy'));
 });
 
 test('marquee, icons and FAQ remain editable and natively translatable', () => {

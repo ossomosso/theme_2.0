@@ -1121,7 +1121,6 @@
         },
         "highlight_daily": {
           "type": "highlight",
-          "disabled": true,
           "settings": {
             "media": "shopify://shop_images/Grasshopper_Ossomosso_Beige_Logo-257.webp",
             "media_position": "right",

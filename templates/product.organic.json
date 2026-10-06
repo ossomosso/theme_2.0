@@ -1102,7 +1102,6 @@
         },
         "highlight_daily": {
           "type": "highlight",
-          "disabled": true,
           "settings": {
             "media": "shopify://shop_images/ossomosso-jarron-organico-transparente-estilismo.webp",
             "media_position": "right",
