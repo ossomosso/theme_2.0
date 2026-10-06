@@ -12,6 +12,7 @@ export class ThemeEvents {
   static variantUpdate = 'variant:update';
   /** @static @constant {string} Event triggered when the cart items or quantities are updated */
   static cartUpdate = 'cart:update';
+  static cartSectionRestored = 'cart:section-restored';
   /** @static @constant {string} Event triggered when a cart update fails */
   static cartError = 'cart:error';
   /** @static @constant {string} Event triggered when a media (video, 3d model) is loaded */

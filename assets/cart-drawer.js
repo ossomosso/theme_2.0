@@ -1,5 +1,5 @@
 import { DialogComponent, DialogOpenEvent, DialogCloseEvent } from '@theme/dialog';
-import { CartAddEvent } from '@theme/events';
+import { CartAddEvent, ThemeEvents } from '@theme/events';
 import { isMobileBreakpoint } from '@theme/utilities';
 
 /**
@@ -22,6 +22,7 @@ class CartDrawerComponent extends DialogComponent {
     super.connectedCallback();
     document.addEventListener(CartAddEvent.eventName, this.#handleCartAdd);
     this.addEventListener(DialogOpenEvent.eventName, this.#updateStickyState);
+    this.addEventListener(ThemeEvents.cartSectionRestored, this.#updateStickyState);
     this.addEventListener(DialogOpenEvent.eventName, this.#handleHistoryOpen);
     this.addEventListener(DialogCloseEvent.eventName, this.#handleHistoryClose);
 
@@ -34,6 +35,7 @@ class CartDrawerComponent extends DialogComponent {
     super.disconnectedCallback();
     document.removeEventListener(CartAddEvent.eventName, this.#handleCartAdd);
     this.removeEventListener(DialogOpenEvent.eventName, this.#updateStickyState);
+    this.removeEventListener(ThemeEvents.cartSectionRestored, this.#updateStickyState);
     this.removeEventListener(DialogOpenEvent.eventName, this.#handleHistoryOpen);
     this.removeEventListener(DialogCloseEvent.eventName, this.#handleHistoryClose);
     this.#historyAbortController?.abort();
