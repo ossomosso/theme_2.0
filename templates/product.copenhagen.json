@@ -763,7 +763,6 @@
             },
             "ossomosso_facts": {
               "type": "ossomosso-product-facts",
-              "disabled": true,
               "settings": {
                 "icon_1": "plant",
                 "title_1": "For dried flowers",
@@ -1047,17 +1046,6 @@
     "ossomosso_product_story_en": {
       "type": "ossomosso-product-story",
       "blocks": {
-        "marquee_hea9YP": {
-          "type": "marquee",
-          "settings": {
-            "speed": 26,
-            "item_1": "Made in Madrid",
-            "item_2": "Quiet sculptural vase",
-            "item_3": "For branches and dried flowers",
-            "item_4": "Made to order",
-            "item_5": "Small-batch 3D printing"
-          }
-        },
         "details_mzHy3T": {
           "type": "details",
           "settings": {
@@ -1112,7 +1100,6 @@
         }
       },
       "block_order": [
-        "marquee_hea9YP",
         "details_mzHy3T",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
@@ -1124,7 +1111,6 @@
     },
     "ossomosso_marquee": {
       "type": "ossomosso-marquee",
-      "disabled": true,
       "settings": {
         "marquee_items": "Original design\nMade in Madrid\n3D-printed PLA\nMade to order\n90-day returns",
         "background_color": "#2a241f",
@@ -1135,7 +1121,6 @@
     },
     "ossomosso_product_faq": {
       "type": "ossomosso-product-faq",
-      "disabled": true,
       "settings": {
         "eyebrow": "Before you bring it home",
         "heading": "Questions about Copenhagen.",

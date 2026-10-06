@@ -8,7 +8,7 @@
       %}
       {% if block.settings[title_key] != blank %}
         <li class="osso-product-facts__item">
-          {% render 'icon-or-image', icon: block.settings[icon_key], image_upload: nil, width: 24, class_name: 'osso-product-facts__icon' %}
+          <svg class="osso-product-facts__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 20 20">{% render 'icon', icon: block.settings[icon_key] %}</svg>
           <div><strong>{{ block.settings[title_key] | escape }}</strong><span>{{ block.settings[text_key] | escape }}</span></div>
         </li>
       {% endif %}

@@ -1,29 +1,11 @@
 {% liquid
   assign featured_image = product.featured_image
   assign secondary_image = product.media[1].preview_image | default: featured_image
-  assign tertiary_image = product.media[2].preview_image | default: secondary_image
-  assign selected_variant = product.selected_or_first_available_variant
 %}
 
 <section class="osso-product-story color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}" data-product-handle="{{ product.handle }}">
   {% for block in section.blocks %}
     {% case block.type %}
-      {% when 'marquee' %}
-        <div class="osso-product-story__marquee" style="--marquee-background: {{ block.settings.background_color | default: '#8b5e3c' }}; --marquee-foreground: {{ block.settings.text_color | default: '#fff8ef' }};" aria-hidden="true" {{ block.shopify_attributes }}>
-          <div class="osso-product-story__marquee-track" style="animation-duration: {{ block.settings.speed | default: 26 }}s;">
-            {% for loop_index in (1..2) %}
-              {% for i in (1..5) %}
-
-                  {% assign item_key = 'item_' | append: i %}
-                  {% assign item_text = block.settings[item_key] %}
-
-                {% if item_text != blank %}
-                  <span>{{ item_text }}</span>{% unless i == 5 %}<span class="osso-product-story__marquee-dot">·</span>{% endunless %}
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-          </div>
-        </div>
 
       {% when 'intro' %}
 
@@ -238,26 +220,6 @@
     color: var(--story-ink);
   }
 
-  .osso-product-story__marquee {
-    overflow: hidden;
-    border-block: 1px solid color-mix(in srgb, var(--marquee-foreground) 22%, transparent);
-    background: var(--marquee-background);
-    color: var(--marquee-foreground);
-  }
-
-  .osso-product-story__marquee-track {
-    display: flex;
-    width: max-content;
-    gap: 1.25rem;
-    padding: .9rem 0;
-    animation: osso-story-marquee 28s linear infinite;
-    font-size: .72rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .osso-product-story__marquee-dot { opacity: .45; }
 
   .osso-product-story__intro,
   .osso-product-story__highlight,
@@ -387,9 +349,9 @@
   .osso-product-story__review { min-height: 15rem; padding: clamp(1.5rem, 3vw, 3rem); background: var(--story-paper); }
   .osso-product-story__review-stars { margin: 0 0 1.5rem; letter-spacing: .2em; color: var(--story-accent); }
   .osso-product-story__review-text { margin: 0; }
-  .osso-product-story__review-author { margin: 2rem 0 0; color: var(--story-muted); font-size: .78rem; font-style: italic; letter-spacing: .02em; }\n  .osso-product-story__review-text::before { content: '“'; display: block; margin-bottom: .5rem; color: var(--story-accent); font-family: Georgia, serif; font-size: 2.4rem; line-height: .7; }
+  .osso-product-story__review-author { margin: 2rem 0 0; color: var(--story-muted); font-size: .78rem; font-style: italic; letter-spacing: .02em; }
+  .osso-product-story__review-text::before { content: '“'; display: block; margin-bottom: .5rem; color: var(--story-accent); font-family: Georgia, serif; font-size: 2.4rem; line-height: .7; }
 
-  @keyframes osso-story-marquee { to { transform: translateX(-50%); } }
 
   @media (max-width: 749px) {
     .osso-product-story__intro,
@@ -401,9 +363,6 @@
     .osso-product-story__tech-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .osso-product-story__reviews-header { display: block; }
     .osso-product-story__reviews-summary { margin-top: 1.25rem; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .osso-product-story__marquee-track { animation: none; }
   }
 {% endstylesheet %}
 
@@ -421,63 +380,6 @@
     }
   ],
   "blocks": [
-    {
-      "type": "marquee",
-      "name": "Marquee",
-      "settings": [
-        {
-          "type": "color",
-          "id": "background_color",
-          "label": "Background color",
-          "default": "#8b5e3c"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text color",
-          "default": "#fff8ef"
-        },
-        {
-          "type": "range",
-          "id": "speed",
-          "label": "Animation speed (seconds)",
-          "min": 10,
-          "max": 60,
-          "step": 1,
-          "default": 26
-        },
-        {
-          "type": "text",
-          "id": "item_1",
-          "label": "Item 1",
-          "default": "Made in Madrid"
-        },
-        {
-          "type": "text",
-          "id": "item_2",
-          "label": "Item 2",
-          "default": "Small-batch 3D printing"
-        },
-        {
-          "type": "text",
-          "id": "item_3",
-          "label": "Item 3",
-          "default": "Ambient light"
-        },
-        {
-          "type": "text",
-          "id": "item_4",
-          "label": "Item 4",
-          "default": "Made to order"
-        },
-        {
-          "type": "text",
-          "id": "item_5",
-          "label": "Item 5",
-          "default": "LED bulb compatible"
-        }
-      ]
-    },
     {
       "type": "intro",
       "name": "Intro + Specs",
@@ -1108,9 +1010,6 @@
     {
       "name": "Ossomosso - Product Story",
       "blocks": {
-        "marquee": {
-          "type": "marquee"
-        },
         "intro": {
           "type": "intro"
         },
@@ -1134,7 +1033,6 @@
         }
       },
       "block_order": [
-        "marquee",
         "intro",
         "features",
         "media_grid",
