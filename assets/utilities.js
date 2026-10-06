@@ -38,6 +38,19 @@ export function supportsViewTransitions() {
   return typeof document.startViewTransition === 'function';
 }
 
+export function shouldDisableCrossDocumentViewTransitions(userAgent = navigator.userAgent) {
+  const ua = userAgent || '';
+  const androidWebView = /\bAndroid\b/i.test(ua) && /;\s?wv\)/i.test(ua);
+  const knownInAppBrowser =
+    /\b(FBAN|FBAV|FB_IAB|FBIOS|Instagram|musical_ly|Bytedance|BytedanceWebview|trill|TikTok)(?:\b|_)/i.test(ua);
+  return androidWebView || knownInAppBrowser;
+}
+
+export function isHistoryRestore(event) {
+  const navigationEntry = globalThis.performance?.getEntriesByType?.('navigation')?.[0];
+  return event.persisted || navigationEntry?.type === 'back_forward';
+}
+
 /**
  * The current view transition
  * @type {{ current: Promise<void> | undefined }}
@@ -91,7 +104,12 @@ const viewTransitionTypes = {
  */
 export function startViewTransition(callback, types) {
   // Check if the API is supported and transitions are desired
-  if (!supportsViewTransitions() || isLowPowerDevice() || prefersReducedMotion()) {
+  if (
+    !supportsViewTransitions() ||
+    isLowPowerDevice() ||
+    prefersReducedMotion() ||
+    shouldDisableCrossDocumentViewTransitions()
+  ) {
     callback();
     return Promise.resolve();
   }

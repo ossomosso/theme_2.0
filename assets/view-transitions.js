@@ -1,7 +1,20 @@
 (function () {
   const viewTransitionRenderBlocker = document.getElementById('view-transition-render-blocker');
+  if (shouldDisableCrossDocumentViewTransitions()) {
+    const style = document.createElement('style');
+    style.textContent = '@view-transition { navigation: none; }';
+    (document.head || document.documentElement).appendChild(style);
+    viewTransitionRenderBlocker?.remove();
+  }
+  const activation = window.navigation?.activation;
+  const noTransitionPossible = !!activation && (activation.from === null || activation.navigationType === 'reload');
   // Remove the view transition render blocker if the user has reduced motion enabled or is on a low power device.
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || isLowPowerDevice()) {
+  if (
+    noTransitionPossible ||
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+    isLowPowerDevice() ||
+    shouldDisableCrossDocumentViewTransitions()
+  ) {
     viewTransitionRenderBlocker?.remove();
   } else {
     // If the browser didn't manage to parse the main content quickly, at least let the user see something.
@@ -91,7 +104,21 @@
    * @returns {viewTransition is null}
    */
   function shouldSkipViewTransition(viewTransition) {
-    return !(viewTransition instanceof ViewTransition) || isLowPowerDevice();
+    return (
+      typeof ViewTransition === 'undefined' ||
+      !(viewTransition instanceof ViewTransition) ||
+      isLowPowerDevice() ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      shouldDisableCrossDocumentViewTransitions()
+    );
+  }
+
+  function shouldDisableCrossDocumentViewTransitions(userAgent = navigator.userAgent) {
+    const ua = userAgent || '';
+    const androidWebView = /\bAndroid\b/i.test(ua) && /;\s?wv\)/i.test(ua);
+    const knownInAppBrowser =
+      /\b(FBAN|FBAV|FB_IAB|FBIOS|Instagram|musical_ly|Bytedance|BytedanceWebview|trill|TikTok)(?:\b|_)/i.test(ua);
+    return androidWebView || knownInAppBrowser;
   }
 
   /*

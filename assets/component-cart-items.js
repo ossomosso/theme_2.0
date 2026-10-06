@@ -6,6 +6,7 @@ import {
   prefersReducedMotion,
   resetShimmer,
   startViewTransition,
+  isHistoryRestore,
 } from '@theme/utilities';
 import { morphSection, sectionRenderer } from '@theme/section-renderer';
 import {
@@ -38,6 +39,7 @@ class CartItemsComponent extends Component {
     document.addEventListener(ThemeEvents.cartUpdate, this.#handleCartUpdate);
     document.addEventListener(ThemeEvents.discountUpdate, this.handleDiscountUpdate);
     document.addEventListener(ThemeEvents.quantitySelectorUpdate, this.#debouncedOnChange);
+    window.addEventListener('pageshow', this.#handlePageShow);
   }
 
   disconnectedCallback() {
@@ -46,7 +48,22 @@ class CartItemsComponent extends Component {
     document.removeEventListener(ThemeEvents.cartUpdate, this.#handleCartUpdate);
     document.removeEventListener(ThemeEvents.discountUpdate, this.handleDiscountUpdate);
     document.removeEventListener(ThemeEvents.quantitySelectorUpdate, this.#debouncedOnChange);
+    window.removeEventListener('pageshow', this.#handlePageShow);
   }
+
+  #handlePageShow = (event) => {
+    if (!isHistoryRestore(event) || !this.dataset.sectionId) return;
+
+    sectionRenderer
+      .renderSection(this.sectionId, { cache: false })
+      .then(() => {
+        this.#updateCartQuantitySelectorButtonStates();
+        this.dispatchEvent(new Event(ThemeEvents.cartSectionRestored, { bubbles: true }));
+      })
+      .catch((error) => {
+        if (error?.name !== 'AbortError') console.warn('[cart-items] restore render failed:', error);
+      });
+  };
 
   /**
    * Handles QuantitySelectorUpdateEvent change event.

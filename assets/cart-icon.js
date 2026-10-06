@@ -1,5 +1,5 @@
 import { Component } from '@theme/component';
-import { onAnimationEnd } from '@theme/utilities';
+import { onAnimationEnd, isHistoryRestore } from '@theme/utilities';
 import { ThemeEvents, CartUpdateEvent } from '@theme/events';
 
 /**
@@ -43,9 +43,17 @@ class CartIcon extends Component {
    * Handles the page show event when the page is restored from cache.
    * @param {PageTransitionEvent} event - The page show event.
    */
-  onPageShow = (event) => {
-    if (event.persisted) {
+  onPageShow = async (event) => {
+    if (!isHistoryRestore(event)) return;
+
+    try {
+      const response = await fetch(`${Theme.routes.cart_url}.js`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Cart request failed: ${response.status}`);
+      const cart = await response.json();
+      await this.renderCartBubble(cart.item_count, false, false);
+    } catch (error) {
       this.ensureCartBubbleIsCorrect();
+      if (error?.name !== 'AbortError') console.warn('[cart-icon] restore count failed:', error);
     }
   };
 
