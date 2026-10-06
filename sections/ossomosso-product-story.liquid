@@ -115,7 +115,7 @@
           {% assign details_text = block.settings.text %}
 
         <div class="osso-product-story__details{% if block.settings.media_position == 'right' %} osso-product-story__row--image-right{% endif %}" {{ block.shopify_attributes }}>
-          <div class="osso-product-story__details-visual">
+          <div class="osso-product-story__details-visual" style="--story-image-fit: {{ block.settings.image_fit | default: 'cover' }}; --story-image-background: {{ block.settings.image_background | default: '#efefef' }};">
             {% assign details_media = block.settings.image | default: product.media[1].preview_image | default: featured_image %}
             {% if details_media != blank %}{{ details_media | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1400', class: 'osso-product-story__details-image', alt: product.title }}{% endif %}
           </div>
@@ -339,6 +339,8 @@
   .osso-product-story__highlight-media,
   .osso-product-story__details-visual { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--story-image-radius, 20px); background: color-mix(in srgb, var(--story-paper) 75%, var(--story-accent)); }
   .osso-product-story__highlight-media .osso-product-story__image { transform: scale(var(--story-image-scale, 1)); }
+  .osso-product-story__details-visual { background: var(--story-image-background, #efefef); }
+  .osso-product-story__details-image { object-fit: var(--story-image-fit, cover); }
   @media (min-width: 750px) {
     .osso-product-story__row--image-right > :first-child { grid-column: 2; grid-row: 1; }
     .osso-product-story__row--image-right > :last-child { grid-column: 1; grid-row: 1; }
@@ -806,6 +808,14 @@
       "type": "details",
       "name": "Details + Accordion",
       "settings": [
+        {
+          "type": "select", "id": "image_fit", "label": "Image framing",
+          "options": [{"value":"cover","label":"Fill frame"},{"value":"contain","label":"Show full image"}],
+          "default": "cover"
+        },
+        {
+          "type": "color", "id": "image_background", "label": "Image frame background", "default": "#efefef"
+        },
         {
           "type": "image_picker",
           "id": "image",

@@ -1059,7 +1059,8 @@
             "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
             "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
-            "media_position": "left"
+            "media_position": "left",
+            "image_fit": "contain"
           }
         },
         "tech_specs_cMwUTM": {
@@ -1104,9 +1105,9 @@
           "type": "highlight",
           "disabled": false,
           "settings": {
-            "media": "shopify://shop_images/ossomosso-jarron-organico-transparente-estilismo.webp",
+            "media": "shopify://shop_images/Ossomosso-Organic-Editorial-Interior.webp",
             "media_position": "right",
-            "image_zoom": 145,
+            "image_zoom": 100,
             "eyebrow": "Made for everyday life",
             "title": "A flowing form, built layer by layer.",
             "text": "Organic’s surface reveals the process behind it: 3D-printed PLA with a fine layered texture. This is a decorative vase for dried stems, not a watertight container. Keep it indoors and clean it with a dry cloth."
