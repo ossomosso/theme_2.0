@@ -811,8 +811,8 @@
         "marquee_hea9YP": {
           "type": "marquee",
           "settings": {
-            "background_color": "#8b5e3c",
-            "text_color": "#fff8ef",
+            "background_color": "#2A241F",
+            "text_color": "#FFFFFF",
             "speed": 26,
             "item_1": "Made in Madrid",
             "item_2": "Airy curved form",
