@@ -805,21 +805,13 @@
         "padding-block-end": 32
       }
     },
-    "ossomosso_marquee_EgRkJz": {
-      "type": "ossomosso-marquee",
-      "name": "Ossomosso - Marquee",
-      "settings": {
-        "marquee_items": "Diseño original\nPLA ecológico\nFabricación local\nPiezas únicas\nImpresión 3D\nMadrid, España\nBajo demanda\nPersonalizable"
-      }
-    },
     "ossomosso_product_story_en": {
       "type": "ossomosso-product-story",
       "blocks": {
         "marquee_hea9YP": {
           "type": "marquee",
-          "disabled": true,
           "settings": {
-            "background_color": "#1f1f1f",
+            "background_color": "#8b5e3c",
             "text_color": "#fff8ef",
             "speed": 26,
             "item_1": "Made in Madrid",
@@ -1217,7 +1209,6 @@
   },
   "order": [
     "main",
-    "ossomosso_marquee_EgRkJz",
     "ossomosso_product_story_en",
     "ossomosso_product_story_es",
     "product_list_zR9Cym"
