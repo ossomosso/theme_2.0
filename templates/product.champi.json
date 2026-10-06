@@ -1070,14 +1070,15 @@
           "settings": {
             "eyebrow": "The idea behind Champi",
             "title": "A small lamp with a playful profile.",
-            "text": "<p>A rounded shade and a mushroom-inspired silhouette give Champi its playful character. Choose it for a bedside table or sideboard that needs a small, expressive point of light.</p>",
-            "show_accordion": true,
+            "text": "<p>Champi’s rounded shade gives a bedside table a playful focal point. Pair it with simple objects and let the mushroom-inspired shape do the talking.</p>",
+            "show_accordion": false,
             "accordion_1_heading": "Product details",
             "accordion_1_content": "<p>Champi is a table lamp for indoor ambient lighting. LED E14 bulb included. 3D printed in PLA, made to order in Madrid.</p>",
             "accordion_2_heading": "Material and care",
             "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
+            "media_position": "left"
           }
         },
         "tech_specs_cMwUTM": {
@@ -1115,17 +1116,32 @@
             "review_2_text": "Use Champi as a compact accent beside books or a framed photograph.",
             "review_3_author": "Care",
             "review_3_text": "Wipe Champi with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
+          },
+          "disabled": true
+        },
+        "highlight_daily": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "media": "shopify://shop_images/Champi-Rosa-Encendida-0248.webp",
+            "media_position": "right",
+            "image_zoom": 100,
+            "eyebrow": "Made for everyday life",
+            "title": "Small lamp. All the essentials.",
+            "text": "An LED E14 bulb is included with Champi. Use it as a decorative point of indoor light on a bedside table or sideboard; the bulb is replaceable, not built into the shade."
           }
         }
       },
       "block_order": [
         "details_mzHy3T",
+        "highlight_daily",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "",
+        "image_radius": 20
       }
     },
     "ossomosso_marquee": {

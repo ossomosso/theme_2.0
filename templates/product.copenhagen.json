@@ -1051,14 +1051,15 @@
           "settings": {
             "eyebrow": "The idea behind Copenhagen",
             "title": "Less decoration, more presence.",
-            "text": "<p>Copenhagen brings a balanced, steady silhouette to shelves and dining tables. Use it to give structure to a composition of dried flowers, or as a quiet object on its own.</p>",
-            "show_accordion": true,
+            "text": "<p>Copenhagen gives a composition a steady centre. A few dried branches and a lower object beside it are enough to bring rhythm to a console or dining table.</p>",
+            "show_accordion": false,
             "accordion_1_heading": "Product details",
             "accordion_1_content": "<p>Decorative vase for dried flowers and branches. Do not fill directly with water.</p>",
             "accordion_2_heading": "Material and care",
             "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
+            "media_position": "left"
           }
         },
         "tech_specs_cMwUTM": {
@@ -1096,17 +1097,32 @@
             "review_2_text": "Pair the vase with a lower object to create a composition with two different heights.",
             "review_3_author": "Care",
             "review_3_text": "Wipe Copenhagen with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
+          },
+          "disabled": true
+        },
+        "highlight_daily": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "media": "shopify://shop_images/IMG_0147.webp",
+            "media_position": "right",
+            "image_zoom": 100,
+            "eyebrow": "Made for everyday life",
+            "title": "Designed for stems, not water.",
+            "text": "Copenhagen is a decorative PLA vase for dried flowers and branches. Do not fill it directly with water. Its 3D-printed texture is best cared for with a soft, dry cloth."
           }
         }
       },
       "block_order": [
         "details_mzHy3T",
+        "highlight_daily",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "",
+        "image_radius": 20
       }
     },
     "ossomosso_marquee": {

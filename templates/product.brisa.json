@@ -834,14 +834,15 @@
             "image": "shopify://shop_images/Brisa_Ossomosso_Base-Roja_Cuadrada.webp",
             "eyebrow": "The idea behind Brisa",
             "title": "A lamp with room to breathe.",
-            "text": "<p>Brisa follows a fluid, airy line with an easy presence. A compact lamp for a shelf, desk or side table where you want a soft shape and a welcoming point of light.</p>",
-            "show_accordion": true,
+            "text": "<p>A fluid curve gives Brisa presence without crowding the room. Place it on a side table or a shelf with a little breathing space around the shade.</p>",
+            "show_accordion": false,
             "accordion_1_heading": "Product details",
             "accordion_1_content": "<p>Brisa is a table lamp for indoor ambient lighting. LED E14 bulb included. 3D printed in PLA, made to order in Madrid.</p>",
             "accordion_2_heading": "Material and care",
             "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
+            "media_position": "left"
           }
         },
         "tech_specs_cMwUTM": {
@@ -879,17 +880,32 @@
             "review_2_author": "Shelf",
             "review_3_text": "Wipe Brisa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners.",
             "review_3_author": "Care"
+          },
+          "disabled": true
+        },
+        "highlight_daily": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "media": "shopify://shop_images/Brisa-Ossomosso-Ambiente-Editorial.webp",
+            "media_position": "right",
+            "image_zoom": 100,
+            "eyebrow": "Made for everyday life",
+            "title": "A softer corner, ready to light.",
+            "text": "Brisa arrives with an LED E14 bulb included. Its light is for atmosphere: a companion to an armchair or a quiet evening, with a bulb you can replace when needed."
           }
         }
       },
       "block_order": [
         "details_mzHy3T",
+        "highlight_daily",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "",
+        "image_radius": 20
       }
     },
     "product_list_zR9Cym": {

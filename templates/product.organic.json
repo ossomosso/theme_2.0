@@ -1051,14 +1051,15 @@
           "settings": {
             "eyebrow": "The idea behind Organic",
             "title": "A freer line for everyday spaces.",
-            "text": "<p>Organic follows a freer line, adding movement and texture to a shelf or console. Pair its sculptural shape with a few dried branches, or display it on its own.</p>",
-            "show_accordion": true,
+            "text": "<p>Organic adds movement without needing a full bouquet. Display it on its own, or use a few dried branches that leave its flowing outline visible.</p>",
+            "show_accordion": false,
             "accordion_1_heading": "Product details",
             "accordion_1_content": "<p>Decorative vase for dried flowers and branches, or display on its own. Do not fill directly with water.</p>",
             "accordion_2_heading": "Material and care",
             "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
+            "media_position": "left"
           }
         },
         "tech_specs_cMwUTM": {
@@ -1096,17 +1097,32 @@
             "review_2_text": "Leave the vase empty on a shelf to make its sculptural outline the focus.",
             "review_3_author": "Care",
             "review_3_text": "Wipe Organic with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
+          },
+          "disabled": true
+        },
+        "highlight_daily": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "media": "shopify://shop_images/ossomosso-jarron-organico-transparente-estilismo.webp",
+            "media_position": "right",
+            "image_zoom": 145,
+            "eyebrow": "Made for everyday life",
+            "title": "A flowing form, built layer by layer.",
+            "text": "Organic’s surface reveals the process behind it: 3D-printed PLA with a fine layered texture. This is a decorative vase for dried stems, not a watertight container. Keep it indoors and clean it with a dry cloth."
           }
         }
       },
       "block_order": [
         "details_mzHy3T",
+        "highlight_daily",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "",
+        "image_radius": 20
       }
     },
     "ossomosso_marquee": {

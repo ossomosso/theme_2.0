@@ -1051,14 +1051,15 @@
           "settings": {
             "eyebrow": "The idea behind Japandi",
             "title": "A balance between natural and precise.",
-            "text": "<p>Japandi pairs a soft organic profile with a restrained composition. A tactile vase for a few dried stems, natural textures and spaces that leave room to breathe.</p>",
-            "show_accordion": true,
+            "text": "<p>Japandi pairs a soft profile with a restrained arrangement. Choose a few dried stems, then surround the piece with wood, linen or other quiet textures.</p>",
+            "show_accordion": false,
             "accordion_1_heading": "Product details",
             "accordion_1_content": "<p>Decorative vase for dried stems and branches. Do not fill directly with water.</p>",
             "accordion_2_heading": "Material and care",
             "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
-            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>"
+            "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
+            "media_position": "left"
           }
         },
         "tech_specs_cMwUTM": {
@@ -1096,17 +1097,32 @@
             "review_2_text": "Combine Japandi with wood, linen or a plain ceramic object for a calm composition.",
             "review_3_author": "Care",
             "review_3_text": "Wipe Japandi with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
+          },
+          "disabled": true
+        },
+        "highlight_daily": {
+          "type": "highlight",
+          "disabled": true,
+          "settings": {
+            "media": "shopify://shop_images/ossomosso-jarron-japandi-blanco-estilismo.webp",
+            "media_position": "right",
+            "image_zoom": 145,
+            "eyebrow": "Made for everyday life",
+            "title": "Texture you can see up close.",
+            "text": "The fine lines on Japandi are the layers of 3D-printed PLA, not a glazed ceramic finish. Made to order in Madrid, it is intended for dry arrangements and indoor use, without water."
           }
         }
       },
       "block_order": [
         "details_mzHy3T",
+        "highlight_daily",
         "tech_specs_cMwUTM",
         "reviews_DTTrtr"
       ],
       "name": "Ossomosso - Product Story",
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "",
+        "image_radius": 20
       }
     },
     "ossomosso_marquee": {
