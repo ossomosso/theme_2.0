@@ -707,7 +707,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Table lamp with a floral silhouette. E14 LED bulb and white textile cable included.</p>",
+                        "text": "<p>Tulipa is a table lamp for indoor ambient lighting. LED E14 bulb included. Includes a white textile cable. 3D printed in PLA, made to order in Madrid.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -779,6 +779,26 @@
                 "accordion_row_VyFryh",
                 "accordion_row_aaFerA"
               ]
+            },
+            "ossomosso_facts": {
+              "type": "ossomosso-product-facts",
+              "disabled": true,
+              "settings": {
+                "icon_1": "lightning_bolt",
+                "title_1": "LED E14 included",
+                "text_1": "A replaceable bulb, ready to use.",
+                "icon_2": "map_pin",
+                "title_2": "Made in Madrid",
+                "text_2": "Designed and made locally.",
+                "icon_3": "3d-model",
+                "title_3": "3D-printed PLA",
+                "text_3": "A lightweight, layered texture.",
+                "icon_4": "return",
+                "title_4": "90-day returns",
+                "text_4": "See our returns policy for conditions.",
+                "faq_label": "Questions before you buy?"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -788,6 +808,7 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "product_description_LfDYCg",
+            "ossomosso_facts",
             "group_X39hBc",
             "accordion_g8EVVp"
           ]
@@ -1064,7 +1085,7 @@
             "text": "<p>An open, flower-inspired silhouette that turns a bedside table into a quiet corner. Tulipa brings a sculptural detail to the room, even when the light is off.</p>",
             "show_accordion": true,
             "accordion_1_heading": "Product details",
-            "accordion_1_content": "<p>Table lamp with a floral silhouette. E14 LED bulb and white textile cable included.</p>",
+            "accordion_1_content": "<p>Tulipa is a table lamp for indoor ambient lighting. LED E14 bulb included. Includes a white textile cable. 3D printed in PLA, made to order in Madrid.</p>",
             "accordion_2_heading": "Material and care",
             "accordion_2_content": "<p>3D printed in PLA in Madrid. Wipe with a soft, dry cloth. Keep away from direct heat and abrasive cleaners.</p>",
             "accordion_3_heading": "Shipping and returns",
@@ -1119,11 +1140,113 @@
       "settings": {
         "color_scheme": ""
       }
+    },
+    "ossomosso_marquee": {
+      "type": "ossomosso-marquee",
+      "disabled": true,
+      "settings": {
+        "marquee_items": "Original design\nMade in Madrid\n3D-printed PLA\nMade to order\n90-day returns",
+        "background_color": "#2a241f",
+        "text_color": "#ffffff",
+        "dot_color": "#af825d",
+        "speed": 26
+      }
+    },
+    "ossomosso_product_faq": {
+      "type": "ossomosso-product-faq",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Before you bring it home",
+        "heading": "Questions about Tulipa.",
+        "intro": "<p>The practical side of Tulipa: what is included, how to use it and how to care for it.</p>",
+        "contact_label": "Still have a question? Talk to us.",
+        "contact_url": "shopify://pages/contact",
+        "background_color": "#f4f2ec",
+        "text_color": "#2a241f"
+      },
+      "blocks": {
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "Which bulb does Tulipa use?",
+            "answer": "<p>Tulipa uses an LED bulb with an E14 small screw base. The bulb is included, so you do not need to buy one separately.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "What is included with Tulipa?",
+            "answer": "<p>Tulipa in your selected colour and an LED E14 bulb. A white textile cable is also included. Decorative objects shown in the photographs are not included.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "What kind of light is Tulipa designed for?",
+            "answer": "<p>Tulipa is a decorative table lamp for a bedside table or a quiet corner. Its flower-inspired shade is designed to bring atmosphere to the space, not to replace the room’s general lighting.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "Can I replace the bulb?",
+            "answer": "<p>Yes. Disconnect the lamp and let the bulb cool before replacing it. Use an LED E14 replacement matching the specifications of the supplied bulb; do not use incandescent or halogen bulbs.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "How do I clean Tulipa?",
+            "answer": "<p>Tulipa is 3D printed in PLA. Remove dust gently with a soft, dry cloth. Do not immerse it in water, put it in the dishwasher or use abrasive cleaners. Keep it away from direct heat.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_6": {
+          "type": "question",
+          "settings": {
+            "question": "Why can I see fine lines on the surface?",
+            "answer": "<p>3D printing builds each piece layer by layer. The fine lines are part of that process and give the surface its characteristic texture; small differences between pieces are normal.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_7": {
+          "type": "question",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "<p>Each piece is made to order in Madrid. Preparation time and transit time are separate. See our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for current delivery estimates and rates. Contact us before ordering if you need it for a particular date.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_8": {
+          "type": "question",
+          "settings": {
+            "question": "Can I return Tulipa?",
+            "answer": "<p>You have 90 days from delivery to request a return. Check the item’s eligibility, required condition and any exceptions in our <a href=\"/en/policies/refund-policy\">returns policy</a>. Email ossomosso.design@gmail.com before sending anything back.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6",
+        "question_7",
+        "question_8"
+      ]
     }
   },
   "order": [
     "main",
+    "ossomosso_marquee",
     "ossomosso_product_story_en",
-    "product_list_zR9Cym"
+    "product_list_zR9Cym",
+    "ossomosso_product_faq"
   ]
 }

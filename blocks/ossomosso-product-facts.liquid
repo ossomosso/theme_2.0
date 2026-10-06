@@ -1,0 +1,265 @@
+<div class="osso-product-facts" {{ block.shopify_attributes }}>
+  <ul class="osso-product-facts__list" role="list">
+    {% for i in (1..4) %}
+      {% liquid
+        assign title_key = 'title_' | append: i
+        assign text_key = 'text_' | append: i
+        assign icon_key = 'icon_' | append: i
+      %}
+      {% if block.settings[title_key] != blank %}
+        <li class="osso-product-facts__item">
+          {% render 'icon-or-image', icon: block.settings[icon_key], image_upload: nil, width: 24, class_name: 'osso-product-facts__icon' %}
+          <div><strong>{{ block.settings[title_key] | escape }}</strong><span>{{ block.settings[text_key] | escape }}</span></div>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  {% if block.settings.faq_label != blank %}
+    <a class="osso-product-facts__link" href="#OssomossoProductFAQ">{{ block.settings.faq_label | escape }} <span aria-hidden="true">↗</span></a>
+  {% endif %}
+</div>
+{% stylesheet %}
+  .osso-product-facts { width: 100%; padding-block: 1rem; border-block: 1px solid rgb(var(--color-foreground-rgb) / .15); }
+  .osso-product-facts__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; }
+  .osso-product-facts__item { display: flex; gap: .7rem; align-items: flex-start; min-width: 0; }
+  .osso-product-facts__icon { flex: 0 0 24px; fill: currentColor; }
+  .osso-product-facts__item strong { display: block; font-size: .82rem; font-weight: 500; line-height: 1.4; }
+  .osso-product-facts__item span { display: block; font-size: .75rem; line-height: 1.5; opacity: .7; margin-top: .2rem; }
+  .osso-product-facts__link { display: inline-flex; gap: .5rem; margin-top: 1.25rem; text-underline-offset: .25em; font-size: .8rem; }
+  .osso-product-facts__link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  @media (max-width: 359px) { .osso-product-facts__list { grid-template-columns: 1fr; } }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "Ossomosso - Product facts",
+  "settings": [
+    {
+      "type": "select",
+      "id": "icon_1",
+      "label": "Icon 1",
+      "options": [
+        {
+          "value": "lightning_bolt",
+          "label": "Electricity / LED"
+        },
+        {
+          "value": "plant",
+          "label": "Dried flowers"
+        },
+        {
+          "value": "map_pin",
+          "label": "Made locally"
+        },
+        {
+          "value": "3d-model",
+          "label": "3D printing"
+        },
+        {
+          "value": "box",
+          "label": "Packaging"
+        },
+        {
+          "value": "return",
+          "label": "Returns"
+        },
+        {
+          "value": "heart",
+          "label": "Care"
+        },
+        {
+          "value": "truck",
+          "label": "Shipping"
+        },
+        {
+          "value": "leaf",
+          "label": "Material"
+        }
+      ],
+      "default": "lightning_bolt"
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Fact 1"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Explanation 1"
+    },
+    {
+      "type": "select",
+      "id": "icon_2",
+      "label": "Icon 2",
+      "options": [
+        {
+          "value": "lightning_bolt",
+          "label": "Electricity / LED"
+        },
+        {
+          "value": "plant",
+          "label": "Dried flowers"
+        },
+        {
+          "value": "map_pin",
+          "label": "Made locally"
+        },
+        {
+          "value": "3d-model",
+          "label": "3D printing"
+        },
+        {
+          "value": "box",
+          "label": "Packaging"
+        },
+        {
+          "value": "return",
+          "label": "Returns"
+        },
+        {
+          "value": "heart",
+          "label": "Care"
+        },
+        {
+          "value": "truck",
+          "label": "Shipping"
+        },
+        {
+          "value": "leaf",
+          "label": "Material"
+        }
+      ],
+      "default": "map_pin"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Fact 2"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Explanation 2"
+    },
+    {
+      "type": "select",
+      "id": "icon_3",
+      "label": "Icon 3",
+      "options": [
+        {
+          "value": "lightning_bolt",
+          "label": "Electricity / LED"
+        },
+        {
+          "value": "plant",
+          "label": "Dried flowers"
+        },
+        {
+          "value": "map_pin",
+          "label": "Made locally"
+        },
+        {
+          "value": "3d-model",
+          "label": "3D printing"
+        },
+        {
+          "value": "box",
+          "label": "Packaging"
+        },
+        {
+          "value": "return",
+          "label": "Returns"
+        },
+        {
+          "value": "heart",
+          "label": "Care"
+        },
+        {
+          "value": "truck",
+          "label": "Shipping"
+        },
+        {
+          "value": "leaf",
+          "label": "Material"
+        }
+      ],
+      "default": "3d-model"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Fact 3"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Explanation 3"
+    },
+    {
+      "type": "select",
+      "id": "icon_4",
+      "label": "Icon 4",
+      "options": [
+        {
+          "value": "lightning_bolt",
+          "label": "Electricity / LED"
+        },
+        {
+          "value": "plant",
+          "label": "Dried flowers"
+        },
+        {
+          "value": "map_pin",
+          "label": "Made locally"
+        },
+        {
+          "value": "3d-model",
+          "label": "3D printing"
+        },
+        {
+          "value": "box",
+          "label": "Packaging"
+        },
+        {
+          "value": "return",
+          "label": "Returns"
+        },
+        {
+          "value": "heart",
+          "label": "Care"
+        },
+        {
+          "value": "truck",
+          "label": "Shipping"
+        },
+        {
+          "value": "leaf",
+          "label": "Material"
+        }
+      ],
+      "default": "return"
+    },
+    {
+      "type": "text",
+      "id": "title_4",
+      "label": "Fact 4"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Explanation 4"
+    },
+    {
+      "type": "text",
+      "id": "faq_label",
+      "label": "FAQ link text",
+      "default": "Questions before you buy?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ossomosso - Product facts"
+    }
+  ]
+}
+{% endschema %}

@@ -760,6 +760,26 @@
                 "accordion_row_VyFryh",
                 "accordion_row_aaFerA"
               ]
+            },
+            "ossomosso_facts": {
+              "type": "ossomosso-product-facts",
+              "disabled": true,
+              "settings": {
+                "icon_1": "plant",
+                "title_1": "For dried flowers",
+                "text_1": "Do not fill directly with water.",
+                "icon_2": "map_pin",
+                "title_2": "Made in Madrid",
+                "text_2": "Designed and made locally.",
+                "icon_3": "3d-model",
+                "title_3": "3D-printed PLA",
+                "text_3": "A lightweight, layered texture.",
+                "icon_4": "return",
+                "title_4": "90-day returns",
+                "text_4": "See our returns policy for conditions.",
+                "faq_label": "Questions before you buy?"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -769,6 +789,7 @@
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "product_description_LfDYCg",
+            "ossomosso_facts",
             "group_X39hBc",
             "accordion_g8EVVp"
           ]
@@ -1100,11 +1121,113 @@
       "settings": {
         "color_scheme": ""
       }
+    },
+    "ossomosso_marquee": {
+      "type": "ossomosso-marquee",
+      "disabled": true,
+      "settings": {
+        "marquee_items": "Original design\nMade in Madrid\n3D-printed PLA\nMade to order\n90-day returns",
+        "background_color": "#2a241f",
+        "text_color": "#ffffff",
+        "dot_color": "#af825d",
+        "speed": 26
+      }
+    },
+    "ossomosso_product_faq": {
+      "type": "ossomosso-product-faq",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Before you bring it home",
+        "heading": "Questions about Copenhagen.",
+        "intro": "<p>The practical side of Copenhagen: what is included, how to use it and how to care for it.</p>",
+        "contact_label": "Still have a question? Talk to us.",
+        "contact_url": "shopify://pages/contact",
+        "background_color": "#f4f2ec",
+        "text_color": "#2a241f"
+      },
+      "blocks": {
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "Can I put water in Copenhagen?",
+            "answer": "<p>Copenhagen is a decorative vase for dried flowers and branches. It is not designed to hold water: do not fill it directly or use it for fresh flowers in water.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "What is included with Copenhagen?",
+            "answer": "<p>One Copenhagen vase. Flowers, branches and other styling props shown in the photographs are not included.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "How should I style Copenhagen?",
+            "answer": "<p>Use a few dried stems on a dining table or console, or leave the vase empty. Its balanced silhouette works well beside a lower object without needing a dense arrangement.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "Is it suitable for outdoor use?",
+            "answer": "<p>This piece is intended for indoor use. Keep it away from rain, direct heat and prolonged direct sunlight.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "How do I clean Copenhagen?",
+            "answer": "<p>Copenhagen is 3D printed in PLA. Remove dust gently with a soft, dry cloth. Do not immerse it in water, put it in the dishwasher or use abrasive cleaners. Keep it away from direct heat.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_6": {
+          "type": "question",
+          "settings": {
+            "question": "Why can I see fine lines on the surface?",
+            "answer": "<p>3D printing builds each piece layer by layer. The fine lines are part of that process and give the surface its characteristic texture; small differences between pieces are normal.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_7": {
+          "type": "question",
+          "settings": {
+            "question": "When will my order arrive?",
+            "answer": "<p>Each piece is made to order in Madrid. Preparation time and transit time are separate. See our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for current delivery estimates and rates. Contact us before ordering if you need it for a particular date.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_8": {
+          "type": "question",
+          "settings": {
+            "question": "Can I return Copenhagen?",
+            "answer": "<p>You have 90 days from delivery to request a return. Check the item’s eligibility, required condition and any exceptions in our <a href=\"/en/policies/refund-policy\">returns policy</a>. Email ossomosso.design@gmail.com before sending anything back.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5",
+        "question_6",
+        "question_7",
+        "question_8"
+      ]
     }
   },
   "order": [
     "main",
+    "ossomosso_marquee",
     "ossomosso_product_story_en",
-    "product_list_zR9Cym"
+    "product_list_zR9Cym",
+    "ossomosso_product_faq"
   ]
 }
