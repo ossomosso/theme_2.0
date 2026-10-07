@@ -96,10 +96,11 @@
             },
             "reviews": {
               "type": "review",
+              "disabled": true,
               "settings": {
                 "stars_style": "shaded",
                 "show_number": true,
-                "rating_color": "primary",
+                "rating_color": "foreground",
                 "type_preset": "paragraph",
                 "width": "100%",
                 "alignment": "left"
@@ -201,6 +202,25 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "ossomosso_facts": {
+              "type": "ossomosso-product-facts",
+              "settings": {
+                "icon_1": "lightning_bolt",
+                "title_1": "LED E14 included",
+                "text_1": "A replaceable bulb, ready to use.",
+                "icon_2": "map_pin",
+                "title_2": "Made in Madrid",
+                "text_2": "Designed and made locally.",
+                "icon_3": "3d-model",
+                "title_3": "3D-printed PLA",
+                "text_3": "A lightweight, layered texture.",
+                "icon_4": "return",
+                "title_4": "90-day returns",
+                "text_4": "See our returns policy for conditions.",
+                "faq_label": "Questions before you buy?"
               },
               "blocks": {}
             },
@@ -779,25 +799,6 @@
                 "accordion_row_VyFryh",
                 "accordion_row_aaFerA"
               ]
-            },
-            "ossomosso_facts": {
-              "type": "ossomosso-product-facts",
-              "settings": {
-                "icon_1": "lightning_bolt",
-                "title_1": "LED E14 included",
-                "text_1": "A replaceable bulb, ready to use.",
-                "icon_2": "map_pin",
-                "title_2": "Made in Madrid",
-                "text_2": "Designed and made locally.",
-                "icon_3": "3d-model",
-                "title_3": "3D-printed PLA",
-                "text_3": "A lightweight, layered texture.",
-                "icon_4": "return",
-                "title_4": "90-day returns",
-                "text_4": "See our returns policy for conditions.",
-                "faq_label": "Questions before you buy?"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
@@ -825,12 +826,24 @@
         "padding-block-end": 32
       }
     },
+    "ossomosso_marquee": {
+      "type": "ossomosso-marquee",
+      "settings": {
+        "marquee_items": "Original design\nMade in Madrid\n3D-printed PLA\nMade to order\n90-day returns",
+        "background_color": "#2a241f",
+        "text_color": "#ffffff",
+        "dot_color": "#af825d",
+        "speed": 26
+      }
+    },
     "ossomosso_product_story_en": {
       "type": "ossomosso-product-story",
       "blocks": {
         "details_mzHy3T": {
           "type": "details",
           "settings": {
+            "image_fit": "cover",
+            "image_background": "#efefef",
             "image": "shopify://shop_images/Brisa_Ossomosso_Base-Roja_Cuadrada.webp",
             "eyebrow": "The idea behind Brisa",
             "title": "A lamp with room to breathe.",
@@ -843,6 +856,17 @@
             "accordion_3_heading": "Shipping and returns",
             "accordion_3_content": "<p>Made to order in Madrid. Check our <a href=\"/en/policies/shipping-policy\">shipping policy</a> for production and delivery information, and our <a href=\"/en/policies/refund-policy\">returns policy</a> for return conditions. <a href=\"/en/pages/contact\">Contact us</a> if you need a specific date.</p>",
             "media_position": "left"
+          }
+        },
+        "highlight_daily": {
+          "type": "highlight",
+          "settings": {
+            "media": "shopify://shop_images/Brisa-Ossomosso-Ambiente-Editorial.webp",
+            "eyebrow": "Made for everyday life",
+            "title": "A softer corner, ready to light.",
+            "text": "Brisa arrives with an LED E14 bulb included. Its light is for atmosphere: a companion to an armchair or a quiet evening, with a bulb you can replace when needed.",
+            "media_position": "right",
+            "image_zoom": 100
           }
         },
         "tech_specs_cMwUTM": {
@@ -870,7 +894,11 @@
         },
         "reviews_DTTrtr": {
           "type": "reviews",
+          "disabled": true,
           "settings": {
+            "note_1_icon": "map_pin",
+            "note_2_icon": "plant",
+            "note_3_icon": "check_box",
             "label": "Styling and care",
             "title": "Living with Brisa",
             "rating_text": "",
@@ -880,19 +908,6 @@
             "review_2_author": "Shelf",
             "review_3_text": "Wipe Brisa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners.",
             "review_3_author": "Care"
-          },
-          "disabled": false
-        },
-        "highlight_daily": {
-          "type": "highlight",
-          "disabled": false,
-          "settings": {
-            "media": "shopify://shop_images/Brisa-Ossomosso-Ambiente-Editorial.webp",
-            "media_position": "right",
-            "image_zoom": 100,
-            "eyebrow": "Made for everyday life",
-            "title": "A softer corner, ready to light.",
-            "text": "Brisa arrives with an LED E14 bulb included. Its light is for atmosphere: a companion to an armchair or a quiet evening, with a bulb you can replace when needed."
           }
         }
       },
@@ -1145,27 +1160,8 @@
         "padding-block-end": 72
       }
     },
-    "ossomosso_marquee": {
-      "type": "ossomosso-marquee",
-      "settings": {
-        "marquee_items": "Original design\nMade in Madrid\n3D-printed PLA\nMade to order\n90-day returns",
-        "background_color": "#2A241F",
-        "text_color": "#FFFFFF",
-        "dot_color": "#af825d",
-        "speed": 26
-      }
-    },
     "ossomosso_product_faq": {
       "type": "ossomosso-product-faq",
-      "settings": {
-        "eyebrow": "Before you bring it home",
-        "heading": "Questions about Brisa.",
-        "intro": "<p>The practical side of Brisa: what is included, how to use it and how to care for it.</p>",
-        "contact_label": "Still have a question? Talk to us.",
-        "contact_url": "shopify://pages/contact",
-        "background_color": "#f4f2ec",
-        "text_color": "#2a241f"
-      },
       "blocks": {
         "question_1": {
           "type": "question",
@@ -1241,7 +1237,16 @@
         "question_6",
         "question_7",
         "question_8"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Before you bring it home",
+        "heading": "Questions about Brisa.",
+        "intro": "<p>The practical side of Brisa: what is included, how to use it and how to care for it.</p>",
+        "contact_label": "Still have a question? Talk to us.",
+        "contact_url": "shopify://pages/contact",
+        "background_color": "#f4f2ec",
+        "text_color": "#2a241f"
+      }
     }
   },
   "order": [
