@@ -13,7 +13,7 @@
       {%- endif -%}
     </header>
 
-    {%- if configured_product == blank -%}
+    {%- if configured_product == blank and section.settings.show_demo == false -%}
       <p class="ossomosso-customizer__notice">Selecciona el producto base desde el editor del tema para activar el configurador.</p>
     {%- else -%}
       <div class="ossomosso-customizer__grid">
@@ -25,14 +25,14 @@
         </div>
 
         <div class="ossomosso-customizer__controls">
-          <p class="ossomosso-customizer__product">{{ configured_product.title | escape }}</p>
-          <p class="ossomosso-customizer__price">{{ selected_variant.price | money }}</p>
+          <p class="ossomosso-customizer__product">{% if configured_product != blank %}{{ configured_product.title | escape }}{% else %}Lámpara personalizada · demo{% endif %}</p>
+          {%- if configured_product != blank -%}<p class="ossomosso-customizer__price">{{ selected_variant.price | money }}</p>{%- endif -%}
 
           <form method="post" action="{{ routes.cart_add_url }}" class="ossomosso-customizer__form" data-customizer-form>
-            <input type="hidden" name="id" value="{{ selected_variant.id }}">
+            {%- if configured_product != blank -%}<input type="hidden" name="id" value="{{ selected_variant.id }}">{%- endif -%}
             <div class="ossomosso-customizer__option-list" data-option-list></div>
-            <button class="button ossomosso-customizer__submit" type="submit" {% unless selected_variant.available %}disabled{% endunless %}>
-              {%- if selected_variant.available -%}Añadir al carrito{%- else -%}No disponible{%- endif -%}
+            <button class="button ossomosso-customizer__submit" type="submit" {% if configured_product == blank or selected_variant.available == false %}disabled{% endif %}>
+              {%- if configured_product == blank -%}Demo: producto pendiente{%- elsif selected_variant.available -%}Añadir al carrito{%- else -%}No disponible{%- endif -%}
             </button>
           </form>
         </div>
@@ -42,7 +42,23 @@
 
   <script type="application/json" data-customizer-options>
     [
-      {%- for block in section.blocks -%}
+      {%- if section.blocks.size == 0 and section.settings.show_demo -%}
+        {
+          "group": "Parte superior",
+          "label": "Pantalla marfil",
+          "colour": "Marfil",
+          "swatch": "#e8dfcf",
+          "image": {{ 'customizer-samples/superior-marfil-prueba.png' | asset_url | json }}
+        },
+        {
+          "group": "Parte inferior",
+          "label": "Cuerpo y base terracota",
+          "colour": "Terracota",
+          "swatch": "#b9674d",
+          "image": {{ 'customizer-samples/cuerpo-base-terracota-prueba.png' | asset_url | json }}
+        }
+      {%- else -%}
+        {%- for block in section.blocks -%}
         {
           "group": {{ block.settings.group | json }},
           "label": {{ block.settings.label | json }},
@@ -50,7 +66,8 @@
           "swatch": {{ block.settings.swatch | json }},
           "image": {% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 1400 | json }}{% else %}null{% endif %}
         }{% unless forloop.last %},{% endunless %}
-      {%- endfor -%}
+        {%- endfor -%}
+      {%- endif -%}
     ]
   </script>
 </section>
@@ -95,6 +112,7 @@
   "class": "section-wrapper",
   "settings": [
     { "type": "product", "id": "product", "label": "Producto base" },
+    { "type": "checkbox", "id": "show_demo", "label": "Mostrar demo si no hay producto", "default": true },
     { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "Diseña tu lámpara" },
     { "type": "text", "id": "heading", "label": "Título", "default": "Personaliza tu pieza" },
     { "type": "richtext", "id": "description", "label": "Descripción", "default": "<p>Elige cada detalle y crea una combinación única.</p>" },
