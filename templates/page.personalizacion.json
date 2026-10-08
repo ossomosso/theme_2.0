@@ -11,11 +11,120 @@
   "sections": {
     "main": {
       "type": "personalizador-ossomosso",
+      "blocks": {
+        "option_PpdR6T": {
+          "type": "option",
+          "settings": {
+            "group": "Parte superior",
+            "label": "Tulipa",
+            "colour": "Blanco",
+            "swatch": "#ffffff",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Blanca-pantalla-superior-transparente.png"
+          }
+        },
+        "option_ecyYNf": {
+          "type": "option",
+          "settings": {
+            "group": "Parte superior",
+            "label": "Tulipa",
+            "colour": "Azul",
+            "swatch": "#1CB7FF",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Azul-pantalla-superior-transparente.png"
+          }
+        },
+        "option_WmmXqk": {
+          "type": "option",
+          "settings": {
+            "group": "Parte superior",
+            "label": "Tulipa",
+            "colour": "Verde",
+            "swatch": "#05500F",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Verde-pantalla-superior-transparente.png"
+          }
+        },
+        "option_g9xkJy": {
+          "type": "option",
+          "settings": {
+            "group": "Parte inferior",
+            "label": "Tulipa",
+            "colour": "Blanco",
+            "swatch": "#ffffff",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Blanca-cuerpo-inferior-sin-tapa-transparente.png"
+          }
+        },
+        "option_QVeaMU": {
+          "type": "option",
+          "settings": {
+            "group": "Parte inferior",
+            "label": "Tulipa",
+            "colour": "Azul",
+            "swatch": "#1CB7FF",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Azul-cuerpo-inferior-sin-tapa-transparente.png"
+          }
+        },
+        "option_JR6Y7G": {
+          "type": "option",
+          "settings": {
+            "group": "Parte inferior",
+            "label": "Tulipa",
+            "colour": "Verde",
+            "swatch": "#05500F",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Verde-cuerpo-inferior-sin-tapa-transparente.png"
+          }
+        },
+        "option_crqymp": {
+          "type": "option",
+          "settings": {
+            "group": "Base",
+            "label": "Tulipa",
+            "colour": "Blanco",
+            "swatch": "#ffffff",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Blanca-tapa-inferior-cable-sombra-transparente.png"
+          }
+        },
+        "option_xJc6Ad": {
+          "type": "option",
+          "settings": {
+            "group": "Base",
+            "label": "Tulipa",
+            "colour": "Azul",
+            "swatch": "#1CB7FF",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Azul-tapa-inferior-cable-sombra-transparente.png"
+          }
+        },
+        "option_dX3LXz": {
+          "type": "option",
+          "settings": {
+            "group": "Base",
+            "label": "Tulipa",
+            "colour": "Verde",
+            "swatch": "#05500F",
+            "image": "shopify://shop_images/Tulipa_Ossomosso_Verde-tapa-inferior-cable-sombra-transparente.png"
+          }
+        }
+      },
+      "block_order": [
+        "option_PpdR6T",
+        "option_ecyYNf",
+        "option_WmmXqk",
+        "option_g9xkJy",
+        "option_QVeaMU",
+        "option_JR6Y7G",
+        "option_crqymp",
+        "option_xJc6Ad",
+        "option_dX3LXz"
+      ],
       "settings": {
+        "product": "",
+        "show_demo": true,
         "eyebrow": "Diseña tu lámpara",
-        "heading": "Personaliza tu pieza"
+        "heading": "Personaliza tu pieza",
+        "description": "<p>Elige cada detalle y crea una combinación única.</p>",
+        "color_scheme": ""
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
