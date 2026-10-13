@@ -86,6 +86,15 @@
       gap: 40px;
     }
   }
+  @media (max-width: 749px) {
+    .osso-about-story { padding: 56px 24px; }
+    .osso-about-story__inner { gap: 32px; }
+    .osso-about-story__label { margin: 0 0 20px; }
+    .osso-about-story__text { margin: 0; }
+    .osso-about-story__body { margin: 24px 0 0; }
+    .osso-about-story__visual { min-height: 0; }
+    .osso-about-story__visual--placeholder { display: none; }
+  }
 </style>
 
 <section class="osso-about-story" data-section-id="{{ section.id }}">
@@ -108,7 +117,7 @@
       {% endif %}
     </div>
 
-    <div class="osso-about-story__visual">
+    <div class="osso-about-story__visual{% if section.settings.svg_code == blank and section.settings.image == blank %} osso-about-story__visual--placeholder{% endif %}">
       {% if section.settings.svg_code != blank %}
         {{ section.settings.svg_code }}
       {% elsif section.settings.image != blank %}

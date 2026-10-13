@@ -110,6 +110,15 @@
       min-height: 60vw;
     }
   }
+  @media (max-width: 749px) {
+    .osso-about-hero { padding-top: 24px; }
+    .osso-about-hero__left { padding: 24px 24px 32px; }
+    .osso-about-hero__eyebrow { margin: 0 0 20px; }
+    .osso-about-hero__title { margin: 0 0 24px; font-size: clamp(42px, 12vw, 50px); line-height: 1.08; }
+    .osso-about-hero__body { margin: 0 0 24px; font-size: 15px; line-height: 1.7; }
+    .osso-about-hero__right { min-height: 0; padding: 0 24px 32px; }
+    .osso-about-hero__image { width: 100%; }
+  }
 </style>
 
 <section class="osso-about-hero" data-section-id="{{ section.id }}">
