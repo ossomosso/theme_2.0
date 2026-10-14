@@ -5,7 +5,7 @@
   assign block_settings = block.settings
 
   if settings.currency_code_enabled_product_cards
-    assign price_min = product.price_min | money_without_currency | append: ' €'_without_currency | append: ' €'
+    assign price_min = product.price_min | money_with_currency
   else
     assign price_min = product.price_min | money_without_currency | append: ' €'
   endif
