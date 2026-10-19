@@ -267,8 +267,11 @@
     {% endif %}
     form="cart-form"
   >
+    <span class="cart__checkout-lock" aria-hidden="true">
+      {{- 'icon-lock.svg' | inline_asset_content -}}
+    </span>
     <span class="button-text">
-      {{ 'content.checkout' | t }}
+      {{ 'content.secure_checkout' | t }}
     </span>
   </button>
 
@@ -468,8 +471,29 @@
 
   .cart__ctas .cart__checkout-button {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     height: clamp(25px, var(--height-buy-buttons), 55px);
     padding-inline: var(--padding-4xl);
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    box-shadow: 0 6px 22px rgb(48 38 30 / 0.08);
+  }
+
+  .cart__checkout-lock {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .cart__checkout-lock svg {
+    width: 20px;
+    height: 20px;
   }
 
   .cart-drawer__summary .cart-totals:not(:has(.cart-totals__original-container:empty)) {
