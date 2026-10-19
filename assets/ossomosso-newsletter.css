@@ -3,7 +3,7 @@
   padding-block: clamp(64px, 7vw, 104px);
 }
 
-[id$='__section_qykFqP'] .text-block--text_6gdkaX p {
+[id$='__section_qykFqP'] [class*='__text_6gdkaX'] p {
   margin: 0;
   padding: 9px 16px;
   border: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
@@ -13,22 +13,28 @@
   line-height: 1.4;
 }
 
-[id$='__section_qykFqP'] .text-block--text_Fy9Ne7 h2 {
+[id$='__section_qykFqP'] [class*='__text_Fy9Ne7'] h2 {
   margin: 0;
   max-inline-size: 850px;
   font-size: clamp(36px, 4.4vw, 68px);
   line-height: 1.1;
   font-weight: 400;
+  font-style: normal;
   letter-spacing: -0.025em;
   color: var(--color-foreground);
 }
 
-[id$='__section_qykFqP'] .text-block--text_Fy9Ne7 em {
+[id$='__section_qykFqP'] [class*='__text_Fy9Ne7'] em {
   color: var(--color-primary);
   font-weight: inherit;
+  font-style: italic;
 }
 
-[id$='__section_qykFqP'] .text-block--text_qgpX3i p {
+[id$='__section_qykFqP'] [class*='__text_qgpX3i'] {
+  max-width: 440px;
+}
+
+[id$='__section_qykFqP'] [class*='__text_qgpX3i'] p {
   max-inline-size: 440px;
   margin: 0;
   font-size: 16px;
