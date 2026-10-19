@@ -956,7 +956,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>New pieces.  </h2>",
+            "text": "<p>A WELCOME GIFT</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -982,7 +982,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><em>Be the first to know</em></h2>",
+            "text": "<h2>10% off <em>your first order.</em></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1007,7 +1007,7 @@
         "text_qgpX3i": {
           "type": "text",
           "settings": {
-            "text": "<p>We release collections in small batches. Be the first to know.</p>",
+            "text": "<p>Subscribe to our newsletter and receive code WELCOMEHOME10 for 10% off your first purchase.</p>",
             "width": "100%",
             "max_width": "narrow",
             "alignment": "center",
