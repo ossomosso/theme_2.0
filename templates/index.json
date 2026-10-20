@@ -777,7 +777,11 @@
       "type": "ossomosso-marquee",
       "name": "Ossomosso - Marquee",
       "settings": {
-        "marquee_items": "Original design\nEco-friendly PLA\nLocal production\nUnique pieces\nImpresión 3D\nMadrid, Spain\nMade to order\nCustomizable"
+        "marquee_items": "Original design\nEco-friendly PLA\nLocal production\nUnique pieces\nImpresión 3D\nMadrid, Spain\nMade to order\nCustomizable",
+        "background_color": "",
+        "text_color": "",
+        "dot_color": "",
+        "speed": 20
       }
     },
     "ossomosso_process_CwcCWp": {
@@ -955,6 +959,7 @@
         "text_6gdkaX": {
           "type": "text",
           "name": "t:names.heading",
+          "disabled": true,
           "settings": {
             "text": "<p>A WELCOME GIFT</p>",
             "width": "fit-content",
@@ -982,7 +987,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Your first piece,<br><em>with 10% off.</em></h2>",
+            "text": "<h2>Your first order,<br/><em>with 10% off.</em></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
