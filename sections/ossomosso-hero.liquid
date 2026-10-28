@@ -10,223 +10,163 @@
   assign body_text = section.settings.body_text
   assign primary_button_text = section.settings.primary_button_text
   assign primary_button_url = section.settings.primary_button_url
-  assign secondary_button_text = section.settings.secondary_button_text
-  assign secondary_button_url = section.settings.secondary_button_url
   assign image = section.settings.image
   assign caption = section.settings.caption
 %}
 
 <style>
   .osso-hero {
-    min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+    align-items: center;
+    gap: clamp(28px, 3.5vw, 56px);
+    width: 100%;
+    max-width: 1600px;
+    margin-inline: auto;
+    padding: 32px clamp(24px, 3.2vw, 48px) 64px;
     background: var(--color-background);
   }
-
-  .osso-hero__left {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 64px 80px 48px;
-  }
-
+  .osso-hero__left { min-width: 0; padding: 36px 0 28px clamp(0px, 2.5vw, 40px); }
   .osso-hero__eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--color-foreground);
-    opacity: 0.8;
-    margin-bottom: 28px;
-    font-family: var(--font-body--family);
-    font-weight: 400;
-  }
-
-  .osso-hero__title {
-    font-family: var(--font-heading--family);
-    font-size: clamp(54px, 6vw, 88px);
-    font-weight: 300;
-    line-height: 1.0;
-    color: var(--color-foreground);
-    margin-bottom: 32px;
-  }
-
-  .osso-hero__title em {
-    font-style: italic;
+    margin: 0 0 28px;
     color: var(--color-primary);
-  }
-
-  .osso-hero__body {
-    font-size: 16px;
-    line-height: 1.75;
-    color: var(--color-foreground);
-    opacity: 0.8;
-    max-width: 380px;
-    margin-bottom: 48px;
     font-family: var(--font-body--family);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .osso-hero__title {
+    margin: 0 0 28px;
+    color: var(--color-foreground);
+    font-family: var(--font-heading--family);
+    font-size: clamp(52px, 5.5vw, 84px);
     font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
   }
-
-  .osso-hero__actions {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  .osso-hero__title em { display: block; color: var(--color-primary); font-style: italic; }
+  .osso-hero__body {
+    max-width: 460px;
+    margin: 0 0 34px;
+    color: rgb(var(--color-foreground-rgb) / 0.8);
+    font-family: var(--font-body--family);
+    font-size: clamp(16px, 1.3vw, 18px);
+    font-weight: 400;
+    line-height: 1.65;
+    text-wrap: pretty;
   }
-
+  .osso-hero__actions { display: flex; align-items: center; }
   .osso-hero__btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    min-height: 56px;
+    padding: 16px 28px;
+    border: 0;
+    border-radius: 99px;
     background: var(--color-foreground);
     color: var(--color-background);
     font-family: var(--font-body--family);
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 14px 32px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s;
-    display: inline-block;
+    font-size: 14px;
     font-weight: 500;
-  }
-
-  .osso-hero__btn-primary:hover {
-    background: var(--color-primary);
-    color: var(--color-background);
-  }
-
-  .osso-hero__btn-ghost {
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-foreground);
-    opacity: 0.8;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
     text-decoration: none;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-    font-weight: 400;
+    transition: background-color 180ms ease, color 180ms ease;
   }
-
-  .osso-hero__btn-ghost:hover {
-    color: var(--color-foreground);
-    opacity: 1;
-    border-color: var(--color-foreground);
-  }
-
+  .osso-hero__btn-primary:hover { background: var(--color-primary); color: var(--color-background); }
+  .osso-hero__btn-primary:focus-visible { outline: 2px solid var(--color-foreground); outline-offset: 5px; }
+  .osso-hero__btn-primary svg { width: 22px; height: 22px; flex-shrink: 0; }
   .osso-hero__scroll {
-    position: absolute;
-    bottom: 40px;
-    left: 48px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 11px;
-    letter-spacing: 0.15em;
+    margin: clamp(32px, 4vw, 60px) 0 0;
+    color: rgb(var(--color-foreground-rgb) / 0.55);
+    font-family: var(--font-body--family);
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--color-foreground);
-    opacity: 0.5;
   }
-
-  .osso-hero__scroll-line {
-    width: 40px;
-    height: 1px;
-    background: var(--color-border);
-    animation: scrollLine 2s ease-in-out infinite;
-  }
-
-  @keyframes scrollLine {
-    0%, 100% { width: 40px; }
-    50% { width: 60px; }
-  }
-
   .osso-hero__right {
     position: relative;
-    background: var(--color-background);
-    opacity: 0.9;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 24px;
+    background: var(--color-background);
   }
-
-  .osso-hero__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
+  .osso-hero__image { display: block; width: 100%; height: 100%; object-fit: cover; }
   .osso-hero__caption {
     position: absolute;
-    bottom: 24px;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    right: 20px;
+    bottom: 20px;
+    max-width: calc(100% - 40px);
+    margin: 0;
+    padding: 10px 16px;
+    border-radius: 99px;
+    background: var(--color-background);
     color: var(--color-foreground);
-    opacity: 0.5;
-    text-align: center;
+    font-size: 12px;
+    line-height: 1.4;
   }
-
+  @media (max-width: 1100px) and (min-width: 901px) {
+    .osso-hero__left { padding-left: 8px; }
+    .osso-hero__title { font-size: 56px; }
+  }
   @media (max-width: 900px) {
-    .osso-hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-      padding-top: 40px;
-    }
-
-    .osso-hero__left {
-      padding: 40px 24px 32px;
-    }
-
-    .osso-hero__right {
-      min-height: 50vw;
-    }
-
-    .osso-hero__scroll {
-      display: none;
-    }
+    .osso-hero { grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 28px 24px 48px; }
+    .osso-hero__left { padding: 8px 0 0; }
+    .osso-hero__title { max-width: 650px; font-size: clamp(44px, 7.5vw, 68px); }
+    .osso-hero__right { aspect-ratio: 4 / 5; max-height: 720px; }
+    .osso-hero__scroll { margin-top: 28px; }
   }
+  @media (max-width: 599px) {
+    .osso-hero { gap: 26px; padding: 20px 20px 40px; }
+    .osso-hero__eyebrow { margin-bottom: 20px; font-size: 10px; letter-spacing: 0.14em; }
+    .osso-hero__title { margin-bottom: 22px; font-size: clamp(42px, 10vw, 58px); }
+    .osso-hero__body { margin-bottom: 26px; font-size: 16px; }
+    .osso-hero__btn-primary { min-height: 54px; gap: 24px; padding: 15px 24px; font-size: 13px; }
+    .osso-hero__right { border-radius: 20px; }
+    .osso-hero__scroll { margin-top: 24px; font-size: 9px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .osso-hero__btn-primary { transition: none; } }
 </style>
 
 <section class="osso-hero" data-section-id="{{ section.id }}">
   <div class="osso-hero__left">
     {% if eyebrow != blank %}
-      <p class="osso-hero__eyebrow">{{ eyebrow }}</p>
+      <p class="osso-hero__eyebrow">{{ eyebrow | escape }}</p>
     {% endif %}
 
     {% if title != blank %}
       <h1 class="osso-hero__title">
-        {{ title }}
+        {{ title | escape }}
         {% if title_emphasis != blank %}
-          <em>{{ title_emphasis }}</em>
+          <em>{{ title_emphasis | escape }}</em>
         {% endif %}
       </h1>
     {% endif %}
 
     {% if body_text != blank %}
-      <p class="osso-hero__body">{{ body_text }}</p>
+      <p class="osso-hero__body">{{ body_text | escape }}</p>
     {% endif %}
 
     <div class="osso-hero__actions">
       {% if primary_button_text != blank and primary_button_url != blank %}
-        <a href="{{ primary_button_url }}" class="osso-hero__btn-primary">{{ primary_button_text }}</a>
-      {% endif %}
-
-      {% if secondary_button_text != blank and secondary_button_url != blank %}
-        <a href="{{ secondary_button_url }}" class="osso-hero__btn-ghost">{{ secondary_button_text }}</a>
+        <a href="{{ primary_button_url }}" class="osso-hero__btn-primary"><span>{{ primary_button_text | escape }}</span><span aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span></a>
       {% endif %}
     </div>
 
-    <div class="osso-hero__scroll">
-      <span class="osso-hero__scroll-line"></span>
-      <span>{{ section.settings.scroll_text | escape }}</span>
-    </div>
+    {% if section.settings.scroll_text != blank %}<p class="osso-hero__scroll">{{ section.settings.scroll_text | escape }}</p>{% endif %}
   </div>
 
   <div class="osso-hero__right">
     {% if image != blank %}
-      {{ image | image_url: width: 1200 | image_tag: class: 'osso-hero__image', loading: 'eager', alt: section.settings.image_alt, alt: section.settings.image_alt, alt: section.settings.image_alt }}
+      {{ image | image_url: width: 1600 | image_tag: class: 'osso-hero__image', loading: 'eager', fetchpriority: 'high', widths: '480, 720, 960, 1200, 1600', sizes: '(max-width: 900px) calc(100vw - 40px), (max-width: 1600px) 52vw, 760px', alt: section.settings.image_alt }}
     {% else %}
       <div class="osso-hero__placeholder" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--color-background); opacity: 0.5;">
         {{ 'product-1' | placeholder_svg_tag }}
@@ -279,17 +219,6 @@
       "type": "url",
       "id": "primary_button_url",
       "label": "Primary button URL"
-    },
-    {
-      "type": "text",
-      "id": "secondary_button_text",
-      "label": "Secondary button text",
-      "default": "Cómo lo hacemos"
-    },
-    {
-      "type": "url",
-      "id": "secondary_button_url",
-      "label": "Secondary button URL"
     },
     {
       "type": "image_picker",

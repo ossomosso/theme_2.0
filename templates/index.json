@@ -522,17 +522,15 @@
       "type": "ossomosso-hero",
       "name": "Ossomosso - Hero",
       "settings": {
-        "eyebrow": "3D printing · Made in Madrid",
-        "title": "New collection",
-        "title_emphasis": "2026",
-        "body_text": "We design and make lamps and decorative vases in Madrid using 3D printing. Sculptural forms, thoughtful details and pieces made to order.",
+        "eyebrow": "Designed and made in Madrid",
+        "title": "A new light",
+        "title_emphasis": "for your everyday.",
+        "body_text": "Lamps and objects with character, created in our Madrid studio. Layer by layer.",
         "primary_button_text": "Explore collection",
         "primary_button_url": "shopify://collections/all",
-        "secondary_button_text": "How we make it",
-        "secondary_button_url": "",
         "image": "shopify://shop_images/lampara-tulipa-blanca-fondo-habitacion-ossomosso-crop.webp",
         "caption": "",
-        "scroll_text": "Explore",
+        "scroll_text": "3D printed · Made to order",
         "image_alt": "White Tulipa lamp on a bedside table"
       }
     },
