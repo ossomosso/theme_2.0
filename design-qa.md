@@ -46,3 +46,23 @@ Los archivos de evidencia citados sin ruta están en `/tmp/ossomosso-pdp-evidenc
 Se generaron con ImageGen dos composiciones editoriales a partir de fotografías reales de Japandi y Organic. Son imágenes secundarias de ambiente, no nuevas fotografías documentales del producto. Se preservaron las originales del catálogo. Subidas WebP: 1448 × 1086 píxeles; Organic 83.904 bytes y Japandi 111.960 bytes. Originales y prompts disponibles en `output/PDP-editorial-2026-10-06`.
 
 No quedan hallazgos P0/P1/P2 abiertos dentro del ámbito revisado. Mejoras posteriores P3: añadir dimensiones medidas, potencia/temperatura de la bombilla y datos eléctricos confirmados por el fabricante. No se inventan esos datos. No se ha realizado auditoría completa de accesibilidad, transacción de compra ni prueba física en Safari/iPad. La recomendación de recipiente interior se basa en el contenido comercial existente; podrá ajustarse si el comerciante confirma otra especificación.
+
+
+# Homepage hero — 28 October 2026
+
+Source visual truth: /Users/macbook/.codex/generated_images/01a0e8c1-10e4-7083-b30f-f561dce52750/exec-c6e562f7-4d67-40fe-a10f-d55d8f167f00.png (1536 × 1024, unknown original CSS density).
+Implementation evidence folder: /Users/macbook/Library/CloudStorage/GoogleDrive-joseandresfernandezrabano@gmail.com/Mi unidad/[06] WORK/[01] Ossomosso/output/homepage-concept-2026-10-28/
+
+Full-view comparison: qa-comparison.png, both images normalized to 640px wide in one image. Implementation desktop is 1280 × 720 CSS/pixels, mobile 390 × 844. Source has a taller aspect ratio; compare the hero region rather than content below the fold. Focused comparison is unnecessary because the hero has only a heading, short copy, one CTA and a large photo; all remain readable in the original captures.
+
+- Typography: existing brand serif, italic terracotta emphasis and body font retained. Two title lines in Spanish. English checked on /en. No truncation.
+- Spacing/layout: split desktop grid, 24px photo radius, pill CTA; stacked mobile with 20px radius. No horizontal overflow at 390px or the default desktop width.
+- Colors: existing cream, dark text, terracotta emphasis and dark CTA retained.
+- Asset fidelity: intentionally keep the currently uploaded white Tulipa photograph instead of the mockup's green Tulipa, as explicitly requested. No replacement imagery or logo. Existing asset has limited resolution, unchanged at the user's request. Desktop square crop and mobile portrait crop checked.
+- Content: one collection CTA, no secondary link. Madrid appears once in final hero body; eyebrow revised to Designed for everyday living / Diseño para vivirlo following user feedback. All seven Spanish hero translations use native Translate & Adapt resources.
+
+Interactions: Spanish CTA navigates to /collections/all. English CTA resolves to /en/collections/all. No console errors returned during browser check. No physical-device or exhaustive accessibility audit was performed.
+
+Comparison history: first composition check passed with no actionable visual P0/P1/P2 findings; user then requested removal of repeated Madrid text, implemented as a copy-only revision. Final publication screenshots are published-desktop.png and published-mobile.png.
+
+final result: passed
