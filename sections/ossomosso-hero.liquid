@@ -108,6 +108,16 @@
     background: var(--color-background);
   }
   .osso-hero__image { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .osso-hero__light {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: var(--lamp-light, 0);
+  }
+  .osso-hero__light--warm { mix-blend-mode: multiply; }
+  .osso-hero__light--glow { mix-blend-mode: screen; }
   .osso-hero__caption {
     position: absolute;
     right: 20px;
@@ -172,9 +182,33 @@
     {% if section.settings.scroll_text != blank %}<p class="osso-hero__scroll">{{ section.settings.scroll_text | escape }}</p>{% endif %}
   </div>
 
-  <div class="osso-hero__right">
+  <osso-scroll-lamp class="osso-hero__right">
     {% if image != blank %}
       {{ image | image_url: width: 1600 | image_tag: class: 'osso-hero__image', loading: 'eager', fetchpriority: 'high', widths: '480, 720, 960, 1200, 1600', sizes: '(max-width: 900px) 100vw, 53vw', alt: section.settings.image_alt }}
+      {% if section.settings.scroll_light and image.src contains 'Brisa-Verde-0374-Centrada' %}
+        {% comment %}Same viewBox and cover crop as the original photograph; retain the printed texture.{% endcomment %}
+        <svg class="osso-hero__light osso-hero__light--warm" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" data-lamp-light>
+          <defs>
+            <radialGradient id="lamp-warm-{{ section.id }}" cx="51%" cy="51%" r="62%">
+              <stop offset="0" stop-color="#ffce69" stop-opacity=".85"/>
+              <stop offset=".58" stop-color="#ffdc91" stop-opacity=".65"/>
+              <stop offset="1" stop-color="#ffe8bb" stop-opacity=".25"/>
+            </radialGradient>
+          </defs>
+          <path fill="url(#lamp-warm-{{ section.id }})" d="M578 143 C610 132 655 139 688 119 C723 100 756 115 794 123 C836 130 881 120 905 134 C961 207 1008 290 1004 411 C1052 469 1096 529 1081 586 C1073 637 1034 696 1000 723 C974 742 908 735 870 744 C817 753 798 786 730 783 C685 782 663 762 640 747 C598 739 555 737 510 728 C473 720 461 690 466 657 C467 625 487 598 505 574 C466 543 444 507 448 468 C451 413 494 361 531 315 L555 267 C541 223 564 176 578 143 Z"/>
+        </svg>
+        <svg class="osso-hero__light osso-hero__light--glow" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+          <defs>
+            <radialGradient id="lamp-glow-{{ section.id }}">
+              <stop offset="0" stop-color="#ffc35e" stop-opacity=".48"/>
+              <stop offset=".5" stop-color="#ffca76" stop-opacity=".2"/>
+              <stop offset="1" stop-color="#ffd79a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="762" cy="439" rx="405" ry="433" fill="url(#lamp-glow-{{ section.id }})"/>
+          <ellipse cx="755" cy="879" rx="370" ry="92" fill="url(#lamp-glow-{{ section.id }})" opacity=".45"/>
+        </svg>
+      {% endif %}
     {% else %}
       <div class="osso-hero__placeholder" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--color-background); opacity: 0.5;">
         {{ 'product-1' | placeholder_svg_tag }}
@@ -184,8 +218,10 @@
     {% if caption != blank %}
       <p class="osso-hero__caption">{{ caption }}</p>
     {% endif %}
-  </div>
+  </osso-scroll-lamp>
 </section>
+
+<script src="{{ 'ossomosso-scroll-lamp.js' | asset_url }}" defer></script>
 
 {% schema %}
 {
@@ -239,6 +275,13 @@
       "type": "image_picker",
       "id": "image",
       "label": "Hero image"
+    },
+    {
+      "type": "checkbox",
+      "id": "scroll_light",
+      "label": "Light up the lamp on scroll",
+      "default": true,
+      "info": "Calibrated for the current Brisa Verde hero photograph."
     },
     {
       "type": "text",
