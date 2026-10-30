@@ -748,10 +748,34 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {}
+                    },
+                    "image_brisa_dimensions": {
+                      "type": "image",
+                      "name": "Brisa dimensions drawing",
+                      "settings": {
+                        "image": "shopify://shop_images/brisa-dimensions-264x227mm.webp",
+                        "link": "",
+                        "image_ratio": "adapt",
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 12,
+                        "padding-block-start": 16,
+                        "padding-block-end": 8,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
-                    "text_McjMWz"
+                    "text_McjMWz",
+                    "image_brisa_dimensions"
                   ]
                 },
                 "accordion_row_aaFerA": {
