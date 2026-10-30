@@ -20,6 +20,7 @@
 
 {% capture class %}
   image-block image-block--{{ block.id }} image-block--height-{{ block_settings.height }} spacing-style size-style
+  {% if block_settings.blend_white_background %}image-block--blend-white-background{% endif %}
 {% endcapture %}
 
 {% capture style %}
@@ -110,6 +111,10 @@
     object-fit: cover;
     aspect-ratio: var(--ratio);
   }
+
+  .image-block--blend-white-background .image-block__image {
+    mix-blend-mode: multiply;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -126,6 +131,12 @@
       "type": "url",
       "id": "link",
       "label": "t:settings.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "blend_white_background",
+      "label": "Blend white background with page",
+      "default": false
     },
     {
       "type": "header",
