@@ -53,7 +53,7 @@
 
     <div class="contact-form__form-row">
       <div class="contact-form__field">
-<label
+      <label
         class="visually-hidden"
         for="{{ form_id }}-name"
       >
@@ -71,7 +71,7 @@
     </div>
 
       <div class="contact-form__field">
-<label
+      <label
         class="visually-hidden"
         for="{{ form_id }}-email"
       >
@@ -99,7 +99,7 @@
     </div>
 
     <div class="contact-form__field">
-<label
+      <label
       class="visually-hidden"
       for="{{ form_id }}-phone"
     >
@@ -118,11 +118,11 @@
     </div>
 
     <div class="contact-form__field">
-<label
+      <label
       class="visually-hidden"
       for="{{ form_id }}-body"
     >
-      {% if section.settings.contact_layout %}{{ 'ossomosso_contact.message' | t }}{% else %}{{- 'blocks.contact_form.comment' | t -}}{% endif %}
+      {% if section.settings.contact_layout %}{{ 'ossomosso_contact.message' | t }} <span aria-hidden="true">*</span>{% else %}{{- 'blocks.contact_form.comment' | t -}}{% endif %}
     </label>
     <textarea
       rows="10"
