@@ -48,9 +48,9 @@
     endif
   endfor
   if filament != blank
-    assign dark_contrast = filament | color_contrast: '#151515'
+    assign dark_contrast = filament | color_contrast: '#000000'
     assign light_contrast = filament | color_contrast: '#ffffff'
-    assign ink = '#151515'
+    assign ink = '#000000'
     assign type_shadow = '0 1px 0 rgb(255 255 255 / 35%)'
     if light_contrast > dark_contrast
       assign ink = '#ffffff'
