@@ -27,6 +27,8 @@
     {%- if form.errors and form.id == form_id -%}
       <div
         class="contact-form__error"
+        id="{{ form_id }}-email-error"
+        role="alert"
         tabindex="-1"
         autofocus
       >
@@ -40,6 +42,7 @@
     {%- if form.posted_successfully? and form.id == form_id -%}
       <div
         class="contact-form__success"
+        role="status"
         tabindex="-1"
         autofocus
       >
@@ -49,79 +52,89 @@
     {%- endif -%}
 
     <div class="contact-form__form-row">
-      <label
+      <div class="contact-form__field">
+<label
         class="visually-hidden"
-        for="ContactForm-name"
+        for="{{ form_id }}-name"
       >
         {{- 'blocks.contact_form.name' | t -}}
       </label>
       <input
         type="text"
-        id="ContactForm-name"
+        id="{{ form_id }}-name"
         class="contact-form__input"
         autocomplete="name"
         name="contact[name]"
         value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
         placeholder="{{ 'blocks.contact_form.name' | t }}"
       >
+    </div>
 
-      <label
+      <div class="contact-form__field">
+<label
         class="visually-hidden"
-        for="ContactForm-email"
+        for="{{ form_id }}-email"
       >
         {{- 'blocks.contact_form.email' | t -}}
         <span aria-hidden="true">*</span></label
       >
       <input
         type="email"
-        id="ContactForm-email"
+        id="{{ form_id }}-email"
         class="contact-form__input"
         autocomplete="email"
         name="contact[email]"
         spellcheck="false"
         autocapitalize="off"
         value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+        required
         aria-required="true"
         {% if form.errors contains 'email' and form.id == form_id %}
           aria-invalid="true"
-          aria-describedby="ContactForm-email-error"
+          aria-describedby="{{ form_id }}-email-error"
         {% endif %}
         placeholder="{{ 'blocks.contact_form.email' | t }}"
       >
     </div>
+    </div>
 
-    <label
+    <div class="contact-form__field">
+<label
       class="visually-hidden"
-      for="ContactForm-phone"
+      for="{{ form_id }}-phone"
     >
       {{- 'blocks.contact_form.phone' | t -}}
+      {% if section.settings.contact_layout %}<span class="contact-form__optional">{{ 'ossomosso_contact.optional' | t }}</span>{% endif %}
     </label>
     <input
       type="tel"
-      id="ContactForm-phone"
+      id="{{ form_id }}-phone"
       class="contact-form__input"
       autocomplete="tel"
       name="contact[phone]"
-      pattern="[0-9\-]*"
       value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
       placeholder="{{ 'blocks.contact_form.phone' | t }}"
     >
+    </div>
 
-    <label
+    <div class="contact-form__field">
+<label
       class="visually-hidden"
-      for="ContactForm-body"
+      for="{{ form_id }}-body"
     >
-      {{- 'blocks.contact_form.comment' | t -}}
+      {% if section.settings.contact_layout %}{{ 'ossomosso_contact.message' | t }}{% else %}{{- 'blocks.contact_form.comment' | t -}}{% endif %}
     </label>
     <textarea
       rows="10"
-      id="ContactForm-body"
+      id="{{ form_id }}-body"
       class="contact-form__input contact-form__input--textarea"
       name="contact[body]"
+      {% if section.settings.contact_layout %}required{% endif %}
       placeholder="{{ 'blocks.contact_form.comment' | t }}"
     >
       {{- form.body -}}
     </textarea>
+    </div>
 
     {{ submit_button }}
   {%- endform -%}
@@ -143,6 +156,11 @@
       flex-direction: row;
       align-items: center;
     }
+  }
+
+  .contact-form__field {
+    width: 100%;
+    min-width: 0;
   }
 
   .contact-form__input {

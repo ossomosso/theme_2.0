@@ -6,7 +6,7 @@
   style="{% render 'size-style', settings: block_settings %}"
   {{ block.shopify_attributes }}
 >
-  {{ block_settings.label }}
+  {% if section.settings.contact_layout %}{{ 'ossomosso_contact.send' | t }}<span aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span>{% else %}{{ block_settings.label }}{% endif %}
 </button>
 
 {% stylesheet %}

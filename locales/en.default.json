@@ -400,5 +400,28 @@
     "pink": "Pink",
     "yellow": "Yellow"
   }
-}
+},
+  "ossomosso_contact": {
+    "eyebrow": "A conversation starts here",
+    "title": "Let’s talk.",
+    "emphasis": "We’re all ears.",
+    "intro": "A question about a piece, a little help with your order, or an idea you’d like to bring to life? Tell us about it.",
+    "email_label": "Write to the studio",
+    "instagram_label": "Behind the scenes",
+    "signature": "Made in Madrid. Layer by layer.",
+    "form_title": "Leave us a note",
+    "form_intro": "Tell us what’s on your mind. We’ll reply by email.",
+    "optional": "(optional)",
+    "message": "Your message",
+    "send": "Send message",
+    "privacy_intro": "We’ll only use your details to reply to your enquiry. Read our",
+    "privacy_link": "privacy policy",
+    "help_label": "Useful information",
+    "shipping_title": "Shipping & lead times",
+    "shipping_body": "How your piece gets to you.",
+    "returns_title": "Returns",
+    "returns_body": "Everything you need to know.",
+    "custom_title": "Something more personal?",
+    "custom_body": "Explore custom colours and ideas."
+  }
 }

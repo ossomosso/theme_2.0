@@ -388,5 +388,28 @@
     "pink": "Rosa",
     "yellow": "Amarillo"
   }
-}
+},
+  "ossomosso_contact": {
+    "eyebrow": "Todo empieza con una conversación",
+    "title": "Hablemos.",
+    "emphasis": "Te escuchamos.",
+    "intro": "¿Una duda sobre una pieza, ayuda con tu pedido o una idea que quieres hacer realidad? Cuéntanos.",
+    "email_label": "Escribe al estudio",
+    "instagram_label": "El día a día del estudio",
+    "signature": "Hecho en Madrid. Capa a capa.",
+    "form_title": "Déjanos un mensaje",
+    "form_intro": "Cuéntanos qué tienes en mente. Te responderemos por email.",
+    "optional": "(opcional)",
+    "message": "Tu mensaje",
+    "send": "Enviar mensaje",
+    "privacy_intro": "Solo utilizaremos tus datos para responder a tu consulta. Lee nuestra",
+    "privacy_link": "política de privacidad",
+    "help_label": "Información útil",
+    "shipping_title": "Envíos y plazos",
+    "shipping_body": "Cómo llegará tu pieza a casa.",
+    "returns_title": "Devoluciones",
+    "returns_body": "Todo lo que necesitas saber.",
+    "custom_title": "¿Algo más personal?",
+    "custom_body": "Descubre colores e ideas a medida."
+  }
 }

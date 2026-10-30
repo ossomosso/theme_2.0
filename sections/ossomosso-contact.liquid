@@ -1,0 +1,120 @@
+<section class="osso-contact" aria-labelledby="ContactTitle-{{ section.id }}">
+  <div class="osso-contact__grid">
+    <div class="osso-contact__intro">
+      <p class="osso-contact__eyebrow">{{ 'ossomosso_contact.eyebrow' | t }}</p>
+      <h1 id="ContactTitle-{{ section.id }}">{{ 'ossomosso_contact.title' | t }}<em>{{ 'ossomosso_contact.emphasis' | t }}</em></h1>
+      <p class="osso-contact__body">{{ 'ossomosso_contact.intro' | t }}</p>
+      <div class="osso-contact__channels">
+        <a class="osso-contact__channel" href="mailto:{{ section.settings.email | escape }}">
+          <span class="osso-contact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
+          <span><small>{{ 'ossomosso_contact.email_label' | t }}</small><span>{{ section.settings.email | escape }}</span></span>
+          <span class="osso-contact__arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="osso-contact__channel" href="https://www.instagram.com/ossomosso.design/" target="_blank" rel="noopener noreferrer">
+          <span class="osso-contact__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></span>
+          <span><small>{{ 'ossomosso_contact.instagram_label' | t }}</small><span>@ossomosso.design</span></span>
+          <span class="osso-contact__arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p class="osso-contact__signature">{{ 'ossomosso_contact.signature' | t }}</p>
+    </div>
+
+    <div class="osso-contact__card">
+      <div class="osso-contact__card-heading">
+        <h2>{{ 'ossomosso_contact.form_title' | t }}</h2>
+        <p>{{ 'ossomosso_contact.form_intro' | t }}</p>
+      </div>
+      {% content_for 'block', type: 'contact-form', id: 'contact-form' %}
+      <p class="osso-contact__privacy">{{ 'ossomosso_contact.privacy_intro' | t }} <a href="{{ shop.privacy_policy.url }}">{{ 'ossomosso_contact.privacy_link' | t }}</a>.</p>
+    </div>
+  </div>
+
+  <nav class="osso-contact__help" aria-label="{{ 'ossomosso_contact.help_label' | t }}">
+    <a href="{{ shop.shipping_policy.url }}"><span class="osso-contact__help-number" aria-hidden="true">01</span><span><strong>{{ 'ossomosso_contact.shipping_title' | t }}</strong><small>{{ 'ossomosso_contact.shipping_body' | t }}</small></span><span aria-hidden="true">↗</span></a>
+    <a href="{{ shop.refund_policy.url }}"><span class="osso-contact__help-number" aria-hidden="true">02</span><span><strong>{{ 'ossomosso_contact.returns_title' | t }}</strong><small>{{ 'ossomosso_contact.returns_body' | t }}</small></span><span aria-hidden="true">↗</span></a>
+    <a href="{{ routes.root_url }}{% unless routes.root_url == '/' %}/{% endunless %}pages/personalizacion"><span class="osso-contact__help-number" aria-hidden="true">03</span><span><strong>{{ 'ossomosso_contact.custom_title' | t }}</strong><small>{{ 'ossomosso_contact.custom_body' | t }}</small></span><span aria-hidden="true">↗</span></a>
+  </nav>
+</section>
+
+{% stylesheet %}
+  .osso-contact {
+    grid-column: 1 / -1;
+    width: min(100% - 2 * var(--page-margin, 24px), 1200px);
+    margin-inline: auto;
+    padding-block: clamp(44px, 6vw, 88px) clamp(48px, 6vw, 80px);
+    color: var(--color-foreground);
+  }
+  .osso-contact__grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: start; gap: clamp(40px, 6vw, 88px); }
+  .osso-contact__intro { padding-block: 20px; }
+  .osso-contact__eyebrow { margin: 0 0 24px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+  .osso-contact h1 { margin: 0; font-family: var(--font-heading--family); font-size: clamp(52px, 5.8vw, 78px); font-weight: 300; line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
+  .osso-contact h1 em { display: block; margin-top: 6px; color: #966440; font-weight: inherit; }
+  .osso-contact__body { max-width: 380px; margin: 28px 0 32px; color: #615950; font-size: 16px; line-height: 1.75; }
+  .osso-contact__channels { max-width: 400px; }
+  .osso-contact__channel { display: flex; gap: 16px; align-items: center; padding: 19px 0; border-top: 1px solid #ded5c9; color: inherit; text-decoration: none; }
+  .osso-contact__channel:last-child { border-bottom: 1px solid #ded5c9; }
+  .osso-contact__icon { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 50%; background: #eee7dc; }
+  .osso-contact__icon svg { width: 23px; height: 23px; }
+  .osso-contact__channel small { display: block; margin-bottom: 3px; font-size: 11px; color: #615950; }
+  .osso-contact__channel span span { font-size: 16px; }
+  .osso-contact__arrow { margin-left: auto; color: #966440; font-size: 22px; }
+  .osso-contact__signature { margin: 28px 0 0; font-family: var(--font-heading--family); font-style: italic; color: #966440; font-size: 22px; }
+  .osso-contact__card { min-width: 0; padding: clamp(24px, 3vw, 40px); border: 1px solid #e8dfd3; border-radius: 28px; background: #fffdf9; box-shadow: 0 12px 40px rgb(70 48 25 / .045); }
+  .osso-contact__card-heading h2 { margin: 0 0 10px; font-family: var(--font-heading--family); font-size: 32px; font-weight: 400; letter-spacing: -.02em; }
+  .osso-contact__card-heading p { margin: 0 0 28px; color: #615950; font-size: 14px; line-height: 1.6; }
+  .osso-contact .contact-form__form { gap: 20px; }
+  .osso-contact .contact-form__form-row { gap: 16px; }
+  .osso-contact .contact-form__field label { position: static !important; display: block; width: auto !important; height: auto !important; clip: auto !important; clip-path: none !important; overflow: visible !important; margin: 0 0 8px !important; padding: 0 !important; white-space: normal !important; font-size: 12px; }
+  .osso-contact .contact-form__optional { margin-left: 6px; color: #70665c; font-size: 11px; }
+  .osso-contact .contact-form__input { min-height: 50px; padding: 14px 16px; border: 1px solid #d8cec0; border-radius: 12px; background: #f9f5ef; color: #2a2420; font-size: 16px; }
+  .osso-contact .contact-form__input::placeholder { color: transparent; }
+  .osso-contact .contact-form__input:focus-visible { outline: 2px solid #966440; outline-offset: 3px; }
+  .osso-contact .contact-form__input--textarea { min-height: 140px; height: 140px; resize: vertical; }
+  .osso-contact .submit-button { --osso-button-face: #d8c3a5; --osso-button-ink: #2a2420; width: 100%; min-height: 54px; display: flex; justify-content: space-between; gap: 20px; padding-inline: 26px; }
+  .osso-contact .submit-button svg { width: 21px; height: 21px; }
+  .osso-contact__privacy { margin: 20px 0 0; max-width: 380px; color: #70665c; font-size: 11px; line-height: 1.7; }
+  .osso-contact__privacy a { color: inherit; text-underline-offset: 3px; }
+  .osso-contact .contact-form__success, .osso-contact .contact-form__error { padding: 16px; border-radius: 12px; font-size: 14px; line-height: 1.6; }
+  .osso-contact .contact-form__success { color: #34523a; background: #edf1e7; }
+  .osso-contact .contact-form__error { color: #922e25; background: #f9ece7; }
+  .osso-contact .contact-form__success svg, .osso-contact .contact-form__error svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .osso-contact__help { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; padding-top: 28px; border-top: 1px solid #ded5c9; }
+  .osso-contact__help a { display: flex; gap: 16px; align-items: baseline; padding-block: 8px; color: inherit; text-decoration: none; }
+  .osso-contact__help a > span:last-child { margin-left: auto; color: #966440; }
+  .osso-contact__help-number { font-size: 10px; color: #966440; }
+  .osso-contact__help strong { display: block; margin-bottom: 7px; font-weight: 500; font-size: 14px; }
+  .osso-contact__help small { display: block; color: #615950; font-size: 12px; line-height: 1.6; }
+  .osso-contact__channel:hover span span, .osso-contact__help a:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+  .osso-contact a:focus-visible { outline: 2px solid #966440; outline-offset: 5px; border-radius: 4px; }
+  @media (max-width: 900px) {
+    .osso-contact__grid { grid-template-columns: 1fr 1.15fr; gap: 32px; }
+    .osso-contact h1 { font-size: 52px; }
+    .osso-contact__help { gap: 20px; }
+  }
+  @media (max-width: 749px) {
+    .osso-contact { width: calc(100% - 40px); padding-block: 28px 48px; }
+    .osso-contact__grid { grid-template-columns: 1fr; gap: 32px; }
+    .osso-contact__intro { padding: 0; }
+    .osso-contact h1 { max-width: 450px; font-size: clamp(46px, 11vw, 62px); }
+    .osso-contact__eyebrow { margin-bottom: 20px; }
+    .osso-contact__body { margin-block: 22px 24px; }
+    .osso-contact__channels { max-width: none; }
+    .osso-contact__signature { margin-top: 20px; }
+    .osso-contact__card { padding: 24px; border-radius: 22px; }
+    .osso-contact__help { grid-template-columns: 1fr; gap: 0; margin-top: 36px; padding-top: 8px; }
+    .osso-contact__help a { padding-block: 20px; border-bottom: 1px solid #ded5c9; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Ossomosso - Contact",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {"type": "text", "id": "email", "label": "Contact email", "default": "info@ossomosso.com"},
+    {"type": "checkbox", "id": "contact_layout", "label": "Use contact page labels", "default": true}
+  ],
+  "presets": [{"name": "Ossomosso - Contact"}]
+}
+{% endschema %}
