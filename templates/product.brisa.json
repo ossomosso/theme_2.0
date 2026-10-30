@@ -771,11 +771,28 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {}
+                    },
+                    "text_brisa_dimensions_units": {
+                      "type": "text",
+                      "name": "Drawing units",
+                      "settings": {
+                        "text": "<p>Dimensions in millimetres (mm).</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "center",
+                        "type_preset": "rte",
+                        "padding-block-start": 0,
+                        "padding-block-end": 16,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
                     "text_McjMWz",
-                    "image_brisa_dimensions"
+                    "image_brisa_dimensions",
+                    "text_brisa_dimensions_units"
                   ]
                 },
                 "accordion_row_aaFerA": {
