@@ -1,0 +1,97 @@
+{{ 'ossomosso-customisation.css' | asset_url | stylesheet_tag }}
+
+<section class="osso-custom" aria-labelledby="CustomTitle-{{ section.id }}">
+  <header class="osso-custom__header">
+    <p class="osso-custom__eyebrow">{{ 'ossomosso_custom.eyebrow' | t }}</p>
+    <h1 id="CustomTitle-{{ section.id }}">{{ 'ossomosso_custom.title' | t }} <em>{{ 'ossomosso_custom.emphasis' | t }}</em></h1>
+    <p>{{ 'ossomosso_custom.intro' | t }}</p>
+  </header>
+
+  <nav class="osso-custom__choices" aria-label="{{ 'ossomosso_custom.choose' | t }}">
+    {% for audience in (1..2) %}
+      {% liquid
+        if audience == 1
+          assign kind = 'private'
+          assign photo = section.settings.private_image
+        else
+          assign kind = 'corporate'
+          assign photo = section.settings.corporate_image
+        endif
+        assign label_key = 'ossomosso_custom.' | append: kind | append: '_label'
+        assign title_key = 'ossomosso_custom.' | append: kind | append: '_card_title'
+        assign body_key = 'ossomosso_custom.' | append: kind | append: '_card_body'
+        assign cta_key = 'ossomosso_custom.' | append: kind | append: '_cta'
+        assign alt_key = 'ossomosso_custom.' | append: kind | append: '_alt'
+        assign photo_alt = alt_key | t
+      %}
+      <a class="osso-custom__choice" href="#{{ kind }}-{{ section.id }}">
+        {% if photo != blank %}{{ photo | image_url: width: 1200 | image_tag: widths: '400, 600, 900, 1200', sizes: '(max-width: 749px) 100vw, 50vw', loading: 'eager', alt: photo_alt }}{% endif %}
+        <div class="osso-custom__choice-copy">
+          <p class="osso-custom__eyebrow">{{ label_key | t }}</p>
+          <h2>{{ title_key | t }}</h2>
+          <p>{{ body_key | t }}</p>
+          <span class="osso-custom__text-link">{{ cta_key | t }} <span aria-hidden="true">↗</span></span>
+        </div>
+      </a>
+    {% endfor %}
+  </nav>
+
+  <section id="private-{{ section.id }}" class="osso-custom__project" aria-labelledby="PrivateTitle-{{ section.id }}">
+    <div class="osso-custom__story">
+      <p class="osso-custom__eyebrow">01 / {{ 'ossomosso_custom.private_label' | t }}</p>
+      <h2 id="PrivateTitle-{{ section.id }}">{{ 'ossomosso_custom.private_title' | t }}</h2>
+      <p class="osso-custom__lead">{{ 'ossomosso_custom.private_intro' | t }}</p>
+      <ul class="osso-custom__features">
+        {% for i in (1..3) %}{% assign key = 'ossomosso_custom.private_feature_' | append: i %}<li><span aria-hidden="true">{{ i | prepend: '0' }}</span>{{ key | t }}</li>{% endfor %}
+      </ul>
+      <p class="osso-custom__note">{{ 'ossomosso_custom.private_note' | t }}</p>
+    </div>
+    {% render 'ossomosso-project-form', audience: 'private', section_id: section.id %}
+  </section>
+
+  <section id="corporate-{{ section.id }}" class="osso-custom__project osso-custom__project--corporate" aria-labelledby="CorporateTitle-{{ section.id }}">
+    <div class="osso-custom__story">
+      <p class="osso-custom__eyebrow">02 / {{ 'ossomosso_custom.corporate_label' | t }}</p>
+      <h2 id="CorporateTitle-{{ section.id }}">{{ 'ossomosso_custom.corporate_title' | t }}</h2>
+      <p class="osso-custom__lead">{{ 'ossomosso_custom.corporate_intro' | t }}</p>
+      <ul class="osso-custom__features">
+        {% for i in (1..3) %}{% assign key = 'ossomosso_custom.corporate_feature_' | append: i %}<li><span aria-hidden="true">{{ i | prepend: '0' }}</span>{{ key | t }}</li>{% endfor %}
+      </ul>
+      <p class="osso-custom__note">{{ 'ossomosso_custom.corporate_note' | t }}</p>
+      <p class="osso-custom__signature">{{ 'ossomosso_custom.signature' | t }}</p>
+    </div>
+    {% render 'ossomosso-project-form', audience: 'corporate', section_id: section.id %}
+  </section>
+
+  <section class="osso-custom__process" aria-labelledby="ProcessTitle-{{ section.id }}">
+    <p class="osso-custom__eyebrow">{{ 'ossomosso_custom.process_label' | t }}</p>
+    <h2 id="ProcessTitle-{{ section.id }}">{{ 'ossomosso_custom.process_title' | t }}</h2>
+    <ol>
+      {% for i in (1..3) %}
+        {% assign title_key = 'ossomosso_custom.step_' | append: i | append: '_title' %}
+        {% assign body_key = 'ossomosso_custom.step_' | append: i | append: '_body' %}
+        <li><span aria-hidden="true">{{ i | prepend: '0' }}</span><h3>{{ title_key | t }}</h3><p>{{ body_key | t }}</p></li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <div class="osso-custom__faq">
+    <h2>{{ 'ossomosso_custom.faq_title' | t }}</h2>
+    <div>{% for i in (1..3) %}{% assign question = 'ossomosso_custom.faq_' | append: i | append: '_q' %}{% assign answer = 'ossomosso_custom.faq_' | append: i | append: '_a' %}<details><summary>{{ question | t }}<span aria-hidden="true">+</span></summary><p>{{ answer | t }}</p></details>{% endfor %}</div>
+  </div>
+  <p class="osso-custom__email">{{ 'ossomosso_custom.email_prompt' | t }} <a href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a></p>
+</section>
+
+{% schema %}
+{
+  "name": "Ossomosso - Customisation",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {"type": "image_picker", "id": "private_image", "label": "Private customisation photo"},
+    {"type": "image_picker", "id": "corporate_image", "label": "Corporate gifting photo"},
+    {"type": "text", "id": "email", "label": "Contact email", "default": "info@ossomosso.com"}
+  ],
+  "presets": [{"name": "Ossomosso - Customisation"}]
+}
+{% endschema %}

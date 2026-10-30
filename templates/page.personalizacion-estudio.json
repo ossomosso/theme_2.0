@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "ossomosso-customisation",
+      "settings": {
+        "private_image": "shopify://shop_images/Brisa-Ossomosso-Ambiente-Editorial.webp",
+        "corporate_image": "shopify://shop_images/Brisa_Ossomosso_Base-Roja_Cuadrada.webp",
+        "email": "info@ossomosso.com"
+      }
+    }
+  },
+  "order": ["main"]
+}

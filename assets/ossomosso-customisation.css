@@ -1,0 +1,80 @@
+.osso-custom { grid-column:1/-1; width:min(calc(100% - 2 * var(--page-margin,24px)),1200px); margin-inline:auto; padding-block:clamp(40px,6vw,80px) 64px; color:var(--color-foreground); }
+.osso-custom__header { max-width:860px; margin:0 auto 44px; text-align:center; }
+.osso-custom__eyebrow { margin:0 0 20px; font-size:10px; line-height:1.6; letter-spacing:.18em; text-transform:uppercase; }
+.osso-custom h1,.osso-custom h2,.osso-custom h3 { font-family:var(--font-heading--family); font-weight:300; letter-spacing:-.025em; }
+.osso-custom h1 { margin:0; font-size:clamp(46px,5.6vw,76px); line-height:1.07; text-wrap:balance; }
+.osso-custom h1 em { display:block; color:#966440; }
+.osso-custom__header>p:last-child { max-width:580px; margin:24px auto 0; font-size:16px; line-height:1.75; color:#615950; }
+.osso-custom__choices { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.osso-custom__choice { display:block; border:1px solid #e2d9cd; border-radius:24px; overflow:hidden; color:inherit; background:#fffdf9; text-decoration:none; }
+.osso-custom__choice img { display:block; width:100%; aspect-ratio:16/9; height:auto; object-fit:cover; }
+.osso-custom__choice:nth-child(2) img { object-fit:contain; background:#f4f2ee; }
+.osso-custom__choice-copy { padding:28px 32px 32px; }
+.osso-custom__choice .osso-custom__eyebrow { color:#78644e; margin-bottom:12px; }
+.osso-custom__choice h2 { font-size:36px; line-height:1.15; margin:0 0 14px; }
+.osso-custom__choice-copy>p:not(.osso-custom__eyebrow) { max-width:410px; margin:0 0 24px; font-size:14px; line-height:1.75; color:#615950; }
+.osso-custom__text-link { display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:13px; font-weight:500; }
+.osso-custom__text-link>span { color:#966440; font-size:24px; }
+.osso-custom__choice:hover .osso-custom__text-link { text-decoration:underline; text-underline-offset:5px; }
+.osso-custom__project { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(36px,6vw,88px); align-items:start; margin-top:88px; padding-top:40px; border-top:1px solid #ded5c9; scroll-margin-top:124px; }
+.osso-custom__story { padding-block:20px; }
+.osso-custom__story h2 { max-width:470px; font-size:clamp(40px,4.4vw,58px); line-height:1.1; margin:0 0 24px; text-wrap:balance; }
+.osso-custom__lead { max-width:430px; font-size:16px; line-height:1.75; color:#615950; margin:0 0 28px; }
+.osso-custom__features { padding:0; margin:0 0 24px; list-style:none; }
+.osso-custom__features li { display:flex; align-items:baseline; gap:18px; padding:18px 0; border-top:1px solid #ded5c9; font-size:14px; line-height:1.65; }
+.osso-custom__features li>span { color:#966440; font-size:10px; }
+.osso-custom__note { color:#70665c; font-size:12px; line-height:1.8; }
+.osso-custom__signature { color:#966440; font-size:26px; font-family:var(--font-heading--family); font-style:italic; margin-top:32px; }
+.osso-custom__form-card { min-width:0; padding:clamp(24px,3vw,40px); background:#fffdf9; border:1px solid #e8dfd3; border-radius:28px; box-shadow:0 12px 40px rgb(70 48 25/.045); }
+.osso-custom__form-card h3 { margin:0 0 10px; font-size:30px; }
+.osso-custom__form-intro { margin:0 0 26px; font-size:13px; color:#615950; line-height:1.7; }
+.osso-custom__fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 16px; }
+.osso-custom__fields>div { min-width:0; }
+.osso-custom__wide { grid-column:1/-1; }
+.osso-custom label { display:block; margin-bottom:8px; font-size:12px; }
+.osso-custom input:not([type=hidden]),.osso-custom textarea { display:block; width:100%; max-width:100%; min-height:50px; padding:13px 15px; border:1px solid #d8cec0; border-radius:12px; background:#f9f5ef; color:#2a2420; font-family:var(--font-body--family); font-size:16px; box-sizing:border-box; }
+.osso-custom textarea { resize:vertical; min-height:130px; }
+.osso-custom__hint { font-size:11px; color:#70665c; line-height:1.7; margin:8px 0 0; }
+body .osso-custom .osso-custom__submit { display:flex; justify-content:space-between; align-items:center; gap:20px; width:100%; padding-inline:24px; min-height:54px; margin-top:24px; }
+.osso-custom__submit svg { width:21px; height:21px; }
+.osso-custom__privacy { font-size:11px; line-height:1.7; color:#70665c; margin:20px 0 0; }
+.osso-custom__privacy a { color:inherit; text-underline-offset:3px; }
+.osso-custom a:focus-visible,.osso-custom input:focus-visible,.osso-custom textarea:focus-visible,.osso-custom summary:focus-visible { outline:2px solid #966440; outline-offset:4px; }
+.osso-custom__success,.osso-custom__error { padding:16px; border-radius:12px; font-size:14px; line-height:1.6; margin-bottom:20px; }
+.osso-custom__success { background:#edf1e7; color:#34523a; }
+.osso-custom__error { background:#f9ece7; color:#922e25; }
+.osso-custom__process { margin-top:88px; border-radius:24px; padding:40px; background:#eee7dc; }
+.osso-custom__process h2 { font-size:40px; margin:0 0 36px; }
+.osso-custom__process ol { display:grid; grid-template-columns:repeat(3,1fr); list-style:none; padding:0; margin:0; gap:40px; }
+.osso-custom__process li>span { display:block; padding-bottom:16px; border-bottom:1px solid #cdbfae; font-size:11px; color:#785b40; }
+.osso-custom__process h3 { font-size:26px; margin:20px 0 12px; }
+.osso-custom__process li p { font-size:13px; color:#615950; line-height:1.75; margin:0; }
+.osso-custom__faq { display:grid; grid-template-columns:.7fr 1.3fr; gap:48px; margin-top:72px; }
+.osso-custom__faq h2 { font-size:38px; margin:0; }
+.osso-custom__faq details { border-top:1px solid #ded5c9; }
+.osso-custom__faq details:last-child { border-bottom:1px solid #ded5c9; }
+.osso-custom__faq summary { display:flex; justify-content:space-between; gap:20px; padding-block:22px; cursor:pointer; list-style:none; font-size:14px; }
+.osso-custom__faq summary::-webkit-details-marker { display:none; }
+.osso-custom__faq summary span { color:#966440; }
+.osso-custom__faq details[open] summary span { transform:rotate(45deg); }
+.osso-custom__faq details p { margin:0 0 22px; color:#615950; font-size:14px; line-height:1.8; }
+.osso-custom__email { margin:48px 0 0; text-align:center; color:#615950; font-size:13px; line-height:1.8; }
+.osso-custom__email a { color:#785236; text-underline-offset:4px; }
+@media(max-width:749px) {
+ .osso-custom { width:calc(100% - 40px); padding-block:32px 48px; }
+ .osso-custom__header { text-align:left; margin-bottom:32px; }
+ .osso-custom h1 { font-size:clamp(44px,11vw,62px); }
+ .osso-custom__choices,.osso-custom__project,.osso-custom__process ol,.osso-custom__faq { grid-template-columns:1fr; }
+ .osso-custom__choices { gap:24px; }
+ .osso-custom__choice-copy { padding:24px; }
+ .osso-custom__choice h2 { font-size:32px; }
+ .osso-custom__project { margin-top:48px; padding-top:28px; gap:24px; scroll-margin-top:80px; }
+ .osso-custom__story { padding:0; }
+ .osso-custom__story h2 { font-size:42px; }
+ .osso-custom__form-card { border-radius:22px; padding:24px; }
+ .osso-custom__fields { grid-template-columns:1fr; }
+ .osso-custom__process { margin-top:48px; padding:28px 24px; }
+ .osso-custom__process h2 { font-size:34px; margin-bottom:28px; }
+ .osso-custom__process ol { gap:28px; }
+ .osso-custom__faq { gap:24px; margin-top:48px; }
+}
