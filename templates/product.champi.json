@@ -734,8 +734,8 @@
                       "name": "Champi dimensions drawing",
                       "settings": {
                         "image": "shopify://shop_images/champi-dimensions-327x249mm-v2.webp",
-                        "blend_white_background": true,
                         "link": "",
+                        "blend_white_background": true,
                         "image_ratio": "adapt",
                         "width": "fill",
                         "custom_width": 100,
@@ -1152,25 +1152,23 @@
             "label": "Styling and care",
             "title": "Living with Champi",
             "rating_text": "",
-            "review_1_author": "Bedside table",
             "review_1_text": "Pair its rounded shade with simple bedding and leave room around the lamp.",
-            "review_2_author": "Sideboard",
+            "review_1_author": "Bedside table",
             "review_2_text": "Use Champi as a compact accent beside books or a framed photograph.",
-            "review_3_author": "Care",
-            "review_3_text": "Wipe Champi with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
-          },
-          "disabled": false
+            "review_2_author": "Sideboard",
+            "review_3_text": "Wipe Champi with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners.",
+            "review_3_author": "Care"
+          }
         },
         "highlight_daily": {
           "type": "highlight",
-          "disabled": false,
           "settings": {
             "media": "shopify://shop_images/Champi-Rosa-Encendida-0248.webp",
-            "media_position": "right",
-            "image_zoom": 100,
             "eyebrow": "Made for everyday life",
             "title": "Small lamp. All the essentials.",
-            "text": "An LED E14 bulb is included with Champi. Use it as a decorative point of indoor light on a bedside table or sideboard; the bulb is replaceable, not built into the shade."
+            "text": "An LED E14 bulb is included with Champi. Use it as a decorative point of indoor light on a bedside table or sideboard; the bulb is replaceable, not built into the shade.",
+            "media_position": "right",
+            "image_zoom": 100
           }
         }
       },
@@ -1198,15 +1196,6 @@
     },
     "ossomosso_product_faq": {
       "type": "ossomosso-product-faq",
-      "settings": {
-        "eyebrow": "Before you bring it home",
-        "heading": "Questions about Champi.",
-        "intro": "<p>The practical side of Champi: what is included, how to use it and how to care for it.</p>",
-        "contact_label": "Still have a question? Talk to us.",
-        "contact_url": "shopify://pages/contact",
-        "background_color": "#f4f2ec",
-        "text_color": "#2a241f"
-      },
       "blocks": {
         "question_1": {
           "type": "question",
@@ -1282,7 +1271,16 @@
         "question_6",
         "question_7",
         "question_8"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Before you bring it home",
+        "heading": "Questions about Champi.",
+        "intro": "<p>The practical side of Champi: what is included, how to use it and how to care for it.</p>",
+        "contact_label": "Still have a question? Talk to us.",
+        "contact_url": "shopify://pages/contact",
+        "background_color": "#f4f2ec",
+        "text_color": "#2a241f"
+      }
     }
   },
   "order": [

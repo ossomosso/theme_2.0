@@ -734,8 +734,8 @@
                       "name": "Tulipa dimensions drawing",
                       "settings": {
                         "image": "shopify://shop_images/tulipa-dimensions-334x249mm.webp",
-                        "blend_white_background": true,
                         "link": "",
+                        "blend_white_background": true,
                         "image_ratio": "adapt",
                         "width": "fill",
                         "custom_width": 100,
@@ -1152,25 +1152,23 @@
             "label": "Styling and care",
             "title": "Living with Tulipa",
             "rating_text": "",
-            "review_1_author": "Bedside table",
             "review_1_text": "Place Tulipa beside the bed for a gentle pool of light at the end of the day.",
-            "review_2_author": "Console",
+            "review_1_author": "Bedside table",
             "review_2_text": "Give its open silhouette space on a console, alongside a small stack of books.",
-            "review_3_author": "Care",
-            "review_3_text": "Wipe Tulipa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
-          },
-          "disabled": false
+            "review_2_author": "Console",
+            "review_3_text": "Wipe Tulipa with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners.",
+            "review_3_author": "Care"
+          }
         },
         "highlight_daily": {
           "type": "highlight",
-          "disabled": false,
           "settings": {
             "media": "shopify://shop_images/lampara-tulipa-verde-encendida-habitacion-ossomosso.webp",
-            "media_position": "right",
-            "image_zoom": 100,
             "eyebrow": "Made for everyday life",
             "title": "The light is part of the package.",
-            "text": "Tulipa includes an LED E14 bulb and a white textile cable. You do not need to find a bulb before enjoying it. When a replacement is needed, choose a compatible LED E14 matching the supplied bulb."
+            "text": "Tulipa includes an LED E14 bulb and a white textile cable. You do not need to find a bulb before enjoying it. When a replacement is needed, choose a compatible LED E14 matching the supplied bulb.",
+            "media_position": "right",
+            "image_zoom": 100
           }
         }
       },
@@ -1198,15 +1196,6 @@
     },
     "ossomosso_product_faq": {
       "type": "ossomosso-product-faq",
-      "settings": {
-        "eyebrow": "Before you bring it home",
-        "heading": "Questions about Tulipa.",
-        "intro": "<p>The practical side of Tulipa: what is included, how to use it and how to care for it.</p>",
-        "contact_label": "Still have a question? Talk to us.",
-        "contact_url": "shopify://pages/contact",
-        "background_color": "#f4f2ec",
-        "text_color": "#2a241f"
-      },
       "blocks": {
         "question_1": {
           "type": "question",
@@ -1282,7 +1271,16 @@
         "question_6",
         "question_7",
         "question_8"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Before you bring it home",
+        "heading": "Questions about Tulipa.",
+        "intro": "<p>The practical side of Tulipa: what is included, how to use it and how to care for it.</p>",
+        "contact_label": "Still have a question? Talk to us.",
+        "contact_url": "shopify://pages/contact",
+        "background_color": "#f4f2ec",
+        "text_color": "#2a241f"
+      }
     }
   },
   "order": [

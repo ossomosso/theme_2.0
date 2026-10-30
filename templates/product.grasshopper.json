@@ -734,8 +734,8 @@
                       "name": "Grasshopper dimensions drawing",
                       "settings": {
                         "image": "shopify://shop_images/grasshopper-dimensions-218x187mm.webp",
-                        "blend_white_background": true,
                         "link": "",
+                        "blend_white_background": true,
                         "image_ratio": "adapt",
                         "width": "fill",
                         "custom_width": 100,
@@ -1152,25 +1152,23 @@
             "label": "Styling and care",
             "title": "Living with Grasshopper",
             "rating_text": "",
-            "review_1_author": "Desk",
             "review_1_text": "Let its graphic outline stand out against a clear wall or an uncluttered desk.",
-            "review_2_author": "Console",
+            "review_1_author": "Desk",
             "review_2_text": "Position Grasshopper slightly off-centre to give a console an informal, lively rhythm.",
-            "review_3_author": "Care",
-            "review_3_text": "Wipe Grasshopper with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners."
-          },
-          "disabled": false
+            "review_2_author": "Console",
+            "review_3_text": "Wipe Grasshopper with a soft, dry cloth. Keep away from heat sources and avoid abrasive cleaners.",
+            "review_3_author": "Care"
+          }
         },
         "highlight_daily": {
           "type": "highlight",
-          "disabled": false,
           "settings": {
             "media": "shopify://shop_images/Grasshopper_Ossomosso_Beige_Logo-257.webp",
-            "media_position": "right",
-            "image_zoom": 100,
             "eyebrow": "Made for everyday life",
             "title": "A characterful shape. A familiar bulb.",
-            "text": "Grasshopper comes with an LED E14 bulb. The small screw base makes the light source replaceable. Made in Madrid by 3D printing, its fine surface lines are part of the process."
+            "text": "Grasshopper comes with an LED E14 bulb. The small screw base makes the light source replaceable. Made in Madrid by 3D printing, its fine surface lines are part of the process.",
+            "media_position": "right",
+            "image_zoom": 100
           }
         }
       },
@@ -1198,15 +1196,6 @@
     },
     "ossomosso_product_faq": {
       "type": "ossomosso-product-faq",
-      "settings": {
-        "eyebrow": "Before you bring it home",
-        "heading": "Questions about Grasshopper.",
-        "intro": "<p>The practical side of Grasshopper: what is included, how to use it and how to care for it.</p>",
-        "contact_label": "Still have a question? Talk to us.",
-        "contact_url": "shopify://pages/contact",
-        "background_color": "#f4f2ec",
-        "text_color": "#2a241f"
-      },
       "blocks": {
         "question_1": {
           "type": "question",
@@ -1282,7 +1271,16 @@
         "question_6",
         "question_7",
         "question_8"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Before you bring it home",
+        "heading": "Questions about Grasshopper.",
+        "intro": "<p>The practical side of Grasshopper: what is included, how to use it and how to care for it.</p>",
+        "contact_label": "Still have a question? Talk to us.",
+        "contact_url": "shopify://pages/contact",
+        "background_color": "#f4f2ec",
+        "text_color": "#2a241f"
+      }
     }
   },
   "order": [
