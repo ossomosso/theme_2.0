@@ -1,5 +1,6 @@
 {{ 'overflow-list.css' | asset_url | preload_tag: as: 'style' }}
 {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'ossomosso-buttons.css' | asset_url | stylesheet_tag }}
 {% if template.name == 'index' %}
   {{ 'ossomosso-newsletter.css' | asset_url | stylesheet_tag }}
 {% endif %}
