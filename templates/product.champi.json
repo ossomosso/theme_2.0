@@ -733,7 +733,7 @@
                       "type": "image",
                       "name": "Champi dimensions drawing",
                       "settings": {
-                        "image": "shopify://shop_images/champi-dimensions-327x249mm.webp",
+                        "image": "shopify://shop_images/champi-dimensions-327x249mm-v2.webp",
                         "blend_white_background": true,
                         "link": "",
                         "image_ratio": "adapt",
