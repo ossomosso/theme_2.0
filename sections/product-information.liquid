@@ -119,6 +119,7 @@
       <button
         type="button"
         class="sticky-add-to-cart__button add-to-cart-button button"
+        style="{% render 'ossomosso-button-color', product: product %}"
         ref="addToCartButton"
         on:click="/handleAddToCartClick"
         {% unless current_variant.available %}

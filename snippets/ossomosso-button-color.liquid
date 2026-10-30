@@ -1,0 +1,61 @@
+{% doc %}
+  Outputs filament button color variables for the selected product color.
+  @param {product} product - Product whose selected variant supplies the color.
+{% enddoc %}
+{%- liquid
+  assign filament = blank
+  for option in product.options_with_values
+    assign option_name = option.name | downcase
+    if option_name == 'color' or option_name == 'colour'
+      for value in option.values
+        if value.selected
+          assign filament = value.swatch.color
+          if filament == blank
+            assign color_name = value.name | downcase
+            case color_name
+              when 'azul', 'blue'
+                assign filament = '#3b82f6'
+              when 'azul transparente', 'transparent blue'
+                assign filament = '#93c5fd'
+              when 'verde', 'green'
+                assign filament = '#22c55e'
+              when 'rojo', 'red'
+                assign filament = '#ef4444'
+              when 'beige'
+                assign filament = '#d6c2a1'
+              when 'blanco', 'white'
+                assign filament = '#ffffff'
+              when 'crema', 'cream', 'marfil', 'ivory'
+                assign filament = '#f6f1e1'
+              when 'gris', 'gray', 'grey'
+                assign filament = '#9ca3af'
+              when 'rosa', 'pink'
+                assign filament = '#ec4899'
+              when 'amarillo', 'yellow'
+                assign filament = '#facc15'
+              when 'negro', 'black'
+                assign filament = '#111111'
+              when 'naranja', 'orange'
+                assign filament = '#f97316'
+              when 'morado', 'violeta', 'purple'
+                assign filament = '#8b5cf6'
+              when 'marrón', 'marron', 'café', 'cafe', 'brown'
+                assign filament = '#8b5e3c'
+            endcase
+          endif
+        endif
+      endfor
+    endif
+  endfor
+  if filament != blank
+    assign dark_contrast = filament | color_contrast: '#151515'
+    assign light_contrast = filament | color_contrast: '#ffffff'
+    assign ink = '#151515'
+    assign type_shadow = '0 1px 0 rgb(255 255 255 / 35%)'
+    if light_contrast > dark_contrast
+      assign ink = '#ffffff'
+      assign type_shadow = '0 1px 1px rgb(0 0 0 / 55%)'
+    endif
+    echo '--osso-button-face: ' | append: filament | append: '; --osso-button-ink: ' | append: ink | append: '; --osso-button-type-shadow: ' | append: type_shadow | append: ';'
+  endif
+-%}

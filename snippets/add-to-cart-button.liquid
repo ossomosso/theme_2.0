@@ -32,6 +32,7 @@
     ref="addToCartButton"
     on:click="/handleClick"
     class="button {{ class }}"
+    style="{% render 'ossomosso-button-color', product: product %}"
     {% if data_testid %}
       data-testid="{{ data_testid }}"
     {% endif %}
