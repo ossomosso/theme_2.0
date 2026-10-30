@@ -6,14 +6,14 @@
 .osso-custom h1 em { display:block; color:#966440; }
 .osso-custom__header>p:last-child { max-width:580px; margin:24px auto 0; font-size:16px; line-height:1.75; color:#615950; }
 .osso-custom__choices { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
-.osso-custom__choice { display:block; border:1px solid #e2d9cd; border-radius:24px; overflow:hidden; color:inherit; background:#fffdf9; text-decoration:none; }
+.osso-custom__choice { display:flex; flex-direction:column; border:1px solid #e2d9cd; border-radius:24px; overflow:hidden; color:inherit; background:#fffdf9; text-decoration:none; }
 .osso-custom__choice img { display:block; width:100%; aspect-ratio:16/9; height:auto; object-fit:cover; }
 .osso-custom__choice:nth-child(2) img { object-fit:contain; background:#f4f2ee; }
-.osso-custom__choice-copy { padding:28px 32px 32px; }
+.osso-custom__choice-copy { display:flex; flex-direction:column; flex:1; padding:28px 32px 32px; }
 .osso-custom__choice .osso-custom__eyebrow { color:#78644e; margin-bottom:12px; }
 .osso-custom__choice h2 { font-size:36px; line-height:1.15; margin:0 0 14px; }
 .osso-custom__choice-copy>p:not(.osso-custom__eyebrow) { max-width:410px; margin:0 0 24px; font-size:14px; line-height:1.75; color:#615950; }
-.osso-custom__text-link { display:flex; align-items:center; justify-content:space-between; gap:16px; font-size:13px; font-weight:500; }
+.osso-custom__text-link { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:auto; font-size:13px; font-weight:500; }
 .osso-custom__text-link>span { color:#966440; font-size:24px; }
 .osso-custom__choice:hover .osso-custom__text-link { text-decoration:underline; text-underline-offset:5px; }
 .osso-custom__project { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(36px,6vw,88px); align-items:start; margin-top:88px; padding-top:40px; border-top:1px solid #ded5c9; scroll-margin-top:124px; }
