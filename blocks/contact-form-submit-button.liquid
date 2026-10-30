@@ -3,7 +3,7 @@
 <button
   type="submit"
   class="button submit-button size-style {{ block_settings.style_class }}"
-  style="{% render 'size-style', settings: block_settings %}"
+  style="{% if section.settings.contact_layout %}--osso-button-face: #d8c3a5; --osso-button-ink: #2a2420;{% endif %}{% render 'size-style', settings: block_settings %}"
   {{ block.shopify_attributes }}
 >
   {% if section.settings.contact_layout %}{{ 'ossomosso_contact.send' | t }}<span aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span>{% else %}{{ block_settings.label }}{% endif %}
