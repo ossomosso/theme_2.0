@@ -10,6 +10,13 @@
   assign body_text = section.settings.body_text
   assign primary_button_text = section.settings.primary_button_text
   assign primary_button_url = section.settings.primary_button_url
+  assign primary_button_color = section.settings.primary_button_color | default: '#6dc7ed'
+  assign primary_button_ink = '#000000'
+  assign button_dark_contrast = primary_button_color | color_contrast: '#000000'
+  assign button_light_contrast = primary_button_color | color_contrast: '#ffffff'
+  if button_light_contrast > button_dark_contrast
+    assign primary_button_ink = '#ffffff'
+  endif
   assign image = section.settings.image
   assign caption = section.settings.caption
 %}
@@ -158,7 +165,7 @@
 
     <div class="osso-hero__actions">
       {% if primary_button_text != blank and primary_button_url != blank %}
-        <a href="{{ primary_button_url }}" class="osso-hero__btn-primary"><span>{{ primary_button_text | escape }}</span><span aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span></a>
+        <a href="{{ primary_button_url }}" class="osso-hero__btn-primary" style="--osso-button-face: {{ primary_button_color }}; --osso-button-ink: {{ primary_button_ink }};"><span>{{ primary_button_text | escape }}</span><span aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span></a>
       {% endif %}
     </div>
 
@@ -220,6 +227,13 @@
       "type": "url",
       "id": "primary_button_url",
       "label": "Primary button URL"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_color",
+      "label": "Button color",
+      "default": "#6dc7ed",
+      "info": "Text color adjusts automatically for contrast."
     },
     {
       "type": "image_picker",
