@@ -753,7 +753,7 @@
                       "type": "image",
                       "name": "Brisa dimensions drawing",
                       "settings": {
-                        "image": "shopify://shop_images/brisa-dimensions-264x227mm.webp",
+                        "image": "shopify://shop_images/brisa-dimensions-264x227mm-v2.webp",
                         "blend_white_background": true,
                         "link": "",
                         "image_ratio": "adapt",
