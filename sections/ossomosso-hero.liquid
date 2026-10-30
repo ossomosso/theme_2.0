@@ -16,14 +16,15 @@
 
 <style>
   .osso-hero {
+    grid-column: 1 / -1;
     display: grid;
     grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
     align-items: center;
     gap: clamp(28px, 3.5vw, 56px);
     width: 100%;
-    max-width: 1600px;
+    max-width: none;
     margin-inline: auto;
-    padding: 32px clamp(24px, 3.2vw, 48px) 64px;
+    padding: 32px 0 64px calc(var(--page-margin) + clamp(24px, 3.2vw, 48px));
     background: var(--color-background);
   }
   .osso-hero__left { min-width: 0; padding: 36px 0 28px clamp(0px, 2.5vw, 40px); }
@@ -96,7 +97,7 @@
     min-width: 0;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 24px;
+    border-radius: 24px 0 0 24px;
     background: var(--color-background);
   }
   .osso-hero__image { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -118,19 +119,19 @@
     .osso-hero__title { font-size: 56px; }
   }
   @media (max-width: 900px) {
-    .osso-hero { grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 28px 24px 48px; }
-    .osso-hero__left { padding: 8px 0 0; }
+    .osso-hero { grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 28px 0 48px; }
+    .osso-hero__left { padding: 8px calc(var(--page-margin) + 24px) 0; }
     .osso-hero__title { max-width: 650px; font-size: clamp(44px, 7.5vw, 68px); }
-    .osso-hero__right { aspect-ratio: 4 / 5; max-height: 720px; }
+    .osso-hero__right { aspect-ratio: 4 / 5; max-height: 720px; border-radius: 0; }
     .osso-hero__scroll { margin-top: 28px; }
   }
   @media (max-width: 599px) {
-    .osso-hero { gap: 26px; padding: 20px 20px 40px; }
+    .osso-hero { gap: 26px; padding: 20px 0 40px; }
+    .osso-hero__left { padding-inline: calc(var(--page-margin) + 20px); }
     .osso-hero__eyebrow { margin-bottom: 20px; font-size: 10px; letter-spacing: 0.14em; }
     .osso-hero__title { margin-bottom: 22px; font-size: clamp(42px, 10vw, 58px); }
     .osso-hero__body { margin-bottom: 26px; font-size: 16px; }
     .osso-hero__btn-primary { min-height: 54px; gap: 24px; padding: 15px 24px; font-size: 13px; }
-    .osso-hero__right { border-radius: 20px; }
     .osso-hero__scroll { margin-top: 24px; font-size: 9px; }
   }
   @media (prefers-reduced-motion: reduce) { .osso-hero__btn-primary { transition: none; } }
@@ -166,7 +167,7 @@
 
   <div class="osso-hero__right">
     {% if image != blank %}
-      {{ image | image_url: width: 1600 | image_tag: class: 'osso-hero__image', loading: 'eager', fetchpriority: 'high', widths: '480, 720, 960, 1200, 1600', sizes: '(max-width: 900px) calc(100vw - 40px), (max-width: 1600px) 52vw, 760px', alt: section.settings.image_alt }}
+      {{ image | image_url: width: 1600 | image_tag: class: 'osso-hero__image', loading: 'eager', fetchpriority: 'high', widths: '480, 720, 960, 1200, 1600', sizes: '(max-width: 900px) 100vw, 53vw', alt: section.settings.image_alt }}
     {% else %}
       <div class="osso-hero__placeholder" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--color-background); opacity: 0.5;">
         {{ 'product-1' | placeholder_svg_tag }}
