@@ -47,16 +47,16 @@ body :is(.button, .button-secondary):is(:disabled, [aria-disabled='true']) {
 @media (prefers-reduced-motion: reduce) {
   body :is(.button, .button-secondary, .osso-hero__btn-primary):not(.button-unstyled, .cart-items__remove, .quick-add__button, .close-button) {
     transition: none;
-    transform: none;
+    transform: none !important;
   }
 }
 
 @media (forced-colors: active) {
   body :is(.button, .button-secondary, .osso-hero__btn-primary):not(.button-unstyled, .cart-items__remove, .quick-add__button, .close-button) {
     border: 2px solid ButtonText;
-    background: ButtonFace;
-    color: ButtonText;
-    box-shadow: none;
+    background: ButtonFace !important;
+    color: ButtonText !important;
+    box-shadow: none !important;
     text-shadow: none;
   }
 }
