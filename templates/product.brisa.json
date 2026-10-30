@@ -830,8 +830,8 @@
       "type": "ossomosso-marquee",
       "settings": {
         "marquee_items": "Original design\nMade in Madrid\n3D-printed PLA\nMade to order\n90-day returns",
-        "background_color": "#2A241F",
-        "text_color": "#FFFFFF",
+        "background_color": "#2a241f",
+        "text_color": "#ffffff",
         "dot_color": "#af825d",
         "speed": 26
       }
@@ -894,7 +894,7 @@
         },
         "reviews_DTTrtr": {
           "type": "reviews",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "note_1_icon": "map_pin",
             "note_2_icon": "plant",
