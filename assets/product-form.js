@@ -670,6 +670,11 @@ class ProductFormComponent extends Component {
 
     const newAddToCartButton = event.detail.data.html.querySelector('product-form-component [ref="addToCartButton"]');
     if (newAddToCartButton && currentAddToCartButton) {
+      for (const property of ['--osso-button-face', '--osso-button-ink', '--osso-button-type-shadow']) {
+        const value = newAddToCartButton.style.getPropertyValue(property);
+        if (value) currentAddToCartButton.style.setProperty(property, value);
+        else currentAddToCartButton.style.removeProperty(property);
+      }
       morph(currentAddToCartButton, newAddToCartButton);
     }
 
