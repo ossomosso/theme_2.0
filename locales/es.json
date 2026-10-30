@@ -413,10 +413,10 @@
     "custom_body": "Descubre colores e ideas a medida."
   },
   "ossomosso_custom": {
-    "eyebrow": "Personalización y regalos de empresa",
+    "eyebrow": "Personalización",
     "title": "Una idea tuya.",
     "emphasis": "Una pieza única.",
-    "intro": "Para un rincón de tu casa o para todo un equipo. Exploremos una pieza que tenga algo que ver contigo.",
+    "intro": "Otro color, una combinación especial o una idea para regalar. Cuéntanos qué tienes en mente y le damos forma contigo.",
     "choose": "Elige tu proyecto",
     "private_label": "Para particulares",
     "private_card_title": "Un poco más tú.",
@@ -465,11 +465,23 @@
     "step_3_body": "Cuando acordemos los detalles y el pedido, fabricaremos tus piezas y organizaremos la entrega.",
     "faq_title": "Antes de empezar.",
     "faq_1_q": "¿Hay un pedido mínimo?",
-    "faq_1_a": "Valoramos de forma individual las solicitudes particulares y los proyectos de empresa. La cantidad mínima, si la hay, dependerá de la pieza y de los cambios necesarios; te lo confirmaremos en la propuesta.",
+    "faq_1_a": "Cada proyecto se valora de forma individual. La cantidad mínima, si la hay, dependerá de la pieza y de los cambios necesarios; te lo confirmaremos en la propuesta.",
     "faq_2_q": "¿Podéis hacer mi color o añadir mi marca?",
     "faq_2_a": "Envíanos una referencia de color y tu idea de marca. Revisaremos los materiales, los colores disponibles y las opciones técnicas antes de confirmar qué podemos fabricar.",
     "faq_3_q": "¿Cuánto cuesta y cuánto tarda?",
     "faq_3_a": "El precio y el plazo dependen del diseño, la personalización y la cantidad. Te confirmaremos ambos antes de que hagas un pedido. Si tienes una fecha de evento, inclúyela en tu consulta.",
-    "email_prompt": "¿Prefieres escribirnos directamente?"
+    "email_prompt": "¿Prefieres escribirnos directamente?",
+    "shared_label": "De la idea a la pieza",
+    "shared_title": "Pequeñas ideas. Muchas posibilidades.",
+    "shared_intro": "Una lámpara para ese rincón, un objeto muy tuyo o un regalo que represente a tu marca. Cada proyecto empieza con la misma pregunta: ¿qué te gustaría crear?",
+    "shared_feature_1": "Colores y combinaciones que encajan contigo.",
+    "shared_feature_2": "Exploramos tamaños, acabados y detalles de marca según el proyecto.",
+    "shared_feature_3": "Desde una pieza especial hasta regalos para todo un equipo.",
+    "shared_cta": "Cuéntanos tu idea",
+    "shared_form_title": "Hablemos de tu idea",
+    "shared_send": "Enviar mi idea",
+    "shared_hint": "Cuéntanos los colores, las medidas o la ocasión. Si es para un equipo o una marca, también puedes añadir más detalles debajo.",
+    "extra_details": "Más detalles del proyecto (opcional)",
+    "company_optional": "Empresa o marca (opcional)"
   }
 }

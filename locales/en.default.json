@@ -425,10 +425,10 @@
     "custom_body": "Explore custom colours and ideas."
   },
   "ossomosso_custom": {
-    "eyebrow": "Personalisation & corporate gifting",
+    "eyebrow": "Personalisation",
     "title": "Your idea.",
     "emphasis": "A piece of its own.",
-    "intro": "For a corner of your home or a whole team. Let’s explore a piece that means something to you.",
+    "intro": "Another colour, a special combination or a thoughtful gift. Tell us what you have in mind and we’ll explore it together.",
     "choose": "Choose your project",
     "private_label": "For you",
     "private_card_title": "A little more you.",
@@ -477,11 +477,23 @@
     "step_3_body": "Once the details and order are agreed, we produce your pieces and arrange delivery.",
     "faq_title": "A few things to know.",
     "faq_1_q": "Is there a minimum order?",
-    "faq_1_a": "Private requests and corporate projects are assessed individually. Any minimum quantity depends on the piece and the changes involved; we’ll confirm it in the proposal.",
+    "faq_1_a": "Every project is assessed individually. Any minimum quantity depends on the piece and the changes involved; we’ll confirm it in the proposal.",
     "faq_2_q": "Can you match my colour or add branding?",
     "faq_2_a": "Share a colour reference and your branding idea. We’ll review the materials, available colours and technical options before confirming what we can make.",
     "faq_3_q": "How much does it cost and how long will it take?",
     "faq_3_a": "The price and timing depend on the design, level of customisation and quantity. We’ll confirm both before you commit to an order. If you have an event date, include it in your enquiry.",
-    "email_prompt": "Prefer to write directly?"
+    "email_prompt": "Prefer to write directly?",
+    "shared_label": "From idea to object",
+    "shared_title": "Small ideas. Many possibilities.",
+    "shared_intro": "A lamp for that corner, an object that feels like you, or a gift that reflects your brand. Every project starts with the same question: what would you like to create?",
+    "shared_feature_1": "Colours and combinations that feel right for you.",
+    "shared_feature_2": "We explore sizes, finishes and branding details to suit the project.",
+    "shared_feature_3": "From one special piece to gifts for a whole team.",
+    "shared_cta": "Tell us your idea",
+    "shared_form_title": "Let’s talk about your idea",
+    "shared_send": "Send my idea",
+    "shared_hint": "Tell us about the colours, size or occasion. If it’s for a team or a brand, you can add more details below.",
+    "extra_details": "More project details (optional)",
+    "company_optional": "Company or brand (optional)"
   }
 }
