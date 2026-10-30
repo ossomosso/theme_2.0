@@ -25,6 +25,12 @@ body .button-secondary:not(.button-unstyled, .cart-items__remove, .quick-add__bu
   --osso-button-edge: #91b4c3;
 }
 
+body .add-to-cart-button:not(.quick-add__button) .add-to-cart-text__content {
+  background-color: var(--osso-button-face);
+  box-shadow: 0 0 3px 3px var(--osso-button-face);
+  border-radius: 3px;
+}
+
 @media (hover: hover) {
   body :is(.button, .button-secondary, .osso-hero__btn-primary):not(.button-unstyled, .cart-items__remove, .quick-add__button, .close-button, :disabled, [aria-disabled='true']):hover {
     background-color: color-mix(in srgb, var(--osso-button-face), white 8%);
@@ -55,6 +61,11 @@ body :is(.button, .button-secondary):is(:disabled, [aria-disabled='true']) {
 }
 
 @media (forced-colors: active) {
+  body .add-to-cart-button .add-to-cart-text__content {
+    background: ButtonFace;
+    box-shadow: none;
+  }
+
   body :is(.button, .button-secondary, .osso-hero__btn-primary):not(.button-unstyled, .cart-items__remove, .quick-add__button, .close-button) {
     border: 2px solid ButtonText;
     background: ButtonFace !important;
