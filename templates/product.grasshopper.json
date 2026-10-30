@@ -728,10 +728,52 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {}
+                    },
+                    "image_grasshopper_dimensions": {
+                      "type": "image",
+                      "name": "Grasshopper dimensions drawing",
+                      "settings": {
+                        "image": "shopify://shop_images/grasshopper-dimensions-218x187mm.webp",
+                        "blend_white_background": true,
+                        "link": "",
+                        "image_ratio": "adapt",
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 12,
+                        "padding-block-start": 16,
+                        "padding-block-end": 8,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
+                    "text_grasshopper_dimensions_units": {
+                      "type": "text",
+                      "name": "Drawing units",
+                      "settings": {
+                        "text": "<p>Dimensions in millimetres (mm).</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "center",
+                        "type_preset": "rte",
+                        "padding-block-start": 0,
+                        "padding-block-end": 16,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
-                    "text_McjMWz"
+                    "text_McjMWz",
+                    "image_grasshopper_dimensions",
+                    "text_grasshopper_dimensions_units"
                   ]
                 },
                 "accordion_row_aaFerA": {
@@ -1100,8 +1142,8 @@
             "spec_6_label": "Cleaning",
             "spec_7_value": "LED E14",
             "spec_7_label": "Bulb included",
-            "spec_8_value": "",
-            "spec_8_label": ""
+            "spec_8_value": "21.8 × Ø 18.7 cm",
+            "spec_8_label": "Dimensions · height × diameter"
           }
         },
         "reviews_DTTrtr": {
