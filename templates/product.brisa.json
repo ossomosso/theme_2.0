@@ -1265,7 +1265,7 @@
           "type": "question",
           "settings": {
             "question": "Can I return Brisa?",
-            "answer": "<p>You have 90 days from delivery to request a return. Check the item’s eligibility, required condition and any exceptions in our <a href=\"/en/policies/refund-policy\">returns policy</a>. Email ossomosso.design@gmail.com before sending anything back.</p>",
+            "answer": "<p>You have 90 days from delivery to request a return. Check the item’s eligibility, required condition and any exceptions in our <a href=\"/en/policies/refund-policy\">returns policy</a>. Email info@ossomosso.com before sending anything back.</p>",
             "open_by_default": false
           }
         }
