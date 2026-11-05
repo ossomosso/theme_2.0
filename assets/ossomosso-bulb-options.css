@@ -9,11 +9,11 @@
 .osso-bulb-options legend {
   padding: 0;
   margin-block-end: var(--margin-xs);
-  font: inherit;
 }
 
-.osso-bulb-options label {
+.buy-buttons-block .osso-bulb-options label {
   display: grid;
+  inline-size: 100%;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: .625rem;
