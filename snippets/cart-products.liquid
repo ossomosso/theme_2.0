@@ -123,6 +123,20 @@
 
           <tbody role="rowgroup">
             {% for item in cart.items %}
+              {%- liquid
+                assign rgb_upgrade_child = false
+                assign rgb_upgrade_parent = false
+                if item.product.handle == 'rgb-bulb-upgrade' and item.parent_relationship.parent != null
+                  assign rgb_upgrade_child = true
+                elsif item.properties._bulb == 'RGB'
+                  for child in cart.items
+                    if child.product.handle == 'rgb-bulb-upgrade' and child.parent_relationship.parent.key == item.key
+                      assign rgb_upgrade_parent = true
+                      break
+                    endif
+                  endfor
+                endif
+              -%}
               <tr
                 role="row"
                 class="cart-items__table-row{% if item.parent_relationship.parent != null %} cart-items__nested-line{% endif %}{% unless item.unit_price_measurement %} cart-items__table-row--full-width-variants{% endunless %}"
@@ -309,6 +323,9 @@
                   {% assign can_update_quantity = item.instructions.can_update_quantity
                     | default: true, allow_false: true
                   %}
+                  {% if rgb_upgrade_parent or rgb_upgrade_child %}
+                    {% assign can_update_quantity = false %}
+                  {% endif %}
                   <div class="cart-items__quantity-controls">
                     {% render 'volume-pricing-info',
                       variant: item.variant,
@@ -340,7 +357,7 @@
                       aria-label="{{ 'accessibility.remove_item' | t: title: localized_item_title | strip | escape }}"
                       on:click="/onLineItemRemove/{{ item.index | plus: 1 }}"
                       {% assign can_remove = item.instructions.can_remove | default: true, allow_false: true %}
-                      {% if can_remove == false %}
+                      {% if can_remove == false or rgb_upgrade_child %}
                         hidden
                       {% endif %}
                     >
