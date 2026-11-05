@@ -4,6 +4,7 @@
 
   @param {product} product_resource - The product to render
   @param {boolean} [show_bulb_upgrade] - Whether to show the selected RGB upgrade total
+  @param {boolean} [show_newsletter_offer] - Expose the variant welcome prices for the main PDP
   @param {boolean} [show_unit_price] - Whether to show the unit price
   @param {boolean} [show_sale_price_first] - Whether to show the sale price first
 {%- enddoc -%}
@@ -78,6 +79,14 @@
     endif
   endif
 
+  if show_newsletter_offer
+    assign welcome_price = price | times: 0.9 | round
+    if rgb_total
+      assign welcome_upgrade = upgrade.price | times: 0.9 | round
+      assign welcome_rgb_price = welcome_price | plus: welcome_upgrade
+    endif
+  endif
+
   # Format all prices
   assign price = price | money_without_currency | append: ' €'
   assign compare_at_price = compare_at_price | money_without_currency | append: ' €'
@@ -85,7 +94,7 @@
   assign price_max = price_max | money_without_currency | append: ' €'
 -%}
 
-<div ref="priceContainer">
+<div ref="priceContainer"{% if show_newsletter_offer %} data-welcome-price="{{ welcome_price | money | escape }}"{% if welcome_rgb_price %} data-welcome-rgb-price="{{ welcome_rgb_price | money | escape }}"{% endif %}{% endif %}>
   {% if rgb_total %}
     <span class="price osso-rgb-price">{{ rgb_total | money_without_currency }} €</span>
     <div class="osso-standard-price">

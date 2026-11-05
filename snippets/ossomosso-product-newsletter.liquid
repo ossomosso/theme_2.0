@@ -1,0 +1,37 @@
+{%- assign form_id = 'ProductNewsletter-' | append: block_id -%}
+{%- capture signup_form -%}
+  {% form 'customer', id: form_id %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    {% if form.posted_successfully? or form.errors %}
+      {% assign signup_open = true %}
+    {% endif %}
+    {% if form.posted_successfully? %}
+      <p role="status">{{ 'ossomosso.pdp.success' | t }}</p>
+    {% else %}
+      {{ form.errors | default_errors }}
+      <div class="osso-product-newsletter__fields">
+        <label class="visually-hidden" for="{{ form_id }}-email">{{ 'ossomosso.pdp.email' | t }}</label>
+        <input id="{{ form_id }}-email" type="email" name="contact[email]" autocomplete="email"
+          placeholder="{{ 'ossomosso.pdp.email' | t }}" required>
+        <button type="submit">{{ 'ossomosso.pdp.subscribe' | t }}</button>
+      </div>
+      <label class="osso-product-newsletter__consent">
+        <input type="checkbox" required>
+        <span>
+          {{ 'ossomosso.pdp.consent' | t }}
+          {% if shop.privacy_policy.url != blank %}
+            <a href="{{ shop.privacy_policy.url }}">{{ 'ossomosso.pdp.privacy' | t }}</a>
+          {% endif %}
+        </span>
+      </label>
+    {% endif %}
+  {% endform %}
+{%- endcapture -%}
+<details class="osso-product-newsletter" {% if signup_open %} open{% endif %}>
+  <summary>
+    <span data-osso-welcome-price>{{ variant.price | times: 0.9 | round | money }}</span>
+    {{ 'ossomosso.pdp.first_order' | t }}
+    <span class="osso-product-newsletter__link">{{ 'ossomosso.pdp.join' | t }}</span>
+  </summary>
+  {{ signup_form }}
+</details>

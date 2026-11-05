@@ -390,6 +390,17 @@
     }
   },
   "ossomosso": {
+    "pdp": {
+      "breadcrumb": "Breadcrumb",
+      "home": "Home",
+      "first_order": "on your first order when you",
+      "join": "join our newsletter",
+      "email": "Your email address",
+      "subscribe": "Subscribe",
+      "consent": "I agree to receive Ossomosso news and offers by email. I can unsubscribe at any time.",
+      "privacy": "Privacy policy",
+      "success": "Thanks for signing up. Check your inbox for your code."
+    },
   "colors": {
     "blue": "Blue",
     "transparent_blue": "Transparent blue",

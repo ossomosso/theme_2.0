@@ -22,6 +22,10 @@ class ProductPrice extends Component {
     const closestSection = this.closest('.shopify-section, dialog');
     if (!closestSection) return;
     closestSection.addEventListener(ThemeEvents.variantUpdate, this.updatePrice);
+    if (this.nextElementSibling?.matches('.osso-product-newsletter')) {
+      closestSection.addEventListener('change', this.updateWelcomePrice);
+      this.updateWelcomePrice();
+    }
   }
 
   disconnectedCallback() {
@@ -29,7 +33,20 @@ class ProductPrice extends Component {
     const closestSection = this.closest('.shopify-section, dialog');
     if (!closestSection) return;
     closestSection.removeEventListener(ThemeEvents.variantUpdate, this.updatePrice);
+    closestSection.removeEventListener('change', this.updateWelcomePrice);
   }
+
+  updateWelcomePrice = () => {
+    const welcomePrice = this.nextElementSibling?.querySelector('[data-osso-welcome-price]');
+    const prices = this.querySelector('[data-welcome-price]');
+    if (!(prices instanceof HTMLElement) || !welcomePrice) return;
+
+    const rgbSelected = this.closest('.product-details')?.querySelector(
+      '.osso-bulb-options input[value]:not([value=""]):checked'
+    );
+    const amount = (rgbSelected && prices.dataset.welcomeRgbPrice) || prices.dataset.welcomePrice;
+    if (amount) welcomePrice.textContent = amount;
+  };
 
   /**
    * Updates the price and volume pricing note.
@@ -53,6 +70,13 @@ class ProductPrice extends Component {
     const newPrice = newProductPrice.querySelector('[ref="priceContainer"]');
     if (newPrice && priceContainer) {
       priceContainer.replaceWith(newPrice);
+      this.updateWelcomePrice();
+    }
+
+    if (newProductPrice.querySelector('[data-welcome-price]')) {
+      const currentBreadcrumb = this.closest('.osso-pdp')?.querySelector('[data-osso-breadcrumb-current]');
+      const updatedBreadcrumb = event.detail.data.html.querySelector('[data-osso-breadcrumb-current]');
+      if (currentBreadcrumb && updatedBreadcrumb) currentBreadcrumb.textContent = updatedBreadcrumb.textContent;
     }
 
     // Update volume pricing note

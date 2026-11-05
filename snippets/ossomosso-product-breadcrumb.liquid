@@ -1,0 +1,31 @@
+{%- liquid
+  assign current_collection = collection
+  if current_collection == blank
+    for product_collection in product.collections
+      if product_collection.handle == 'portable-lamps'
+        assign current_collection = product_collection
+        break
+      elsif product_collection.handle == 'lamparas' or product_collection.handle == 'jarrones'
+        assign current_collection = product_collection
+      endif
+    endfor
+  endif
+-%}
+<nav class="osso-product-breadcrumb" aria-label="{{ 'ossomosso.pdp.breadcrumb' | t }}">
+  <a href="{{ routes.root_url }}">{{ 'ossomosso.pdp.home' | t }}</a>
+  {% if current_collection != blank %}
+    <span aria-hidden="true">/</span>
+    <a href="{{ current_collection.url }}">{{ current_collection.title | escape }}</a>
+  {% endif %}
+  <span aria-hidden="true">/</span>
+  <span aria-current="page" data-osso-breadcrumb-current>
+    {{- product.title | escape -}}
+    {%- for option in product.options_with_values -%}
+      {%- assign option_name = option.name | downcase -%}
+      {%- if option_name == 'color' or option_name == 'colour' -%}
+        {{ ' — ' }}{% render 'ossomosso-color-name', value: option.selected_value %}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </span>
+</nav>

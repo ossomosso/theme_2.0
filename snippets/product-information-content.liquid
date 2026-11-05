@@ -4,6 +4,7 @@
   Renders the product information layout with media gallery and product details.
   Used by both product-information and featured-product-information sections.
 
+  @param {boolean} [show_pdp_header] - Show the main product breadcrumb and gallery layout
   @param {number} product_media_size - Number of media items in the product
   @param {string} section_id - Unique section ID
   @param {object} settings - Section settings object
@@ -78,7 +79,7 @@
 
 <div class="section-background color-{{ settings.color_scheme }}"></div>
 <div
-  class="product-information section section--{{ content_width }} spacing-style color-{{ settings.color_scheme }} relative"
+  class="product-information{% if show_pdp_header %} osso-pdp{% endif %} section section--{{ content_width }} spacing-style color-{{ settings.color_scheme }} relative"
   style="{% render 'spacing-style', settings: settings %} --gap: {{ settings.gap }}px;"
   data-testid="product-information"
 >
@@ -96,6 +97,9 @@
         class="product-information__media"
         data-testid="product-information-media"
       >
+        {% if show_pdp_header %}
+          {% render 'ossomosso-product-breadcrumb', product: product, collection: collection %}
+        {% endif %}
         {{ media_gallery }}
       </div>
     {% endcapture %}
