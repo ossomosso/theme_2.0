@@ -65,6 +65,10 @@
       assign bulb_template = true
     elsif template.suffix == 'grasshopper' and product_resource.handle == 'grasshoper-lamp'
       assign bulb_template = true
+    elsif template.suffix == 'tulipa' and product_resource.handle == 'lampara-tulip'
+      assign bulb_template = true
+    elsif template.suffix == 'champi' and product_resource.handle == 'lampara-champi'
+      assign bulb_template = true
     endif
     if bulb_template and product_resource.id == product.id
       assign upgrade = all_products['rgb-bulb-upgrade'].selected_or_first_available_variant
