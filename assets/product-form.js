@@ -198,7 +198,7 @@ class ProductFormComponent extends Component {
   /** @type {boolean} */
   #variantChangeInProgress = false;
 
-  /** @type {Array<{variantId: string, quantity: number}>} */
+  /** @type {Array<{variantId: string, quantity: number, bulbUpgradeId?: number}>} */
   #addToCartQueue = [];
 
   connectedCallback() {
@@ -228,8 +228,9 @@ class ProductFormComponent extends Component {
     const variantIdInput = /** @type {HTMLInputElement | null} */ (this.querySelector('input[name="id"]'));
     if (!variantIdInput?.value || !cart?.items) return 0;
 
-    const cartItem = cart.items.find((item) => item.variant_id.toString() === variantIdInput.value.toString());
-    const cartQty = cartItem ? cartItem.quantity : 0;
+    const cartQty = cart.items.reduce((quantity, item) => {
+      return item.variant_id.toString() === variantIdInput.value ? quantity + item.quantity : quantity;
+    }, 0);
 
     // Use public API to update quantity selector
     const quantitySelector = /** @type {any | undefined} */ (this.querySelector('quantity-selector-component'));
@@ -283,19 +284,21 @@ class ProductFormComponent extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    const bulbUpgradeId = Number(this.querySelector('input[name="osso_bulb"]:checked')?.getAttribute('value')) || undefined;
+
     if (this.#variantChangeInProgress) {
       const intendedVariantId = this.#getIntendedVariantId();
       const quantity = this.#getQuantity();
 
       if (intendedVariantId) {
-        this.#addToCartQueue.push({ variantId: intendedVariantId, quantity });
+        this.#addToCartQueue.push({ variantId: intendedVariantId, quantity, bulbUpgradeId });
       }
 
       this.refs.addToCartButtonContainer?.animateAddToCart?.();
       return;
     }
 
-    this.#processAddToCart(undefined, undefined, event);
+    this.#processAddToCart(undefined, undefined, event, bulbUpgradeId);
   }
 
   /** @returns {string | undefined} */
@@ -312,8 +315,9 @@ class ProductFormComponent extends Component {
    * @param {string} [overrideVariantId]
    * @param {number} [overrideQuantity]
    * @param {Event} [event]
+   * @param {number} [bulbUpgradeId]
    */
-  #processAddToCart(overrideVariantId, overrideQuantity, event) {
+  #processAddToCart(overrideVariantId, overrideQuantity, event, bulbUpgradeId) {
     const { addToCartTextError } = this.refs;
 
     if (this.#timeout) clearTimeout(this.#timeout);
@@ -388,16 +392,30 @@ class ProductFormComponent extends Component {
       if (item instanceof HTMLElement && item.dataset.sectionId) {
         cartItemComponentsSectionIds.push(item.dataset.sectionId);
       }
-      formData.append('sections', cartItemComponentsSectionIds.join(','));
     });
+    const sections = cartItemComponentsSectionIds.join(',');
+    formData.set('sections', sections);
+    const id = Number(formData.get('id'));
+    const quantity = Number(formData.get('quantity')) || Number(this.dataset.quantityDefault) || 1;
 
-    const fetchCfg = fetchConfig('javascript', { body: formData });
+    const fetchCfg = bulbUpgradeId
+      ? fetchConfig('json', {
+          body: JSON.stringify({
+            items: [
+              { id, quantity, properties: { _bulb: 'RGB' } },
+              { id: bulbUpgradeId, quantity, parent_id: id },
+            ],
+            sections,
+            sections_url: window.location.pathname,
+          }),
+        })
+      : fetchConfig('javascript', { body: formData });
 
     fetch(Theme.routes.cart_add_url, {
       ...fetchCfg,
       headers: {
         ...fetchCfg.headers,
-        Accept: 'text/html',
+        Accept: bulbUpgradeId ? 'application/json' : 'text/html',
       },
     })
       .then((response) => response.json())
@@ -652,7 +670,13 @@ class ProductFormComponent extends Component {
     if (this.#addToCartQueue.length > 0) {
       const queuedItems = [...this.#addToCartQueue];
       this.#addToCartQueue = [];
-      this.#processBatchAddToCart(queuedItems);
+      const standardItems = queuedItems.filter((item) => !item.bulbUpgradeId);
+      this.#processBatchAddToCart(standardItems);
+      for (const item of queuedItems) {
+        if (item.bulbUpgradeId) {
+          this.#processAddToCart(item.variantId, item.quantity, undefined, item.bulbUpgradeId);
+        }
+      }
     }
 
     const { addToCartButtonContainer: currentAddToCartButtonContainer, acceleratedCheckoutButtonContainer } = this.refs;

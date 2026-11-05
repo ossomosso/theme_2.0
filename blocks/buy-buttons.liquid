@@ -6,6 +6,16 @@
     assign product = collections.all.products.first
   endif
 
+  assign portable_handle = blank
+  if request.page_type == 'product' and product.handle == 'lampara-brisa' and template.suffix == 'brisa'
+    assign portable_handle = 'brisa-portable-lamp'
+  elsif request.page_type == 'product' and product.handle == 'grasshoper-lamp' and template.suffix == 'grasshopper'
+    assign portable_handle = 'grasshopper-portable-lamp'
+  endif
+  if portable_handle != blank
+    assign bulb_upgrade = all_products['rgb-bulb-upgrade'].selected_or_first_available_variant
+  endif
+
   assign variant = closest.product.selected_or_first_available_variant
   assign inventory_quantity = variant.inventory_quantity
   assign inventory_policy = variant.inventory_policy
@@ -35,6 +45,10 @@
   endif
 %}
 
+{% if portable_handle != blank %}
+  {{ 'ossomosso-bulb-options.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
 <span
   class="buy-buttons-block buy-buttons-block--{{ block.id }}"
   {{ block.shopify_attributes }}
@@ -63,6 +77,9 @@
           ref="variantId"
           value="{{ product.selected_or_first_available_variant.id }}"
         >
+        {%- if portable_handle != blank -%}
+          {% render 'ossomosso-bulb-options', part: 'picker', upgrade: bulb_upgrade %}
+        {%- endif -%}
         {%- if block_settings.gift_card_form and product.gift_card? -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section, block: block -%}
           <span class="buy-buttons-block__bar">
@@ -224,6 +241,9 @@
         {%- endif -%}
       {%- endform -%}
     </product-form-component>
+    {%- if portable_handle != blank -%}
+      {% render 'ossomosso-bulb-options', part: 'portable', portable: all_products[portable_handle] %}
+    {%- endif -%}
   {%- else -%}
     <div class="product-form-buttons">
       <button

@@ -1,0 +1,92 @@
+.osso-bulb-options {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.osso-bulb-options legend {
+  margin-block-end: .5rem;
+  font-weight: 600;
+}
+
+.osso-bulb-options label {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .625rem;
+  padding: .65rem .75rem;
+  border: 1px solid #e4d8cc;
+  border-radius: 10px;
+  background: #fffdfa;
+  cursor: pointer;
+}
+
+.osso-bulb-options label + label {
+  margin-block-start: .45rem;
+}
+
+.osso-bulb-options label:has(:checked) {
+  border-color: #876346;
+  background: #f5eee5;
+}
+
+.osso-bulb-options input {
+  margin: 0;
+  accent-color: #79553b;
+}
+
+.osso-bulb-options small,
+.osso-portable-link small {
+  color: #695447;
+  font-size: .8em;
+}
+
+.osso-portable-link {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-block-start: 1rem;
+  padding: .5rem .7rem;
+  border-radius: 12px;
+  background: #f3ebe1;
+  color: #29231f;
+  text-decoration: none;
+}
+
+.osso-portable-link img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.osso-portable-link small {
+  display: block;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.osso-portable-link > :last-child {
+  margin-inline-start: auto;
+}
+
+.osso-bulb-options input:focus-visible,
+.osso-portable-link:focus-visible {
+  outline: 2px solid #774d31;
+  outline-offset: 3px;
+}
+
+.osso-rgb-price {
+  display: none;
+}
+
+.shopify-section:has(.osso-bulb-options input[value]:not([value=""]):checked) {
+  .osso-rgb-price {
+    display: inline;
+  }
+
+  .osso-standard-price {
+    display: none;
+  }
+}

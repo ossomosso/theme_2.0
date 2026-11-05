@@ -483,5 +483,13 @@
     "shared_hint": "Cuéntanos los colores, las medidas o la ocasión. Si es para un equipo o una marca, también puedes añadir más detalles debajo.",
     "extra_details": "Más detalles del proyecto (opcional)",
     "company_optional": "Empresa o marca (opcional)"
+  },
+  "ossomosso_bulb": {
+    "choose": "Elige la bombilla",
+    "white": "Bombilla blanca",
+    "included": "Incluida",
+    "rgb": "Bombilla RGB",
+    "portable": "Portátil con batería",
+    "view_portable": "Ver {{ title }}"
   }
 }

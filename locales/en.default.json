@@ -495,5 +495,13 @@
     "shared_hint": "Tell us about the colours, size or occasion. If it’s for a team or a brand, you can add more details below.",
     "extra_details": "More project details (optional)",
     "company_optional": "Company or brand (optional)"
+  },
+  "ossomosso_bulb": {
+    "choose": "Choose your bulb",
+    "white": "White bulb",
+    "included": "Included",
+    "rgb": "RGB bulb",
+    "portable": "Cordless with rechargeable battery",
+    "view_portable": "View {{ title }}"
   }
 }

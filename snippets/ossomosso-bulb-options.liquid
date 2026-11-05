@@ -1,0 +1,26 @@
+{%- if part == 'picker' and upgrade.available -%}
+  <fieldset class="osso-bulb-options">
+    <legend>{{ 'ossomosso_bulb.choose' | t }}</legend>
+    <label>
+      <input type="radio" name="osso_bulb" value="" checked>
+      <span>{{ 'ossomosso_bulb.white' | t }}</span>
+      <small>{{ 'ossomosso_bulb.included' | t }}</small>
+    </label>
+    <label>
+      <input type="radio" name="osso_bulb" value="{{ upgrade.id }}">
+      <span>{{ 'ossomosso_bulb.rgb' | t }}</span>
+      <small>+{{ upgrade.price | money_without_currency }} €</small>
+    </label>
+  </fieldset>
+{%- elsif part == 'portable' and portable != blank -%}
+  <a class="osso-portable-link" href="{{ portable.url }}">
+    {%- if portable.featured_image -%}
+      {{ portable.featured_image | image_url: width: 112 | image_tag: width: 56, height: 56, alt: '', loading: 'lazy' }}
+    {%- endif -%}
+    <span>
+      <strong>{{ 'ossomosso_bulb.portable' | t }}</strong>
+      <small>{{ 'ossomosso_bulb.view_portable' | t: title: portable.title }}</small>
+    </span>
+    <span aria-hidden="true">↗</span>
+  </a>
+{%- endif -%}

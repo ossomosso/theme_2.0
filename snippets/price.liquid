@@ -3,6 +3,7 @@
   It is used in the product block,featured product block, and the product card block.
 
   @param {product} product_resource - The product to render
+  @param {boolean} [show_bulb_upgrade] - Whether to show the selected RGB upgrade total
   @param {boolean} [show_unit_price] - Whether to show the unit price
   @param {boolean} [show_sale_price_first] - Whether to show the sale price first
 {%- enddoc -%}
@@ -58,6 +59,21 @@
     assign use_currency = true
   endif
 
+  if show_bulb_upgrade and request.page_type == 'product'
+    assign bulb_template = false
+    if template.suffix == 'brisa' and product_resource.handle == 'lampara-brisa'
+      assign bulb_template = true
+    elsif template.suffix == 'grasshopper' and product_resource.handle == 'grasshoper-lamp'
+      assign bulb_template = true
+    endif
+    if bulb_template and product_resource.id == product.id
+      assign upgrade = all_products['rgb-bulb-upgrade'].selected_or_first_available_variant
+      if upgrade.available and price != blank
+        assign rgb_total = price | plus: upgrade.price
+      endif
+    endif
+  endif
+
   # Format all prices
   assign price = price | money_without_currency | append: ' €'
   assign compare_at_price = compare_at_price | money_without_currency | append: ' €'
@@ -66,6 +82,10 @@
 -%}
 
 <div ref="priceContainer">
+  {% if rgb_total %}
+    <span class="price osso-rgb-price">{{ rgb_total | money_without_currency }} €</span>
+    <div class="osso-standard-price">
+  {% endif %}
   {% if has_volume_pricing %}
     {% comment %} Volume pricing display {% endcomment %}
     {% if show_compare_price %}
@@ -125,6 +145,9 @@
     -%}
     {% render 'unit-price', price: unit_price, measurement: selected_variant.unit_price_measurement %}
   {%- endif -%}
+  {% if rgb_total %}
+    </div>
+  {% endif %}
 </div>
 {%- if has_volume_pricing -%}
   <small
