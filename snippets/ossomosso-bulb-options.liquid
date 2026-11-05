@@ -26,7 +26,7 @@
   -%}
   <a class="osso-portable-link" href="{{ portable.url }}">
     {%- if card_image -%}
-      {{ card_image | image_url: width: 112 | image_tag: width: 56, height: 56, alt: '', loading: 'lazy' }}
+      {{ card_image | image_url: width: 192, height: 192, crop: 'center' | image_tag: widths: '64, 128, 192', sizes: '64px', width: 64, height: 64, alt: '', loading: 'lazy' }}
     {%- endif -%}
     <span>
       <strong>{{ options.portable_heading | default: heading | escape }}</strong>
