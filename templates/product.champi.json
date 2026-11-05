@@ -144,6 +144,8 @@
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
+                "show_bulb_picker": true,
+                "show_portable_card": false,
                 "stacking": false,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
