@@ -6,29 +6,12 @@
     assign product = collections.all.products.first
   endif
 
-  assign portable_handle = blank
-  if request.page_type == 'product' and product.handle == 'lampara-brisa' and template.suffix == 'brisa'
-    assign portable_handle = 'brisa-portable-lamp'
-  elsif request.page_type == 'product' and product.handle == 'grasshoper-lamp' and template.suffix == 'grasshopper'
-    assign portable_handle = 'grasshopper-portable-lamp'
-  endif
-  assign show_bulb_options = false
-  if portable_handle != blank
-    assign show_bulb_options = true
-  elsif request.page_type == 'product' and product.handle == 'lampara-tulip' and template.suffix == 'tulipa'
-    assign show_bulb_options = true
-  elsif request.page_type == 'product' and product.handle == 'lampara-champi' and template.suffix == 'champi'
-    assign show_bulb_options = true
-  endif
-  if show_bulb_options and block_settings.show_bulb_picker != false
+  if block_settings.show_bulb_picker
     assign bulb_upgrade = all_products['rgb-bulb-upgrade'].selected_or_first_available_variant
   endif
 
-  if show_bulb_options and block_settings.show_portable_card != false
+  if block_settings.show_portable_card
     assign portable_product = block_settings.portable_product
-    if portable_product == blank and portable_handle != blank
-      assign portable_product = all_products[portable_handle]
-    endif
   endif
 
   assign variant = closest.product.selected_or_first_available_variant
@@ -63,7 +46,7 @@
   endif
 %}
 
-{% if show_bulb_options %}
+{% if bulb_upgrade.available or portable_product != blank %}
   {{ 'ossomosso-bulb-options.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
@@ -95,7 +78,7 @@
           ref="variantId"
           value="{{ product.selected_or_first_available_variant.id }}"
         >
-        {%- if show_bulb_options -%}
+        {%- if bulb_upgrade.available -%}
           {% render 'ossomosso-bulb-options', part: 'picker', upgrade: bulb_upgrade, options: block_settings %}
         {%- endif -%}
         {%- if block_settings.gift_card_form and product.gift_card? -%}
@@ -436,7 +419,7 @@
       "type": "checkbox",
       "id": "show_bulb_picker",
       "label": "Mostrar selector de bombilla",
-      "default": true
+      "default": false
     },
     {
       "type": "text",
@@ -467,13 +450,12 @@
       "type": "checkbox",
       "id": "show_portable_card",
       "label": "Mostrar tarjeta portátil",
-      "default": true
+      "default": false
     },
     {
       "type": "product",
       "id": "portable_product",
-      "label": "Producto enlazado",
-      "info": "Si lo dejas vacío, Brisa y Grasshopper enlazan a su versión portátil."
+      "label": "Producto enlazado"
     },
     {
       "type": "text",
