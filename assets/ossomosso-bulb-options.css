@@ -2,17 +2,19 @@
   margin: 0 0 1rem;
   padding: 0;
   border: 0;
+  inline-size: 100%;
   min-inline-size: 0;
 }
 
 .osso-bulb-options legend {
-  margin-block-end: .5rem;
-  font-weight: 600;
+  padding: 0;
+  margin-block-end: var(--margin-xs);
+  font: inherit;
 }
 
 .osso-bulb-options label {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: .625rem;
   padding: .65rem .75rem;
@@ -75,6 +77,12 @@
 .osso-portable-link:focus-visible {
   outline: 2px solid #774d31;
   outline-offset: 3px;
+}
+
+@media screen and (max-width: 749px) {
+  .buy-buttons-block:has(.osso-bulb-options, .osso-portable-link) {
+    padding-inline: 0;
+  }
 }
 
 .osso-rgb-price {

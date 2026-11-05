@@ -485,7 +485,7 @@
     "company_optional": "Empresa o marca (opcional)"
   },
   "ossomosso_bulb": {
-    "choose": "Elige la bombilla",
+    "choose": "Tipo de bombilla",
     "white": "Bombilla blanca",
     "included": "Incluida",
     "rgb": "Bombilla RGB",
