@@ -1,25 +1,36 @@
 {%- if part == 'picker' and upgrade.available -%}
+  {%- liquid
+    assign heading = 'ossomosso_bulb.choose' | t
+    assign white_label = 'ossomosso_bulb.white' | t
+    assign white_note = 'ossomosso_bulb.included' | t
+    assign rgb_label = 'ossomosso_bulb.rgb' | t
+  -%}
   <fieldset class="osso-bulb-options">
-    <legend>{{ 'ossomosso_bulb.choose' | t }}</legend>
+    <legend>{{ options.bulb_heading | default: heading | escape }}</legend>
     <label>
       <input type="radio" name="osso_bulb" value="" checked>
-      <span>{{ 'ossomosso_bulb.white' | t }}</span>
-      <small>{{ 'ossomosso_bulb.included' | t }}</small>
+      <span>{{ options.white_bulb_label | default: white_label | escape }}</span>
+      <small>{{ options.white_bulb_note | default: white_note | escape }}</small>
     </label>
     <label>
       <input type="radio" name="osso_bulb" value="{{ upgrade.id }}">
-      <span>{{ 'ossomosso_bulb.rgb' | t }}</span>
+      <span>{{ options.rgb_bulb_label | default: rgb_label | escape }}</span>
       <small>+{{ upgrade.price | money_without_currency }} €</small>
     </label>
   </fieldset>
 {%- elsif part == 'portable' and portable != blank -%}
+  {%- liquid
+    assign heading = 'ossomosso_bulb.portable' | t
+    assign link_label = 'ossomosso_bulb.view_portable' | t: title: portable.title
+    assign card_image = options.portable_image | default: portable.featured_image
+  -%}
   <a class="osso-portable-link" href="{{ portable.url }}">
-    {%- if portable.featured_image -%}
-      {{ portable.featured_image | image_url: width: 112 | image_tag: width: 56, height: 56, alt: '', loading: 'lazy' }}
+    {%- if card_image -%}
+      {{ card_image | image_url: width: 112 | image_tag: width: 56, height: 56, alt: '', loading: 'lazy' }}
     {%- endif -%}
     <span>
-      <strong>{{ 'ossomosso_bulb.portable' | t }}</strong>
-      <small>{{ 'ossomosso_bulb.view_portable' | t: title: portable.title }}</small>
+      <strong>{{ options.portable_heading | default: heading | escape }}</strong>
+      <small>{{ options.portable_link_label | default: link_label | escape }}</small>
     </span>
     <span aria-hidden="true">↗</span>
   </a>

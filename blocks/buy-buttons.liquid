@@ -20,8 +20,15 @@
   elsif request.page_type == 'product' and product.handle == 'lampara-champi' and template.suffix == 'champi'
     assign show_bulb_options = true
   endif
-  if show_bulb_options
+  if show_bulb_options and block_settings.show_bulb_picker != false
     assign bulb_upgrade = all_products['rgb-bulb-upgrade'].selected_or_first_available_variant
+  endif
+
+  if show_bulb_options and block_settings.show_portable_card != false
+    assign portable_product = block_settings.portable_product
+    if portable_product == blank and portable_handle != blank
+      assign portable_product = all_products[portable_handle]
+    endif
   endif
 
   assign variant = closest.product.selected_or_first_available_variant
@@ -43,6 +50,9 @@
     if variant.available
       assign can_add_to_cart = true
       assign add_to_cart_text = 'products.product.add_to_cart' | t
+      if block_settings.add_to_cart_label != blank
+        assign add_to_cart_text = block_settings.add_to_cart_label | escape
+      endif
     elsif inventory_managed and inventory_quantity <= 0 and inventory_policy == 'deny' or quantity_rule_soldout
       assign can_add_to_cart = false
       assign add_to_cart_text = 'products.product.sold_out' | t
@@ -86,7 +96,7 @@
           value="{{ product.selected_or_first_available_variant.id }}"
         >
         {%- if show_bulb_options -%}
-          {% render 'ossomosso-bulb-options', part: 'picker', upgrade: bulb_upgrade %}
+          {% render 'ossomosso-bulb-options', part: 'picker', upgrade: bulb_upgrade, options: block_settings %}
         {%- endif -%}
         {%- if block_settings.gift_card_form and product.gift_card? -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section, block: block -%}
@@ -249,8 +259,8 @@
         {%- endif -%}
       {%- endform -%}
     </product-form-component>
-    {%- if portable_handle != blank -%}
-      {% render 'ossomosso-bulb-options', part: 'portable', portable: all_products[portable_handle] %}
+    {%- if portable_product != blank -%}
+      {% render 'ossomosso-bulb-options', part: 'portable', portable: portable_product, options: block_settings %}
     {%- endif -%}
   {%- else -%}
     <div class="product-form-buttons">
@@ -408,6 +418,79 @@
   "name": "t:names.product_buy_buttons",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Botón de compra"
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_label",
+      "label": "Texto de agregar al carrito",
+      "info": "Si lo dejas vacío, se usa el texto del idioma de la tienda."
+    },
+    {
+      "type": "header",
+      "content": "Tipo de bombilla"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bulb_picker",
+      "label": "Mostrar selector de bombilla",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "bulb_heading",
+      "label": "Título del selector"
+    },
+    {
+      "type": "text",
+      "id": "white_bulb_label",
+      "label": "Nombre de la bombilla blanca"
+    },
+    {
+      "type": "text",
+      "id": "white_bulb_note",
+      "label": "Texto junto a la bombilla blanca"
+    },
+    {
+      "type": "text",
+      "id": "rgb_bulb_label",
+      "label": "Nombre de la bombilla RGB",
+      "info": "El suplemento se toma del producto Suplemento de bombilla RGB."
+    },
+    {
+      "type": "header",
+      "content": "Tarjeta de la versión portátil"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_portable_card",
+      "label": "Mostrar tarjeta portátil",
+      "default": true
+    },
+    {
+      "type": "product",
+      "id": "portable_product",
+      "label": "Producto enlazado",
+      "info": "Si lo dejas vacío, Brisa y Grasshopper enlazan a su versión portátil."
+    },
+    {
+      "type": "text",
+      "id": "portable_heading",
+      "label": "Título de la tarjeta"
+    },
+    {
+      "type": "text",
+      "id": "portable_link_label",
+      "label": "Texto del enlace"
+    },
+    {
+      "type": "image_picker",
+      "id": "portable_image",
+      "label": "Imagen de la tarjeta",
+      "info": "Si lo dejas vacío, se usa la foto principal del producto enlazado."
+    },
     {
       "type": "paragraph",
       "content": "t:content.resource_reference_product"
