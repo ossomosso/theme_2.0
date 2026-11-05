@@ -12,15 +12,7 @@
   elsif request.page_type == 'product' and product.handle == 'grasshoper-lamp' and template.suffix == 'grasshopper'
     assign portable_handle = 'grasshopper-portable-lamp'
   endif
-  assign show_bulb_options = false
   if portable_handle != blank
-    assign show_bulb_options = true
-  elsif request.page_type == 'product' and product.handle == 'lampara-tulip' and template.suffix == 'tulipa'
-    assign show_bulb_options = true
-  elsif request.page_type == 'product' and product.handle == 'lampara-champi' and template.suffix == 'champi'
-    assign show_bulb_options = true
-  endif
-  if show_bulb_options
     assign bulb_upgrade = all_products['rgb-bulb-upgrade'].selected_or_first_available_variant
   endif
 
@@ -53,7 +45,7 @@
   endif
 %}
 
-{% if show_bulb_options %}
+{% if portable_handle != blank %}
   {{ 'ossomosso-bulb-options.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
@@ -85,7 +77,7 @@
           ref="variantId"
           value="{{ product.selected_or_first_available_variant.id }}"
         >
-        {%- if show_bulb_options -%}
+        {%- if portable_handle != blank -%}
           {% render 'ossomosso-bulb-options', part: 'picker', upgrade: bulb_upgrade %}
         {%- endif -%}
         {%- if block_settings.gift_card_form and product.gift_card? -%}
