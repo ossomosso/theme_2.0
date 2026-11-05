@@ -195,10 +195,10 @@
             "ossomosso_facts": {
               "type": "ossomosso-product-facts",
               "settings": {
-                "icon_1": "lightning_bolt",
+                "icon_1": "map_pin",
                 "title_1": "Cordless light",
                 "text_1": "Move it from room to room.",
-                "icon_2": "check_box",
+                "icon_2": "lightning_bolt",
                 "title_2": "USB-C charging",
                 "text_2": "Recharge the internal battery.",
                 "icon_3": "heart",
