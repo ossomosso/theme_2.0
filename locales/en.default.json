@@ -500,7 +500,7 @@
     "choose": "Bulb type",
     "white": "White bulb",
     "included": "Included",
-    "rgb": "RGB bulb",
+    "rgb": "Smart colour bulb",
     "portable": "Cordless with rechargeable battery",
     "view_portable": "View {{ title }}"
   }

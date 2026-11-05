@@ -488,7 +488,7 @@
     "choose": "Tipo de bombilla",
     "white": "Bombilla blanca",
     "included": "Incluida",
-    "rgb": "Bombilla RGB",
+    "rgb": "Bombilla colores inteligente",
     "portable": "Portátil con batería",
     "view_portable": "Ver {{ title }}"
   }
