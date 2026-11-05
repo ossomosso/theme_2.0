@@ -1,5 +1,17 @@
+.buy-buttons-block:has(.osso-bulb-options, .osso-portable-link) {
+  --osso-purchase-spacing: 36px;
+  /* Account for the solid edge below the tactile button. */
+  --osso-purchase-spacing-after-button: calc(var(--osso-purchase-spacing) + 5px);
+}
+
+.buy-buttons-block:has(.osso-bulb-options):not(:has(.osso-portable-link)) {
+  /* The product details stack already provides 16px between blocks. */
+  margin-block-end: calc(var(--osso-purchase-spacing-after-button) - 16px);
+}
+
 .osso-bulb-options {
-  margin: 0 0 1rem;
+  margin: 0;
+  margin-block-end: var(--osso-purchase-spacing);
   padding: 0;
   border: 0;
   inline-size: 100%;
@@ -48,7 +60,7 @@
   display: flex;
   align-items: center;
   gap: .75rem;
-  margin-block-start: 1rem;
+  margin-block-start: var(--osso-purchase-spacing-after-button);
   padding: .5rem .7rem;
   border-radius: 12px;
   background: #f3ebe1;
