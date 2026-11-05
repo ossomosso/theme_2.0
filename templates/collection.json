@@ -15,6 +15,33 @@
         "heading": "Products"
       }
     },
+    "lamps_products": {
+      "type": "ossomosso-collection-products",
+      "settings": {
+        "collection": "portable-lamps",
+        "heading": "Portable Lamps",
+        "all_products_only": false,
+        "product_limit": 50
+      }
+    },
+    "ossomosso_collection_products_Ryex79": {
+      "type": "ossomosso-collection-products",
+      "settings": {
+        "collection": "lamparas",
+        "heading": "Desk Lamps",
+        "all_products_only": false,
+        "product_limit": 50
+      }
+    },
+    "vases_products": {
+      "type": "ossomosso-collection-products",
+      "settings": {
+        "collection": "jarrones",
+        "heading": "Vases",
+        "all_products_only": true,
+        "product_limit": 3
+      }
+    },
     "main": {
       "type": "main-collection",
       "blocks": {
@@ -186,6 +213,7 @@
           ]
         }
       },
+      "disabled": true,
       "settings": {
         "layout_type": "grid",
         "product_card_size": "large",
@@ -201,31 +229,13 @@
         "color_scheme": "",
         "padding-block-start": 32,
         "padding-block-end": 32
-      },
-      "disabled": true
-    },
-    "lamps_products": {
-      "type": "ossomosso-collection-products",
-      "settings": {
-        "collection": "lamparas",
-        "heading": "Lamps",
-        "product_limit": 50,
-        "all_products_only": false
-      }
-    },
-    "vases_products": {
-      "type": "ossomosso-collection-products",
-      "settings": {
-        "collection": "jarrones",
-        "heading": "Vases",
-        "product_limit": 3,
-        "all_products_only": true
       }
     }
   },
   "order": [
     "section",
     "lamps_products",
+    "ossomosso_collection_products_Ryex79",
     "vases_products",
     "main"
   ]
