@@ -147,7 +147,7 @@
               "settings": {
                 "show_bulb_picker": true,
                 "show_portable_card": true,
-                "portable_product": "brisa-portable-lamp",
+                "portable_product_url": "shopify://products/brisa-portable-lamp",
                 "stacking": false,
                 "show_pickup_availability": false,
                 "gift_card_form": true,

@@ -10,8 +10,9 @@
     assign bulb_upgrade = all_products['rgb-bulb-upgrade'].selected_or_first_available_variant
   endif
 
-  if block_settings.show_portable_card
-    assign portable_product = block_settings.portable_product
+  if block_settings.show_portable_card and block_settings.portable_product_url != blank
+    assign portable_handle = block_settings.portable_product_url | split: '?' | first | split: '/products/' | last
+    assign portable_product = all_products[portable_handle]
   endif
 
   assign variant = closest.product.selected_or_first_available_variant
@@ -453,9 +454,10 @@
       "default": false
     },
     {
-      "type": "product",
-      "id": "portable_product",
-      "label": "Producto enlazado"
+      "type": "url",
+      "id": "portable_product_url",
+      "label": "Producto enlazado",
+      "info": "Selecciona la ficha de la lámpara portátil."
     },
     {
       "type": "text",
