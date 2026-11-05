@@ -94,7 +94,7 @@
   assign price_max = price_max | money_without_currency | append: ' €'
 -%}
 
-<div ref="priceContainer"{% if show_newsletter_offer %} data-welcome-price="{{ welcome_price | money | escape }}"{% if welcome_rgb_price %} data-welcome-rgb-price="{{ welcome_rgb_price | money | escape }}"{% endif %}{% endif %}>
+<div ref="priceContainer"{% if show_newsletter_offer %} data-welcome-price="{% render 'ossomosso-welcome-price', amount: welcome_price %}"{% if welcome_rgb_price %} data-welcome-rgb-price="{% render 'ossomosso-welcome-price', amount: welcome_rgb_price %}"{% endif %}{% endif %}>
   {% if rgb_total %}
     <span class="price osso-rgb-price">{{ rgb_total | money_without_currency }} €</span>
     <div class="osso-standard-price">

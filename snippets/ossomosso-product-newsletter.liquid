@@ -1,4 +1,5 @@
 {%- assign form_id = 'ProductNewsletter-' | append: block_id -%}
+{%- assign welcome_price = variant.price | times: 0.9 | round -%}
 {%- capture signup_form -%}
   {% form 'customer', id: form_id %}
     <input type="hidden" name="contact[tags]" value="newsletter">
@@ -29,7 +30,7 @@
 {%- endcapture -%}
 <details class="osso-product-newsletter" {% if signup_open %} open{% endif %}>
   <summary>
-    <span data-osso-welcome-price>{{ variant.price | times: 0.9 | round | money }}</span>
+    <span data-osso-welcome-price>{% render 'ossomosso-welcome-price', amount: welcome_price %}</span>
     {{ 'ossomosso.pdp.first_order' | t }}
     <span class="osso-product-newsletter__link">{{ 'ossomosso.pdp.join' | t }}</span>
   </summary>

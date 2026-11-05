@@ -1,0 +1,18 @@
+{%- liquid
+  assign euros = amount | divided_by: 100
+  assign cents = amount | modulo: 100
+  echo euros
+  if cents > 0
+    assign language = request.locale.iso_code | split: '-' | first
+    if language == 'en'
+      echo '.'
+    else
+      echo ','
+    endif
+    if cents < 10
+      echo '0'
+    endif
+    echo cents
+  endif
+  echo ' €'
+-%}
