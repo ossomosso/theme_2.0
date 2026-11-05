@@ -1,5 +1,5 @@
 .buy-buttons-block:has(.osso-bulb-options, .osso-portable-link) {
-  --osso-purchase-spacing: 36px;
+  --osso-purchase-spacing: 28px;
   /* Account for the solid edge below the tactile button. */
   --osso-purchase-spacing-after-button: calc(var(--osso-purchase-spacing) + 5px);
 }
