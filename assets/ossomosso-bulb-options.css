@@ -84,6 +84,7 @@
 
 .osso-portable-link__arrow {
   flex-shrink: 0;
+  font-size: 1.3rem;
   line-height: 1;
   margin-inline-start: auto;
 }
