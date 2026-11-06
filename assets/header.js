@@ -139,7 +139,12 @@ class HeaderComponent extends Component {
     const scrollTop = document.scrollingElement?.scrollTop ?? 0;
     const headerTop = this.getBoundingClientRect().top;
     const isScrollingUp = scrollTop < this.#lastScrollTop;
-    const isAtTop = headerTop >= 0;
+    const activeSection = stickyMode === 'scroll-up' && this.dataset.stickyState === 'active'
+      ? this.parentElement
+      : null;
+    const stickyInset = activeSection ? parseFloat(getComputedStyle(activeSection).top) : 0;
+    // A positive sticky inset keeps the header visible before it reaches its natural position.
+    const isAtTop = stickyInset > 0 ? scrollTop === 0 || headerTop > stickyInset + 0.5 : headerTop >= 0;
 
     if (this.#timeout) {
       clearTimeout(this.#timeout);

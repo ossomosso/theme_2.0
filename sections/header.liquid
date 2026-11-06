@@ -608,6 +608,10 @@
   }
 
   @media screen and (min-width: 750px) {
+    .header-section:has(> #header-component[sticky='scroll-up'][data-sticky-state='active']) {
+      top: 16px;
+    }
+
     #header-group:has(.announcement-bar) > .header-section:has(> #header-component) {
       margin-block-start: 12px;
     }
