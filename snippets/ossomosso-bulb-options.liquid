@@ -32,6 +32,6 @@
       <strong>{{ options.portable_heading | default: heading | escape }}</strong>
       <small>{{ options.portable_link_label | default: link_label | escape }}</small>
     </span>
-    <span aria-hidden="true">↗</span>
+    {{ 'icon-chevron-right.svg' | inline_asset_content }}
   </a>
 {%- endif -%}

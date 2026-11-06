@@ -82,7 +82,8 @@
   text-underline-offset: .2em;
 }
 
-.osso-portable-link > :last-child {
+.osso-portable-link > svg {
+  flex-shrink: 0;
   margin-inline-start: auto;
 }
 
