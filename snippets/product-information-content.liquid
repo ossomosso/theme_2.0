@@ -97,9 +97,6 @@
         class="product-information__media"
         data-testid="product-information-media"
       >
-        {% if show_pdp_header %}
-          {% render 'ossomosso-product-breadcrumb', product: product, collection: collection %}
-        {% endif %}
         {{ media_gallery }}
       </div>
     {% endcapture %}

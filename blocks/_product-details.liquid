@@ -15,6 +15,9 @@
   {% endif %}
 >
   {% capture children %}
+    {% if request.page_type == 'product' and section.id contains '__main' %}
+      {% render 'ossomosso-product-breadcrumb', product: closest.product, collection: collection %}
+    {% endif %}
     <div class="view-product-title">
       <a
         href="{{ closest.product.selected_or_first_available_variant.url }}"

@@ -67,6 +67,10 @@ export default class VariantPicker extends Component {
     if (!selectedOption) return;
 
     this.updateSelectedOption(event.target);
+    if (selectedOption.dataset.ossoColorLabel) {
+      const breadcrumbColor = this.closest('.osso-pdp .product-details')?.querySelector('[data-osso-breadcrumb-color]');
+      if (breadcrumbColor) breadcrumbColor.textContent = selectedOption.dataset.ossoColorLabel;
+    }
     this.dispatchEvent(new VariantSelectedEvent({
       id: selectedOption.dataset.optionValueId ?? '',
     }));

@@ -73,12 +73,6 @@ class ProductPrice extends Component {
       this.updateWelcomePrice();
     }
 
-    if (newProductPrice.querySelector('[data-welcome-price]')) {
-      const currentBreadcrumb = this.closest('.osso-pdp')?.querySelector('[data-osso-breadcrumb-current]');
-      const updatedBreadcrumb = event.detail.data.html.querySelector('[data-osso-breadcrumb-current]');
-      if (currentBreadcrumb && updatedBreadcrumb) currentBreadcrumb.textContent = updatedBreadcrumb.textContent;
-    }
-
     // Update volume pricing note
     const newNote = newProductPrice.querySelector('[ref="volumePricingNote"]');
 

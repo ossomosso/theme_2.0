@@ -18,12 +18,12 @@
     <a href="{{ current_collection.url }}">{{ current_collection.title | escape }}</a>
   {% endif %}
   <span aria-hidden="true">/</span>
-  <span aria-current="page" data-osso-breadcrumb-current>
+  <span aria-current="page">
     {{- product.title | escape -}}
     {%- for option in product.options_with_values -%}
       {%- assign option_name = option.name | downcase -%}
       {%- if option_name == 'color' or option_name == 'colour' -%}
-        {{ ' — ' }}{% render 'ossomosso-color-name', value: option.selected_value %}
+        {{ ' — ' }}<span data-osso-breadcrumb-color>{% render 'ossomosso-color-name', value: option.selected_value %}</span>
         {%- break -%}
       {%- endif -%}
     {%- endfor -%}
