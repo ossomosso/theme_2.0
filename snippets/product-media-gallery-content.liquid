@@ -95,10 +95,6 @@
   endif
 
   assign slideshow_controls_style = block_settings.slideshow_controls_style
-  # Use a counter instead of dots when there are many images to avoid cropping/overflow.
-  if slideshow_controls_style == 'dots' and selected_product.media.size > 15
-    assign slideshow_controls_style = 'counter'
-  endif
 
   assign render_slideshow_arrows = false
 
@@ -193,6 +189,10 @@
 
   if sorted_media.size == 0
     assign sorted_media = selected_product.media
+  endif
+  # Base the control on the images shown for the selected variant.
+  if slideshow_controls_style == 'dots' and sorted_media.size > 15
+    assign slideshow_controls_style = 'counter'
   endif
   assign has_image_drop = sorted_media | has: 'media_type', 'image'
 

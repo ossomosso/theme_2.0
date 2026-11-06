@@ -30,7 +30,7 @@
 {%- endcapture -%}
 <details class="osso-product-newsletter" {% if signup_open %} open{% endif %}>
   <summary>
-    <span data-osso-welcome-price>{% render 'ossomosso-welcome-price', amount: welcome_price %}</span>
+    <span data-osso-welcome-price aria-live="polite">{% render 'ossomosso-welcome-price', amount: welcome_price %}</span>
     {{ 'ossomosso.pdp.first_order' | t }}
     <span class="osso-product-newsletter__link">{{ 'ossomosso.pdp.join' | t }}</span>
   </summary>
