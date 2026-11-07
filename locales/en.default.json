@@ -514,5 +514,17 @@
     "rgb": "Smart colour bulb",
     "portable": "Cordless with rechargeable battery",
     "view_portable": "View {{ title }}"
+  },
+  "osso_shipping": {
+    "destination": "Delivery · {{ country }}",
+    "shipping_from": "Shipping from [amount]",
+    "free_from": "Free shipping on orders from [amount]",
+    "free_shipping": "Free shipping",
+    "checkout_note": "Final shipping options and delivery times are confirmed at checkout for your address.",
+    "shipping_policy": "Shipping details",
+    "returns_policy": "Returns & exchanges",
+    "secure_payment": "Secure payment",
+    "payment_methods": "Available payment methods"
   }
+
 }

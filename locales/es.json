@@ -502,5 +502,17 @@
     "rgb": "Bombilla colores inteligente",
     "portable": "Portátil con batería",
     "view_portable": "Ver {{ title }}"
+  },
+  "osso_shipping": {
+    "destination": "Envíos · {{ country }}",
+    "shipping_from": "Envío desde [amount]",
+    "free_from": "Envío gratis en pedidos desde [amount]",
+    "free_shipping": "Envío gratis",
+    "checkout_note": "Las opciones de envío y los plazos se confirman al finalizar la compra según tu dirección.",
+    "shipping_policy": "Información de envío",
+    "returns_policy": "Cambios y devoluciones",
+    "secure_payment": "Pago seguro",
+    "payment_methods": "Métodos de pago disponibles"
   }
+
 }

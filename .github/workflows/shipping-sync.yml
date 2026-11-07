@@ -1,0 +1,35 @@
+name: Sync Shopify shipping information
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: shipping-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read Shopify shipping settings
+        run: node scripts/sync-shipping.mjs
+        env:
+          SHOPIFY_SHOP: e730p1-1f.myshopify.com
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_SHIPPING_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_SHIPPING_CLIENT_SECRET }}
+      - name: Publish public shipping data through the connected theme
+        run: |
+          git add assets/ossomosso-shipping-data.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'Ossomosso shipping sync'
+            git config user.email 'shipping-sync@users.noreply.github.com'
+            git commit -m 'Sync shipping information from Shopify'
+            git push origin HEAD:main
+          fi

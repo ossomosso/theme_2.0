@@ -1,0 +1,51 @@
+{% liquid
+  assign shipping_product = closest.product | default: product
+  assign shipping_country = localization.country
+%}
+<ossomosso-shipping class="osso-shipping" data-source="{{ 'ossomosso-shipping-data.json' | asset_url }}" data-country="{{ shipping_country.iso_code | escape }}" data-currency="{{ cart.currency.iso_code | escape }}" data-product="{{ shipping_product.id }}" data-locale="{{ request.locale.iso_code | escape }}" style="--shipping-background: {{ block.settings.background }}; --shipping-radius: {{ block.settings.corner_radius }}px" {{ block.shopify_attributes }}>
+  <div class="osso-shipping__heading">
+    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 5h11v12H3zM14 9h4l3 4v4h-7"/><circle cx="7" cy="18" r="2" fill="var(--shipping-background)"/><circle cx="18" cy="18" r="2" fill="var(--shipping-background)"/></svg>
+    <span>{{ 'osso_shipping.destination' | t: country: shipping_country.name }}</span>
+  </div>
+  <div class="osso-shipping__rates" data-shipping-rates hidden></div>
+  <p class="osso-shipping__note">{{ 'osso_shipping.checkout_note' | t }}</p>
+  <div class="osso-shipping__links">
+    {% if shop.shipping_policy.url != blank %}<a href="{{ shop.shipping_policy.url }}">{{ 'osso_shipping.shipping_policy' | t }}</a>{% endif %}
+    {% if shop.refund_policy.url != blank %}<a href="{{ shop.refund_policy.url }}">{{ 'osso_shipping.returns_policy' | t }}</a>{% endif %}
+  </div>
+  {% if block.settings.show_payments and shop.enabled_payment_types.size > 0 %}
+    <div class="osso-shipping__payments">
+      <span>{{ 'osso_shipping.secure_payment' | t }}</span>
+      <ul role="list" aria-label="{{ 'osso_shipping.payment_methods' | t }}">{% for type in shop.enabled_payment_types %}<li>{{ type | payment_type_svg_tag }}</li>{% endfor %}</ul>
+    </div>
+  {% endif %}
+  <script type="application/json" data-shipping-config>{"shipping_from":{{ 'osso_shipping.shipping_from' | t | json }},"free_from":{{ 'osso_shipping.free_from' | t | json }},"free_shipping":{{ 'osso_shipping.free_shipping' | t | json }}}</script>
+</ossomosso-shipping>
+<script type="module" src="{{ 'ossomosso-shipping.js' | asset_url }}"></script>
+{% stylesheet %}
+  .osso-shipping { display: block; width: 100%; color: var(--color-foreground); background: var(--shipping-background); border-radius: var(--shipping-radius); padding: 20px; }
+  .osso-shipping__heading { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 500; }
+  .osso-shipping__heading svg { flex-shrink: 0; }
+  .osso-shipping__rates { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgb(var(--color-foreground-rgb) / .12); }
+  .osso-shipping__rates span { display: block; font-size: .85rem; line-height: 1.65; }
+  .osso-shipping__note { margin: 10px 0 0; font-size: .75rem; line-height: 1.6; opacity: .75; }
+  .osso-shipping__links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; font-size: .75rem; }
+  .osso-shipping__links a { text-decoration: underline; text-underline-offset: 3px; }
+  .osso-shipping__links a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  .osso-shipping__payments { border-top: 1px solid rgb(var(--color-foreground-rgb) / .12); margin-top: 16px; padding-top: 14px; font-size: .75rem; }
+  .osso-shipping__payments ul { display: flex; flex-wrap: wrap; gap: 5px; list-style: none; padding: 0; margin: 8px 0 0; }
+  .osso-shipping__payments svg { display: block; width: 30px; height: auto; }
+  @media (max-width: 749px) { .osso-shipping { padding: 18px; } }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "Ossomosso - Shipping",
+  "settings": [
+    { "type": "paragraph", "content": "Shipping rates sync from Shopify. Delivery estimates and final eligibility are confirmed at checkout. Translations use the theme language editor." },
+    { "type": "color", "id": "background", "label": "Background", "default": "#F3EBE0" },
+    { "type": "range", "id": "corner_radius", "label": "Corner radius", "min": 0, "max": 32, "step": 1, "unit": "px", "default": 16 },
+    { "type": "checkbox", "id": "show_payments", "label": "Show enabled payment methods", "default": true }
+  ],
+  "presets": [{ "name": "Ossomosso - Shipping" }]
+}
+{% endschema %}

@@ -760,6 +760,14 @@
                 "accordion_row_VyFryh",
                 "accordion_row_aaFerA"
               ]
+            },
+            "ossomosso_shipping": {
+              "type": "ossomosso-shipping-info",
+              "settings": {
+                "background": "#F3EBE0",
+                "corner_radius": 16,
+                "show_payments": true
+              }
             }
           },
           "block_order": [
@@ -768,6 +776,7 @@
             "price_a7krng",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "ossomosso_shipping",
             "product_description_LfDYCg",
             "group_X39hBc",
             "accordion_g8EVVp"
