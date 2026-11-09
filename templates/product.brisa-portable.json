@@ -132,6 +132,16 @@
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
+                "add_to_cart_label": "",
+                "show_bulb_picker": false,
+                "bulb_heading": "",
+                "white_bulb_label": "",
+                "white_bulb_note": "",
+                "rgb_bulb_label": "",
+                "show_portable_card": false,
+                "portable_product_url": "",
+                "portable_heading": "",
+                "portable_link_label": "",
                 "stacking": false,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
@@ -243,7 +253,7 @@
                     "text_McjMWz": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li>Format: cordless table lamp for indoor use.</li><li>Charging port: USB-C.</li><li>Battery: 3.7 V · 400 mAh · 1.48 Wh.</li><li>Colours: Blue, beige, grey, green and red.</li></ul>",
+                        "text": "<ul><li>Battery capacity: 4000 mAh</li><li>Battery voltage: 3.7 V</li><li>Charging connection: USB-C</li><li>Power source: Rechargeable battery</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -270,8 +280,8 @@
                       "name": "Brisa dimensions drawing",
                       "settings": {
                         "image": "shopify://shop_images/brisa-dimensions-264x227mm-v2.webp",
-                        "blend_white_background": true,
                         "link": "",
+                        "blend_white_background": true,
                         "image_ratio": "adapt",
                         "width": "fill",
                         "custom_width": 100,
@@ -298,6 +308,16 @@
                         "max_width": "normal",
                         "alignment": "center",
                         "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
                         "padding-block-start": 0,
                         "padding-block-end": 16,
                         "padding-inline-start": 0,
@@ -401,11 +421,17 @@
             "image_fit": "cover",
             "image_background": "#efefef",
             "image": "shopify://shop_images/Brisa-Portable-Rojo-EFEFEF.webp",
-            "show_accordion": false,
-            "media_position": "left",
             "eyebrow": "Brisa Portable",
             "title": "The curve that gives Brisa its shape",
-            "text": "<p>Give the curved shade a little space on a side table or shelf, where its outline can be seen from different angles.</p>"
+            "text": "<p>Give the curved shade a little space on a side table or shelf, where its outline can be seen from different angles.</p>",
+            "show_accordion": false,
+            "accordion_1_heading": "Product description",
+            "accordion_1_content": "<p>Table lamp with a floral silhouette and ambient light. Works especially well with a warm LED bulb.</p>",
+            "accordion_2_heading": "Materials and process",
+            "accordion_2_content": "<p>3D printed in small batches and assembled locally in Madrid.</p>",
+            "accordion_3_heading": "Shipping and returns",
+            "accordion_3_content": "<p>Made to order. Contact us if you need help with delivery times or a return.</p>",
+            "media_position": "left"
           }
         }
       },
@@ -416,6 +442,67 @@
       "settings": {
         "color_scheme": "",
         "image_radius": 20
+      }
+    },
+    "ossomosso_product_faq": {
+      "type": "ossomosso-product-faq",
+      "blocks": {
+        "question_1": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use it without a cable?",
+            "answer": "<p>Yes. It runs on its internal battery, so you can move it around without keeping it plugged in.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_2": {
+          "type": "question",
+          "settings": {
+            "question": "How do I charge it?",
+            "answer": "<p>Connect a USB-C cable to the charging port on the lamp.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_3": {
+          "type": "question",
+          "settings": {
+            "question": "Where can I use it?",
+            "answer": "<p>It is intended for indoor use. Try it on a bedside table, a console or a shelf as a point of ambient light.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_4": {
+          "type": "question",
+          "settings": {
+            "question": "How do I clean it?",
+            "answer": "<p>Turn the lamp off, disconnect it from charging and wipe it with a soft, dry cloth. Keep it away from water and abrasive cleaners.</p>",
+            "open_by_default": false
+          }
+        },
+        "question_5": {
+          "type": "question",
+          "settings": {
+            "question": "Can I return it?",
+            "answer": "<p>You have 90 days from delivery to request a return. Check our <a href=\"/en/policies/refund-policy\">returns policy</a> for conditions, or email <a href=\"mailto:info@ossomosso.com\">info@ossomosso.com</a>.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "question_1",
+        "question_2",
+        "question_3",
+        "question_4",
+        "question_5"
+      ],
+      "settings": {
+        "eyebrow": "Before you bring it home",
+        "heading": "Questions about Brisa Portable",
+        "intro": "<p>Charging, everyday use and care.</p>",
+        "contact_label": "Still have a question? Talk to us.",
+        "contact_url": "shopify://pages/contact",
+        "background_color": "#f4f2ec",
+        "text_color": "#2a241f"
       }
     },
     "product_list_zR9Cym": {
@@ -653,67 +740,6 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 60,
         "padding-block-end": 72
-      }
-    },
-    "ossomosso_product_faq": {
-      "type": "ossomosso-product-faq",
-      "blocks": {
-        "question_1": {
-          "type": "question",
-          "settings": {
-            "open_by_default": false,
-            "question": "Can I use it without a cable?",
-            "answer": "<p>Yes. It runs on its internal battery, so you can move it around without keeping it plugged in.</p>"
-          }
-        },
-        "question_2": {
-          "type": "question",
-          "settings": {
-            "open_by_default": false,
-            "question": "How do I charge it?",
-            "answer": "<p>Connect a USB-C cable to the charging port on the lamp.</p>"
-          }
-        },
-        "question_3": {
-          "type": "question",
-          "settings": {
-            "open_by_default": false,
-            "question": "Where can I use it?",
-            "answer": "<p>It is intended for indoor use. Try it on a bedside table, a console or a shelf as a point of ambient light.</p>"
-          }
-        },
-        "question_4": {
-          "type": "question",
-          "settings": {
-            "open_by_default": false,
-            "question": "How do I clean it?",
-            "answer": "<p>Turn the lamp off, disconnect it from charging and wipe it with a soft, dry cloth. Keep it away from water and abrasive cleaners.</p>"
-          }
-        },
-        "question_5": {
-          "type": "question",
-          "settings": {
-            "open_by_default": false,
-            "question": "Can I return it?",
-            "answer": "<p>You have 90 days from delivery to request a return. Check our <a href=\"/en/policies/refund-policy\">returns policy</a> for conditions, or email <a href=\"mailto:info@ossomosso.com\">info@ossomosso.com</a>.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "question_1",
-        "question_2",
-        "question_3",
-        "question_4",
-        "question_5"
-      ],
-      "settings": {
-        "eyebrow": "Before you bring it home",
-        "heading": "Questions about Brisa Portable",
-        "intro": "<p>Charging, everyday use and care.</p>",
-        "contact_label": "Still have a question? Talk to us.",
-        "contact_url": "shopify://pages/contact",
-        "background_color": "#f4f2ec",
-        "text_color": "#2a241f"
       }
     }
   },
