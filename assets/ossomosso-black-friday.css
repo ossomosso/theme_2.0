@@ -8,7 +8,7 @@
 .osso-hero--black-friday .osso-hero__title em { color: inherit; margin-left: .25em; }
 .osso-bf-hero-offer { margin: 0 0 16px; color: #163b4b; font-size: clamp(23px, 2.5vw, 34px); line-height: 1.25; letter-spacing: -.03em; }
 .osso-hero--black-friday .osso-hero__body { max-width: 430px; color: #4c4945; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
-.osso-hero--black-friday .osso-hero__right { min-height: 600px; aspect-ratio: 1 / 1.1; border-radius: 28px 0 0 28px; }
+.osso-hero--black-friday .osso-hero__right { width: 100%; min-height: 0; aspect-ratio: 1 / 1.1; border-radius: 28px 0 0 28px; }
 .osso-hero--black-friday .osso-hero__caption { background: #fffaf6; color: #163b4b; }
 .osso-bf-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 510px; gap: 16px; margin-top: 32px; border-top: 1px solid #d7beb0; padding-top: 20px; }
 .osso-bf-tiers span { color: #4c4945; font-size: 11px; line-height: 1.45; }
