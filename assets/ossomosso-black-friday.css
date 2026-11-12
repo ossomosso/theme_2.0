@@ -25,3 +25,37 @@
 .card-gallery, .ossomosso-collection-products__gallery, .osso-products__image { position: relative; }
 .osso-bf-card-badge { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; z-index: 3; padding: 7px 10px; border-radius: 6px; background: #bde4ec; color: #163b4b; font-family: var(--font-body--family); font-size: 11px; font-weight: 600; line-height: 1.3; letter-spacing: .035em; white-space: nowrap; pointer-events: none; }
 @media (max-width: 749px) { .osso-bf-card-badge { inset-block-start: 10px; inset-inline-end: 10px; padding: 6px 8px; font-size: 10px; } }
+@media (max-width: 749px) {
+  .osso-pdp .product-details > .group-block > .group-block-content:has(> product-price .osso-bf-price-note) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .osso-pdp .product-details > .group-block > .group-block-content:has(> product-price .osso-bf-price-note) > .text-block:has(> h1) {
+    grid-area: auto;
+    grid-column: 1 / -1;
+    min-width: 0;
+    width: 100%;
+  }
+  .osso-pdp .product-details > .group-block > .group-block-content:has(> product-price .osso-bf-price-note) > product-price {
+    grid-area: auto;
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    min-width: 0;
+    width: 100%;
+    text-align: start;
+    padding-block: 0;
+  }
+  .osso-pdp .product-details product-price:has(.osso-bf-price-note) [ref='priceContainer'] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
+  }
+  .osso-pdp .product-details product-price .osso-bf-price-note {
+    flex-basis: 100%;
+    margin-top: 0;
+    font-size: 12px;
+    white-space: normal;
+  }
+  .osso-pdp .product-details product-price .osso-bf-price-badge { margin-inline-start: 0; }
+}
