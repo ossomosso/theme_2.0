@@ -1,0 +1,22 @@
+{% doc %}
+Renders the maximum Black Friday saving over a product card image.
+@param {product} product_resource - The card product
+{% enddoc %}
+{%- liquid
+  assign max_rate = 0
+  if settings.black_friday_enabled and product_resource.available
+    for card_variant in product_resource.variants
+      capture rate_output
+        render 'ossomosso-bf-rate', variant: card_variant
+      endcapture
+      assign card_rate = rate_output | plus: 0
+      assign max_rate = max_rate | at_least: card_rate
+      if max_rate == 30
+        break
+      endif
+    endfor
+  endif
+-%}
+{%- if max_rate > 0 -%}
+  <span class="osso-bf-card-badge">{{ 'ossomosso_bf.up_to' | t: rate: max_rate }}</span>
+{%- endif -%}

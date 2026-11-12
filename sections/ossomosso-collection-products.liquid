@@ -33,6 +33,7 @@
             <li class="ossomosso-collection-products__card" data-product-handle="{{ product.handle }}">
               <a href="{{ variant.url }}" class="ossomosso-collection-products__link">
                 <div class="ossomosso-collection-products__gallery">
+                  {% render 'ossomosso-bf-card-badge', product_resource: product %}
                   {% if card_media %}
                     {{ card_media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '320, 480, 640, 900', alt: product.title }}
                   {% endif %}

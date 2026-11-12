@@ -184,6 +184,7 @@
 
       <div class="osso-products__card" {{ block.shopify_attributes }}>
         <div class="osso-products__image">
+          {% render 'ossomosso-bf-card-badge', product_resource: product %}
           {% if image != blank %}
             {{ image | image_url: width: 800 | image_tag: loading: 'lazy' }}
           {% elsif product != blank and product.featured_image != blank %}

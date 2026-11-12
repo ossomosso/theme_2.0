@@ -4,6 +4,7 @@
 
 {% capture children %}
   {% unless product == blank %}
+    {% render 'ossomosso-bf-card-badge', product_resource: product %}
     <div
       class="product-badges product-badges--{{ settings.badge_position }}"
       style="

@@ -4,6 +4,7 @@
 
   @param {product} product_resource - The product to render
   @param {variant} [variant_resource] - A specific variant to render
+  @param {boolean} [show_campaign_badge] - Show the exact discount next to the main product price
   @param {boolean} [show_bulb_upgrade] - Whether to show the selected RGB upgrade total
   @param {boolean} [show_newsletter_offer] - Expose the variant welcome prices for the main PDP
   @param {boolean} [show_unit_price] - Whether to show the unit price
@@ -124,7 +125,7 @@
     <span class="osso-rgb-price">
       <span class="price">{% render 'format-price', price: rgb_total %}</span>
       {% if bf_rate > 0 %}<s class="compare-at-price">{% assign regular_rgb_total = selected_variant.price | plus: upgrade.price %}{% render 'format-price', price: regular_rgb_total %}</s>{% endif %}
-      {% if bf_rate > 0 %}<span class="osso-bf-price-badge">−{{ bf_rate }}%</span>{% endif %}
+      {% if bf_rate > 0 and show_campaign_badge %}<span class="osso-bf-price-badge">−{{ bf_rate }}%</span>{% endif %}
     </span>
     <div class="osso-standard-price">
   {% endif %}
@@ -181,7 +182,7 @@
       {% endif %}
     </div>
   {% endif %}
-  {% if bf_rate > 0 %}<span class="osso-bf-price-badge">−{{ bf_rate }}%</span>{% endif %}
+  {% if bf_rate > 0 and show_campaign_badge %}<span class="osso-bf-price-badge">−{{ bf_rate }}%</span>{% endif %}
   {% if bf_rate > 0 and show_newsletter_offer %}<small class="osso-bf-price-note">{{ 'ossomosso_bf.automatic' | t }}</small>{% endif %}
   {%- if selected_variant.unit_price and show_unit_price %}
     {%- liquid

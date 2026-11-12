@@ -516,6 +516,7 @@
     "view_portable": "View {{ title }}"
   },
   "ossomosso_bf": {
+    "up_to": "UP TO {{ rate }}%",
     "banner": "UP TO 30% OFF",
     "eyebrow": "Good design. A little closer.",
     "hero_body": "A softer glow, a favourite colour. Bring home the piece you have had your eye on.",

@@ -10,10 +10,6 @@
 .osso-hero--black-friday .osso-hero__body { max-width: 430px; color: #4c4945; font-size: 16px; line-height: 1.6; margin-bottom: 24px; }
 .osso-hero--black-friday .osso-hero__right { width: 100%; min-height: 0; aspect-ratio: 1 / 1.1; border-radius: 28px 0 0 28px; }
 .osso-hero--black-friday .osso-hero__caption { background: #fffaf6; color: #163b4b; }
-.osso-bf-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 510px; gap: 16px; margin-top: 32px; border-top: 1px solid #d7beb0; padding-top: 20px; }
-.osso-bf-tiers span { color: #4c4945; font-size: 11px; line-height: 1.45; }
-.osso-bf-tiers strong { display: block; font-family: var(--font-heading--family); font-weight: 400; font-size: 32px; color: #163b4b; line-height: 1; margin-bottom: 8px; }
-.osso-bf-exclusions { max-width: 490px; color: #655b53; font-size: 10px; line-height: 1.6; margin: 18px 0 0; }
 .osso-bf-price-badge { display: inline-block; vertical-align: middle; margin-inline-start: 8px; padding: 4px 7px; background: #bde4ec; color: #163b4b; font-family: var(--font-body--family); font-size: 11px; font-weight: 600; border-radius: 5px; line-height: 1.25; white-space: nowrap; }
 .osso-bf-price-note { display: block; margin-top: 8px; color: #46616a; font-family: var(--font-body--family); font-size: 11px; font-weight: 400; line-height: 1.45; }
 .osso-standard-price .price__sale { display: inline-flex; gap: 8px; flex-wrap: wrap; align-items: baseline; }
@@ -23,7 +19,9 @@
   .osso-hero--black-friday .osso-hero__left { padding-inline: max(24px, var(--page-margin)); }
   .osso-hero--black-friday .osso-hero__title { font-size: clamp(86px, 19vw, 140px); }
   .osso-hero--black-friday .osso-hero__right { min-height: 0; aspect-ratio: 1 / 1; border-radius: 0; }
-  .osso-bf-tiers { max-width: none; gap: 14px; margin-top: 24px; }
   .osso-bf-announcement a { padding: 12px 14px; font-size: 10px; letter-spacing: .025em; }
 }
 .osso-hero.osso-hero--black-friday { background: var(--color-background); }
+.card-gallery, .ossomosso-collection-products__gallery, .osso-products__image { position: relative; }
+.osso-bf-card-badge { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; z-index: 3; padding: 7px 10px; border-radius: 6px; background: #bde4ec; color: #163b4b; font-family: var(--font-body--family); font-size: 11px; font-weight: 600; line-height: 1.3; letter-spacing: .035em; white-space: nowrap; pointer-events: none; }
+@media (max-width: 749px) { .osso-bf-card-badge { inset-block-start: 10px; inset-inline-end: 10px; padding: 6px 8px; font-size: 10px; } }

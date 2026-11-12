@@ -504,6 +504,7 @@
     "view_portable": "Ver {{ title }}"
   },
   "ossomosso_bf": {
+    "up_to": "HASTA UN {{ rate }}%",
     "banner": "HASTA UN 30% DE DESCUENTO",
     "eyebrow": "El diseño que te gusta, un poco más cerca.",
     "hero_body": "Una luz más cálida, tu color favorito. Es el momento de hacerle un hueco a esa pieza que tenías en mente.",

@@ -193,14 +193,6 @@
       {% endif %}
     </div>
 
-    {% if settings.black_friday_enabled %}
-      <div class="osso-bf-tiers" aria-label="{{ 'ossomosso_bf.offer_details' | t }}">
-        <span><strong>−30%</strong>{{ 'ossomosso_bf.tier_30' | t }}</span>
-        <span><strong>−20%</strong>{{ 'ossomosso_bf.tier_20' | t }}</span>
-        <span><strong>−15%</strong>{{ 'ossomosso_bf.tier_15' | t }}</span>
-      </div>
-      <p class="osso-bf-exclusions">{{ 'ossomosso_bf.exclusions' | t }}</p>
-    {% endif %}
     {% if section.settings.scroll_text != blank and settings.black_friday_enabled == false %}<p class="osso-hero__scroll">{{ section.settings.scroll_text | escape }}</p>{% endif %}
   </div>
 
