@@ -15,7 +15,7 @@
           class="cart-totals__original-value cart-secondary-typography"
           data-testid="cart-subtotal-value"
         >
-          {{- cart.items_subtotal_price | money_without_currency -}} €
+          {% render 'format-price', price: cart.items_subtotal_price %}
         </span>
       </span>
       <ul
@@ -30,7 +30,7 @@
               {{ discount.title | escape }}
             </span>
             <span class="cart-discounts__value cart-secondary-typography"
-              >-{{ discount.total_allocated_amount | money_without_currency }} €
+              >-{% render 'format-price', price: discount.total_allocated_amount %}
             </span>
           </li>
         {%- endfor -%}
@@ -223,7 +223,9 @@
   {% endif %}
 
   {%- liquid
-    assign total_price = cart.total_price | money_without_currency | append: ' €'
+    capture total_price
+                    render 'format-price', price: cart.total_price
+                  endcapture
   -%}
 
   <div class="cart-totals__container{% if settings.show_installments %} cart-totals__container--has-installments{% endif %}">

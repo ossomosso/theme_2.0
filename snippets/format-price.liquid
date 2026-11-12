@@ -16,7 +16,9 @@
 
   assign show_currency = settings.currency_code_enabled_product_pages
 
-  assign formatted_price = price_value | money_without_currency | append: ' €'
+  capture formatted_price
+    render 'ossomosso-welcome-price', amount: price_value
+  endcapture
 
   if price_type == 'per_item'
     assign per_item_text = 'content.quantity_per_item' | t

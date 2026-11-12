@@ -8,6 +8,21 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "Black Friday",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "black_friday_enabled",
+        "label": "Show Black Friday campaign",
+        "default": false
+      },
+      {
+        "type": "paragraph",
+        "content": "Controls the campaign design and advertised prices. The three Black Friday automatic discounts must also be active in Shopify > Discounts. Disable those discounts when turning this setting off."
+      }
+    ]
+  },
+  {
     "name": "t:names.logo_and_favicon",
     "settings": [
       {

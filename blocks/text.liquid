@@ -1,5 +1,15 @@
 
-{% render 'text', block: block %}
+{% liquid
+  assign bf_text = blank
+  if settings.black_friday_enabled
+    if block.id contains 'text_Fy9Ne7'
+      assign bf_text = 'ossomosso_bf.newsletter_heading_html' | t
+    elsif block.id contains 'text_qgpX3i'
+      assign bf_text = 'ossomosso_bf.newsletter_body_html' | t
+    endif
+  endif
+%}
+{% render 'text', block: block, override_text: bf_text %}
 
 {% schema %}
 {

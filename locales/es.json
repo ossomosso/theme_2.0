@@ -502,5 +502,24 @@
     "rgb": "Bombilla colores inteligente",
     "portable": "Portátil con batería",
     "view_portable": "Ver {{ title }}"
+  },
+  "ossomosso_bf": {
+    "banner": "HASTA UN 30% DE DESCUENTO",
+    "eyebrow": "El diseño que te gusta, un poco más cerca.",
+    "hero_body": "Una luz más cálida, tu color favorito. Es el momento de hacerle un hueco a esa pieza que tenías en mente.",
+    "hero_offer": "Hasta un 30% de descuento.",
+    "cta": "Explorar las ofertas",
+    "hero_image_alt": "Lámpara Brisa con base verde y pantalla blanca escultural",
+    "hero_caption": "Brisa en verde · 30% de descuento",
+    "offer_details": "Ofertas de Black Friday",
+    "tier_30": "Lámparas con cable verdes y blancas",
+    "tier_20": "Otros colores de lámparas con cable",
+    "tier_15": "Jarrones",
+    "exclusions": "Excluidas las lámparas con batería y las mejoras de bombilla. Aplicado automáticamente en el carrito. No acumulable a códigos de descuento.",
+    "automatic": "Black Friday · aplicado automáticamente en el carrito.",
+    "newsletter_heading_html": "<h2>Nuevas piezas.<br><em>Antes que nadie.</em></h2>",
+    "newsletter_body_html": "<p>Novedades del estudio, nuevos colores y pequeñas colecciones. Sé el primero en enterarte.</p>",
+    "subscribe": "Suscribirme"
   }
+
 }

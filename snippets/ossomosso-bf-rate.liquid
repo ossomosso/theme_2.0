@@ -1,0 +1,19 @@
+{% doc %}
+Returns the campaign percentage for one explicitly eligible variant.
+@param {variant} variant - The selected variant
+{% enddoc %}
+{%- liquid
+  assign rate = 0
+  if settings.black_friday_enabled
+    assign variant_id = variant.id | append: ""
+    case variant_id
+      when '58237374366028' or '58238071308620' or '58923632722252'
+        assign rate = 15
+      when '57603928654156' or '58923679777100' or '58081382400332' or '58923603493196' or '58925727121740' or '58921400369484' or '58921400402252' or '58921400435020' or '58923566170444'
+        assign rate = 20
+      when '57603928588620' or '58247881687372' or '58237129982284' or '58921400467788'
+        assign rate = 30
+    endcase
+  endif
+  echo rate
+-%}

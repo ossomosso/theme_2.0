@@ -27,6 +27,7 @@
 
     {%- render 'meta-tags' -%}
     {%- render 'stylesheets' -%}
+    {% if settings.black_friday_enabled %}{{ 'ossomosso-black-friday.css' | asset_url | stylesheet_tag }}{% endif %}
     {%- render 'fonts' -%}
     {%- render 'scripts' -%}
     {%- render 'theme-styles-variables' -%}

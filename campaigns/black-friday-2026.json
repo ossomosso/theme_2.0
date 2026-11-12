@@ -1,0 +1,175 @@
+{
+  "campaign": "Black Friday 2026",
+  "currency": "EUR",
+  "groups": {
+    "15": [
+      {
+        "product": "Organic Vase",
+        "productId": "gid://shopify/Product/15935528829260",
+        "variantId": "gid://shopify/ProductVariant/58237374366028",
+        "color": "Default Title",
+        "basePrice": "45.00",
+        "salePrice": "38.25"
+      },
+      {
+        "product": "Japandi Vase",
+        "productId": "gid://shopify/Product/15935727239500",
+        "variantId": "gid://shopify/ProductVariant/58238071308620",
+        "color": "Default Title",
+        "basePrice": "45.00",
+        "salePrice": "38.25"
+      },
+      {
+        "product": "Copenhagen Vase",
+        "productId": "gid://shopify/Product/16133249007948",
+        "variantId": "gid://shopify/ProductVariant/58923632722252",
+        "color": "Default Title",
+        "basePrice": "45.00",
+        "salePrice": "38.25"
+      }
+    ],
+    "20": [
+      {
+        "product": "Tulipa Lamp",
+        "productId": "gid://shopify/Product/15772627894604",
+        "variantId": "gid://shopify/ProductVariant/57603928654156",
+        "color": "Azul Transparente",
+        "basePrice": "55.00",
+        "salePrice": "44.00"
+      },
+      {
+        "product": "Grasshopper Lamp",
+        "productId": "gid://shopify/Product/15776539803980",
+        "variantId": "gid://shopify/ProductVariant/58923679777100",
+        "color": "Azul",
+        "basePrice": "49.00",
+        "salePrice": "39.20"
+      },
+      {
+        "product": "Grasshopper Lamp",
+        "productId": "gid://shopify/Product/15776539803980",
+        "variantId": "gid://shopify/ProductVariant/58081382400332",
+        "color": "Beige",
+        "basePrice": "49.00",
+        "salePrice": "39.20"
+      },
+      {
+        "product": "Champi Lamp",
+        "productId": "gid://shopify/Product/15935425544524",
+        "variantId": "gid://shopify/ProductVariant/58923603493196",
+        "color": "Rosa",
+        "basePrice": "55.00",
+        "salePrice": "44.00"
+      },
+      {
+        "product": "Champi Lamp",
+        "productId": "gid://shopify/Product/15935425544524",
+        "variantId": "gid://shopify/ProductVariant/58925727121740",
+        "color": "Amarillo",
+        "basePrice": "55.00",
+        "salePrice": "44.00"
+      },
+      {
+        "product": "Brisa Lamp",
+        "productId": "gid://shopify/Product/16132697391436",
+        "variantId": "gid://shopify/ProductVariant/58921400369484",
+        "color": "Azul",
+        "basePrice": "65.00",
+        "salePrice": "52.00"
+      },
+      {
+        "product": "Brisa Lamp",
+        "productId": "gid://shopify/Product/16132697391436",
+        "variantId": "gid://shopify/ProductVariant/58921400402252",
+        "color": "Beige",
+        "basePrice": "65.00",
+        "salePrice": "52.00"
+      },
+      {
+        "product": "Brisa Lamp",
+        "productId": "gid://shopify/Product/16132697391436",
+        "variantId": "gid://shopify/ProductVariant/58921400435020",
+        "color": "Gris",
+        "basePrice": "65.00",
+        "salePrice": "52.00"
+      },
+      {
+        "product": "Brisa Lamp",
+        "productId": "gid://shopify/Product/16132697391436",
+        "variantId": "gid://shopify/ProductVariant/58923566170444",
+        "color": "Rojo",
+        "basePrice": "65.00",
+        "salePrice": "52.00"
+      }
+    ],
+    "30": [
+      {
+        "product": "Tulipa Lamp",
+        "productId": "gid://shopify/Product/15772627894604",
+        "variantId": "gid://shopify/ProductVariant/57603928588620",
+        "color": "Verde",
+        "basePrice": "55.00",
+        "salePrice": "38.50"
+      },
+      {
+        "product": "Tulipa Lamp",
+        "productId": "gid://shopify/Product/15772627894604",
+        "variantId": "gid://shopify/ProductVariant/58247881687372",
+        "color": "Blanco",
+        "basePrice": "55.00",
+        "salePrice": "38.50"
+      },
+      {
+        "product": "Champi Lamp",
+        "productId": "gid://shopify/Product/15935425544524",
+        "variantId": "gid://shopify/ProductVariant/58237129982284",
+        "color": "Blanco",
+        "basePrice": "55.00",
+        "salePrice": "38.50"
+      },
+      {
+        "product": "Brisa Lamp",
+        "productId": "gid://shopify/Product/16132697391436",
+        "variantId": "gid://shopify/ProductVariant/58921400467788",
+        "color": "Verde",
+        "basePrice": "65.00",
+        "salePrice": "45.50"
+      }
+    ]
+  },
+  "discounts": [
+    {
+      "rate": 30,
+      "id": "gid://shopify/DiscountAutomaticNode/2294151709004",
+      "automaticDiscount": {
+        "title": "Black Friday · 30%",
+        "status": "ACTIVE",
+        "summary": "30 % de descuento en 3 productos",
+        "startsAt": "2026-11-11T23:00:00Z",
+        "endsAt": null
+      }
+    },
+    {
+      "rate": 20,
+      "id": "gid://shopify/DiscountAutomaticNode/2294151741772",
+      "automaticDiscount": {
+        "title": "Black Friday · 20%",
+        "status": "ACTIVE",
+        "summary": "20 % de descuento en 4 productos",
+        "startsAt": "2026-11-11T23:00:00Z",
+        "endsAt": null
+      }
+    },
+    {
+      "rate": 15,
+      "id": "gid://shopify/DiscountAutomaticNode/2294151774540",
+      "automaticDiscount": {
+        "title": "Black Friday · 15%",
+        "status": "ACTIVE",
+        "summary": "15 % de descuento en 3 productos",
+        "startsAt": "2026-11-11T23:00:00Z",
+        "endsAt": null
+      }
+    }
+  ]
+}

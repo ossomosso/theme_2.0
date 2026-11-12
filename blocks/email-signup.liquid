@@ -47,7 +47,7 @@
         {% endif %}
       >
         {% if block_settings.display_type == 'text' %}
-          {{ block_settings.label }}
+          {% if settings.black_friday_enabled %}{{ 'ossomosso_bf.subscribe' | t }}{% else %}{{ block_settings.label }}{% endif %}
         {% else %}
           <svg
             viewBox="0 0 20 20"

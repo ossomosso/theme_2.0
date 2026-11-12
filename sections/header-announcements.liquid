@@ -8,6 +8,11 @@
   ></script>
 {% endif %}
 
+{% if settings.black_friday_enabled %}
+  <aside class="osso-bf-announcement">
+    <a href="{{ routes.all_products_collection_url }}"><strong>BLACK FRIDAY</strong><span aria-hidden="true"> — </span>{{ 'ossomosso_bf.banner' | t }}<span aria-hidden="true"> ↗</span></a>
+  </aside>
+{% else %}
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <aside
   class="announcement-bar spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
@@ -37,6 +42,8 @@
     </div>
   </announcement-bar-component>
 </aside>
+
+{% endif %}
 
 {% stylesheet %}
   .announcement-bar {

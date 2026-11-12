@@ -355,7 +355,8 @@
           "selected_variant_hover_border_color": "#3a3430"
         }
       }
-    }
+    },
+    "black_friday_enabled": true
   },
   "presets": {
     "Tinker": {

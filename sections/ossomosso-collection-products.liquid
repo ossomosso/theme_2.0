@@ -41,7 +41,7 @@
                 {% unless variant.title == 'Default Title' %}
                   <p class="ossomosso-collection-products__variants">{% render 'ossomosso-color-name', value: variant.title %}</p>
                 {% endunless %}
-                <p>{{ variant.price | money }}</p>
+                <div>{% render 'price', product_resource: product, variant_resource: variant, show_sale_price_first: true %}</div>
               </a>
             </li>
           {% endfor %}

@@ -89,7 +89,7 @@
     </div>
   {%- endif -%}
 </product-price>
-{% if show_newsletter_offer %}
+{% if show_newsletter_offer and settings.black_friday_enabled == false %}
   {% render 'ossomosso-product-newsletter', block_id: block.id, variant: selected_variant %}
 {% endif %}
 

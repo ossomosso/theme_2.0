@@ -514,5 +514,24 @@
     "rgb": "Smart colour bulb",
     "portable": "Cordless with rechargeable battery",
     "view_portable": "View {{ title }}"
+  },
+  "ossomosso_bf": {
+    "banner": "UP TO 30% OFF",
+    "eyebrow": "Good design. A little closer.",
+    "hero_body": "A softer glow, a favourite colour. Bring home the piece you have had your eye on.",
+    "hero_offer": "Up to 30% off.",
+    "cta": "Explore the offers",
+    "hero_image_alt": "Brisa lamp with a green base and white sculptural shade",
+    "hero_caption": "Brisa in green · 30% off",
+    "offer_details": "Black Friday offers",
+    "tier_30": "Green & white corded lamps",
+    "tier_20": "Other corded lamp colours",
+    "tier_15": "Vases",
+    "exclusions": "Battery lamps and bulb upgrades excluded. Automatically applied in your cart. Cannot be combined with discount codes.",
+    "automatic": "Black Friday · automatically applied in your cart.",
+    "newsletter_heading_html": "<h2>New pieces.<br><em>Before anyone else.</em></h2>",
+    "newsletter_body_html": "<p>Studio news, new colours and small collections. Stay in the loop.</p>",
+    "subscribe": "Subscribe"
   }
+
 }

@@ -199,7 +199,7 @@
           <p class="osso-products__name">{{ name | default: product.title }}</p>
           <div class="osso-products__meta">
             <span class="osso-products__type">{{ type }}</span>
-            <span class="osso-products__price">{{ price | default: product.price | money_without_currency }} €</span>
+            <span class="osso-products__price">{% if product != blank %}{% render 'price', product_resource: product, show_sale_price_first: true %}{% else %}{{ price | money_without_currency }} €{% endif %}</span>
           </div>
         </div>
       </div>
