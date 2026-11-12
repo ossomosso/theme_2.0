@@ -1,5 +1,5 @@
 .osso-bf-announcement { width: 100%; background: #a9dce8; color: #163b4b; border-radius: 0 0 10px 10px; text-align: center; }
-.osso-bf-announcement a { display: block; padding: 17px 20px; color: inherit; font-size: 13px; letter-spacing: .06em; text-decoration: none; line-height: 1.5; }
+.osso-bf-announcement a { display: block; padding: 11px 20px; color: inherit; font-size: 13px; letter-spacing: .06em; text-decoration: none; line-height: 1.5; }
 .osso-bf-announcement a:focus-visible { outline: 2px solid currentColor; outline-offset: -5px; }
 .osso-hero--black-friday { background: #fae7dc; gap: 32px; padding-block: 38px 44px; }
 .osso-hero--black-friday .osso-hero__left { padding-block: 12px; }
@@ -19,7 +19,7 @@
   .osso-hero--black-friday .osso-hero__left { padding-inline: max(24px, var(--page-margin)); }
   .osso-hero--black-friday .osso-hero__title { font-size: clamp(86px, 19vw, 140px); }
   .osso-hero--black-friday .osso-hero__right { min-height: 0; aspect-ratio: 1 / 1; border-radius: 0; }
-  .osso-bf-announcement a { padding: 12px 14px; font-size: 10px; letter-spacing: .025em; }
+  .osso-bf-announcement a { padding: 9px 14px; font-size: 10px; letter-spacing: .025em; }
 }
 .osso-hero.osso-hero--black-friday { background: var(--color-background); }
 .card-gallery, .ossomosso-collection-products__gallery, .osso-products__image { position: relative; }
