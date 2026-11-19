@@ -1,0 +1,40 @@
+{% doc %}
+  Renders the official organization identity and homepage website structured data.
+{% enddoc %}
+{%- liquid
+  assign brand_url = shop.url | append: '/'
+  assign organization_id = brand_url | append: '#organization'
+  assign website_id = brand_url | append: '#website'
+  assign brand_description = 'ossomosso_seo.home_description' | t
+-%}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": {{ organization_id | json }},
+    "name": {{ shop.name | json }},
+    "url": {{ brand_url | json }},
+    "description": {{ brand_description | json }},
+    "email": "info@ossomosso.com",
+    {% if settings.logo != blank %}
+      "logo": {{ settings.logo | image_url: width: 500 | prepend: 'https:' | json }},
+    {% endif %}
+    "sameAs": [
+      "https://www.instagram.com/ossomosso.design/",
+      "https://www.pinterest.com/ossomossodesign/"
+    ]
+  }
+</script>
+{%- if request.page_type == 'index' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": {{ website_id | json }},
+      "name": {{ shop.name | json }},
+      "alternateName": "ossomosso.com",
+      "url": {{ brand_url | json }},
+      "publisher": { "@id": {{ organization_id | json }} }
+    }
+  </script>
+{%- endif -%}

@@ -20,6 +20,8 @@
   assign image = section.settings.image
   assign image_alt = section.settings.image_alt
   assign caption = section.settings.caption
+  assign default_brand_intro = 'ossomosso_seo.brand_intro' | t
+  assign brand_intro = section.settings.brand_intro | default: default_brand_intro
   if settings.black_friday_enabled
     assign eyebrow = 'ossomosso_bf.eyebrow' | t
     assign title = 'Black'
@@ -79,6 +81,7 @@
     line-height: 1.65;
     text-wrap: pretty;
   }
+  .osso-hero__brand { margin: 22px 0 0; max-width: 420px; color: rgb(var(--color-foreground-rgb) / 0.75); font-family: var(--font-body--family); font-size: 13px; line-height: 1.65; text-wrap: pretty; }
   .osso-hero__actions { display: flex; align-items: center; }
   .osso-hero__btn-primary {
     display: inline-flex;
@@ -192,6 +195,7 @@
         <a href="{{ primary_button_url }}" class="osso-hero__btn-primary" style="--osso-button-face: {{ primary_button_color }}; --osso-button-ink: {{ primary_button_ink }};"><span>{{ primary_button_text | escape }}</span><span aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span></a>
       {% endif %}
     </div>
+    <p class="osso-hero__brand">{{ brand_intro | escape }}</p>
 
     {% if section.settings.scroll_text != blank and settings.black_friday_enabled == false %}<p class="osso-hero__scroll">{{ section.settings.scroll_text | escape }}</p>{% endif %}
   </div>
@@ -243,6 +247,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "textarea",
+      "id": "brand_intro",
+      "label": "Brand introduction",
+      "info": "Leave blank to use the default introduction in the visitor's language."
+    },
     {
       "type": "text",
       "id": "eyebrow",

@@ -503,6 +503,11 @@
     "portable": "Portátil con batería",
     "view_portable": "Ver {{ title }}"
   },
+  "ossomosso_seo": {
+    "home_title": "Ossomosso | Lámparas y jarrones de diseño hechos en Madrid",
+    "home_description": "Descubre las lámparas y jarrones de Ossomosso. Diseño independiente, impresión 3D y fabricación bajo pedido en Madrid. Elige tu pieza y tu color.",
+    "brand_intro": "Ossomosso. Lámparas y jarrones de diseño, impresos en 3D para tu hogar."
+},
   "ossomosso_bf": {
     "up_to": "HASTA UN {{ rate }}%",
     "banner": "HASTA UN 30% DE DESCUENTO",

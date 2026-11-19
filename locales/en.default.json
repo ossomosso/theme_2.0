@@ -515,6 +515,11 @@
     "portable": "Cordless with rechargeable battery",
     "view_portable": "View {{ title }}"
   },
+  "ossomosso_seo": {
+    "home_title": "Ossomosso | Designer lamps and vases made in Madrid",
+    "home_description": "Discover lamps and vases by Ossomosso. Independent design, 3D printed and made to order in Madrid. Find your favourite piece and colour.",
+    "brand_intro": "Ossomosso. Designer lamps and vases, 3D printed for your home."
+},
   "ossomosso_bf": {
     "up_to": "UP TO {{ rate }}%",
     "banner": "UP TO 30% OFF",
